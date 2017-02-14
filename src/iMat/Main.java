@@ -9,10 +9,10 @@ import javafx.stage.Stage;
 public class Main extends Application {
 
     @Override
-    public void start(Stage primaryStage) throws Exception{
-        Parent root = FXMLLoader.load(getClass().getResource("imat_main.fxml"));
-        primaryStage.setTitle("Hello World");
-        primaryStage.setScene(new Scene(root, 300, 275));
+    public void start(Stage primaryStage) throws Exception {
+        Parent root = FXMLLoader.load(getClass().getResource("fxmls/imat_main.fxml"));
+        primaryStage.setTitle("iMat");
+        primaryStage.setScene(new Scene(root, 600, 400));
         primaryStage.show();
     }
 
