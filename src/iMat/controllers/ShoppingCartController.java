@@ -2,6 +2,7 @@ package iMat.controllers;
 
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
 import javafx.scene.control.ListCell;
 import javafx.scene.control.ListView;
 import se.chalmers.ait.dat215.project.Product;
@@ -14,6 +15,7 @@ import java.util.ResourceBundle;
 public class ShoppingCartController implements Initializable {
 
     @FXML private ListView shoppingCartList;
+    @FXML private Button goToCart;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
