@@ -3,12 +3,8 @@
 <?import javafx.scene.control.*?>
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.layout.GridPane?>
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Label?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="iMat.controllers.MainController">
    <children>
       <MenuBar prefHeight="29.0" prefWidth="600.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
         <menus>
@@ -31,16 +27,19 @@
       </MenuBar>
       <AnchorPane layoutY="30.0" prefHeight="570.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.topAnchor="30.0">
          <children>
-            <fx:include source="imat_filter.fxml" />
+            <fx:include fx:id="filter" source="Filter.fxml" />
          </children>
       </AnchorPane>
       <BorderPane layoutX="200.0" layoutY="29.0" prefHeight="571.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="200.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="30.0">
          <center>
-            <fx:include source="imat_feature.fxml" />
+            <fx:include fx:id="feature" source="Feature.fxml" />
          </center>
          <top>
-            <fx:include source="imat_search.fxml" />
+            <fx:include fx:id="search" source="Search.fxml" />
          </top>
+         <right>
+            <fx:include fx:id="shoppingCart" source="ShoppingCart.fxml" />
+         </right>
       </BorderPane>
    </children>
 </AnchorPane>

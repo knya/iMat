@@ -8,20 +8,28 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import se.chalmers.ait.dat215.project.IMatDataHandler;
-
+import se.chalmers.ait.dat215.project.Product;
 import java.net.URL;
+import java.util.List;
 import java.util.ResourceBundle;
 
 /**
- * Search controller for search function.
+ * Controller for search function.
  */
 public class SearchController implements Initializable {
 
+    private MainController mainController;
+
     private IMatDataHandler dataHandler;
     private String searchText;
+    private List<Product> productList;
 
     @FXML private TextField searchTextField;
     @FXML private Button searchButton;
+
+    protected void injectMainController(MainController mainController) {
+        this.mainController = mainController;
+    }
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -42,6 +50,10 @@ public class SearchController implements Initializable {
 
     @FXML
     private void searchButtonActionPerformed(ActionEvent event){
-        dataHandler.findProducts(searchText);
+        productList = dataHandler.findProducts(searchText);
+    }
+
+    public List<Product> getProductList() {
+        return productList;
     }
 }
