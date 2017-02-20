@@ -35,12 +35,12 @@
             <fx:include fx:id="search" source="Search.fxml" />
          </children>
       </AnchorPane>
-      <AnchorPane layoutX="200.0" layoutY="110.0" prefHeight="490.0" prefWidth="400.0" AnchorPane.bottomAnchor="0.0" AnchorPane.topAnchor="110.0">
+      <AnchorPane layoutX="200.0" layoutY="110.0" prefHeight="490.0" prefWidth="400.0">
          <children>
             <fx:include fx:id="feature" source="Feature.fxml" />
          </children>
       </AnchorPane>
-      <AnchorPane layoutX="600.0" layoutY="30.0">
+      <AnchorPane layoutX="600.0" layoutY="30.0" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="30.0">
          <children>
             <fx:include fx:id="shoppingCart" source="ShoppingCart.fxml" />
          </children>

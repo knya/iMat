@@ -1,5 +1,6 @@
 package iMat.cells;
 
+import iMat.controllers.ShoppingCartController;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Button;
@@ -8,6 +9,7 @@ import javafx.scene.control.ListCell;
 import javafx.scene.layout.AnchorPane;
 import se.chalmers.ait.dat215.project.ShoppingItem;
 
+import java.awt.event.ActionEvent;
 import java.io.IOException;
 
 /**
@@ -17,7 +19,7 @@ public class ShoppingItemCell extends ListCell<ShoppingItem> {
 
     @FXML private Label nameLabel;
     @FXML private Button removeButton;
-    @FXML private AnchorPane cellAnchorPane;
+    @FXML private AnchorPane shoppingItemPane;
 
     private FXMLLoader fxmlLoader;
 
@@ -30,10 +32,8 @@ public class ShoppingItemCell extends ListCell<ShoppingItem> {
             setText(null);
             setGraphic(null);
         } else {
-
-            /*
             if (fxmlLoader == null) {
-                fxmlLoader = new FXMLLoader(getClass().getResource("fxmls/ShoppingItemCell.fxml"));
+                fxmlLoader = new FXMLLoader(getClass().getResource("/iMat/fxmls/ShoppingItemCell.fxml"));
                 fxmlLoader.setController(this);
 
                 try {
@@ -41,13 +41,9 @@ public class ShoppingItemCell extends ListCell<ShoppingItem> {
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
-
             }
-            */
-
-            nameLabel.setText(String.valueOf(shoppingItem.getProduct().getName()));
-
-            setGraphic(cellAnchorPane);
+            nameLabel.setText(shoppingItem.getProduct().getName());
+            setGraphic(shoppingItemPane);
         }
     }
 }

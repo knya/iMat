@@ -4,9 +4,9 @@
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane fx:id="cellAnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="74.0" prefWidth="208.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="iMat.cells.ShoppingItemCell">
+<AnchorPane fx:id="shoppingItemPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="68.0" prefWidth="208.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <Label fx:id="nameLabel" layoutX="14.0" layoutY="14.0" text="Label" />
-      <Button fx:id="removeButton" layoutX="135.0" layoutY="18.0" mnemonicParsing="false" text="Remove" />
+      <Button fx:id="removeButton" layoutX="138.0" layoutY="10.0" mnemonicParsing="false" text="Remove" />
    </children>
 </AnchorPane>
