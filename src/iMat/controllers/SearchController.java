@@ -52,8 +52,4 @@ public class SearchController implements Initializable {
     private void searchButtonActionPerformed(ActionEvent event){
         productList = dataHandler.findProducts(searchText);
     }
-
-    public List<Product> getProductList() {
-        return productList;
-    }
 }
