@@ -7,6 +7,8 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
+import se.chalmers.ait.dat215.project.IMatDataHandler;
+import se.chalmers.ait.dat215.project.Product;
 import se.chalmers.ait.dat215.project.ShoppingItem;
 
 import java.net.URL;
@@ -15,23 +17,23 @@ import java.util.ResourceBundle;
 /**
  * Created by Johan on 2017-02-21.
  */
+/*
 public class ShoppingItemCellController implements Initializable {
 
     @FXML private Label nameLabel;
     @FXML private Button removeButton;
     @FXML private AnchorPane shoppingItemPane;
 
-    private ShoppingItem shoppingItem;
-    private ShoppingCartController shoppingCartController;
+    private IMatDataHandler dataHandler;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-
+        dataHandler = IMatDataHandler.getInstance();
     }
 
     @FXML
     private void removeButtonActionPerformed(ActionEvent event) {
-        System.out.println("hej");
+
     }
 
     public AnchorPane getAnchorPane() {
@@ -42,3 +44,4 @@ public class ShoppingItemCellController implements Initializable {
         nameLabel.setText(shoppingItem.getProduct().getName());
     }
 }
+*/

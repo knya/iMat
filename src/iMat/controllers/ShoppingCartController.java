@@ -7,9 +7,8 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
-import se.chalmers.ait.dat215.project.IMatDataHandler;
-import se.chalmers.ait.dat215.project.ShoppingCart;
-import se.chalmers.ait.dat215.project.ShoppingItem;
+import se.chalmers.ait.dat215.project.*;
+
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -27,7 +26,6 @@ public class ShoppingCartController implements Initializable {
 
     private ShoppingCart shoppingCart;
     private IMatDataHandler dataHandler;
-    @FXML private ShoppingItemCellController shoppingItemCellController;
 
     public void injectMainController(MainController mainController) {
         this.mainController = mainController;
@@ -36,17 +34,25 @@ public class ShoppingCartController implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         dataHandler = IMatDataHandler.getInstance();
-        ShoppingItem shoppingItem1 = new ShoppingItem(dataHandler.getProduct(1));
-        ShoppingItem shoppingItem2 = new ShoppingItem(dataHandler.getProduct(2));
+        shoppingCart = dataHandler.getShoppingCart();
+
+        shoppingCart.addProduct(dataHandler.getProduct(1));
+        shoppingCart.addProduct(dataHandler.getProduct(2));
 
         shoppingItemObservableList = FXCollections.observableArrayList();
-        shoppingItemObservableList.addAll(shoppingItem1, shoppingItem2);
+        shoppingItemObservableList.addAll(shoppingCart.getItems());
+
+//        ShoppingItem shoppingItem1 = new ShoppingItem(dataHandler.getProduct(1));
+//        ShoppingItem shoppingItem2 = new ShoppingItem(dataHandler.getProduct(2));
+
+//        shoppingItemObservableList = FXCollections.observableArrayList();
+//        shoppingItemObservableList.addAll(shoppingItem1, shoppingItem2);
 
         shoppingItemListView.setItems(shoppingItemObservableList);
-        shoppingItemListView.setCellFactory(shoppingItemListView -> new ShoppingItemCell());
+        shoppingItemListView.setCellFactory(shoppingItemListView -> new ShoppingItemCell(shoppingItemListView));
     }
 
-    public ObservableList<ShoppingItem> getShoppingItemObservableList() {
-        return shoppingItemObservableList;
+    public ListView<ShoppingItem> getShoppingItemListView() {
+        return shoppingItemListView;
     }
 }
