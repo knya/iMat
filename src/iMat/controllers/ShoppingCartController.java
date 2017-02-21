@@ -27,8 +27,9 @@ public class ShoppingCartController implements Initializable {
 
     private ShoppingCart shoppingCart;
     private IMatDataHandler dataHandler;
+    @FXML private ShoppingItemCellController shoppingItemCellController;
 
-    protected void injectMainController(MainController mainController) {
+    public void injectMainController(MainController mainController) {
         this.mainController = mainController;
     }
 
@@ -43,5 +44,9 @@ public class ShoppingCartController implements Initializable {
 
         shoppingItemListView.setItems(shoppingItemObservableList);
         shoppingItemListView.setCellFactory(shoppingItemListView -> new ShoppingItemCell());
+    }
+
+    public ObservableList<ShoppingItem> getShoppingItemObservableList() {
+        return shoppingItemObservableList;
     }
 }

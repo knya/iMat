@@ -1,5 +1,7 @@
 package iMat.cells;
 
+import iMat.controllers.ShoppingCartController;
+import iMat.controllers.ShoppingItemCellController;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -17,14 +19,28 @@ import java.io.IOException;
  */
 public class ShoppingItemCell extends ListCell<ShoppingItem> {
 
-    @FXML private Label nameLabel;
-    @FXML private Button removeButton;
-    @FXML private AnchorPane shoppingItemPane;
+//    @FXML private Label nameLabel;
+//    @FXML private Button removeButton;
+//    @FXML private AnchorPane shoppingItemPane;
 
-    private ShoppingCart shoppingCart;
-    private ShoppingItem shoppingItem;
+    private ShoppingItemCellController shoppingItemCellController;
 
     private FXMLLoader fxmlLoader;
+
+    public ShoppingItemCell() {
+        if (fxmlLoader == null) {
+            fxmlLoader = new FXMLLoader(getClass().getResource("/iMat/fxmls/ShoppingItemCell.fxml"));
+
+
+            try {
+                fxmlLoader.load();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+
+        shoppingItemCellController = fxmlLoader.getController();
+    }
 
     @Override
     protected void updateItem(ShoppingItem shoppingItem, boolean empty) {
@@ -32,28 +48,11 @@ public class ShoppingItemCell extends ListCell<ShoppingItem> {
         super.updateItem(shoppingItem, empty);
 
         if(empty || shoppingItem == null) {
-            setText(null);
             setGraphic(null);
         } else {
-            if (fxmlLoader == null) {
-                fxmlLoader = new FXMLLoader(getClass().getResource("/iMat/fxmls/ShoppingItemCell.fxml"));
-                fxmlLoader.setController(this);
-
-                try {
-                    fxmlLoader.load();
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-            }
-            nameLabel.setText(shoppingItem.getProduct().getName());
-            setGraphic(shoppingItemPane);
+            shoppingItemCellController.setLabels(shoppingItem);
+            setGraphic(shoppingItemCellController.getAnchorPane());
         }
     }
 
-    @FXML
-    private void removeButtonActionPerformed(ActionEvent event) {
-//        System.out.println(shoppingCart); //null
-        System.out.println(shoppingItem);
-//        shoppingCart.removeItem(shoppingItem);
-    }
 }
