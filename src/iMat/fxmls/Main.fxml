@@ -25,25 +25,33 @@
           </Menu>
         </menus>
       </MenuBar>
-      <AnchorPane layoutY="29.0" prefHeight="571.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.topAnchor="30.0">
-         <children>
-            <fx:include fx:id="filter" source="Filter.fxml" />
-         </children>
-      </AnchorPane>
-      <AnchorPane layoutX="200.0" layoutY="30.0" prefHeight="80.0" prefWidth="400.0" AnchorPane.leftAnchor="200.0" AnchorPane.topAnchor="30.0">
-         <children>
-            <fx:include fx:id="search" source="Search.fxml" />
-         </children>
-      </AnchorPane>
-      <AnchorPane layoutX="200.0" layoutY="110.0" prefHeight="490.0" prefWidth="400.0">
-         <children>
-            <fx:include fx:id="feature" source="Feature.fxml" />
-         </children>
-      </AnchorPane>
-      <AnchorPane layoutX="600.0" layoutY="30.0" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="30.0">
-         <children>
-            <fx:include fx:id="shoppingCart" source="ShoppingCart.fxml" />
-         </children>
-      </AnchorPane>
+      <SplitPane dividerPositions="0.24686716791979949, 0.7443609022556391" layoutY="30.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="569.0" prefWidth="800.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="30.0">
+        <items>
+          <AnchorPane minHeight="0.0" minWidth="190.0" prefHeight="568.0" prefWidth="224.0" SplitPane.resizableWithParent="false">
+               <children>
+                  <fx:include fx:id="filter" source="Filter.fxml" />
+               </children>
+            </AnchorPane>
+            <SplitPane dividerPositions="0.15" orientation="VERTICAL" prefHeight="568.0" prefWidth="318.0">
+              <items>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0" SplitPane.resizableWithParent="false">
+                     <children>
+                        <fx:include fx:id="search" source="Search.fxml" />
+                     </children>
+                  </AnchorPane>
+                  <fx:include fx:id="feature" source="Feature.fxml" />
+              </items>
+            </SplitPane>
+            <SplitPane prefHeight="571.0" prefWidth="340.0" SplitPane.resizableWithParent="false">
+               <items>
+                  <AnchorPane prefHeight="200.0" prefWidth="200.0" SplitPane.resizableWithParent="false">
+                     <children>
+                        <fx:include fx:id="shoppingCart" source="ShoppingCart.fxml" />
+                     </children>
+                  </AnchorPane>
+               </items>
+            </SplitPane>
+        </items>
+      </SplitPane>
    </children>
 </AnchorPane>
