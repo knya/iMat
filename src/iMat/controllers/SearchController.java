@@ -27,7 +27,7 @@ public class SearchController implements Initializable {
     @FXML private TextField searchTextField;
     @FXML private Button searchButton;
 
-    protected void injectMainController(MainController mainController) {
+    public void injectMainController(MainController mainController) {
         this.mainController = mainController;
     }
 

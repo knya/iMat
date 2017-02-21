@@ -1,6 +1,5 @@
 package iMat.controllers;
 
-import iMat.controllers.tabs.HomeTabController;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.layout.AnchorPane;
@@ -10,19 +9,20 @@ import java.util.ResourceBundle;
 
 public class MainController implements Initializable {
 
-    @FXML private AnchorPane search;
-    @FXML private AnchorPane filter;
-    @FXML private AnchorPane feature;
-    @FXML private AnchorPane shoppingCart;
+//    @FXML private AnchorPane search;
+//    @FXML private AnchorPane filter;
+//    @FXML private AnchorPane feature;
+//    @FXML private AnchorPane shoppingCart;
 
     @FXML private SearchController searchController;
     @FXML private ShoppingCartController shoppingCartController;
-    @FXML private HomeTabController homeTabController;
+    @FXML private FeatureTabController featureTabController;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         searchController.injectMainController(this);
         shoppingCartController.injectMainController(this);
-//        homeTabController.injectMainController(this);
+//        featureTabController.injectMainController(this);
     }
+
 }

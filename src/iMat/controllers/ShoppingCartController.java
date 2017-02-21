@@ -26,8 +26,7 @@ public class ShoppingCartController implements Initializable {
     private ObservableList<ShoppingItem> shoppingItemObservableList;
 
     private ShoppingCart shoppingCart;
-//    private ShoppingCartListener shoppingCartListener;
-//    private IMatDataHandler dataHandler;
+    private IMatDataHandler dataHandler;
 
     protected void injectMainController(MainController mainController) {
         this.mainController = mainController;
@@ -35,11 +34,12 @@ public class ShoppingCartController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-//        dataHandler = IMatDataHandler.getInstance();
-//        ShoppingItem shoppingItem1 = new ShoppingItem(dataHandler.getProduct(1));
-//        ShoppingItem shoppingItem2 = new ShoppingItem(dataHandler.getProduct(2));
-//        shoppingItemObservableList = FXCollections.observableArrayList();
-//        shoppingItemObservableList.addAll(shoppingItem1, shoppingItem2);
+        dataHandler = IMatDataHandler.getInstance();
+        ShoppingItem shoppingItem1 = new ShoppingItem(dataHandler.getProduct(1));
+        ShoppingItem shoppingItem2 = new ShoppingItem(dataHandler.getProduct(2));
+
+        shoppingItemObservableList = FXCollections.observableArrayList();
+        shoppingItemObservableList.addAll(shoppingItem1, shoppingItem2);
 
         shoppingItemListView.setItems(shoppingItemObservableList);
         shoppingItemListView.setCellFactory(shoppingItemListView -> new ShoppingItemCell());
