@@ -1,8 +1,10 @@
 package iMat.controllers;
 
 import iMat.cells.ShoppingItemCell;
+import iMat.controllers.cells.ShoppingItemCellController;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
@@ -10,7 +12,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import se.chalmers.ait.dat215.project.*;
 
-import java.awt.event.ActionEvent;
+import javax.swing.*;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -43,7 +45,7 @@ public class ShoppingCartController implements Initializable {
         shoppingCart.addProduct(dataHandler.getProduct(1));
         shoppingCart.addProduct(dataHandler.getProduct(2));
 
-        totalLabel.setText(String.valueOf(shoppingCart.getTotal()));
+        totalLabel.setText(String.valueOf(shoppingCart.getTotal()) + ":-");
 
 //        shoppingItemObservableList = FXCollections.observableArrayList();
 //        shoppingItemObservableList.addAll(shoppingCart.getItems());
@@ -52,7 +54,7 @@ public class ShoppingCartController implements Initializable {
         shoppingItemListView.setCellFactory(shoppingItemListView -> new ShoppingItemCell());
 
         shoppingCart.addShoppingCartListener(cartEvent -> {
-            totalLabel.setText(String.valueOf(shoppingCart.getTotal()));
+            totalLabel.setText(String.valueOf(shoppingCart.getTotal()) + ":-");
             shoppingItemListView.setItems(refreshItemListView());
         });
     }
@@ -62,6 +64,11 @@ public class ShoppingCartController implements Initializable {
         shoppingItemObservableList.addAll(shoppingCart.getItems());
 
         return shoppingItemObservableList;
+    }
+
+    @FXML
+    private void goToCartActionPerformed(ActionEvent event) {
+        //TODO
     }
 
 

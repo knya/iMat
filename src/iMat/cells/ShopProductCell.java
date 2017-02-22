@@ -1,5 +1,6 @@
 package iMat.cells;
 
+import iMat.controllers.cells.ShopProductCellController;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Label;
@@ -18,19 +19,14 @@ import java.util.ResourceBundle;
  */
 public class ShopProductCell extends ListCell<Product> {
 
-    @FXML private Label productNameLabel;
-    @FXML private ImageView productImageView;
-    @FXML private AnchorPane shopProductCellPane;
+    private ShopProductCellController shopProductCellController;
 
-    private IMatDataHandler dataHandler;
     private FXMLLoader fxmlLoader;
 
     public ShopProductCell() {
-        dataHandler = IMatDataHandler.getInstance();
-
         if (fxmlLoader == null) {
             fxmlLoader = new FXMLLoader(getClass().getResource("/iMat/fxmls/ShopProductCell.fxml"));
-            fxmlLoader.setController(this);
+//            fxmlLoader.setController(this);
 
             try {
                 fxmlLoader.load();
@@ -38,6 +34,7 @@ public class ShopProductCell extends ListCell<Product> {
                 e.printStackTrace();
             }
         }
+        shopProductCellController = fxmlLoader.getController();
     }
 
     @Override
@@ -47,9 +44,9 @@ public class ShopProductCell extends ListCell<Product> {
         if(empty || product == null) {
             setGraphic(null);
         } else {
-            productNameLabel.setText(product.getName());
-            productImageView.setImage(dataHandler.getFXImage(product));
-            setGraphic(shopProductCellPane);
+            setGraphic(shopProductCellController.getAnchorPane());
+            shopProductCellController.injectProduct(product);
+            shopProductCellController.setLabels(product);
         }
 
     }

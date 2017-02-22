@@ -1,4 +1,4 @@
-package iMat.controllers;
+package iMat.controllers.cells;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
