@@ -47,12 +47,19 @@ public class ShoppingCartController implements Initializable {
         shoppingItemObservableList.addAll(shoppingCart.getItems());
 
         shoppingItemListView.setItems(shoppingItemObservableList);
-        shoppingItemListView.setCellFactory(shoppingItemListView -> new ShoppingItemCell(shoppingItemListView));
+        shoppingItemListView.setCellFactory(shoppingItemListView -> new ShoppingItemCell());
 
         shoppingCart.addShoppingCartListener(new ShoppingCartListener() {
             @Override
             public void shoppingCartChanged(CartEvent cartEvent) {
                 totalLabel.setText(String.valueOf(shoppingCart.getTotal()));
+            }
+        });
+
+        shoppingCart.addShoppingCartListener(new ShoppingCartListener() {
+            @Override
+            public void shoppingCartChanged(CartEvent cartEvent) {
+                shoppingItemListView.getItems().remove(cartEvent.getShoppingItem());
             }
         });
     }

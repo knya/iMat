@@ -29,15 +29,15 @@ public class ShoppingItemCell extends ListCell<ShoppingItem> {
     @FXML private Button removeButton;
     @FXML private AnchorPane shoppingItemPane;
 
-    private ListView<ShoppingItem> shoppingItemListView;
+//    private ListView<ShoppingItem> shoppingItemListView;
 
     private IMatDataHandler dataHandler;
 
     private FXMLLoader fxmlLoader;
 
-    public ShoppingItemCell(ListView<ShoppingItem> shoppingItemListView) {
+    public ShoppingItemCell() {
         dataHandler = IMatDataHandler.getInstance();
-        this.shoppingItemListView = shoppingItemListView;
+//        this.shoppingItemListView = shoppingItemListView;
 
         if (fxmlLoader == null) {
             fxmlLoader = new FXMLLoader(getClass().getResource("/iMat/fxmls/ShoppingItemCell.fxml"));
@@ -84,9 +84,8 @@ public class ShoppingItemCell extends ListCell<ShoppingItem> {
 
     private void removeButtonEventHandler(ShoppingItem shoppingItem) {
         removeButton.addEventHandler(ActionEvent.ACTION, e -> {
-            shoppingItemListView.getItems().remove(shoppingItem);
-
             dataHandler.getShoppingCart().removeItem(shoppingItem);
+            notifyShoppingCart(shoppingItem,true);
         });
     }
 
@@ -96,7 +95,7 @@ public class ShoppingItemCell extends ListCell<ShoppingItem> {
             shoppingItem.setAmount(shoppingItem.getAmount() + 1);
             amountLabel.setText(String.valueOf(shoppingItem.getAmount()));
 
-            dataHandler.getShoppingCart().fireShoppingCartChanged(shoppingItem,true);
+            notifyShoppingCart(shoppingItem,true);
         });
     }
 
@@ -107,8 +106,12 @@ public class ShoppingItemCell extends ListCell<ShoppingItem> {
             }
             amountLabel.setText(String.valueOf(shoppingItem.getAmount()));
 
-            dataHandler.getShoppingCart().fireShoppingCartChanged(shoppingItem,true);
+            notifyShoppingCart(shoppingItem,true);
         });
+    }
+
+    private void notifyShoppingCart(ShoppingItem shoppingItem, boolean addEvent) {
+        dataHandler.getShoppingCart().fireShoppingCartChanged(shoppingItem,true);
     }
 
 //    @FXML
@@ -118,6 +121,4 @@ public class ShoppingItemCell extends ListCell<ShoppingItem> {
 //        dataHandler.getShoppingCart().removeItem(0);
 //        System.out.println(dataHandler.getShoppingCart().getItems().size());
 //    }
-
-
 }
