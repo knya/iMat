@@ -9,6 +9,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.ListCell;
 import javafx.scene.control.ListView;
 import javafx.scene.layout.AnchorPane;
+import se.chalmers.ait.dat215.project.CartEvent;
 import se.chalmers.ait.dat215.project.IMatDataHandler;
 import se.chalmers.ait.dat215.project.ShoppingItem;
 
@@ -58,11 +59,15 @@ public class ShoppingItemCell extends ListCell<ShoppingItem> {
             setLabels(shoppingItem);
             setGraphic(shoppingItemPane);
 
-            removeButtonEventHandler(shoppingItem);
+            addButtonEventHandlers(shoppingItem);
 
 //            shoppingItemCellController.setLabels(shoppingItem);
 //            setGraphic(shoppingItemCellController.getAnchorPane());
         }
+    }
+
+    private void addButtonEventHandlers(ShoppingItem shoppingItem) {
+        removeButtonEventHandler(shoppingItem);
     }
 
     private void setLabels(ShoppingItem shoppingItem) {
@@ -76,13 +81,14 @@ public class ShoppingItemCell extends ListCell<ShoppingItem> {
         });
     }
 
-    /*
-    @FXML
-    protected void removeButtonActionPerformed(ActionEvent event) {
-        System.out.println(dataHandler.getShoppingCart().getItems().size());
-        dataHandler.getShoppingCart().removeItem(0);
-        System.out.println(dataHandler.getShoppingCart().getItems().size());
-    }
-    */
+
+//    @FXML
+//    protected void removeButtonActionPerformed(CartEvent event) {
+//        dataHandler.getShoppingCart().removeItem(event.getShoppingItem());
+//        System.out.println(dataHandler.getShoppingCart().getItems().size());
+//        dataHandler.getShoppingCart().removeItem(0);
+//        System.out.println(dataHandler.getShoppingCart().getItems().size());
+//    }
+
 
 }

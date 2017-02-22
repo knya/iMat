@@ -20,8 +20,8 @@ public class MainController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        searchController.injectMainController(this);
-        shoppingCartController.injectMainController(this);
+//        searchController.injectMainController(this);
+//        shoppingCartController.injectMainController(this);
 //        featureTabController.injectMainController(this);
     }
 
