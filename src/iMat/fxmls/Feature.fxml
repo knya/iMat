@@ -5,24 +5,35 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane prefHeight="35.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="iMat.controllers.FeatureTabController">
+<AnchorPane prefHeight="400.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="iMat.controllers.FeatureTabController">
    <children>
-      <TabPane minHeight="0.0" minWidth="0.0" prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+      <TabPane minHeight="400.0" minWidth="600.0" prefHeight="400.0" prefWidth="600.0" tabClosingPolicy="UNAVAILABLE" tabMaxWidth="500.0" tabMinHeight="30.0" tabMinWidth="75.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
         <tabs>
-          <Tab text="Hem">
+          <Tab closable="false" text="Hem">
                <content>
-                  <AnchorPane prefHeight="147.0" prefWidth="400.0">
-                     <children>
-                        <fx:include fx:id="homeTab" source="HomeTab.fxml" />
-                     </children>
-                  </AnchorPane>
+                  <AnchorPane prefHeight="147.0" prefWidth="400.0" />
                </content>
           </Tab>
-          <Tab text="Butik">
+          <Tab closable="false" text="Butik">
                <content>
                   <AnchorPane prefHeight="200.0" prefWidth="200.0" />
                </content>
           </Tab>
+            <Tab closable="false" text="Favoriter">
+               <content>
+                  <AnchorPane prefHeight="200.0" prefWidth="200.0" />
+               </content>
+            </Tab>
+            <Tab closable="false" text="Historik">
+               <content>
+                  <AnchorPane prefHeight="200.0" prefWidth="200.0" />
+               </content>
+            </Tab>
+            <Tab closable="false" text="Mina Sidor">
+               <content>
+                  <AnchorPane prefHeight="200.0" prefWidth="200.0" />
+               </content>
+            </Tab>
         </tabs>
       </TabPane>
    </children>

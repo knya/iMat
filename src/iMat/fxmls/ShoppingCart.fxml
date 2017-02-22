@@ -7,7 +7,10 @@
 
 <AnchorPane prefHeight="571.0" prefWidth="200.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="iMat.controllers.ShoppingCartController">
    <children>
-      <ListView fx:id="shoppingItemListView" layoutY="80.0" prefHeight="400.0" prefWidth="400.0" AnchorPane.bottomAnchor="80.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="80.0" />
-      <Button fx:id="goToCartButton" layoutX="15.0" layoutY="514.0" mnemonicParsing="false" text="Gå till kundvagn" AnchorPane.bottomAnchor="35.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" />
+      <ListView fx:id="shoppingItemListView" layoutY="104.0" prefHeight="400.0" prefWidth="200.0" AnchorPane.bottomAnchor="80.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="80.0" />
+      <Button fx:id="goToCartButton" layoutX="15.0" layoutY="514.0" mnemonicParsing="false" text="Gå till kundvagn" AnchorPane.bottomAnchor="35.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0">
+         <tooltip>
+            <Tooltip text="Förstorar upp kundvagnen" />
+         </tooltip></Button>
    </children>
 </AnchorPane>
