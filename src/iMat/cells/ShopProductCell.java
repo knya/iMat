@@ -4,6 +4,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListCell;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import se.chalmers.ait.dat215.project.IMatDataHandler;
 import se.chalmers.ait.dat215.project.Product;
@@ -17,7 +18,8 @@ import java.util.ResourceBundle;
  */
 public class ShopProductCell extends ListCell<Product> {
 
-    @FXML private Label nameLabel;
+    @FXML private Label productNameLabel;
+    @FXML private ImageView productImageView;
     @FXML private AnchorPane shopProductCellPane;
 
     private IMatDataHandler dataHandler;
@@ -46,6 +48,8 @@ public class ShopProductCell extends ListCell<Product> {
         if(empty || product == null) {
             setGraphic(null);
         } else {
+            productNameLabel.setText(product.getName());
+            productImageView.setImage(dataHandler.getFXImage(product));
             setGraphic(shopProductCellPane);
         }
 
