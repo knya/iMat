@@ -38,7 +38,6 @@ public class ShopProductCell extends ListCell<Product> {
                 e.printStackTrace();
             }
         }
-
     }
 
     @Override

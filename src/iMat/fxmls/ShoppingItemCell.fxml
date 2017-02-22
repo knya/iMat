@@ -8,5 +8,8 @@
    <children>
       <Label fx:id="nameLabel" layoutX="14.0" layoutY="10.0" text="Label" />
       <Button fx:id="removeButton" layoutX="112.0" layoutY="5.0" mnemonicParsing="false" text="Remove" />
+      <Button fx:id="decreaseButton" layoutX="90.0" layoutY="40.0" mnemonicParsing="false" text="-" />
+      <Button fx:id="increaseButton" layoutX="153.0" layoutY="40.0" mnemonicParsing="false" text="+" />
+      <Label fx:id="amountLabel" alignment="CENTER" layoutX="118.0" layoutY="45.0" prefHeight="17.0" prefWidth="34.0" textAlignment="CENTER" />
    </children>
 </AnchorPane>

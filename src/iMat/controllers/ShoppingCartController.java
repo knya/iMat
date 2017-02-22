@@ -26,8 +26,6 @@ public class ShoppingCartController implements Initializable {
 
     private ObservableList<ShoppingItem> shoppingItemObservableList;
 
-//    private ShoppingCartListener shoppingCartListener;
-
     private ShoppingCart shoppingCart;
     private IMatDataHandler dataHandler;
 
@@ -39,6 +37,8 @@ public class ShoppingCartController implements Initializable {
     public void initialize(URL location, ResourceBundle resources) {
         dataHandler = IMatDataHandler.getInstance();
         shoppingCart = dataHandler.getShoppingCart();
+
+        totalLabel.setVisible(false);
 
         shoppingCart.addProduct(dataHandler.getProduct(1));
         shoppingCart.addProduct(dataHandler.getProduct(2));
