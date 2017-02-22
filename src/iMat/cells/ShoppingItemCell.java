@@ -85,14 +85,18 @@ public class ShoppingItemCell extends ListCell<ShoppingItem> {
     private void removeButtonEventHandler(ShoppingItem shoppingItem) {
         removeButton.addEventHandler(ActionEvent.ACTION, e -> {
             shoppingItemListView.getItems().remove(shoppingItem);
+
             dataHandler.getShoppingCart().removeItem(shoppingItem);
         });
     }
+
 
     private void increaseQuantityEventHandler(ShoppingItem shoppingItem) {
         increaseButton.addEventHandler(ActionEvent.ACTION, e -> {
             shoppingItem.setAmount(shoppingItem.getAmount() + 1);
             amountLabel.setText(String.valueOf(shoppingItem.getAmount()));
+
+            dataHandler.getShoppingCart().fireShoppingCartChanged(shoppingItem,true);
         });
     }
 
@@ -102,9 +106,10 @@ public class ShoppingItemCell extends ListCell<ShoppingItem> {
                 shoppingItem.setAmount(shoppingItem.getAmount() - 1);
             }
             amountLabel.setText(String.valueOf(shoppingItem.getAmount()));
+
+            dataHandler.getShoppingCart().fireShoppingCartChanged(shoppingItem,true);
         });
     }
-
 
 //    @FXML
 //    protected void removeButtonActionPerformed(CartEvent event) {

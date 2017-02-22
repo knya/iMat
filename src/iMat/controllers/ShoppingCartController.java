@@ -38,23 +38,23 @@ public class ShoppingCartController implements Initializable {
         dataHandler = IMatDataHandler.getInstance();
         shoppingCart = dataHandler.getShoppingCart();
 
-        totalLabel.setVisible(false);
-
         shoppingCart.addProduct(dataHandler.getProduct(1));
         shoppingCart.addProduct(dataHandler.getProduct(2));
+
+        totalLabel.setText(String.valueOf(shoppingCart.getTotal()));
 
         shoppingItemObservableList = FXCollections.observableArrayList();
         shoppingItemObservableList.addAll(shoppingCart.getItems());
 
+        shoppingItemListView.setItems(shoppingItemObservableList);
+        shoppingItemListView.setCellFactory(shoppingItemListView -> new ShoppingItemCell(shoppingItemListView));
+
         shoppingCart.addShoppingCartListener(new ShoppingCartListener() {
             @Override
             public void shoppingCartChanged(CartEvent cartEvent) {
-                totalLabel.textProperty().setValue(String.valueOf(shoppingCart.getTotal()));
+                totalLabel.setText(String.valueOf(shoppingCart.getTotal()));
             }
         });
-
-        shoppingItemListView.setItems(shoppingItemObservableList);
-        shoppingItemListView.setCellFactory(shoppingItemListView -> new ShoppingItemCell(shoppingItemListView));
     }
 
 
