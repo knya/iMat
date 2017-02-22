@@ -1,15 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.text.*?>
 <?import javafx.scene.image.*?>
 <?import javafx.scene.control.*?>
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane prefHeight="571.0" prefWidth="200.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="iMat.controllers.ShoppingCartController">
+<AnchorPane minHeight="728.0" minWidth="200.0" prefHeight="728.0" prefWidth="200.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="iMat.controllers.ShoppingCartController">
    <children>
-      <ListView fx:id="shoppingItemListView" layoutY="80.0" prefHeight="400.0" prefWidth="400.0" AnchorPane.bottomAnchor="80.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="80.0" />
+      <ListView fx:id="shoppingItemListView" layoutY="80.0" prefHeight="400.0" prefWidth="400.0" AnchorPane.bottomAnchor="100.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="150.0" />
       <Button fx:id="goToCartButton" layoutX="15.0" layoutY="524.0" mnemonicParsing="false" text="Gå till kundvagn" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" />
-      <Label layoutX="100.0" layoutY="492.0" prefHeight="20.0" prefWidth="38.0" text="Total:" />
-      <Label fx:id="totalLabel" layoutX="148.0" layoutY="493.0" prefHeight="17.0" prefWidth="38.0" text="totalLabel" />
+      <Label layoutX="5.0" layoutY="708.0" prefHeight="20.0" prefWidth="65.0" text="Total:" AnchorPane.bottomAnchor="60.0" AnchorPane.leftAnchor="5.0">
+         <font>
+            <Font name="Arial Black" size="20.0" />
+         </font></Label>
+      <Label fx:id="totalLabel" layoutX="75.0" layoutY="708.0" prefHeight="17.0" prefWidth="120.0" text="totalLabel" AnchorPane.bottomAnchor="60.0" AnchorPane.leftAnchor="75.0">
+         <font>
+            <Font name="Arial Black" size="20.0" />
+         </font></Label>
    </children>
 </AnchorPane>

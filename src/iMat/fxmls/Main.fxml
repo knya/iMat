@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.image.*?>
 <?import javafx.scene.control.*?>
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
@@ -44,9 +45,10 @@
             </SplitPane>
             <SplitPane prefHeight="571.0" prefWidth="340.0" SplitPane.resizableWithParent="false">
                <items>
-                  <AnchorPane prefHeight="571.0" prefWidth="200.0" SplitPane.resizableWithParent="false">
+                  <AnchorPane prefHeight="728.0" prefWidth="200.0" SplitPane.resizableWithParent="false">
                      <children>
                         <fx:include fx:id="shoppingCart" source="ShoppingCart.fxml" />
+                        <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
                      </children>
                   </AnchorPane>
                </items>
