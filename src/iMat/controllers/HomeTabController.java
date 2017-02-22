@@ -1,4 +1,4 @@
-package iMat.controllers.tabs;
+package iMat.controllers;
 
 import iMat.controllers.FeatureTabController;
 import javafx.fxml.FXML;

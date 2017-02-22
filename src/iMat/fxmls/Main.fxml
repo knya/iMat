@@ -32,14 +32,18 @@
                   <fx:include fx:id="filter" source="Filter.fxml" />
                </children>
             </AnchorPane>
-            <SplitPane dividerPositions="0.15" orientation="VERTICAL" prefHeight="568.0" prefWidth="318.0">
+            <SplitPane dividerPositions="0.1602112676056338" orientation="VERTICAL" prefHeight="568.0" prefWidth="318.0">
               <items>
-                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0" SplitPane.resizableWithParent="false">
+                  <AnchorPane prefHeight="200.0" prefWidth="200.0">
                      <children>
                         <fx:include fx:id="search" source="Search.fxml" />
                      </children>
                   </AnchorPane>
-                  <fx:include fx:id="feature" source="Feature.fxml" />
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0" SplitPane.resizableWithParent="false">
+                     <children>
+                        <fx:include fx:id="feature" source="Feature.fxml" />
+                     </children>
+                  </AnchorPane>
               </items>
             </SplitPane>
             <SplitPane prefHeight="571.0" prefWidth="340.0" SplitPane.resizableWithParent="false">
