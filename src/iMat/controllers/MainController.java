@@ -2,24 +2,29 @@ package iMat.controllers;
 
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.TabPane;
 import javafx.scene.layout.AnchorPane;
-import sun.plugin.javascript.navig.Anchor;
 
 import java.net.URL;
 import java.util.ResourceBundle;
 
 public class MainController implements Initializable {
 
-    @FXML private AnchorPane search;
-    @FXML private AnchorPane filter;
-    @FXML private AnchorPane feature;
-    @FXML private AnchorPane shoppingCart;
+//    @FXML private AnchorPane search;
+//    @FXML private AnchorPane filter;
+//    @FXML private AnchorPane feature;
+//    @FXML private AnchorPane shoppingCart;
 
     @FXML private SearchController searchController;
+    @FXML private ShoppingCartController shoppingCartController;
+    @FXML private TabController tabController;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         searchController.injectMainController(this);
+        shoppingCartController.injectMainController(this);
+//        tabController.injectMainController(this);
+//        shopTabController.injectMainController(this);
+//        homeTabController.injectMainController(this);
     }
+
 }
