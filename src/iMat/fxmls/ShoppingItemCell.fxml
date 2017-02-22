@@ -4,12 +4,12 @@
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane fx:id="shoppingItemPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="80.0" prefWidth="180.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane fx:id="shoppingItemPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="80.0" prefWidth="180.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="iMat.controllers.ShoppingItemCellController">
    <children>
       <Label fx:id="nameLabel" layoutX="14.0" layoutY="10.0" text="Label" />
-      <Button fx:id="removeButton" layoutX="112.0" layoutY="5.0" mnemonicParsing="false" text="Remove" />
-      <Button fx:id="decreaseButton" layoutX="90.0" layoutY="40.0" mnemonicParsing="false" text="-" />
-      <Button fx:id="increaseButton" layoutX="153.0" layoutY="40.0" mnemonicParsing="false" text="+" />
-      <Label fx:id="amountLabel" alignment="CENTER" layoutX="118.0" layoutY="45.0" prefHeight="17.0" prefWidth="34.0" textAlignment="CENTER" />
+      <Button fx:id="removeButton" layoutX="112.0" layoutY="5.0" mnemonicParsing="false" onAction="#removeButtonActionPerformed" text="Remove" />
+      <Button fx:id="decreaseButton" layoutX="99.0" layoutY="40.0" mnemonicParsing="false" onAction="#decreaseButtonActionPerformed" prefHeight="22.0" prefWidth="26.0" text="-" />
+      <Button fx:id="increaseButton" layoutX="152.0" layoutY="40.0" mnemonicParsing="false" onAction="#increaseButtonActionPerformed" prefHeight="22.0" prefWidth="26.0" text="+" />
+      <Label fx:id="amountLabel" alignment="CENTER" layoutX="127.0" layoutY="43.0" prefHeight="17.0" prefWidth="26.0" textAlignment="CENTER" />
    </children>
 </AnchorPane>

@@ -10,6 +10,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import se.chalmers.ait.dat215.project.*;
 
+import java.awt.event.ActionEvent;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -19,6 +20,7 @@ import java.util.ResourceBundle;
 public class ShoppingCartController implements Initializable {
 
     private MainController mainController;
+    private ShoppingItemCellController shoppingItemCellController;
 
     @FXML private ListView<ShoppingItem> shoppingItemListView;
     @FXML private Button goToCartButton;
@@ -43,25 +45,23 @@ public class ShoppingCartController implements Initializable {
 
         totalLabel.setText(String.valueOf(shoppingCart.getTotal()));
 
-        shoppingItemObservableList = FXCollections.observableArrayList();
-        shoppingItemObservableList.addAll(shoppingCart.getItems());
+//        shoppingItemObservableList = FXCollections.observableArrayList();
+//        shoppingItemObservableList.addAll(shoppingCart.getItems());
 
-        shoppingItemListView.setItems(shoppingItemObservableList);
+        shoppingItemListView.setItems(refreshItemListView());
         shoppingItemListView.setCellFactory(shoppingItemListView -> new ShoppingItemCell());
 
-        shoppingCart.addShoppingCartListener(new ShoppingCartListener() {
-            @Override
-            public void shoppingCartChanged(CartEvent cartEvent) {
-                totalLabel.setText(String.valueOf(shoppingCart.getTotal()));
-            }
+        shoppingCart.addShoppingCartListener(cartEvent -> {
+            totalLabel.setText(String.valueOf(shoppingCart.getTotal()));
+            shoppingItemListView.setItems(refreshItemListView());
         });
+    }
 
-        shoppingCart.addShoppingCartListener(new ShoppingCartListener() {
-            @Override
-            public void shoppingCartChanged(CartEvent cartEvent) {
-                shoppingItemListView.getItems().remove(cartEvent.getShoppingItem());
-            }
-        });
+    private ObservableList<ShoppingItem> refreshItemListView() {
+        ObservableList<ShoppingItem> shoppingItemObservableList = FXCollections.observableArrayList();
+        shoppingItemObservableList.addAll(shoppingCart.getItems());
+
+        return shoppingItemObservableList;
     }
 
 

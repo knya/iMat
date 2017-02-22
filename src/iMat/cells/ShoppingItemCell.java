@@ -1,20 +1,19 @@
 package iMat.cells;
 
-import javafx.beans.value.ChangeListener;
-import javafx.beans.value.ObservableValue;
+import iMat.controllers.ShoppingItemCellController;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListCell;
-import javafx.scene.control.ListView;
 import javafx.scene.layout.AnchorPane;
-import se.chalmers.ait.dat215.project.CartEvent;
 import se.chalmers.ait.dat215.project.IMatDataHandler;
 import se.chalmers.ait.dat215.project.ShoppingCartListener;
 import se.chalmers.ait.dat215.project.ShoppingItem;
 
+import javax.swing.*;
 import java.io.IOException;
 
 /**
@@ -30,6 +29,9 @@ public class ShoppingItemCell extends ListCell<ShoppingItem> {
     @FXML private AnchorPane shoppingItemPane;
 
 //    private ListView<ShoppingItem> shoppingItemListView;
+//    private ObservableList<ShoppingItem> shoppingItemObservableList;
+
+    private ShoppingItemCellController shoppingItemCellController;
 
     private IMatDataHandler dataHandler;
 
@@ -37,11 +39,10 @@ public class ShoppingItemCell extends ListCell<ShoppingItem> {
 
     public ShoppingItemCell() {
         dataHandler = IMatDataHandler.getInstance();
-//        this.shoppingItemListView = shoppingItemListView;
 
         if (fxmlLoader == null) {
             fxmlLoader = new FXMLLoader(getClass().getResource("/iMat/fxmls/ShoppingItemCell.fxml"));
-            fxmlLoader.setController(this);
+//            fxmlLoader.setController(this);
 
             try {
                 fxmlLoader.load();
@@ -50,7 +51,7 @@ public class ShoppingItemCell extends ListCell<ShoppingItem> {
             }
         }
 
-//        shoppingCartController = fxmlLoader.getController();
+        shoppingItemCellController = fxmlLoader.getController();
     }
 
     @Override
@@ -61,64 +62,13 @@ public class ShoppingItemCell extends ListCell<ShoppingItem> {
         if(empty || shoppingItem == null) {
             setGraphic(null);
         } else {
-            setLabels(shoppingItem);
-            setGraphic(shoppingItemPane);
-
-            addButtonEventHandlers(shoppingItem);
-
+            setGraphic(shoppingItemCellController.getAnchorPane());
+            shoppingItemCellController.setLabels(shoppingItem);
+            shoppingItemCellController.injectShoppingItem(shoppingItem);
 //            shoppingItemCellController.setLabels(shoppingItem);
-//            setGraphic(shoppingItemCellController.getAnchorPane());
+//            shoppingItemCellController.addButtonEventHandlers(shoppingItem);
+
+//            addButtonEventHandlers(shoppingItem);
         }
     }
-
-    private void addButtonEventHandlers(ShoppingItem shoppingItem) {
-        removeButtonEventHandler(shoppingItem);
-        increaseQuantityEventHandler(shoppingItem);
-        decreaseQuantityEventHandler(shoppingItem);
-    }
-
-    private void setLabels(ShoppingItem shoppingItem) {
-        nameLabel.setText(shoppingItem.getProduct().getName());
-        amountLabel.setText(String.valueOf(shoppingItem.getAmount()));
-    }
-
-    private void removeButtonEventHandler(ShoppingItem shoppingItem) {
-        removeButton.addEventHandler(ActionEvent.ACTION, e -> {
-            dataHandler.getShoppingCart().removeItem(shoppingItem);
-            notifyShoppingCart(shoppingItem,true);
-        });
-    }
-
-
-    private void increaseQuantityEventHandler(ShoppingItem shoppingItem) {
-        increaseButton.addEventHandler(ActionEvent.ACTION, e -> {
-            shoppingItem.setAmount(shoppingItem.getAmount() + 1);
-            amountLabel.setText(String.valueOf(shoppingItem.getAmount()));
-
-            notifyShoppingCart(shoppingItem,true);
-        });
-    }
-
-    private void decreaseQuantityEventHandler(ShoppingItem shoppingItem) {
-        decreaseButton.addEventHandler(ActionEvent.ACTION, e -> {
-            if (shoppingItem.getAmount() > 1.0) {
-                shoppingItem.setAmount(shoppingItem.getAmount() - 1);
-            }
-            amountLabel.setText(String.valueOf(shoppingItem.getAmount()));
-
-            notifyShoppingCart(shoppingItem,true);
-        });
-    }
-
-    private void notifyShoppingCart(ShoppingItem shoppingItem, boolean addEvent) {
-        dataHandler.getShoppingCart().fireShoppingCartChanged(shoppingItem,true);
-    }
-
-//    @FXML
-//    protected void removeButtonActionPerformed(CartEvent event) {
-//        dataHandler.getShoppingCart().removeItem(event.getShoppingItem());
-//        System.out.println(dataHandler.getShoppingCart().getItems().size());
-//        dataHandler.getShoppingCart().removeItem(0);
-//        System.out.println(dataHandler.getShoppingCart().getItems().size());
-//    }
 }
