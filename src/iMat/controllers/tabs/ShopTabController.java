@@ -1,7 +1,7 @@
-package iMat.controllers;
+package iMat.controllers.tabs;
 
 import iMat.cells.ShopProductCell;
-//import iMat.controllers.FeatureTabController;
+import iMat.controllers.TabController;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -18,7 +18,7 @@ import java.util.ResourceBundle;
  */
 public class ShopTabController implements Initializable {
 
-//    private FeatureTabController featureTabController;
+    private TabController tabController;
 
     @FXML private ListView<Product> shopProductListView;
 
@@ -37,7 +37,7 @@ public class ShopTabController implements Initializable {
         shopProductListView.setCellFactory(productListView -> new ShopProductCell());
     }
 
-//    public void injectTabController(FeatureTabController featureTabController) {
-//        this.featureTabController = featureTabController;
-//    }
+    public void injectTabController(TabController tabController) {
+        this.tabController = tabController;
+    }
 }

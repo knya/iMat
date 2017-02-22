@@ -1,8 +1,8 @@
 package iMat.controllers;
 
 
-import iMat.controllers.HomeTabController;
-import iMat.controllers.ShopTabController;
+import iMat.controllers.tabs.HomeTabController;
+import iMat.controllers.tabs.ShopTabController;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.layout.AnchorPane;
@@ -15,10 +15,10 @@ import java.util.ResourceBundle;
  */
 
 
-public class FeatureTabController implements Initializable {
+public class TabController implements Initializable {
 
-    @FXML private AnchorPane homeTab;
-    @FXML private AnchorPane shopTab;
+//    @FXML private AnchorPane homeTab;
+//    @FXML private AnchorPane shopTab;
 
     private MainController mainController;
 
@@ -31,7 +31,7 @@ public class FeatureTabController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-//        homeTabController.injectTabController(this);
-//        shopTabController.injectTabController(this);
+        homeTabController.injectTabController(this);
+        shopTabController.injectTabController(this);
     }
 }

@@ -1,6 +1,6 @@
-package iMat.controllers;
+package iMat.controllers.tabs;
 
-import iMat.controllers.FeatureTabController;
+import iMat.controllers.TabController;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
@@ -13,16 +13,16 @@ import java.util.ResourceBundle;
  */
 public class HomeTabController implements Initializable {
 
-    private FeatureTabController featureTabController;
+    private TabController tabController;
 
     @FXML private Label kampanjLabel;
-
-    public void injectTabController(FeatureTabController featureTabController) {
-        this.featureTabController = featureTabController;
-    }
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         kampanjLabel.setText("testar");
+    }
+
+    public void injectTabController(TabController tabController) {
+        this.tabController = tabController;
     }
 }
