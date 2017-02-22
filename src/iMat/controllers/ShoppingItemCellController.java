@@ -1,15 +1,12 @@
 package iMat.controllers;
 
-import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
-import se.chalmers.ait.dat215.project.CartEvent;
 import se.chalmers.ait.dat215.project.IMatDataHandler;
-import se.chalmers.ait.dat215.project.Product;
 import se.chalmers.ait.dat215.project.ShoppingItem;
 
 import java.net.URL;
@@ -23,6 +20,7 @@ public class ShoppingItemCellController implements Initializable {
 
     @FXML private Label nameLabel;
     @FXML private Label amountLabel;
+    @FXML private Label priceLabel;
     @FXML private Button removeButton;
     @FXML private Button increaseButton;
     @FXML private Button decreaseButton;
@@ -49,7 +47,7 @@ public class ShoppingItemCellController implements Initializable {
     @FXML
     private void increaseButtonActionPerformed(ActionEvent event) {
         shoppingItem.setAmount(shoppingItem.getAmount() + 1);
-        amountLabel.setText(String.valueOf(shoppingItem.getAmount()));
+        setLabels(shoppingItem);
 
         notifyShoppingCart(shoppingItem,true);
     }
@@ -59,7 +57,7 @@ public class ShoppingItemCellController implements Initializable {
         if (shoppingItem.getAmount() > 1.0) {
             shoppingItem.setAmount(shoppingItem.getAmount() - 1);
         }
-        amountLabel.setText(String.valueOf(shoppingItem.getAmount()));
+        setLabels(shoppingItem);
 
         notifyShoppingCart(shoppingItem,true);
     }
@@ -70,7 +68,8 @@ public class ShoppingItemCellController implements Initializable {
 
     public void setLabels(ShoppingItem shoppingItem) {
         nameLabel.setText(shoppingItem.getProduct().getName());
-        amountLabel.setText(String.valueOf(shoppingItem.getAmount()));
+        amountLabel.setText(String.valueOf(shoppingItem.getAmount()) + " " + shoppingItem.getProduct().getUnitSuffix());
+        priceLabel.setText(String.valueOf(shoppingItem.getTotal()) + ":-");
     }
 
     private void notifyShoppingCart(ShoppingItem shoppingItem, boolean addEvent) {
