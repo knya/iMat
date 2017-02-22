@@ -4,7 +4,7 @@
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="iMat.controllers.MainController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="iMat.controllers.MainController">
    <children>
       <MenuBar prefHeight="29.0" prefWidth="600.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
         <menus>
@@ -25,16 +25,16 @@
           </Menu>
         </menus>
       </MenuBar>
-      <SplitPane dividerPositions="0.24686716791979949, 0.7443609022556391" layoutY="30.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="569.0" prefWidth="800.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="30.0">
+      <SplitPane dividerPositions="0.2, 0.8" layoutY="30.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="569.0" prefWidth="800.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="30.0">
         <items>
           <AnchorPane minHeight="0.0" minWidth="190.0" prefHeight="568.0" prefWidth="224.0" SplitPane.resizableWithParent="false">
                <children>
                   <fx:include fx:id="filter" source="Filter.fxml" />
                </children>
             </AnchorPane>
-            <SplitPane dividerPositions="0.1602112676056338" orientation="VERTICAL" prefHeight="568.0" prefWidth="318.0">
+            <SplitPane dividerPositions="0.15" orientation="VERTICAL" prefHeight="568.0" prefWidth="318.0">
               <items>
-                  <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                  <AnchorPane prefHeight="200.0" prefWidth="200.0" SplitPane.resizableWithParent="false">
                      <children>
                         <fx:include fx:id="search" source="Search.fxml" />
                      </children>
