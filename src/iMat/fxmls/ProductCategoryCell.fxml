@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+
+<AnchorPane fx:id="productCategoryCellPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="60.0" prefWidth="200.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="iMat.controllers.cells.ProductCategoryCellController">
+   <children>
+      <Label fx:id="nameLabel" layoutX="38.0" layoutY="22.0" prefHeight="17.0" prefWidth="91.0" text="Label" />
+   </children>
+</AnchorPane>

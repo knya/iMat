@@ -5,66 +5,8 @@
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="200.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="200.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="iMat.controllers.FilterController">
    <children>
-      <Button layoutX="10.0" layoutY="20.0" maxWidth="200.0" minWidth="180.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="180.0" text="Frukt" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="20.0">
-         <font>
-            <Font name="Lucida Sans Demibold" size="18.0" />
-         </font></Button>
-      <Button layoutX="10.0" layoutY="60.0" maxWidth="200.0" minWidth="180.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="180.0" text="Grönsaker" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="65.0">
-         <font>
-            <Font name="Lucida Sans Demibold" size="18.0" />
-         </font>
-      </Button>
-      <Button layoutX="10.0" layoutY="100.0" maxWidth="200.0" minWidth="180.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="180.0" text="Kött" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="110.0">
-         <font>
-            <Font name="Lucida Sans Demibold" size="18.0" />
-         </font>
-      </Button>
-      <Button layoutX="10.0" layoutY="140.0" maxWidth="200.0" minWidth="180.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="180.0" text="Mejeri" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="155.0">
-         <font>
-            <Font name="Lucida Sans Demibold" size="18.0" />
-         </font>
-      </Button>
-      <Button layoutX="10.0" layoutY="180.0" maxWidth="200.0" minWidth="180.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="180.0" text="Bröd" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="200.0">
-         <font>
-            <Font name="Lucida Sans Demibold" size="18.0" />
-         </font>
-      </Button>
-      <Button layoutX="10.0" layoutY="220.0" maxWidth="200.0" minWidth="180.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="180.0" text="Fryst" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="245.0">
-         <font>
-            <Font name="Lucida Sans Demibold" size="18.0" />
-         </font>
-      </Button>
-      <Button layoutX="10.0" layoutY="260.0" maxWidth="200.0" minWidth="180.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="180.0" text="Bakning" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="290.0">
-         <font>
-            <Font name="Lucida Sans Demibold" size="18.0" />
-         </font>
-      </Button>
-      <Button layoutX="10.0" layoutY="300.0" maxWidth="200.0" minWidth="180.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="180.0" text="Fredagsmys" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="335.0">
-         <font>
-            <Font name="Lucida Sans Demibold" size="18.0" />
-         </font>
-      </Button>
-      <Button layoutX="10.0" layoutY="340.0" maxWidth="200.0" minWidth="180.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="180.0" text="Hälsa" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="380.0">
-         <font>
-            <Font name="Lucida Sans Demibold" size="18.0" />
-         </font>
-      </Button>
-      <Button layoutX="10.0" layoutY="380.0" maxWidth="200.0" minWidth="180.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="180.0" text="Hemmet" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="425.0">
-         <font>
-            <Font name="Lucida Sans Demibold" size="18.0" />
-         </font>
-      </Button>
-      <Button layoutX="10.0" layoutY="420.0" maxWidth="200.0" minWidth="180.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="180.0" text="Konserver" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="470.0">
-         <font>
-            <Font name="Lucida Sans Demibold" size="18.0" />
-         </font>
-      </Button>
-      <Button layoutX="10.0" layoutY="460.0" maxWidth="200.0" minWidth="180.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="180.0" text="Dryck" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="515.0">
-         <font>
-            <Font name="Lucida Sans Demibold" size="18.0" />
-         </font>
-      </Button>
+      <ListView fx:id="productCategoryListView" layoutY="75.0" prefHeight="526.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.topAnchor="80.0" />
    </children>
 </AnchorPane>
