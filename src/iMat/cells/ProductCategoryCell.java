@@ -1,11 +1,7 @@
 package iMat.cells;
 
-import iMat.controllers.cells.AbstractCellController;
 import iMat.controllers.cells.ICellController;
-import iMat.controllers.cells.ProductCategoryCellController;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.control.ListCell;
-import se.chalmers.ait.dat215.project.ProductCategory;
 
 import java.io.IOException;
 
@@ -21,7 +17,7 @@ public class ProductCategoryCell extends AbstractCell {
 
     public ProductCategoryCell() {
         if (fxmlLoader == null) {
-            fxmlLoader = new FXMLLoader(getClass().getResource("/iMat/fxmls/ProductCategoryCell.fxml"));
+            fxmlLoader = new FXMLLoader(getClass().getResource("/iMat/fxmls/cells/ProductCategoryCell.fxml"));
 
             try {
                 fxmlLoader.load();

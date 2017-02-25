@@ -5,7 +5,6 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.control.ListCell;
 import se.chalmers.ait.dat215.project.ShoppingItem;
 
-import javax.swing.*;
 import java.io.IOException;
 
 /**
@@ -22,7 +21,7 @@ public class ShoppingItemCell extends ListCell<ShoppingItem> {
 
     public ShoppingItemCell() {
         if (fxmlLoader == null) {
-            fxmlLoader = new FXMLLoader(getClass().getResource("/iMat/fxmls/ShoppingItemCell.fxml"));
+            fxmlLoader = new FXMLLoader(getClass().getResource("/iMat/fxmls/cells/ShoppingItemCell.fxml"));
 //            fxmlLoader.setController(this);
 
             try {
