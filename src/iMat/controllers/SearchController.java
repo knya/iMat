@@ -7,8 +7,11 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyEvent;
 import se.chalmers.ait.dat215.project.IMatDataHandler;
 import se.chalmers.ait.dat215.project.Product;
+
 import java.net.URL;
 import java.util.List;
 import java.util.ResourceBundle;
@@ -20,7 +23,7 @@ public class SearchController implements Initializable {
 
     private MainController mainController;
 
-    private IMatDataHandler dataHandler;
+    private IMatDataHandler dataHandler = IMatDataHandler.getInstance();
     private String searchText;
     private List<Product> productList;
 
@@ -33,7 +36,6 @@ public class SearchController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        dataHandler = IMatDataHandler.getInstance();
         addSearchInputListener();
     }
 
@@ -49,7 +51,21 @@ public class SearchController implements Initializable {
     }
 
     @FXML
+    private void onEnterKeyPressed(KeyEvent key) {
+        if(key.getCode().equals(KeyCode.ENTER)) {
+            searchForProduct();
+        }
+    }
+
+    @FXML
     private void searchButtonActionPerformed(ActionEvent event){
+        searchForProduct();
+    }
+
+    private void searchForProduct() {
         productList = dataHandler.findProducts(searchText);
+
+        mainController.getTabController().getShopTabController().setProductObservableList(productList);
+        mainController.getTabPane().getSelectionModel().select(1);
     }
 }
