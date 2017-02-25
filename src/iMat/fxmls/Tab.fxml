@@ -32,5 +32,14 @@
              </AnchorPane>
          </content>
        </Tab>
+       <Tab text="Kundvagn">
+           <content>
+               <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                   <children>
+                       <fx:include fx:id="shoppingCartTab" source="tabs/ShoppingCartTab.fxml" />
+                   </children>
+               </AnchorPane>
+           </content>
+       </Tab>
    </tabs>
 </TabPane>

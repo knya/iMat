@@ -13,6 +13,7 @@ import se.chalmers.ait.dat215.project.Product;
 import se.chalmers.ait.dat215.project.ProductCategory;
 
 import java.net.URL;
+import java.util.List;
 import java.util.ResourceBundle;
 
 /**
@@ -44,6 +45,15 @@ public class ShopTabController implements Initializable {
 
         productCategoryLabel.setText(String.valueOf(productCategory));
         productObservableList.addAll(dataHandler.getProducts(productCategory));
+
+        return productObservableList;
+    }
+
+    public ObservableList<Product> setProductObservableList(List<Product> productList) {
+        productObservableList.clear();
+
+        productCategoryLabel.setText("Sökresultat");
+        productObservableList.addAll(productList);
 
         return productObservableList;
     }
