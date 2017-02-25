@@ -2,7 +2,6 @@ package iMat.controllers.cells;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
@@ -16,34 +15,32 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.ResourceBundle;
 
 /**
  * Controller for ProductCells in Shop tab.
  */
-public class ShopProductCellController implements Initializable {
+public class ShopProductCellController extends AbstractCellController {
 
     @FXML private Label productNameLabel;
     @FXML private ImageView productImageView;
     @FXML private AnchorPane shopProductCellPane;
-
     @FXML private Button addToCartButton;
 
-    private ShoppingItemCellController shoppingItemCellController;
-
-    private IMatDataHandler dataHandler;
-    private ShoppingCart shoppingCart;
-    private ShoppingItem shoppingItem;
+    private IMatDataHandler dataHandler = IMatDataHandler.getInstance();
+    private ShoppingCart shoppingCart = dataHandler.getShoppingCart();
 
     private Product product;
 
-    @Override
-    public void initialize(URL location, ResourceBundle resources) {
-        dataHandler = IMatDataHandler.getInstance();
-        shoppingCart = dataHandler.getShoppingCart();
+    public void setLabels() {
+        productNameLabel.setText(product.getName());
+        productImageView.setImage(dataHandler.getFXImage(product));
     }
 
-    public void injectProduct(Product product) {
+    public AnchorPane getAnchorPane() {
+        return shopProductCellPane;
+    }
+
+    public void inject(Product product) {
         this.product = product;
     }
 
@@ -79,20 +76,11 @@ public class ShopProductCellController implements Initializable {
     }
 
     private List<Product> getProductsInShoppingCart() {
-        List<Product> productList = new ArrayList<Product>();
+        List<Product> productList = new ArrayList<>();
 
         for (ShoppingItem i : shoppingCart.getItems()) {
             productList.add(i.getProduct());
         }
         return productList;
-    }
-
-    public void setLabels(Product product) {
-        productNameLabel.setText(product.getName());
-        productImageView.setImage(dataHandler.getFXImage(product));
-    }
-
-    public AnchorPane getAnchorPane() {
-        return shopProductCellPane;
     }
 }

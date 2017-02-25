@@ -1,5 +1,6 @@
 package iMat.cells;
 
+import iMat.controllers.cells.ICellController;
 import iMat.controllers.cells.ShopProductCellController;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.ListCell;
@@ -12,8 +13,7 @@ import java.io.IOException;
  */
 public class ShopProductCell extends ListCell<Product> {
 
-    private ShopProductCellController shopProductCellController;
-
+    private ICellController cellController;
     private FXMLLoader fxmlLoader;
 
     public ShopProductCell() {
@@ -27,7 +27,7 @@ public class ShopProductCell extends ListCell<Product> {
                 e.printStackTrace();
             }
         }
-        shopProductCellController = fxmlLoader.getController();
+        cellController = fxmlLoader.getController();
     }
 
     @Override
@@ -37,10 +37,9 @@ public class ShopProductCell extends ListCell<Product> {
         if(empty || product == null) {
             setGraphic(null);
         } else {
-            setGraphic(shopProductCellController.getAnchorPane());
-            shopProductCellController.injectProduct(product);
-            shopProductCellController.setLabels(product);
+            setGraphic(cellController.getAnchorPane());
+            cellController.inject(product);
+            cellController.setLabels();
         }
-
     }
 }

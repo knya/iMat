@@ -10,7 +10,7 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 /**
- * Created by Johan on 2017-02-23.
+ * Abstract class for Cell Controllers
  */
 public abstract class AbstractCellController implements ICellController {
 
@@ -42,8 +42,8 @@ public abstract class AbstractCellController implements ICellController {
         this.shoppingItem = shoppingItem;
     }
 
-//    @Override
-//    public void inject(Product product) {
-//        this.product = product;
-//    }
+    @Override
+    public void inject(Product product) {
+        this.product = product;
+    }
 }

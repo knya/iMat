@@ -6,11 +6,8 @@ import se.chalmers.ait.dat215.project.Product;
 import se.chalmers.ait.dat215.project.ProductCategory;
 import se.chalmers.ait.dat215.project.ShoppingItem;
 
-import java.net.URL;
-import java.util.ResourceBundle;
-
 /**
- * Created by Johan on 2017-02-23.
+ * Interface for Cell Controllers.
  */
 public interface ICellController extends Initializable {
     AnchorPane getAnchorPane();
@@ -18,7 +15,7 @@ public interface ICellController extends Initializable {
 
     void inject(ProductCategory productCategory);
     void inject(ShoppingItem shoppingItem);
-//    void inject(Product product);
+    void inject(Product product);
 
 
 }
