@@ -1,9 +1,6 @@
 package iMat.controllers.cells;
 
 import iMat.cells.ICell;
-import iMat.cells.ProductCategoryCell;
-import iMat.cells.ShopProductCell;
-import iMat.cells.ShoppingItemCell;
 import javafx.scene.layout.AnchorPane;
 import se.chalmers.ait.dat215.project.Product;
 import se.chalmers.ait.dat215.project.ProductCategory;
@@ -34,6 +31,7 @@ public abstract class AbstractCellController implements ICellController {
     @Override
     public abstract void setLabels();
 
+
     @Override
     public void inject(ProductCategory productCategory) {
         this.productCategory = productCategory;
@@ -44,23 +42,8 @@ public abstract class AbstractCellController implements ICellController {
         this.shoppingItem = shoppingItem;
     }
 
-    @Override
-    public void inject(Product product) {
-        this.product = product;
-    }
-
-    @Override
-    public ProductCategory getProductCategoryCell() {
-        return productCategory;
-    }
-
-    @Override
-    public ShoppingItem getShoppingItemCell() {
-        return shoppingItem;
-    }
-
-    @Override
-    public Product getProductCell() {
-        return product;
-    }
+//    @Override
+//    public void inject(Product product) {
+//        this.product = product;
+//    }
 }

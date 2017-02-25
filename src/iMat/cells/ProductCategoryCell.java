@@ -16,7 +16,6 @@ public class ProductCategoryCell extends ListCell<ProductCategory> {
     private FXMLLoader fxmlLoader;
 
     private ICellController cellController;
-//    private ProductCategoryCellController productCategoryCellController;
 
     public ProductCategoryCell() {
         if (fxmlLoader == null) {
@@ -29,11 +28,11 @@ public class ProductCategoryCell extends ListCell<ProductCategory> {
             }
         }
         cellController = fxmlLoader.getController();
-//        productCategoryCellController = fxmlLoader.getController();
     }
 
     @Override
     protected void updateItem(ProductCategory productCategory, boolean empty) {
+
         super.updateItem(productCategory, empty);
 
         if(empty || productCategory == null) {
@@ -44,18 +43,4 @@ public class ProductCategoryCell extends ListCell<ProductCategory> {
             cellController.setLabels();
         }
     }
-
-
-//    @Override
-//    protected void updateItem(ProductCategory productCategory, boolean empty) {
-//        super.updateItem(productCategory, empty);
-//
-//        if(empty || productCategory == null) {
-//            setGraphic(null);
-//        } else {
-//            setGraphic(productCategoryCellController.getAnchorPane());
-//            productCategoryCellController.injectProductCategory(productCategory);
-//            productCategoryCellController.setLabels(productCategory);
-//        }
-//    }
 }

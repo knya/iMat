@@ -26,6 +26,8 @@ public abstract class AbstractCell extends ListCell implements ICell {
     }
     */
 
+
+    /*
     public void updateItem(ProductCategory cell, boolean empty) {
         super.updateItem(cell, empty);
 
@@ -58,4 +60,5 @@ public abstract class AbstractCell extends ListCell implements ICell {
             cellController.inject(cell);
         }
     }
+    */
 }

@@ -19,23 +19,13 @@ public class ProductCategoryCellController extends AbstractCellController {
     @FXML private AnchorPane productCategoryCellPane;
     @FXML private Label nameLabel;
 
-    private IMatDataHandler dataHandler;
+//    private IMatDataHandler dataHandler;
 
     private ProductCategory productCategory;
-    private ShoppingItem shoppingItem;
-    private Product product;
 
-    @Override
-    public void initialize(URL location, ResourceBundle resources) {
-        dataHandler = IMatDataHandler.getInstance();
-    }
-
-//    public void setLabels(ProductCategory productCategory) {
-//        nameLabel.setText(String.valueOf(productCategory));
-//    }
-
-//    public void injectProductCategory(ProductCategory productCategory) {
-//        this.productCategory = productCategory;
+//    @Override
+//    public void initialize(URL location, ResourceBundle resources) {
+//        dataHandler = IMatDataHandler.getInstance();
 //    }
 
     public AnchorPane getAnchorPane() {
@@ -44,6 +34,11 @@ public class ProductCategoryCellController extends AbstractCellController {
 
     @Override
     public void setLabels() {
-        nameLabel.setText(String.valueOf(getProductCategoryCell()));
+        nameLabel.setText(String.valueOf(productCategory));
+    }
+
+    @Override
+    public void inject(ProductCategory productCategory) {
+        this.productCategory = productCategory;
     }
 }
