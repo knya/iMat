@@ -29,7 +29,7 @@
         <items>
           <AnchorPane minHeight="0.0" minWidth="190.0" prefHeight="568.0" prefWidth="224.0" SplitPane.resizableWithParent="false">
                <children>
-                  <fx:include fx:id="filter" source="Filter.fxml" />
+                  <fx:include fx:id="categories" source="Categories.fxml" />
                </children>
             </AnchorPane>
             <SplitPane dividerPositions="0.15" orientation="VERTICAL" prefHeight="568.0" prefWidth="318.0">
@@ -39,9 +39,9 @@
                         <fx:include fx:id="search" source="Search.fxml" />
                      </children>
                   </AnchorPane>
-                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0" SplitPane.resizableWithParent="false">
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
                      <children>
-                        <fx:include fx:id="feature" source="Feature.fxml" />
+                        <fx:include fx:id="tab" source="Tab.fxml" />
                      </children>
                   </AnchorPane>
               </items>

@@ -18,7 +18,7 @@ import static se.chalmers.ait.dat215.project.ProductCategory.FISH;
 /**
  * Created by Johan on 2017-02-23.
  */
-public class FilterController implements Initializable {
+public class CategoriesController implements Initializable {
 
     @FXML private ListView<ProductCategory> productCategoryListView;
     private ObservableList<ProductCategory> productCategoryObservableList;

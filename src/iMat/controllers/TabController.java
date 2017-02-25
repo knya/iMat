@@ -2,6 +2,7 @@ package iMat.controllers;
 
 
 import iMat.controllers.tabs.HomeTabController;
+import iMat.controllers.tabs.MyPagesTabController;
 import iMat.controllers.tabs.ShopTabController;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -17,13 +18,15 @@ import java.util.ResourceBundle;
 
 public class TabController implements Initializable {
 
-//    @FXML private AnchorPane homeTab;
-//    @FXML private AnchorPane shopTab;
+    @FXML private AnchorPane homeTab;
+    @FXML private AnchorPane shopTab;
+    @FXML private AnchorPane myPagesTab;
 
     private MainController mainController;
 
     @FXML private HomeTabController homeTabController;
     @FXML private ShopTabController shopTabController;
+    @FXML private MyPagesTabController myPagesTabController;
 
     public void injectMainController(MainController mainController) {
         this.mainController = mainController;
@@ -33,5 +36,6 @@ public class TabController implements Initializable {
     public void initialize(URL location, ResourceBundle resources) {
         homeTabController.injectTabController(this);
         shopTabController.injectTabController(this);
+        myPagesTabController.injectTabController(this);
     }
 }
