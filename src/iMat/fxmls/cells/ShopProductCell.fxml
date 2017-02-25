@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
@@ -8,6 +9,6 @@
    <children>
       <ImageView fx:id="productImageView" fitHeight="80.0" fitWidth="83.0" layoutX="14.0" layoutY="11.0" pickOnBounds="true" preserveRatio="true" />
       <Label fx:id="productNameLabel" layoutX="107.0" layoutY="14.0" text="Namn" />
-      <Button fx:id="addToCartButton" layoutX="297.0" layoutY="31.0" mnemonicParsing="false" onAction="#addToCartActionPerformed" text="Lägg till i kundvagn" />
+      <Button fx:id="addToCartButton" layoutX="324.0" layoutY="10.0" mnemonicParsing="false" onAction="#addToCartActionPerformed" text="Lägg till i kundvagn" />
    </children>
 </AnchorPane>

@@ -59,7 +59,6 @@ public class ShopProductCellController extends AbstractCellController {
     }
 
     private boolean checkIfShoppingCartContainsProduct(Product product) {
-        System.out.println(getProductsInShoppingCart().contains(product));
         return getProductsInShoppingCart().contains(product);
     }
 

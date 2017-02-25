@@ -38,4 +38,8 @@ public class TabController implements Initializable {
         shopTabController.injectTabController(this);
         myPagesTabController.injectTabController(this);
     }
+
+    public ShopTabController getShopTabController() {
+        return shopTabController;
+    }
 }

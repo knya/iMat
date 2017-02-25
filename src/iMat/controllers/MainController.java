@@ -19,12 +19,22 @@ public class MainController implements Initializable {
     @FXML private SearchController searchController;
     @FXML private ShoppingCartController shoppingCartController;
     @FXML private TabController tabController;
+    @FXML private CategoriesController categoriesController;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         searchController.injectMainController(this);
         shoppingCartController.injectMainController(this);
         tabController.injectMainController(this);
+        categoriesController.injectMainController(this);
+    }
+
+    public TabController getTabController() {
+        return tabController;
+    }
+
+    public TabPane getTabPane() {
+        return tab;
     }
 
 }

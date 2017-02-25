@@ -9,6 +9,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.ListView;
 import se.chalmers.ait.dat215.project.IMatDataHandler;
 import se.chalmers.ait.dat215.project.Product;
+import se.chalmers.ait.dat215.project.ProductCategory;
 
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -24,17 +25,24 @@ public class ShopTabController implements Initializable {
 
     private ObservableList<Product> productObservableList;
 
-    private IMatDataHandler dataHandler;
+    private IMatDataHandler dataHandler = IMatDataHandler.getInstance();
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        dataHandler = IMatDataHandler.getInstance();
 
         productObservableList = FXCollections.observableArrayList();
         productObservableList.addAll(dataHandler.getProducts());
 
         shopProductListView.setItems(productObservableList);
         shopProductListView.setCellFactory(productListView -> new ShopProductCell());
+    }
+
+    public ObservableList<Product> setProductObservableList(ProductCategory productCategory) {
+        productObservableList.clear();
+
+        productObservableList.addAll(dataHandler.getProducts(productCategory));
+
+        return productObservableList;
     }
 
     public void injectTabController(TabController tabController) {
