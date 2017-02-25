@@ -3,7 +3,6 @@ package iMat.cells;
 import iMat.controllers.cells.ShoppingItemCellController;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.ListCell;
-import se.chalmers.ait.dat215.project.IMatDataHandler;
 import se.chalmers.ait.dat215.project.ShoppingItem;
 
 import javax.swing.*;

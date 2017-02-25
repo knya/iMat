@@ -1,5 +1,8 @@
 package iMat.controllers.cells;
 
+import iMat.cells.ProductCategoryCell;
+import iMat.cells.ShopProductCell;
+import iMat.cells.ShoppingItemCell;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
@@ -14,7 +17,7 @@ import java.util.ResourceBundle;
 /**
  * Created by Johan on 2017-02-23.
  */
-public class ProductCategoryCellController implements Initializable {
+public class ProductCategoryCellController extends AbstractCellController {
 
     @FXML private AnchorPane productCategoryCellPane;
     @FXML private Label nameLabel;
@@ -32,9 +35,9 @@ public class ProductCategoryCellController implements Initializable {
         nameLabel.setText(String.valueOf(productCategory));
     }
 
-    public void injectProductCategory(ProductCategory productCategory) {
-        this.productCategory = productCategory;
-    }
+//    public void injectProductCategory(ProductCategory productCategory) {
+//        this.productCategory = productCategory;
+//    }
 
     public AnchorPane getAnchorPane() {
         return productCategoryCellPane;

@@ -75,5 +75,9 @@ public class ShoppingItemCellController implements Initializable {
     private void notifyShoppingCart(ShoppingItem shoppingItem, boolean addEvent) {
         dataHandler.getShoppingCart().fireShoppingCartChanged(shoppingItem, addEvent);
     }
+
+    public void notifyShoppingItem() {
+        setLabels(shoppingItem);
+    }
 }
 
