@@ -38,8 +38,10 @@ public class CategoriesController implements Initializable {
     public void initialize(URL location, ResourceBundle resources) {
 
         productCategoryObservableList = FXCollections.observableArrayList();
-        productCategoryObservableList.add(FISH);
-        productCategoryObservableList.add(BREAD);
+
+        for (ProductCategory i : ProductCategory.values()) {
+            productCategoryObservableList.add(i);
+        }
 
         productCategoryListView.setItems(productCategoryObservableList);
         productCategoryListView.setCellFactory(productCategoryListView -> new ProductCategoryCell());
