@@ -1,15 +1,12 @@
 package iMat.controllers.cells;
 
-import iMat.cells.ProductCategoryCell;
-import iMat.cells.ShopProductCell;
-import iMat.cells.ShoppingItemCell;
 import javafx.fxml.FXML;
-import javafx.fxml.Initializable;
-import javafx.scene.Node;
 import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
 import se.chalmers.ait.dat215.project.IMatDataHandler;
+import se.chalmers.ait.dat215.project.Product;
 import se.chalmers.ait.dat215.project.ProductCategory;
+import se.chalmers.ait.dat215.project.ShoppingItem;
 
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -25,15 +22,17 @@ public class ProductCategoryCellController extends AbstractCellController {
     private IMatDataHandler dataHandler;
 
     private ProductCategory productCategory;
+    private ShoppingItem shoppingItem;
+    private Product product;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         dataHandler = IMatDataHandler.getInstance();
     }
 
-    public void setLabels(ProductCategory productCategory) {
-        nameLabel.setText(String.valueOf(productCategory));
-    }
+//    public void setLabels(ProductCategory productCategory) {
+//        nameLabel.setText(String.valueOf(productCategory));
+//    }
 
 //    public void injectProductCategory(ProductCategory productCategory) {
 //        this.productCategory = productCategory;
@@ -41,5 +40,10 @@ public class ProductCategoryCellController extends AbstractCellController {
 
     public AnchorPane getAnchorPane() {
         return productCategoryCellPane;
+    }
+
+    @Override
+    public void setLabels() {
+        nameLabel.setText(String.valueOf(getProductCategoryCell()));
     }
 }

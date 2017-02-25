@@ -32,6 +32,9 @@ public abstract class AbstractCellController implements ICellController {
     public abstract AnchorPane getAnchorPane();
 
     @Override
+    public abstract void setLabels();
+
+    @Override
     public void inject(ProductCategory productCategory) {
         this.productCategory = productCategory;
     }
@@ -44,5 +47,20 @@ public abstract class AbstractCellController implements ICellController {
     @Override
     public void inject(Product product) {
         this.product = product;
+    }
+
+    @Override
+    public ProductCategory getProductCategoryCell() {
+        return productCategory;
+    }
+
+    @Override
+    public ShoppingItem getShoppingItemCell() {
+        return shoppingItem;
+    }
+
+    @Override
+    public Product getProductCell() {
+        return product;
     }
 }

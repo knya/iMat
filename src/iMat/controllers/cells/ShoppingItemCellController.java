@@ -13,7 +13,7 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 /**
- * Controller for ShoppingItems added to ShoppingCart.
+ * Controller for ShoppingItemCells added to ShoppingCart.
  */
 
 public class ShoppingItemCellController implements Initializable {

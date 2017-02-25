@@ -19,7 +19,7 @@ import java.util.List;
 import java.util.ResourceBundle;
 
 /**
- * Created by JOHAN on 2017-02-22.
+ * Controller for ProductCells in Shop tab.
  */
 public class ShopProductCellController implements Initializable {
 

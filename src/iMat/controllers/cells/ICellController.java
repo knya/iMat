@@ -14,7 +14,14 @@ import java.util.ResourceBundle;
  */
 public interface ICellController extends Initializable {
     AnchorPane getAnchorPane();
+
     void inject(ProductCategory productCategory);
     void inject(ShoppingItem shoppingItem);
     void inject(Product product);
+
+    ProductCategory getProductCategoryCell();
+    ShoppingItem getShoppingItemCell();
+    Product getProductCell();
+
+    void setLabels();
 }
