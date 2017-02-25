@@ -6,6 +6,7 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import se.chalmers.ait.dat215.project.IMatDataHandler;
 import se.chalmers.ait.dat215.project.Product;
@@ -22,6 +23,7 @@ public class ShopTabController implements Initializable {
     private TabController tabController;
 
     @FXML private ListView<Product> shopProductListView;
+    @FXML private Label productCategoryLabel;
 
     private ObservableList<Product> productObservableList;
 
@@ -40,6 +42,7 @@ public class ShopTabController implements Initializable {
     public ObservableList<Product> setProductObservableList(ProductCategory productCategory) {
         productObservableList.clear();
 
+        productCategoryLabel.setText(String.valueOf(productCategory));
         productObservableList.addAll(dataHandler.getProducts(productCategory));
 
         return productObservableList;

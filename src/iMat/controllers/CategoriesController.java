@@ -19,7 +19,7 @@ import static se.chalmers.ait.dat215.project.ProductCategory.BREAD;
 import static se.chalmers.ait.dat215.project.ProductCategory.FISH;
 
 /**
- * Created by Johan on 2017-02-23.
+ * Controller for ProductCategory
  */
 public class CategoriesController implements Initializable {
 
@@ -27,8 +27,6 @@ public class CategoriesController implements Initializable {
     private ObservableList<ProductCategory> productCategoryObservableList;
 
     private MainController mainController;
-
-    private IMatDataHandler dataHandler = IMatDataHandler.getInstance();
 
     public void injectMainController(MainController mainController) {
         this.mainController = mainController;
@@ -39,9 +37,7 @@ public class CategoriesController implements Initializable {
 
         productCategoryObservableList = FXCollections.observableArrayList();
 
-        for (ProductCategory i : ProductCategory.values()) {
-            productCategoryObservableList.add(i);
-        }
+        productCategoryObservableList.addAll(ProductCategory.values());
 
         productCategoryListView.setItems(productCategoryObservableList);
         productCategoryListView.setCellFactory(productCategoryListView -> new ProductCategoryCell());
