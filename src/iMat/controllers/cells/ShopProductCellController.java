@@ -23,6 +23,7 @@ public class ShopProductCellController extends AbstractCellController {
     @FXML private ImageView productImageView;
     @FXML private AnchorPane shopProductCellPane;
     @FXML private Button addToCartButton;
+    @FXML private Button addToFavoritesButton;
 
     private IMatDataHandler dataHandler = IMatDataHandler.getInstance();
     private ShoppingCart shoppingCart = dataHandler.getShoppingCart();
@@ -49,6 +50,20 @@ public class ShopProductCellController extends AbstractCellController {
         } else {
             shoppingCart.addProduct(product);
         }
+    }
+
+    @FXML
+    private void addToFavoritesActionPerformed(ActionEvent event) {
+        if (!dataHandler.isFavorite(product)) {
+            dataHandler.addFavorite(product);
+            addToFavoritesButton.setText("Ta bort från favoriter");
+        } else {
+            dataHandler.removeFavorite(product);
+            addToFavoritesButton.setText("Lägg till som favorit");
+        }
+
+
+
     }
 
     private void increaseQuantity(Product product) {
