@@ -11,8 +11,6 @@ import se.chalmers.ait.dat215.project.Product;
 import se.chalmers.ait.dat215.project.ShoppingCart;
 import se.chalmers.ait.dat215.project.ShoppingItem;
 
-import java.io.IOException;
-import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -48,7 +46,6 @@ public class ShopProductCellController extends AbstractCellController {
     private void addToCartActionPerformed(ActionEvent event) {
         if (getProductsInShoppingCart().contains(product)) {
             increaseQuantity(product);
-//            notifyShoppingItem();
         } else {
             shoppingCart.addProduct(product);
         }

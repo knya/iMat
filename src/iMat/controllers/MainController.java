@@ -15,7 +15,6 @@ public class MainController implements Initializable {
     @FXML private TabPane tab;
     @FXML private AnchorPane shoppingCart;
 
-
     @FXML private SearchController searchController;
     @FXML private ShoppingCartController shoppingCartController;
     @FXML private TabController tabController;
