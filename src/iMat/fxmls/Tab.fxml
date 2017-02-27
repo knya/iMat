@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
@@ -34,7 +35,7 @@
        </Tab>
        <Tab text="Kundvagn">
            <content>
-               <AnchorPane prefHeight="200.0" prefWidth="200.0">
+               <AnchorPane prefHeight="200.0" prefWidth="200.0" visible="false">
                    <children>
                        <fx:include fx:id="shoppingCartTab" source="tabs/ShoppingCartTab.fxml" />
                    </children>
