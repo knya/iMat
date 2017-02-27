@@ -14,11 +14,11 @@ public class MyPagesTabController implements Initializable {
 
     private TabController tabController;
 
-    private IMatDataHandler dataHandler;
+    private IMatDataHandler dataHandler = IMatDataHandler.getInstance();
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        dataHandler = IMatDataHandler.getInstance();
+
     }
 
     public void injectTabController(TabController tabController) {
