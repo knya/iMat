@@ -16,6 +16,4 @@ public interface ICellController extends Initializable {
     void inject(ProductCategory productCategory);
     void inject(ShoppingItem shoppingItem);
     void inject(Product product);
-
-
 }

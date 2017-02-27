@@ -1,6 +1,5 @@
 package iMat.controllers.cells;
 
-import iMat.cells.ICell;
 import javafx.scene.layout.AnchorPane;
 import se.chalmers.ait.dat215.project.Product;
 import se.chalmers.ait.dat215.project.ProductCategory;
@@ -30,7 +29,6 @@ public abstract class AbstractCellController implements ICellController {
 
     @Override
     public abstract void setLabels();
-
 
     @Override
     public void inject(ProductCategory productCategory) {
