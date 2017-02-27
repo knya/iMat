@@ -12,10 +12,8 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 /**
- * Tab controller for Feature pane.
+ * Tab controller for Tab pane.
  */
-
-
 public class TabController implements Initializable {
 
     @FXML private AnchorPane homeTab;
