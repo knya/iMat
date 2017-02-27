@@ -46,7 +46,7 @@ public class ShopProductCellController extends AbstractCellController {
 
     @FXML
     private void addToCartActionPerformed(ActionEvent event) {
-        if (checkIfShoppingCartContainsProduct(product)) {
+        if (getProductsInShoppingCart().contains(product)) {
             increaseQuantity(product);
 //            notifyShoppingItem();
         } else {
@@ -56,10 +56,6 @@ public class ShopProductCellController extends AbstractCellController {
 
     private void increaseQuantity(Product product) {
         shoppingCart.getItems().get(getIndex(product)).setAmount(shoppingCart.getItems().get(getIndex(product)).getAmount() + 1);
-    }
-
-    private boolean checkIfShoppingCartContainsProduct(Product product) {
-        return getProductsInShoppingCart().contains(product);
     }
 
     private int getIndex(Product product) {
