@@ -9,6 +9,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import se.chalmers.ait.dat215.project.IMatDataHandler;
 import se.chalmers.ait.dat215.project.Product;
+
 import java.net.URL;
 import java.util.List;
 import java.util.ResourceBundle;
@@ -24,8 +25,10 @@ public class SearchController implements Initializable {
     private String searchText;
     private List<Product> productList;
 
-    @FXML private TextField searchTextField;
-    @FXML private Button searchButton;
+    @FXML
+    private TextField searchTextField;
+    @FXML
+    private Button searchButton;
 
     public void injectMainController(MainController mainController) {
         this.mainController = mainController;
@@ -49,7 +52,13 @@ public class SearchController implements Initializable {
     }
 
     @FXML
-    private void searchButtonActionPerformed(ActionEvent event){
-        productList = dataHandler.findProducts(searchText);
+    private void searchButtonActionPerformed(ActionEvent event) {
+        try {
+            productList = dataHandler.findProducts(searchText);
+
+        } catch (NullPointerException e) {
+        }
+        ;
+
     }
 }

@@ -17,6 +17,7 @@ public class ShoppingItemCell extends ListCell<ShoppingItem> {
 
     private FXMLLoader fxmlLoader;
 
+
     public ShoppingItemCell() {
         if (fxmlLoader == null) {
             fxmlLoader = new FXMLLoader(getClass().getResource("/iMat/fxmls/cells/ShoppingItemCell.fxml"));

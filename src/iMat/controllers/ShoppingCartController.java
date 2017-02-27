@@ -5,14 +5,18 @@ import iMat.controllers.cells.ShoppingItemCellController;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
+import javafx.scene.image.Image;
 import se.chalmers.ait.dat215.project.*;
 
 import javax.swing.*;
+import javax.swing.text.html.ImageView;
+import java.awt.event.MouseEvent;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -28,24 +32,37 @@ public class ShoppingCartController implements Initializable {
     @FXML private Button goToCartButton;
     @FXML private Label totalLabel;
 
+
     private ObservableList<ShoppingItem> shoppingItemObservableList;
 
     private ShoppingCart shoppingCart;
     private IMatDataHandler dataHandler;
+
+
 
     public void injectMainController(MainController mainController) {
         this.mainController = mainController;
     }
 
     @Override
-    public void initialize(URL location, ResourceBundle resources) {
+    synchronized public void initialize(URL location, ResourceBundle resources) {
         dataHandler = IMatDataHandler.getInstance();
         shoppingCart = dataHandler.getShoppingCart();
 
         shoppingCart.addProduct(dataHandler.getProduct(1));
         shoppingCart.addProduct(dataHandler.getProduct(2));
+        shoppingCart.addProduct(dataHandler.getProduct(3));
+
 
         totalLabel.setText(String.valueOf(shoppingCart.getTotal()) + ":-");
+
+
+
+
+
+
+
+
 
 //        shoppingItemObservableList = FXCollections.observableArrayList();
 //        shoppingItemObservableList.addAll(shoppingCart.getItems());
