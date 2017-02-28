@@ -41,6 +41,10 @@ public class ShopProductCellController extends AbstractCellController {
         } else {
             favoriteButtonImage.setImage(emptyStar);
         }
+
+        if (getProductsInShoppingCart().contains(product)) {
+            addToCartButton.setDisable(true);
+        }
     }
 
     public AnchorPane getAnchorPane() {
@@ -57,6 +61,7 @@ public class ShopProductCellController extends AbstractCellController {
             increaseQuantity(product);
         } else {
             shoppingCart.addProduct(product);
+            addToCartButton.setDisable(true);
         }
     }
 
