@@ -32,7 +32,11 @@ public class ShopProductCellController extends AbstractCellController {
     public void setLabels() {
         productNameLabel.setText(product.getName());
         productImageView.setImage(dataHandler.getFXImage(product));
-        addToFavoritesButton.setGraphic(new ImageView("/Imat/Images/EmptyStar.png"));
+        if(dataHandler.isFavorite(product)){
+            addToFavoritesButton.setGraphic(new ImageView("/Imat/Images/FullStar.png"));
+        }else{
+            addToFavoritesButton.setGraphic(new ImageView("/Imat/Images/EmptyStar.png"));
+        }
     }
 
     public AnchorPane getAnchorPane() {

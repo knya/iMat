@@ -29,6 +29,7 @@ public class TabController implements Initializable {
     @FXML private MyPagesTabController myPagesTabController;
     @FXML private ShoppingCartTabController shoppingCartTabController;
 
+
     public void injectMainController(MainController mainController) {
         this.mainController = mainController;
     }

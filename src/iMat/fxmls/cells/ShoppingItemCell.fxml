@@ -1,15 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane fx:id="shoppingItemPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="80.0" prefWidth="180.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="iMat.controllers.cells.ShoppingItemCellController">
+<AnchorPane fx:id="shoppingItemPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="80.0" prefWidth="250.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="iMat.controllers.cells.ShoppingItemCellController">
    <children>
-      <Label fx:id="nameLabel" layoutX="14.0" layoutY="10.0" text="Label" />
-      <Button fx:id="removeButton" layoutX="112.0" layoutY="5.0" mnemonicParsing="false" onAction="#removeButtonActionPerformed" text="Remove" />
-      <Button fx:id="decreaseButton" layoutX="77.0" layoutY="40.0" mnemonicParsing="false" onAction="#decreaseButtonActionPerformed" prefHeight="22.0" prefWidth="26.0" text="-" />
-      <Button fx:id="increaseButton" layoutX="152.0" layoutY="40.0" mnemonicParsing="false" onAction="#increaseButtonActionPerformed" prefHeight="22.0" prefWidth="26.0" text="+" />
-      <Label fx:id="amountLabel" alignment="CENTER" layoutX="103.0" layoutY="43.0" prefHeight="17.0" prefWidth="47.0" textAlignment="CENTER" />
-      <Label fx:id="priceLabel" alignment="CENTER_RIGHT" layoutX="14.0" layoutY="44.0" prefHeight="14.0" prefWidth="56.0" text="Label" />
+      <Label fx:id="nameLabel" layoutX="10.0" layoutY="10.0" prefWidth="100.0" text="Label" />
+      <Button fx:id="removeButton" layoutX="150.0" layoutY="5.0" mnemonicParsing="false" onAction="#removeButtonActionPerformed" prefWidth="80.0" text="Remove" />
+      <Button fx:id="decreaseButton" alignment="CENTER" layoutX="70.0" layoutY="40.0" mnemonicParsing="false" onAction="#decreaseButtonActionPerformed" prefHeight="22.0" prefWidth="40.0" text="-" />
+      <Button fx:id="increaseButton" alignment="CENTER" layoutX="190.0" layoutY="40.0" mnemonicParsing="false" onAction="#increaseButtonActionPerformed" prefHeight="22.0" prefWidth="40.0" text="+" />
+      <Label fx:id="amountLabel" alignment="CENTER" layoutX="115.0" layoutY="43.0" prefHeight="17.0" prefWidth="70.0" textAlignment="CENTER" />
+      <Label fx:id="priceLabel" alignment="CENTER_RIGHT" layoutX="5.0" layoutY="45.0" prefHeight="14.0" prefWidth="60.0" text="Label" />
    </children>
 </AnchorPane>
