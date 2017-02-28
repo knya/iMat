@@ -4,8 +4,10 @@ import iMat.cells.OrderCartCell;
 import iMat.controllers.TabController;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
 import se.chalmers.ait.dat215.project.IMatDataHandler;
 import se.chalmers.ait.dat215.project.ShoppingItem;
@@ -21,6 +23,7 @@ public class OrderTabController implements Initializable {
     private TabController tabController;
 
     @FXML private ListView<ShoppingItem> shoppingItemListView;
+    @FXML private Button placeOrderButton;
 
     private IMatDataHandler dataHandler = IMatDataHandler.getInstance();
 
@@ -44,5 +47,10 @@ public class OrderTabController implements Initializable {
         shoppingItemObservableList.addAll(dataHandler.getShoppingCart().getItems());
 
         return shoppingItemObservableList;
+    }
+
+    @FXML
+    private void placeOrderActionPerformed(ActionEvent event) {
+        dataHandler.placeOrder(true);
     }
 }

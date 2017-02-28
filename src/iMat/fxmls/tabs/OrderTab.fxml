@@ -1,11 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.text.*?>
 <?import javafx.scene.control.*?>
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="545.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="iMat.controllers.tabs.OrderTabController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="436.0" prefWidth="545.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="iMat.controllers.tabs.OrderTabController">
    <children>
-      <ListView fx:id="shoppingItemListView" layoutX="20.0" layoutY="96.0" prefHeight="277.0" prefWidth="505.0" AnchorPane.bottomAnchor="14.0" AnchorPane.topAnchor="96.0" />
+      <ListView fx:id="shoppingItemListView" layoutX="20.0" layoutY="96.0" prefHeight="286.0" prefWidth="505.0" AnchorPane.bottomAnchor="54.0" AnchorPane.topAnchor="96.0" />
+      <Button fx:id="placeOrderButton" layoutX="387.0" layoutY="391.0" mnemonicParsing="false" onAction="#placeOrderActionPerformed" prefHeight="32.0" prefWidth="138.0" text="Lägg beställning">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Button>
    </children>
 </AnchorPane>

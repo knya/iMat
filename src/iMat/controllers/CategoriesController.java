@@ -36,7 +36,6 @@ public class CategoriesController implements Initializable {
     public void initialize(URL location, ResourceBundle resources) {
 
         productCategoryObservableList = FXCollections.observableArrayList();
-
         productCategoryObservableList.addAll(ProductCategory.values());
 
         productCategoryListView.setItems(productCategoryObservableList);
