@@ -71,6 +71,6 @@ public class ShoppingCartController implements Initializable {
 
     @FXML
     private void goToCartActionPerformed(ActionEvent event) {
-        //TODO
+        mainController.getTabPane().getSelectionModel().select(3);
     }
 }
