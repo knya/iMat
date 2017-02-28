@@ -13,7 +13,7 @@ public class MainController implements Initializable {
     @FXML private AnchorPane search;
     @FXML private AnchorPane categories;
     @FXML private TabPane tab;
-    @FXML private AnchorPane shoppingCart;
+    @FXML private AnchorPane shopping;
 
     @FXML private SearchController searchController;
     @FXML private ShoppingCartController shoppingCartController;
@@ -26,6 +26,12 @@ public class MainController implements Initializable {
         shoppingCartController.injectMainController(this);
         tabController.injectMainController(this);
         categoriesController.injectMainController(this);
+        search.setMinHeight(106);
+        search.setMaxHeight(106);
+        categories.setMinWidth(200);
+        categories.setMaxWidth(200);
+        shopping.setMinWidth(200);
+        shopping.setMaxWidth(200);
     }
 
     public TabController getTabController() {
