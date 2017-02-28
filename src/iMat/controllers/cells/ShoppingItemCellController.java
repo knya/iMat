@@ -1,9 +1,12 @@
 package iMat.controllers.cells;
 
+import com.sun.javafx.robot.FXRobotImage;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import se.chalmers.ait.dat215.project.IMatDataHandler;
 import se.chalmers.ait.dat215.project.ShoppingItem;
@@ -25,9 +28,14 @@ public class ShoppingItemCellController extends AbstractCellController {
     @FXML private Button decreaseButton;
     @FXML private AnchorPane shoppingItemPane;
 
+
+
     private IMatDataHandler dataHandler = IMatDataHandler.getInstance();
 
     private ShoppingItem shoppingItem;
+
+    Image image = new Image("/toolbarButtonGraphics/general/Delete16.gif");
+
 
 //    @Override
 //    public void initialize(URL location, ResourceBundle resources) {
@@ -52,6 +60,7 @@ public class ShoppingItemCellController extends AbstractCellController {
         nameLabel.setText(shoppingItem.getProduct().getName());
         amountLabel.setText(String.valueOf(shoppingItem.getAmount()) + " " + shoppingItem.getProduct().getUnitSuffix());
         priceLabel.setText(String.valueOf(shoppingItem.getTotal()) + ":-");
+        removeButton.setGraphic(new ImageView(image));
     }
 
     @FXML
@@ -64,7 +73,9 @@ public class ShoppingItemCellController extends AbstractCellController {
         shoppingItem.setAmount(shoppingItem.getAmount() + 1);
         setLabels();
 
+
         notifyShoppingCart(shoppingItem,true);
+
     }
 
     @FXML

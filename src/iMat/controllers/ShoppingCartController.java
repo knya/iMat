@@ -10,6 +10,8 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import se.chalmers.ait.dat215.project.*;
 
 import java.net.URL;
@@ -27,10 +29,12 @@ public class ShoppingCartController implements Initializable {
     @FXML private Button goToCartButton;
     @FXML private Label totalLabel;
 
+
     private ObservableList<ShoppingItem> shoppingItemObservableList;
 
     private ShoppingCart shoppingCart;
     private IMatDataHandler dataHandler;
+    Image shoppincart = new Image("/Imat/Images/ShoppingCart.png");
 
     public void injectMainController(MainController mainController) {
         this.mainController = mainController;
@@ -40,6 +44,7 @@ public class ShoppingCartController implements Initializable {
     synchronized public void initialize(URL location, ResourceBundle resources) {
         dataHandler = IMatDataHandler.getInstance();
         shoppingCart = dataHandler.getShoppingCart();
+        goToCartButton.setGraphic(new ImageView(shoppincart));
 
         shoppingCart.addProduct(dataHandler.getProduct(1));
         shoppingCart.addProduct(dataHandler.getProduct(2));
@@ -47,8 +52,6 @@ public class ShoppingCartController implements Initializable {
 
         totalLabel.setText(String.valueOf(shoppingCart.getTotal()) + ":-");
 
-//        shoppingItemObservableList = FXCollections.observableArrayList();
-//        shoppingItemObservableList.addAll(shoppingCart.getItems());
 
         shoppingItemListView.setItems(refreshItemListView());
         shoppingItemListView.setCellFactory(shoppingItemListView -> new ShoppingItemCell());

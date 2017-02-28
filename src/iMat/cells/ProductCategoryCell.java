@@ -41,6 +41,7 @@ public class ProductCategoryCell extends ListCell<ProductCategory> {
             setGraphic(cellController.getAnchorPane());
             cellController.inject(productCategory);
             cellController.setLabels();
+
         }
     }
 }

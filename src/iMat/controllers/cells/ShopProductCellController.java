@@ -4,13 +4,12 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
-import se.chalmers.ait.dat215.project.IMatDataHandler;
-import se.chalmers.ait.dat215.project.Product;
-import se.chalmers.ait.dat215.project.ShoppingCart;
-import se.chalmers.ait.dat215.project.ShoppingItem;
+import se.chalmers.ait.dat215.project.*;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -33,6 +32,7 @@ public class ShopProductCellController extends AbstractCellController {
     public void setLabels() {
         productNameLabel.setText(product.getName());
         productImageView.setImage(dataHandler.getFXImage(product));
+        addToFavoritesButton.setGraphic(new ImageView("/Imat/Images/EmptyStar.png"));
     }
 
     public AnchorPane getAnchorPane() {
@@ -57,9 +57,11 @@ public class ShopProductCellController extends AbstractCellController {
         if (!dataHandler.isFavorite(product)) {
             dataHandler.addFavorite(product);
             addToFavoritesButton.setText("Ta bort från favoriter");
+            addToFavoritesButton.setGraphic(new ImageView("/Imat/Images/Fullstar.png"));
         } else {
             dataHandler.removeFavorite(product);
             addToFavoritesButton.setText("Lägg till som favorit");
+            addToFavoritesButton.setGraphic(new ImageView(("/Imat/Images/EmptyStar.png")));
         }
 
 
