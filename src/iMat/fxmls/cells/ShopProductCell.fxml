@@ -15,5 +15,6 @@
          <graphic>
             <ImageView fx:id="favoriteButtonImage" fitHeight="26.0" fitWidth="23.0" pickOnBounds="true" preserveRatio="true" />
          </graphic></Button>
+      <Label fx:id="productPriceLabel" layoutX="112.0" layoutY="53.0" text="Price" />
    </children>
 </AnchorPane>

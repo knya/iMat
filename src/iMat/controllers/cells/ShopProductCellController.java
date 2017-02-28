@@ -18,6 +18,7 @@ import java.util.List;
 public class ShopProductCellController extends AbstractCellController {
 
     @FXML private Label productNameLabel;
+    @FXML private Label productPriceLabel;
     @FXML private ImageView productImageView;
     @FXML private AnchorPane shopProductCellPane;
     @FXML private Button addToCartButton;
@@ -35,6 +36,7 @@ public class ShopProductCellController extends AbstractCellController {
     public void setLabels() {
         productNameLabel.setText(product.getName());
         productImageView.setImage(dataHandler.getFXImage(product));
+        productPriceLabel.setText(String.valueOf(product.getPrice()) + ":-");
 
         if (dataHandler.isFavorite(product)) {
             favoriteButtonImage.setImage(fullStar);
