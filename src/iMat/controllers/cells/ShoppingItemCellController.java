@@ -34,7 +34,6 @@ public class ShoppingItemCellController extends AbstractCellController {
 
     private ShoppingItem shoppingItem;
 
-    Image image = new Image("/toolbarButtonGraphics/general/Delete16.gif");
 
 
 //    @Override
@@ -60,7 +59,6 @@ public class ShoppingItemCellController extends AbstractCellController {
         nameLabel.setText(shoppingItem.getProduct().getName());
         amountLabel.setText(String.valueOf(shoppingItem.getAmount()) + " " + shoppingItem.getProduct().getUnitSuffix());
         priceLabel.setText(String.valueOf(shoppingItem.getTotal()) + ":-");
-        removeButton.setGraphic(new ImageView(image));
     }
 
     @FXML

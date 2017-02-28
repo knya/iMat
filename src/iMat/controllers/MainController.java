@@ -31,11 +31,11 @@ public class MainController implements Initializable {
         categoriesController.injectMainController(this);
         search.setMinHeight(100);
         search.setMaxHeight(100);
-        categories.setMinWidth(250);
-        categories.setMaxWidth(250);
-        shopping.setMinWidth(250);
-        shopping.setMaxWidth(250);
-        tabsAnchorPane.setMinSize(524,608);
+        categories.setMinWidth(256);
+        categories.setMaxWidth(256);
+        shopping.setMinWidth(256);
+        shopping.setMaxWidth(256);
+        tabsAnchorPane.setMinSize(524,628);
     }
 
     public TabController getTabController() {
