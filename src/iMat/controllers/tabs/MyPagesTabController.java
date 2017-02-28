@@ -1,6 +1,8 @@
 package iMat.controllers.tabs;
 
 import iMat.controllers.TabController;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.TextField;
@@ -39,6 +41,41 @@ public class MyPagesTabController implements Initializable {
         addressField.setText(dataHandler.getCustomer().getAddress());
         postCodeField.setText(dataHandler.getCustomer().getPostCode());
         cityField.setText(dataHandler.getCustomer().getPostAddress());
+
+        firstNameField.textProperty().addListener(new ChangeListener<String>() {
+            @Override
+            public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
+                dataHandler.getCustomer().setFirstName(newValue);
+            }
+        });
+
+        lastNameField.textProperty().addListener(new ChangeListener<String>() {
+            @Override
+            public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
+                dataHandler.getCustomer().setLastName(newValue);
+            }
+        });
+
+        addressField.textProperty().addListener(new ChangeListener<String>() {
+            @Override
+            public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
+                dataHandler.getCustomer().setAddress(newValue);
+            }
+        });
+
+        postCodeField.textProperty().addListener(new ChangeListener<String>() {
+            @Override
+            public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
+                dataHandler.getCustomer().setPostCode(newValue);
+            }
+        });
+
+        cityField.textProperty().addListener(new ChangeListener<String>() {
+            @Override
+            public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
+                dataHandler.getCustomer().setPostAddress(newValue);
+            }
+        });
     }
 
     public void injectTabController(TabController tabController) {
