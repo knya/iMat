@@ -15,6 +15,7 @@ import javafx.scene.image.ImageView;
 import se.chalmers.ait.dat215.project.*;
 
 import java.net.URL;
+import java.util.List;
 import java.util.ResourceBundle;
 
 /**
@@ -34,7 +35,7 @@ public class ShoppingCartController implements Initializable {
 
     private ShoppingCart shoppingCart;
     private IMatDataHandler dataHandler;
-    Image shoppincart = new Image("/Imat/Images/ShoppingCart.png");
+    private Image shoppingCartImage = new Image("/iMat/Images/ShoppingCart.png");
 
     public void injectMainController(MainController mainController) {
         this.mainController = mainController;
@@ -44,7 +45,7 @@ public class ShoppingCartController implements Initializable {
     synchronized public void initialize(URL location, ResourceBundle resources) {
         dataHandler = IMatDataHandler.getInstance();
         shoppingCart = dataHandler.getShoppingCart();
-        goToCartButton.setGraphic(new ImageView(shoppincart));
+        goToCartButton.setGraphic(new ImageView(shoppingCartImage));
 
         shoppingCart.addProduct(dataHandler.getProduct(1));
         shoppingCart.addProduct(dataHandler.getProduct(2));
