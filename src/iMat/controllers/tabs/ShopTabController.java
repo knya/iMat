@@ -55,10 +55,19 @@ public class ShopTabController implements Initializable {
         productCategoryLabel.setText("Sökresultat");
         productObservableList.addAll(productList);
 
+
         return productObservableList;
     }
 
     public void injectTabController(TabController tabController) {
         this.tabController = tabController;
     }
+
+    public ObservableList<Product> setProductObservableList(ObservableList<Product> productList){
+        productObservableList.clear();
+        productObservableList.addAll(productList);
+        return productObservableList;
+    }
+
+
 }

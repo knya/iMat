@@ -40,6 +40,7 @@ public class ShopProductCell extends ListCell<Product> {
             setGraphic(cellController.getAnchorPane());
             cellController.inject(product);
             cellController.setLabels();
+
         }
     }
 }

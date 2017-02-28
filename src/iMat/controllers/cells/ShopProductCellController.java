@@ -4,13 +4,12 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
-import se.chalmers.ait.dat215.project.IMatDataHandler;
-import se.chalmers.ait.dat215.project.Product;
-import se.chalmers.ait.dat215.project.ShoppingCart;
-import se.chalmers.ait.dat215.project.ShoppingItem;
+import se.chalmers.ait.dat215.project.*;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -27,6 +26,8 @@ public class ShopProductCellController extends AbstractCellController {
 
     private IMatDataHandler dataHandler = IMatDataHandler.getInstance();
     private ShoppingCart shoppingCart = dataHandler.getShoppingCart();
+
+    Image favouriteIcon = new Image("/iMat/Images/apple-red-icon.png");
 
     private Product product;
 
