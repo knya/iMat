@@ -44,6 +44,8 @@ public class ShopProductCellController extends AbstractCellController {
 
         if (getProductsInShoppingCart().contains(product)) {
             addToCartButton.setDisable(true);
+        } else {
+            addToCartButton.setDisable(false);
         }
     }
 
@@ -57,12 +59,15 @@ public class ShopProductCellController extends AbstractCellController {
 
     @FXML
     private void addToCartActionPerformed(ActionEvent event) {
-        if (getProductsInShoppingCart().contains(product)) {
-            increaseQuantity(product);
-        } else {
-            shoppingCart.addProduct(product);
-            addToCartButton.setDisable(true);
-        }
+        shoppingCart.addProduct(product);
+        addToCartButton.setDisable(true);
+
+//        if (getProductsInShoppingCart().contains(product)) {
+//            addToCartButton.setDisable(false);
+//        } else {
+//            shoppingCart.addProduct(product);
+//            addToCartButton.setDisable(true);
+//        }
     }
 
     @FXML
