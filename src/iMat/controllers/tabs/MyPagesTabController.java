@@ -5,7 +5,6 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
-import se.chalmers.ait.dat215.project.Customer;
 import se.chalmers.ait.dat215.project.IMatDataHandler;
 
 import java.net.URL;
@@ -34,7 +33,7 @@ public class MyPagesTabController implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
-        socialSecurityNumberField.setText("940517");
+        socialSecurityNumberField.setText(dataHandler.getUser().getUserName());
         firstNameField.setText(dataHandler.getCustomer().getFirstName());
         lastNameField.setText(dataHandler.getCustomer().getLastName());
         addressField.setText(dataHandler.getCustomer().getAddress());
