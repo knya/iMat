@@ -27,13 +27,12 @@ public class ShopProductCellController extends AbstractCellController {
     private IMatDataHandler dataHandler = IMatDataHandler.getInstance();
     private ShoppingCart shoppingCart = dataHandler.getShoppingCart();
 
-    Image favouriteIcon = new Image("/iMat/Images/apple-red-icon.png");
-
     private Product product;
 
     public void setLabels() {
         productNameLabel.setText(product.getName());
         productImageView.setImage(dataHandler.getFXImage(product));
+        addToFavoritesButton.setGraphic(new ImageView("/Imat/Images/EmptyStar.png"));
     }
 
     public AnchorPane getAnchorPane() {
@@ -58,9 +57,11 @@ public class ShopProductCellController extends AbstractCellController {
         if (!dataHandler.isFavorite(product)) {
             dataHandler.addFavorite(product);
             addToFavoritesButton.setText("Ta bort från favoriter");
+            addToFavoritesButton.setGraphic(new ImageView("/Imat/Images/Fullstar.png"));
         } else {
             dataHandler.removeFavorite(product);
             addToFavoritesButton.setText("Lägg till som favorit");
+            addToFavoritesButton.setGraphic(new ImageView(("/Imat/Images/EmptyStar.png")));
         }
 
 
