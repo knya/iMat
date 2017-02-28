@@ -9,7 +9,6 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import se.chalmers.ait.dat215.project.*;
 
-import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -23,19 +22,24 @@ public class ShopProductCellController extends AbstractCellController {
     @FXML private AnchorPane shopProductCellPane;
     @FXML private Button addToCartButton;
     @FXML private Button addToFavoritesButton;
+    @FXML private ImageView favoriteButtonImage;
 
     private IMatDataHandler dataHandler = IMatDataHandler.getInstance();
     private ShoppingCart shoppingCart = dataHandler.getShoppingCart();
+
+    private Image fullStar = new Image("/iMat/Images/FullStar.png");
+    private Image emptyStar = new Image("/iMat/Images/EmptyStar.png");
 
     private Product product;
 
     public void setLabels() {
         productNameLabel.setText(product.getName());
         productImageView.setImage(dataHandler.getFXImage(product));
-        if(dataHandler.isFavorite(product)){
-            addToFavoritesButton.setGraphic(new ImageView("/Imat/Images/FullStar.png"));
-        }else{
-            addToFavoritesButton.setGraphic(new ImageView("/Imat/Images/EmptyStar.png"));
+
+        if (dataHandler.isFavorite(product)) {
+            favoriteButtonImage.setImage(fullStar);
+        } else {
+            favoriteButtonImage.setImage(emptyStar);
         }
     }
 
@@ -60,16 +64,11 @@ public class ShopProductCellController extends AbstractCellController {
     private void addToFavoritesActionPerformed(ActionEvent event) {
         if (!dataHandler.isFavorite(product)) {
             dataHandler.addFavorite(product);
-            addToFavoritesButton.setText("Ta bort från favoriter");
-            addToFavoritesButton.setGraphic(new ImageView("/Imat/Images/Fullstar.png"));
+            favoriteButtonImage.setImage(fullStar);
         } else {
             dataHandler.removeFavorite(product);
-            addToFavoritesButton.setText("Lägg till som favorit");
-            addToFavoritesButton.setGraphic(new ImageView(("/Imat/Images/EmptyStar.png")));
+            favoriteButtonImage.setImage(emptyStar);
         }
-
-
-
     }
 
     private void increaseQuantity(Product product) {
