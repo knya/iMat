@@ -5,13 +5,13 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="383.0" prefWidth="547.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="iMat.controllers.tabs.MyPagesTabController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="461.0" prefWidth="586.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="iMat.controllers.tabs.MyPagesTabController">
    <children>
-      <ScrollPane prefHeight="400.0" prefWidth="600.0">
+      <ScrollPane prefHeight="477.0" prefWidth="586.0">
          <content>
-            <AnchorPane prefHeight="380.0" prefWidth="560.0">
+            <AnchorPane prefHeight="397.0" prefWidth="598.0">
                <children>
-                  <AnchorPane layoutY="10.0" prefHeight="160.0" prefWidth="346.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
+                  <AnchorPane layoutY="10.0" prefHeight="217.0" prefWidth="578.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
                      <children>
                         <Separator layoutX="11.0" layoutY="35.0" prefHeight="5.0" prefWidth="325.0" />
                         <Label layoutX="10.0" layoutY="10.0" text="Personliga uppgifter:">
@@ -21,13 +21,17 @@
                         </Label>
                         <Label layoutX="15.0" layoutY="45.0" text="Personnummer (ÅÅMMDDXXXX):" />
                         <Label layoutX="15.0" layoutY="100.0" text="Förnamn:" />
-                        <Label layoutX="150.0" layoutY="100.0" text="Efternamn:" />
+                        <Label layoutX="145.0" layoutY="100.0" text="Efternamn:" />
                         <TextField fx:id="firstNameField" layoutX="10.0" layoutY="120.0" prefHeight="22.0" prefWidth="120.0" promptText="Förnamn" />
                         <TextField fx:id="lastNameField" layoutX="145.0" layoutY="120.0" prefHeight="22.0" prefWidth="120.0" promptText="Efternamn" />
                         <TextField fx:id="socialSecurityNumberField" editable="false" layoutX="10.0" layoutY="65.0" prefHeight="22.0" prefWidth="250.0" promptText="Personnummer" />
+                        <Label layoutX="15.0" layoutY="163.0" text="Telefon:" />
+                        <TextField fx:id="phoneNumberField" layoutX="15.0" layoutY="180.0" prefHeight="27.0" prefWidth="116.0" />
+                        <Label layoutX="145.0" layoutY="163.0" text="Mobiltelefon:" />
+                        <TextField fx:id="mobilePhoneNumberField" layoutX="145.0" layoutY="180.0" prefHeight="27.0" prefWidth="121.0" />
                      </children>
                   </AnchorPane>
-                  <AnchorPane layoutY="170.0" prefHeight="300.0" prefWidth="400.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="170.0">
+                  <AnchorPane layoutX="10.0" layoutY="227.0" prefHeight="233.0" prefWidth="578.0" AnchorPane.bottomAnchor="-63.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="227.0">
                      <children>
                         <TextField fx:id="cityField" layoutX="145.0" layoutY="150.0" prefHeight="22.0" prefWidth="120.0" promptText="Stad" />
                         <TextField fx:id="postCodeField" layoutX="10.0" layoutY="150.0" prefHeight="22.0" prefWidth="120.0" promptText="Postkod" />

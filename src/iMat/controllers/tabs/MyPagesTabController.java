@@ -25,6 +25,8 @@ public class MyPagesTabController implements Initializable {
     @FXML private TextField socialSecurityNumberField;
     @FXML private TextField firstNameField;
     @FXML private TextField lastNameField;
+    @FXML private TextField phoneNumberField;
+    @FXML private TextField mobilePhoneNumberField;
 
     @FXML private TextField addressField;
     @FXML private TextField postCodeField;
@@ -38,6 +40,8 @@ public class MyPagesTabController implements Initializable {
         socialSecurityNumberField.setText(dataHandler.getUser().getUserName());
         firstNameField.setText(dataHandler.getCustomer().getFirstName());
         lastNameField.setText(dataHandler.getCustomer().getLastName());
+        phoneNumberField.setText(dataHandler.getCustomer().getPhoneNumber());
+        mobilePhoneNumberField.setText(dataHandler.getCustomer().getMobilePhoneNumber());
         addressField.setText(dataHandler.getCustomer().getAddress());
         postCodeField.setText(dataHandler.getCustomer().getPostCode());
         cityField.setText(dataHandler.getCustomer().getPostAddress());
@@ -53,6 +57,20 @@ public class MyPagesTabController implements Initializable {
             @Override
             public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
                 dataHandler.getCustomer().setLastName(newValue);
+            }
+        });
+
+        phoneNumberField.textProperty().addListener(new ChangeListener<String>() {
+            @Override
+            public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
+                dataHandler.getCustomer().setPhoneNumber(newValue);
+            }
+        });
+
+        mobilePhoneNumberField.textProperty().addListener(new ChangeListener<String>() {
+            @Override
+            public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
+                dataHandler.getCustomer().setMobilePhoneNumber(newValue);
             }
         });
 
