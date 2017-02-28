@@ -13,5 +13,14 @@
             <Font size="16.0" />
          </font>
       </Button>
+      <Label layoutX="20.0" layoutY="14.0" text="Kundvagn">
+         <font>
+            <Font size="21.0" />
+         </font>
+      </Label>
+      <Label fx:id="nameLabel" layoutX="20.0" layoutY="82.0" text="Namn" />
+      <Label fx:id="amountLabel" layoutX="100.0" layoutY="82.0" text="Antal" />
+      <Label fx:id="priceLabel" layoutX="180.0" layoutY="82.0" text="Pris" />
+      <Label fx:id="sumLabel" layoutX="260.0" layoutY="82.0" prefHeight="14.0" prefWidth="41.0" text="Summa" />
    </children>
 </AnchorPane>
