@@ -1,6 +1,6 @@
 package iMat.controllers.tabs;
 
-import iMat.cells.ShoppingItemCartCell;
+import iMat.cells.OrderCartCell;
 import iMat.controllers.TabController;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -16,7 +16,7 @@ import java.util.ResourceBundle;
 /**
  * Created by JOHAN on 2017-02-25.
  */
-public class ShoppingCartTabController implements Initializable {
+public class OrderTabController implements Initializable {
 
     private TabController tabController;
 
@@ -28,7 +28,7 @@ public class ShoppingCartTabController implements Initializable {
     public void initialize(URL location, ResourceBundle resources) {
 
         shoppingItemListView.setItems(refreshItemListView());
-        shoppingItemListView.setCellFactory(shoppingItemListView -> new ShoppingItemCartCell());
+        shoppingItemListView.setCellFactory(shoppingItemListView -> new OrderCartCell());
 
         dataHandler.getShoppingCart().addShoppingCartListener(cartEvent -> {
             shoppingItemListView.setItems(refreshItemListView());

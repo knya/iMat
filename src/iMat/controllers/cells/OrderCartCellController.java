@@ -8,7 +8,7 @@ import se.chalmers.ait.dat215.project.ShoppingItem;
 /**
  * Created by Johan on 2017-02-28.
  */
-public class ShoppingItemCartCellController extends AbstractCellController {
+public class OrderCartCellController extends AbstractCellController {
 
     @FXML private Label nameLabel;
     @FXML private AnchorPane shoppingItemCellPane;

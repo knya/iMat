@@ -10,15 +10,15 @@ import java.io.IOException;
 /**
  * Created by Johan on 2017-02-28.
  */
-public class ShoppingItemCartCell extends ListCell<ShoppingItem> {
+public class OrderCartCell extends ListCell<ShoppingItem> {
 
     private ICellController cellController;
 
     private FXMLLoader fxmlLoader;
 
-    public ShoppingItemCartCell() {
+    public OrderCartCell() {
         if (fxmlLoader == null) {
-            fxmlLoader = new FXMLLoader(getClass().getResource("/iMat/fxmls/cells/ShoppingItemCartCell.fxml"));
+            fxmlLoader = new FXMLLoader(getClass().getResource("/iMat/fxmls/cells/OrderCartCell.fxml"));
 
             try {
                 fxmlLoader.load();

@@ -37,7 +37,7 @@
            <content>
                <AnchorPane prefHeight="200.0" prefWidth="200.0">
                    <children>
-                       <fx:include fx:id="shoppingCartTab" source="tabs/ShoppingCartTab.fxml" />
+                       <fx:include fx:id="orderTab" source="tabs/OrderTab.fxml" />
                    </children>
                </AnchorPane>
            </content>
