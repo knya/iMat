@@ -14,6 +14,8 @@ public class Main extends Application {
         Parent root = FXMLLoader.load(getClass().getResource("fxmls/Main.fxml"));
         primaryStage.setTitle("iMat");
         primaryStage.setScene(new Scene(root, 1024, 768));
+        primaryStage.setMinHeight(768);
+        primaryStage.setMinWidth(1024);
         primaryStage.show();
     }
 

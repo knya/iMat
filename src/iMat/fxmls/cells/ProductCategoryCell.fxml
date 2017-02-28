@@ -5,9 +5,9 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane fx:id="productCategoryCellPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="60.0" prefWidth="250.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="iMat.controllers.cells.ProductCategoryCellController">
+<AnchorPane fx:id="productCategoryCellPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="60.0" prefWidth="205.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="iMat.controllers.cells.ProductCategoryCellController">
    <children>
-      <Label fx:id="nameLabel" layoutX="5.0" layoutY="20.0" prefHeight="20.0" prefWidth="230.0" text="Label">
+      <Label fx:id="nameLabel" layoutX="5.0" layoutY="20.0" prefHeight="20.0" prefWidth="205.0" text="Label">
          <font>
             <Font name="Lucida Sans Demibold" size="20.0" />
          </font></Label>
