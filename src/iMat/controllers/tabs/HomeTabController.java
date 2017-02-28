@@ -19,7 +19,7 @@ public class HomeTabController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        kampanjLabel.setText("testar");
+        kampanjLabel.setText("Hem");
     }
 
     public void injectTabController(TabController tabController) {

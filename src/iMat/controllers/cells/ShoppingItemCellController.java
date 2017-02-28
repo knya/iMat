@@ -1,6 +1,8 @@
 package iMat.controllers.cells;
 
 import com.sun.javafx.robot.FXRobotImage;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -28,23 +30,9 @@ public class ShoppingItemCellController extends AbstractCellController {
     @FXML private Button decreaseButton;
     @FXML private AnchorPane shoppingItemPane;
 
-
-
     private IMatDataHandler dataHandler = IMatDataHandler.getInstance();
 
     private ShoppingItem shoppingItem;
-
-
-
-//    @Override
-//    public void initialize(URL location, ResourceBundle resources) {
-//        dataHandler = IMatDataHandler.getInstance();
-//    }
-
-//    public void injectShoppingItem(ShoppingItem shoppingItem) {
-//        this.shoppingItem = shoppingItem;
-//    }
-
 
     public void inject(ShoppingItem shoppingItem) {
         this.shoppingItem = shoppingItem;
@@ -70,7 +58,6 @@ public class ShoppingItemCellController extends AbstractCellController {
     private void increaseButtonActionPerformed(ActionEvent event) {
         shoppingItem.setAmount(shoppingItem.getAmount() + 1);
         setLabels();
-
 
         notifyShoppingCart(shoppingItem,true);
 
