@@ -2,6 +2,8 @@ package iMat.controllers;
 
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.geometry.Orientation;
+import javafx.scene.control.SplitPane;
 import javafx.scene.control.TabPane;
 import javafx.scene.layout.AnchorPane;
 
@@ -13,7 +15,8 @@ public class MainController implements Initializable {
     @FXML private AnchorPane search;
     @FXML private AnchorPane categories;
     @FXML private TabPane tab;
-    @FXML private AnchorPane shoppingCart;
+    @FXML private AnchorPane shopping;
+    @FXML private AnchorPane tabsAnchorPane;
 
     @FXML private SearchController searchController;
     @FXML private ShoppingCartController shoppingCartController;
@@ -26,6 +29,13 @@ public class MainController implements Initializable {
         shoppingCartController.injectMainController(this);
         tabController.injectMainController(this);
         categoriesController.injectMainController(this);
+        search.setMinHeight(100);
+        search.setMaxHeight(100);
+        categories.setMinWidth(250);
+        categories.setMaxWidth(250);
+        shopping.setMinWidth(250);
+        shopping.setMaxWidth(250);
+        tabsAnchorPane.setMinSize(524,608);
     }
 
     public TabController getTabController() {
