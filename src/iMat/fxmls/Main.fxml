@@ -34,9 +34,9 @@
                   <fx:include fx:id="categories" source="Categories.fxml" />
                </children>
             </AnchorPane>
-            <SplitPane dividerPositions="0.2" orientation="VERTICAL" prefHeight="568.0" prefWidth="318.0">
+            <SplitPane dividerPositions="0.2" orientation="VERTICAL" prefHeight="568.0" prefWidth="318.0" stylesheets="@../css/centerBackground.css">
               <items>
-                  <AnchorPane fx:id="search" prefHeight="200.0" prefWidth="200.0" SplitPane.resizableWithParent="false">
+                  <AnchorPane fx:id="search" prefHeight="200.0" prefWidth="200.0" stylesheets="@../css/centerBackground.css" SplitPane.resizableWithParent="false">
                      <children>
                         <fx:include fx:id="search" source="Search.fxml" />
                      </children>

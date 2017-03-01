@@ -1,29 +1,16 @@
 
 .button{
-    -fx-background-color: #0A65BF;
+    -fx-background-color: #fecaa0;
     -fx-font-size: 12pt;
-    -fx-text-fill: white;
+    -fx-text-fill: #4b4b4b;
 }
 
 
-/*
-.label{
-    -fx-font-size: 15pt;
-}
-
-.list-cell{
-
-    -fx-font-size: 13pt;
-}*/
-.tab-pane{
-    -fx-font-size: 14pt;
-}
-/*
-.split-pane:horizontal > .split-pane-divider {
-    -fx-background-color: transparent;
-}*/
 .split-pane:vertical > .split-pane-divider {
     -fx-background-color: transparent;
+}
+.split-pane{
+    -fx-background-color: white;
 }
 
 
