@@ -37,14 +37,7 @@ public class MyPagesTabController implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
-        socialSecurityNumberField.setText(dataHandler.getUser().getUserName());
-        firstNameField.setText(dataHandler.getCustomer().getFirstName());
-        lastNameField.setText(dataHandler.getCustomer().getLastName());
-        phoneNumberField.setText(dataHandler.getCustomer().getPhoneNumber());
-        mobilePhoneNumberField.setText(dataHandler.getCustomer().getMobilePhoneNumber());
-        addressField.setText(dataHandler.getCustomer().getAddress());
-        postCodeField.setText(dataHandler.getCustomer().getPostCode());
-        cityField.setText(dataHandler.getCustomer().getPostAddress());
+        setLabels();
 
         firstNameField.textProperty().addListener(new ChangeListener<String>() {
             @Override
@@ -94,6 +87,17 @@ public class MyPagesTabController implements Initializable {
                 dataHandler.getCustomer().setPostAddress(newValue);
             }
         });
+    }
+
+    private void setLabels() {
+        socialSecurityNumberField.setText(dataHandler.getUser().getUserName());
+        firstNameField.setText(dataHandler.getCustomer().getFirstName());
+        lastNameField.setText(dataHandler.getCustomer().getLastName());
+        phoneNumberField.setText(dataHandler.getCustomer().getPhoneNumber());
+        mobilePhoneNumberField.setText(dataHandler.getCustomer().getMobilePhoneNumber());
+        addressField.setText(dataHandler.getCustomer().getAddress());
+        postCodeField.setText(dataHandler.getCustomer().getPostCode());
+        cityField.setText(dataHandler.getCustomer().getPostAddress());
     }
 
     public void injectTabController(TabController tabController) {
