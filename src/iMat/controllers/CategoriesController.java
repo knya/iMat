@@ -8,10 +8,12 @@ import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.ListView;
+import se.chalmers.ait.dat215.project.Product;
 import se.chalmers.ait.dat215.project.ProductCategory;
 
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.ResourceBundle;
 
@@ -25,6 +27,46 @@ public class CategoriesController implements Initializable {
     @FXML private ListView<List<ProductCategory>> productCategoryListView;
     private ObservableList<List<ProductCategory>> productCategoryListObservableList;
 
+    private List<ProductCategory> allCategories = new ArrayList<>(Arrays.asList(
+            ProductCategory.values()
+    ));
+
+    private List<ProductCategory> fruitAndBerriesCategory = new ArrayList<>(Arrays.asList(
+            CITRUS_FRUIT, EXOTIC_FRUIT, MELONS, FRUIT, BERRY
+    ));
+
+    private List<ProductCategory> breadCategory = new ArrayList<>(Arrays.asList(
+            BREAD
+    ));
+
+    private List<ProductCategory> vegetablesCategory = new ArrayList<>(Arrays.asList(
+            CABBAGE, VEGETABLE_FRUIT, ROOT_VEGETABLE, HERB, POD
+    ));
+
+    private List<ProductCategory> meatCategory = new ArrayList<>(Arrays.asList(
+        FISH, MEAT
+    ));
+
+    private List<ProductCategory> pantryCategory = new ArrayList<>(Arrays.asList(
+            HOT_DRINKS, FLOUR_SUGAR_SALT, NUTS_AND_SEEDS
+    ));
+
+    private List<ProductCategory> dairyCategory = new ArrayList<>(Arrays.asList(
+            DAIRIES
+    ));
+
+    private List<ProductCategory> drinksCategory = new ArrayList<>(Arrays.asList(
+            COLD_DRINKS
+    ));
+
+    private List<ProductCategory> sweetsCategory = new ArrayList<>(Arrays.asList(
+            SWEET
+    ));
+
+    private List<ProductCategory> carbsCategory = new ArrayList<>(Arrays.asList(
+                PASTA, POTATO_RICE
+    ));
+
     private MainController mainController;
 
     public void injectMainController(MainController mainController) {
@@ -34,12 +76,12 @@ public class CategoriesController implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
-        List<ProductCategory> fruitCategory = new ArrayList<>();
-        fruitCategory.add(CITRUS_FRUIT);
-        fruitCategory.add(EXOTIC_FRUIT);
-
         productCategoryListObservableList = FXCollections.observableArrayList();
-        productCategoryListObservableList.add(fruitCategory);
+        productCategoryListObservableList.addAll(
+                allCategories, fruitAndBerriesCategory, breadCategory, vegetablesCategory,
+                meatCategory, pantryCategory, dairyCategory, drinksCategory, sweetsCategory,
+                carbsCategory
+        );
 
         productCategoryListView.setItems(productCategoryListObservableList);
         productCategoryListView.setCellFactory(productCategoryListView -> new ProductCategoryCell());
