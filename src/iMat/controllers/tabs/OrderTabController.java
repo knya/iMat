@@ -66,7 +66,7 @@ public class OrderTabController implements Initializable {
         Parent root = FXMLLoader.load(getClass().getResource("/iMat/fxmls/stages/ConfirmationStage.fxml"));
         Stage confirmationStage = new Stage();
         confirmationStage.setScene(new Scene(root));
-        confirmationStage.initModality(Modality.APPLICATION_MODAL);
+//        confirmationStage.initModality(Modality.APPLICATION_MODAL);
         confirmationStage.setTitle("Bekräfta beställning");
         confirmationStage.setResizable(false);
         confirmationStage.showAndWait();
