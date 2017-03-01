@@ -19,10 +19,13 @@ public class ShopProductCellController extends AbstractCellController {
 
     @FXML private Label productNameLabel;
     @FXML private Label productPriceLabel;
+    @FXML private Label productAmountLabel;
     @FXML private ImageView productImageView;
     @FXML private AnchorPane shopProductCellPane;
     @FXML private Button addToCartButton;
     @FXML private Button addToFavoritesButton;
+    @FXML private Button increaseButton;
+    @FXML private Button decreaseButton;
     @FXML private ImageView favoriteButtonImage;
 
     private IMatDataHandler dataHandler = IMatDataHandler.getInstance();
@@ -32,11 +35,13 @@ public class ShopProductCellController extends AbstractCellController {
     private Image emptyStar = new Image("/iMat/Images/EmptyStar.png");
 
     private Product product;
+    private double quantity = 1.0;
 
     public void setLabels() {
         productNameLabel.setText(product.getName());
         productImageView.setImage(dataHandler.getFXImage(product));
         productPriceLabel.setText(String.valueOf(product.getPrice()) + ":-");
+        productAmountLabel.setText(String.valueOf(1.0));
 
         if (dataHandler.isFavorite(product)) {
             favoriteButtonImage.setImage(fullStar);
@@ -45,9 +50,9 @@ public class ShopProductCellController extends AbstractCellController {
         }
 
         if (getProductsInShoppingCart().contains(product)) {
-            addToCartButton.setDisable(true);
+            disableButtons(true);
         } else {
-            addToCartButton.setDisable(false);
+            disableButtons(false);
         }
     }
 
@@ -61,15 +66,9 @@ public class ShopProductCellController extends AbstractCellController {
 
     @FXML
     private void addToCartActionPerformed(ActionEvent event) {
-        shoppingCart.addProduct(product);
-        addToCartButton.setDisable(true);
-
-//        if (getProductsInShoppingCart().contains(product)) {
-//            addToCartButton.setDisable(false);
-//        } else {
-//            shoppingCart.addProduct(product);
-//            addToCartButton.setDisable(true);
-//        }
+        shoppingCart.addProduct(product, quantity);
+        productAmountLabel.setText(String.valueOf(1.0));
+        disableButtons(true);
     }
 
     @FXML
@@ -81,6 +80,26 @@ public class ShopProductCellController extends AbstractCellController {
             dataHandler.removeFavorite(product);
             favoriteButtonImage.setImage(emptyStar);
         }
+    }
+
+    @FXML
+    private void increaseButtonActionPerformed(ActionEvent event) {
+        quantity = quantity + 1.0;
+        productAmountLabel.setText(String.valueOf(quantity));
+    }
+
+    @FXML
+    private void decreaseButtonActionPerformed(ActionEvent event) {
+        if(quantity > 1.0) {
+            quantity = quantity - 1;
+        }
+        productAmountLabel.setText(String.valueOf(quantity));
+    }
+
+    private void disableButtons(boolean b) {
+        addToCartButton.setDisable(b);
+        increaseButton.setDisable(b);
+        decreaseButton.setDisable(b);
     }
 
     private void increaseQuantity(Product product) {
