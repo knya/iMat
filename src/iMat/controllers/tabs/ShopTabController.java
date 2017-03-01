@@ -13,6 +13,7 @@ import se.chalmers.ait.dat215.project.Product;
 import se.chalmers.ait.dat215.project.ProductCategory;
 
 import java.net.URL;
+import java.util.Comparator;
 import java.util.List;
 import java.util.ResourceBundle;
 
@@ -55,9 +56,12 @@ public class ShopTabController implements Initializable {
     public ObservableList<Product> setProductCategoryObservableList(List<ProductCategory> productCategoryList) {
         productObservableList.clear();
 
+        Comparator<Product> comparator = Comparator.comparingInt(Product::getProductId);
+
         for (ProductCategory i : productCategoryList) {
             productObservableList.addAll(dataHandler.getProducts(i));
         }
+        productObservableList.sort(comparator);
         return productObservableList;
     }
 }
