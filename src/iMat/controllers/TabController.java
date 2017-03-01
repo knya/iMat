@@ -36,9 +36,9 @@ public class TabController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        homeTabController.injectTabController(this);
-        shopTabController.injectTabController(this);
-        myPagesTabController.injectTabController(this);
+        homeTabController.inject(this);
+        shopTabController.inject(this);
+        myPagesTabController.inject(this);
         orderTabController.inject(this);
     }
 

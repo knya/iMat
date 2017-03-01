@@ -100,7 +100,7 @@ public class MyPagesTabController implements Initializable {
         cityField.setText(dataHandler.getCustomer().getPostAddress());
     }
 
-    public void injectTabController(TabController tabController) {
+    public void inject(TabController tabController) {
         this.tabController = tabController;
     }
 }

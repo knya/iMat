@@ -59,7 +59,7 @@ public class ShopTabController implements Initializable {
         return productObservableList;
     }
 
-    public void injectTabController(TabController tabController) {
+    public void inject(TabController tabController) {
         this.tabController = tabController;
     }
 

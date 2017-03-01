@@ -22,7 +22,7 @@ public class HomeTabController implements Initializable {
         kampanjLabel.setText("Hem");
     }
 
-    public void injectTabController(TabController tabController) {
+    public void inject(TabController tabController) {
         this.tabController = tabController;
     }
 }
