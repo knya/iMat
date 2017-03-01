@@ -11,7 +11,7 @@
       <ImageView fx:id="productImageView" fitHeight="80.0" fitWidth="83.0" layoutX="14.0" layoutY="11.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="20" />
       <Label fx:id="productNameLabel" layoutX="107.0" layoutY="14.0" text="Namn" AnchorPane.leftAnchor="110.0" AnchorPane.topAnchor="20.0" />
       <Button fx:id="addToCartButton" layoutX="300.0" layoutY="20.0" mnemonicParsing="false" onAction="#addToCartActionPerformed" text="Lägg till i kundvagn" AnchorPane.rightAnchor="30.0" AnchorPane.topAnchor="20.0" />
-      <Button fx:id="addToFavoritesButton" layoutX="260.0" layoutY="17.0" mnemonicParsing="false" onAction="#addToFavoritesActionPerformed" prefHeight="17.0" prefWidth="16.0" AnchorPane.leftAnchor="260.0" AnchorPane.topAnchor="17.0">
+      <Button fx:id="addToFavoritesButton" layoutX="260.0" layoutY="17.0" mnemonicParsing="false" onAction="#addToFavoritesActionPerformed" prefHeight="17.0" prefWidth="16.0" AnchorPane.leftAnchor="260.0" AnchorPane.topAnchor="20.0">
          <graphic>
             <ImageView fx:id="favoriteButtonImage" fitHeight="26.0" fitWidth="23.0" pickOnBounds="true" preserveRatio="true" />
          </graphic></Button>

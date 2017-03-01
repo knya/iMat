@@ -68,6 +68,4 @@ public class ShopTabController implements Initializable {
         productObservableList.addAll(productList);
         return productObservableList;
     }
-
-
 }
