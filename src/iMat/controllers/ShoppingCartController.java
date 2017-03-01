@@ -24,12 +24,10 @@ import java.util.ResourceBundle;
 public class ShoppingCartController implements Initializable {
 
     private MainController mainController;
-    private ShoppingItemCellController shoppingItemCellController;
 
     @FXML private ListView<ShoppingItem> shoppingItemListView;
     @FXML private Button goToCartButton;
     @FXML private Label totalLabel;
-
 
     private ObservableList<ShoppingItem> shoppingItemObservableList;
 
@@ -42,7 +40,7 @@ public class ShoppingCartController implements Initializable {
     }
 
     @Override
-    synchronized public void initialize(URL location, ResourceBundle resources) {
+    public void initialize(URL location, ResourceBundle resources) {
         dataHandler = IMatDataHandler.getInstance();
         shoppingCart = dataHandler.getShoppingCart();
         goToCartButton.setGraphic(new ImageView(shoppingCartImage));

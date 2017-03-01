@@ -34,19 +34,9 @@ public class ShopTabController implements Initializable {
     public void initialize(URL location, ResourceBundle resources) {
 
         productObservableList = FXCollections.observableArrayList();
-        productObservableList.addAll(dataHandler.getProducts());
 
         shopProductListView.setItems(productObservableList);
         shopProductListView.setCellFactory(productListView -> new ShopProductCell());
-    }
-
-    public ObservableList<Product> setProductObservableList(ProductCategory productCategory) {
-        productObservableList.clear();
-
-        productCategoryLabel.setText(String.valueOf(productCategory));
-        productObservableList.addAll(dataHandler.getProducts(productCategory));
-
-        return productObservableList;
     }
 
     public ObservableList<Product> setProductObservableList(List<Product> productList) {
@@ -55,7 +45,6 @@ public class ShopTabController implements Initializable {
         productCategoryLabel.setText("Sökresultat");
         productObservableList.addAll(productList);
 
-
         return productObservableList;
     }
 
@@ -63,9 +52,12 @@ public class ShopTabController implements Initializable {
         this.tabController = tabController;
     }
 
-    public ObservableList<Product> setProductObservableList(ObservableList<Product> productList){
+    public ObservableList<Product> setProductCategoryObservableList(List<ProductCategory> productCategoryList) {
         productObservableList.clear();
-        productObservableList.addAll(productList);
+
+        for (ProductCategory i : productCategoryList) {
+            productObservableList.addAll(dataHandler.getProducts(i));
+        }
         return productObservableList;
     }
 }

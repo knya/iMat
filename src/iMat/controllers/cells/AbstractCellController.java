@@ -6,6 +6,7 @@ import se.chalmers.ait.dat215.project.ProductCategory;
 import se.chalmers.ait.dat215.project.ShoppingItem;
 
 import java.net.URL;
+import java.util.List;
 import java.util.ResourceBundle;
 
 /**
@@ -15,7 +16,7 @@ public abstract class AbstractCellController implements ICellController {
 
     private ICellController cellController;
 
-    private ProductCategory productCategory;
+    private List<ProductCategory> productCategoryList;
     private ShoppingItem shoppingItem;
     private Product product;
 
@@ -31,8 +32,8 @@ public abstract class AbstractCellController implements ICellController {
     public abstract void setLabels();
 
     @Override
-    public void inject(ProductCategory productCategory) {
-        this.productCategory = productCategory;
+    public void inject(List<ProductCategory> productCategoryList) {
+        this.productCategoryList = productCategoryList;
     }
 
     @Override

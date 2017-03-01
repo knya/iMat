@@ -7,11 +7,12 @@ import javafx.scene.control.ListCell;
 import se.chalmers.ait.dat215.project.ProductCategory;
 
 import java.io.IOException;
+import java.util.List;
 
 /**
  * Created by Johan on 2017-02-23.
  */
-public class ProductCategoryCell extends ListCell<ProductCategory> {
+public class ProductCategoryCell extends ListCell<List<ProductCategory>> {
 
     private FXMLLoader fxmlLoader;
 
@@ -31,15 +32,15 @@ public class ProductCategoryCell extends ListCell<ProductCategory> {
     }
 
     @Override
-    protected void updateItem(ProductCategory productCategory, boolean empty) {
+    protected void updateItem(List<ProductCategory> productCategoryList, boolean empty) {
 
-        super.updateItem(productCategory, empty);
+        super.updateItem(productCategoryList, empty);
 
-        if(empty || productCategory == null) {
+        if(empty || productCategoryList == null) {
             setGraphic(null);
         } else {
             setGraphic(cellController.getAnchorPane());
-            cellController.inject(productCategory);
+            cellController.inject(productCategoryList);
             cellController.setLabels();
 
         }
