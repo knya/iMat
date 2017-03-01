@@ -1,0 +1,29 @@
+
+.button{
+    -fx-background-color: #0A65BF;
+    -fx-font-size: 12pt;
+    -fx-text-fill: white;
+}
+
+
+/*
+.label{
+    -fx-font-size: 15pt;
+}
+
+.list-cell{
+
+    -fx-font-size: 13pt;
+}*/
+.tab-pane{
+    -fx-font-size: 14pt;
+}
+/*
+.split-pane:horizontal > .split-pane-divider {
+    -fx-background-color: transparent;
+}*/
+.split-pane:vertical > .split-pane-divider {
+    -fx-background-color: transparent;
+}
+
+
