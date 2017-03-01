@@ -21,10 +21,26 @@
 .button{
     -fx-font-size: 12pt;
 }
-.tab-pane{
+.tab-pane .tab:selected{
     -fx-background-color: white;
+}
+.tab-pane .tab{
+    -fx-background-color: #fecaa0;
+}
+.tab-pane{
+    -fx-tab-min-width: 100px;
+    -fx-tab-min-height: 50px;
+    -fx-background-color: white;
+}
+.tab .tab-label {
+    -fx-alignment: CENTER;
+    -fx-text-fill: #4b4b4b;
+    -fx-font-size: 16pt;
 }
 .tab-header-area{
     -fx-font-size: 16pt;
     -fx-background-color: white;
+}
+.tab-pane:focused > .tab-header-area > .headers-region > .tab:selected .focus-indicator {
+    -fx-border-color: gray;
 }
