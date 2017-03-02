@@ -15,6 +15,7 @@ import javafx.scene.image.ImageView;
 import se.chalmers.ait.dat215.project.*;
 
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
 
@@ -31,8 +32,7 @@ public class ShoppingCartController implements Initializable {
 
     private ObservableList<ShoppingItem> shoppingItemObservableList;
 
-    private ShoppingCart shoppingCart;
-    private IMatDataHandler dataHandler;
+    private IMatDataHandler dataHandler = IMatDataHandler.getInstance();;
     private Image shoppingCartImage = new Image("/iMat/Images/ShoppingCart.png");
 
     public void injectMainController(MainController mainController) {
@@ -42,28 +42,27 @@ public class ShoppingCartController implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         dataHandler = IMatDataHandler.getInstance();
-        shoppingCart = dataHandler.getShoppingCart();
         goToCartButton.setGraphic(new ImageView(shoppingCartImage));
 
-        shoppingCart.addProduct(dataHandler.getProduct(1));
-        shoppingCart.addProduct(dataHandler.getProduct(2));
-        shoppingCart.addProduct(dataHandler.getProduct(3));
+        dataHandler.getShoppingCart().addProduct(dataHandler.getProduct(1));
+        dataHandler.getShoppingCart().addProduct(dataHandler.getProduct(2));
+        dataHandler.getShoppingCart().addProduct(dataHandler.getProduct(3));
 
-        totalLabel.setText(String.valueOf(shoppingCart.getTotal()) + ":-");
+        totalLabel.setText(String.valueOf(dataHandler.getShoppingCart().getTotal()) + ":-");
 
 
         shoppingItemListView.setItems(refreshItemListView());
         shoppingItemListView.setCellFactory(shoppingItemListView -> new ShoppingItemCell());
 
-        shoppingCart.addShoppingCartListener(cartEvent -> {
-            totalLabel.setText(String.valueOf(shoppingCart.getTotal()) + ":-");
+        dataHandler.getShoppingCart().addShoppingCartListener(cartEvent -> {
+            totalLabel.setText(String.valueOf(dataHandler.getShoppingCart().getTotal()) + ":-");
             shoppingItemListView.setItems(refreshItemListView());
         });
     }
 
     private ObservableList<ShoppingItem> refreshItemListView() {
         ObservableList<ShoppingItem> shoppingItemObservableList = FXCollections.observableArrayList();
-        shoppingItemObservableList.addAll(shoppingCart.getItems());
+        shoppingItemObservableList.addAll(dataHandler.getShoppingCart().getItems());
 
         return shoppingItemObservableList;
     }

@@ -36,7 +36,7 @@ public class ShopTabController implements Initializable {
 
 
         productObservableList = FXCollections.observableArrayList();
-        setProductObservableList(dataHandler.getProducts());
+//        setProductObservableList(dataHandler.getProducts());
         shopProductListView.setItems(productObservableList);
         shopProductListView.setCellFactory(productListView -> new ShopProductCell());
 
