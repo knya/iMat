@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane fx:id="loginScenePane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="iMatLogin.LoginController">
+   <children>
+      <Label layoutX="84.0" layoutY="14.0" text="Inloggning" />
+      <Label layoutX="42.0" layoutY="42.0" text="Användarnamn:" />
+      <TextField fx:id="userNameTextField" layoutX="43.0" layoutY="56.0" />
+      <Label layoutX="42.0" layoutY="93.0" text="Lösenord:" />
+      <TextField fx:id="passwordTextField" layoutX="43.0" layoutY="107.0" />
+      <Button layoutX="14.0" layoutY="139.0" mnemonicParsing="false" text="Glömt lösenord" />
+      <Button layoutX="120.0" layoutY="139.0" mnemonicParsing="false" onAction="#createButtonActionPerformed" text="Skapa användare" />
+      <Button layoutX="81.0" layoutY="189.0" mnemonicParsing="false" onAction="#changeSceneContent" text="Logga in" />
+      <Separator layoutX="222.0" orientation="VERTICAL" prefHeight="400.0" prefWidth="16.0" />
+      <StackPane fx:id="createAccountPane" layoutX="241.0" prefHeight="400.0" prefWidth="360.0" visible="false">
+         <children>
+            <fx:include fx:id="loginStep1" source="LoginStep1.fxml" />
+         </children>
+      </StackPane>
+   </children>
+</AnchorPane>
