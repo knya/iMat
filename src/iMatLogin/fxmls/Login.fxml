@@ -15,9 +15,23 @@
       <Button layoutX="120.0" layoutY="139.0" mnemonicParsing="false" onAction="#createButtonActionPerformed" text="Skapa användare" />
       <Button layoutX="81.0" layoutY="189.0" mnemonicParsing="false" onAction="#changeSceneContent" text="Logga in" />
       <Separator layoutX="222.0" orientation="VERTICAL" prefHeight="400.0" prefWidth="16.0" />
-      <StackPane fx:id="createAccountPane" layoutX="241.0" prefHeight="400.0" prefWidth="360.0" visible="false">
+      <StackPane fx:id="createAccountPane" layoutX="241.0" prefHeight="400.0" prefWidth="360.0">
          <children>
-            <fx:include fx:id="createAccountStep1" source="CreateAccountStep1.fxml" />
+            <AnchorPane fx:id="createAcctionStep3Pane" prefHeight="200.0" prefWidth="200.0">
+               <children>
+                  <fx:include fx:id="createAccountStep3" source="CreateAccountStep3.fxml" />
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="createAccountStep2Pane" prefHeight="200.0" prefWidth="200.0">
+               <children>
+                  <fx:include fx:id="createAccountStep2" source="CreateAccountStep2.fxml" />
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="createAccountStep1Pane" prefHeight="200.0" prefWidth="200.0">
+               <children>
+                  <fx:include fx:id="createAccountStep1" source="CreateAccountStep1.fxml" />
+               </children>
+            </AnchorPane>
          </children>
       </StackPane>
    </children>

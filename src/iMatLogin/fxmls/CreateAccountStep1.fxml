@@ -4,9 +4,8 @@
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-
-<AnchorPane fx:id="createAccountStep1" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="360.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="iMatLogin.CreateAccountStep1Controller">
+<AnchorPane id="pane2" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="360.0" stylesheets="@createAccount.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="iMatLogin.CreateAccountStep1Controller">
    <children>
-      <Button fx:id="createAccountButton" layoutX="50.0" layoutY="178.0" mnemonicParsing="false" text="Skapa konto" />
+      <Button fx:id="goForwardButton" layoutX="302.0" layoutY="364.0" mnemonicParsing="false" onAction="#goForwardActionPerformed" text="Nästa" />
    </children>
 </AnchorPane>

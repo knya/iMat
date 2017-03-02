@@ -14,6 +14,7 @@ import javafx.stage.Stage;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
+import java.util.Stack;
 
 /**
  * Created by JOHAN on 2017-03-02.
@@ -22,6 +23,9 @@ public class LoginController implements Initializable {
 
     @FXML private AnchorPane loginScenePane;
     @FXML private StackPane createAccountPane;
+    @FXML private AnchorPane createAccountStep1Pane;
+    @FXML private AnchorPane createAccountStep2Pane;
+    @FXML private AnchorPane createAcctionStep3Pane;
 
     @FXML private TextField userNameField;
     @FXML private TextField passwordField;
@@ -33,8 +37,9 @@ public class LoginController implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         createAccountStep1Controller.inject(this);
-//        createAccountStep2Controller.inject(this);
-//        createAccountStep3Controller.inject(this);
+        createAccountStep2Controller.inject(this);
+        createAccountStep3Controller.inject(this);
+        createAccountPane.setVisible(false);
     }
 
     @FXML
@@ -48,5 +53,17 @@ public class LoginController implements Initializable {
 
     @FXML protected void createButtonActionPerformed(ActionEvent event) {
         createAccountPane.setVisible(true);
+    }
+
+    public AnchorPane getCreateAccountStep1() {
+        return createAccountStep1Pane;
+    }
+
+    public AnchorPane getCreateAccountStep2() {
+        return createAccountStep2Pane;
+    }
+
+    public AnchorPane getCreateAccountStep3() {
+        return createAcctionStep3Pane;
     }
 }

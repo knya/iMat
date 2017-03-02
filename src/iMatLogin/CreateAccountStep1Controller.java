@@ -1,5 +1,6 @@
 package iMatLogin;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
@@ -14,7 +15,7 @@ public class CreateAccountStep1Controller implements Initializable {
 
     private LoginController loginController;
 
-    @FXML private Button createAccountButton;
+    @FXML private Button goForwardButton;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -23,5 +24,10 @@ public class CreateAccountStep1Controller implements Initializable {
 
     public void inject(LoginController loginController) {
         this.loginController = loginController;
+    }
+
+    @FXML
+    protected void goForwardActionPerformed(ActionEvent event) {
+        loginController.getCreateAccountStep2().toFront();
     }
 }
