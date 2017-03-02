@@ -39,53 +39,32 @@ public class MyPagesTabController implements Initializable {
 
         setLabels();
 
-        firstNameField.textProperty().addListener(new ChangeListener<String>() {
-            @Override
-            public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
-                dataHandler.getCustomer().setFirstName(newValue);
-            }
+        firstNameField.textProperty().addListener((observable, oldValue, newValue) -> {
+            dataHandler.getCustomer().setFirstName(newValue);
         });
 
-        lastNameField.textProperty().addListener(new ChangeListener<String>() {
-            @Override
-            public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
-                dataHandler.getCustomer().setLastName(newValue);
-            }
+        lastNameField.textProperty().addListener((observable, oldValue, newValue) -> {
+            dataHandler.getCustomer().setLastName(newValue);
         });
 
-        phoneNumberField.textProperty().addListener(new ChangeListener<String>() {
-            @Override
-            public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
-                dataHandler.getCustomer().setPhoneNumber(newValue);
-            }
+        phoneNumberField.textProperty().addListener((observable, oldValue, newValue) -> {
+            dataHandler.getCustomer().setPhoneNumber(newValue);
         });
 
-        mobilePhoneNumberField.textProperty().addListener(new ChangeListener<String>() {
-            @Override
-            public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
-                dataHandler.getCustomer().setMobilePhoneNumber(newValue);
-            }
+        mobilePhoneNumberField.textProperty().addListener((observable, oldValue, newValue) -> {
+            dataHandler.getCustomer().setMobilePhoneNumber(newValue);
         });
 
-        addressField.textProperty().addListener(new ChangeListener<String>() {
-            @Override
-            public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
-                dataHandler.getCustomer().setAddress(newValue);
-            }
+        addressField.textProperty().addListener((observable, oldValue, newValue) -> {
+            dataHandler.getCustomer().setAddress(newValue);
         });
 
-        postCodeField.textProperty().addListener(new ChangeListener<String>() {
-            @Override
-            public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
-                dataHandler.getCustomer().setPostCode(newValue);
-            }
+        postCodeField.textProperty().addListener((observable, oldValue, newValue) -> {
+            dataHandler.getCustomer().setPostCode(newValue);
         });
 
-        cityField.textProperty().addListener(new ChangeListener<String>() {
-            @Override
-            public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
-                dataHandler.getCustomer().setPostAddress(newValue);
-            }
+        cityField.textProperty().addListener((observable, oldValue, newValue) -> {
+            dataHandler.getCustomer().setPostAddress(newValue);
         });
     }
 
