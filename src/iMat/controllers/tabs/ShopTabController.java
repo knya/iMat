@@ -34,10 +34,13 @@ public class ShopTabController implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
-        productObservableList = FXCollections.observableArrayList();
 
+        productObservableList = FXCollections.observableArrayList();
+        setProductObservableList(dataHandler.getProducts());
         shopProductListView.setItems(productObservableList);
         shopProductListView.setCellFactory(productListView -> new ShopProductCell());
+
+
     }
 
     public ObservableList<Product> setProductObservableList(List<Product> productList) {

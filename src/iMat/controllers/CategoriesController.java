@@ -7,7 +7,10 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import se.chalmers.ait.dat215.project.Product;
 import se.chalmers.ait.dat215.project.ProductCategory;
 
@@ -26,6 +29,11 @@ public class CategoriesController implements Initializable {
 
     @FXML private ListView<List<ProductCategory>> productCategoryListView;
     private ObservableList<List<ProductCategory>> productCategoryListObservableList;
+
+    @FXML private Button escapeHatch;
+
+    private Image Logo = new Image("/Imat/Images/TestLogo.jpg");
+
 
     private List<ProductCategory> allCategories = new ArrayList<>(Arrays.asList(
             ProductCategory.values()
@@ -73,6 +81,8 @@ public class CategoriesController implements Initializable {
         this.mainController = mainController;
     }
 
+
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
@@ -82,6 +92,10 @@ public class CategoriesController implements Initializable {
                 meatCategory, pantryCategory, dairyCategory, drinksCategory, sweetsCategory,
                 carbsCategory
         );
+
+        escapeHatch.setGraphic(new ImageView(Logo));
+        escapeHatch.setMaxWidth(Logo.getWidth());
+        escapeHatch.setMaxHeight((Logo.getHeight()));
 
         productCategoryListView.setItems(productCategoryListObservableList);
         productCategoryListView.setCellFactory(productCategoryListView -> new ProductCategoryCell());
