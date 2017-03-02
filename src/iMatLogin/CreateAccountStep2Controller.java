@@ -10,8 +10,14 @@ import java.util.ResourceBundle;
  */
 public class CreateAccountStep2Controller implements Initializable {
 
+    private LoginController loginController;
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
+    }
+
+    public void inject(LoginController loginController) {
+        this.loginController = loginController;
     }
 }

@@ -8,9 +8,9 @@
    <children>
       <Label layoutX="84.0" layoutY="14.0" text="Inloggning" />
       <Label layoutX="42.0" layoutY="42.0" text="Användarnamn:" />
-      <TextField fx:id="userNameTextField" layoutX="43.0" layoutY="56.0" />
+      <TextField fx:id="userNameField" layoutX="43.0" layoutY="56.0" />
       <Label layoutX="42.0" layoutY="93.0" text="Lösenord:" />
-      <TextField fx:id="passwordTextField" layoutX="43.0" layoutY="107.0" />
+      <TextField fx:id="passwordField" layoutX="43.0" layoutY="107.0" />
       <Button layoutX="14.0" layoutY="139.0" mnemonicParsing="false" text="Glömt lösenord" />
       <Button layoutX="120.0" layoutY="139.0" mnemonicParsing="false" onAction="#createButtonActionPerformed" text="Skapa användare" />
       <Button layoutX="81.0" layoutY="189.0" mnemonicParsing="false" onAction="#changeSceneContent" text="Logga in" />
