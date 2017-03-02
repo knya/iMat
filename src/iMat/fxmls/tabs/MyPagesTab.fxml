@@ -20,11 +20,11 @@
                            </font>
                         </Label>
                         <Label layoutX="15.0" layoutY="45.0" text="Personnummer (ÅÅMMDDXXXX):" />
-                        <Label layoutX="15.0" layoutY="100.0" text="Förnamn:" />
-                        <Label layoutX="145.0" layoutY="100.0" text="Efternamn:" />
-                        <TextField fx:id="firstNameField" layoutX="10.0" layoutY="120.0" prefHeight="22.0" prefWidth="120.0" promptText="Förnamn" />
-                        <TextField fx:id="lastNameField" layoutX="145.0" layoutY="120.0" prefHeight="22.0" prefWidth="120.0" promptText="Efternamn" />
                         <TextField fx:id="socialSecurityNumberField" editable="false" layoutX="10.0" layoutY="65.0" prefHeight="22.0" prefWidth="250.0" promptText="Personnummer" />
+                        <Label layoutX="15.0" layoutY="100.0" text="Förnamn:" />
+                        <TextField fx:id="firstNameField" layoutX="10.0" layoutY="120.0" prefHeight="22.0" prefWidth="120.0" promptText="Förnamn" />
+                        <Label layoutX="145.0" layoutY="100.0" text="Efternamn:" />
+                        <TextField fx:id="lastNameField" layoutX="145.0" layoutY="120.0" prefHeight="22.0" prefWidth="120.0" promptText="Efternamn" />
                         <Label layoutX="15.0" layoutY="163.0" text="Telefon:" />
                         <TextField fx:id="phoneNumberField" layoutX="15.0" layoutY="180.0" prefHeight="27.0" prefWidth="116.0" />
                         <Label layoutX="145.0" layoutY="163.0" text="Mobiltelefon:" />
@@ -33,18 +33,18 @@
                   </AnchorPane>
                   <AnchorPane layoutX="10.0" layoutY="227.0" prefHeight="233.0" prefWidth="578.0" AnchorPane.bottomAnchor="-63.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="227.0">
                      <children>
-                        <TextField fx:id="cityField" layoutX="145.0" layoutY="150.0" prefHeight="22.0" prefWidth="120.0" promptText="Stad" />
-                        <TextField fx:id="postCodeField" layoutX="10.0" layoutY="150.0" prefHeight="22.0" prefWidth="120.0" promptText="Postkod" />
-                        <Label layoutX="15.0" layoutY="130.0" text="Postkod:" />
-                        <Label layoutX="15.0" layoutY="70.0" text="Mottagaradress:" />
                         <Label layoutX="10.0" layoutY="35.0" text="Leveransuppgifter:">
                            <font>
                               <Font name="System Bold" size="16.0" />
                            </font>
                         </Label>
-                        <Label layoutX="150.0" layoutY="130.0" text="Stad:" />
-                        <Separator layoutX="13.0" layoutY="60.0" prefHeight="6.0" prefWidth="330.0" />
+                        <Label layoutX="15.0" layoutY="70.0" text="Mottagaradress:" />
                         <TextField fx:id="addressField" layoutX="10.0" layoutY="90.0" prefHeight="22.0" prefWidth="250.0" promptText="Adress" />
+                        <Label layoutX="15.0" layoutY="130.0" text="Postkod:" />
+                        <TextField fx:id="postCodeField" layoutX="10.0" layoutY="150.0" prefHeight="22.0" prefWidth="120.0" promptText="Postkod" />
+                        <Label layoutX="150.0" layoutY="130.0" text="Stad:" />
+                        <TextField fx:id="cityField" layoutX="145.0" layoutY="150.0" prefHeight="22.0" prefWidth="120.0" promptText="Stad" />
+                        <Separator layoutX="13.0" layoutY="60.0" prefHeight="6.0" prefWidth="330.0" />
                      </children>
                   </AnchorPane>
                </children>
