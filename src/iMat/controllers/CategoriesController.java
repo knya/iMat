@@ -5,13 +5,13 @@ import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import se.chalmers.ait.dat215.project.Product;
 import se.chalmers.ait.dat215.project.ProductCategory;
 
 import java.net.URL;
@@ -81,8 +81,6 @@ public class CategoriesController implements Initializable {
         this.mainController = mainController;
     }
 
-
-
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
@@ -94,8 +92,8 @@ public class CategoriesController implements Initializable {
         );
 
         escapeHatch.setGraphic(new ImageView(Logo));
-        escapeHatch.setMaxWidth(Logo.getWidth());
-        escapeHatch.setMaxHeight((Logo.getHeight()));
+//        escapeHatch.setMaxWidth(Logo.getWidth());
+//        escapeHatch.setMaxHeight((Logo.getHeight()));
 
         productCategoryListView.setItems(productCategoryListObservableList);
         productCategoryListView.setCellFactory(productCategoryListView -> new ProductCategoryCell());
@@ -109,5 +107,10 @@ public class CategoriesController implements Initializable {
                 }
             }
         });
+    }
+
+    @FXML
+    protected void escapeHatchActionPerformed(ActionEvent event) {
+        //TODO
     }
 }
