@@ -1,6 +1,7 @@
 
 .button{
     -fx-background-color: #fecaa0;
+    -fx-border-color: #5d5d5d;
     -fx-font-size: 12pt;
     -fx-text-fill: #4b4b4b;
 }
@@ -11,6 +12,12 @@
 }
 .split-pane{
     -fx-background-color: white;
+    -fx-focus-color: transparent;
+    -fx-faint-focus-color: transparent;
+}
+.list-view{
+    -fx-focus-color: transparent;
+    -fx-faint-focus-color: transparent;
 }
 
 

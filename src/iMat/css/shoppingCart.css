@@ -3,8 +3,16 @@
     -fx-background-color: #fecaa0;
     -fx-text-fill: white;
 }
+
 .list-cell:odd { /* <=== changed to even */
     -fx-background-color: #FEF1E1;
+    -fx-text-fill: black;
+}
+.list-cell:even{
+    -fx-text-fill: black;
+}
+.button{
+    -fx-font-size: 12pt;
 }
 /*
 .list-cell:filled:hover {
@@ -14,33 +22,8 @@
 
 .tab-pane .tab-header-area .tab-header-background {
     -fx-background-color: #FEF1E1;
-}
-.list-cell{
-    -fx-font-size: 12pt;
-}
-.button{
-    -fx-font-size: 12pt;
-}
-.tab-pane .tab:selected{
-    -fx-background-color: white;
-}
-.tab-pane .tab{
-    -fx-background-color: #fecaa0;
+    -fx-opacity: 75%;
 }
 .tab-pane{
-    -fx-tab-min-width: 100px;
-    -fx-tab-min-height: 50px;
     -fx-background-color: white;
-}
-.tab .tab-label {
-    -fx-alignment: CENTER;
-    -fx-text-fill: #4b4b4b;
-    -fx-font-size: 16pt;
-}
-.tab-header-area{
-    -fx-font-size: 16pt;
-    -fx-background-color: white;
-}
-.tab-pane:focused > .tab-header-area > .headers-region > .tab:selected .focus-indicator {
-    -fx-border-color: gray;
 }
