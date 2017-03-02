@@ -63,7 +63,11 @@ public class SearchController implements Initializable {
     }
 
     private void searchForProduct() {
-        productList = dataHandler.findProducts(searchText);
+        if (searchText == null) {
+            productList = dataHandler.findProducts("");
+        } else {
+            productList = dataHandler.findProducts(searchText);
+        }
 
         mainController.getTabController().getShopTabController().setProductObservableList(productList);
         mainController.getTabPane().getSelectionModel().select(1);
