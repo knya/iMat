@@ -1,7 +1,9 @@
 package iMat.controllers.cells;
 
+import iMat.Main;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
@@ -69,6 +71,8 @@ public class ShopProductCellController extends AbstractCellController {
         shoppingCart.addProduct(product, quantity);
         productAmountLabel.setText(String.valueOf(1.0));
         disableButtons(true);
+
+
     }
 
     @FXML
@@ -102,6 +106,8 @@ public class ShopProductCellController extends AbstractCellController {
         decreaseButton.setDisable(b);
     }
 
+
+
     private void increaseQuantity(Product product) {
         shoppingCart.getItems().get(getIndex(product)).setAmount(shoppingCart.getItems().get(getIndex(product)).getAmount() + 1);
     }
@@ -123,7 +129,14 @@ public class ShopProductCellController extends AbstractCellController {
 
         for (ShoppingItem i : shoppingCart.getItems()) {
             productList.add(i.getProduct());
+            System.out.println(productList);
         }
         return productList;
+
     }
+
+
+
+
+
 }

@@ -1,9 +1,14 @@
 package iMat.controllers.cells;
 
+import iMat.Main;
+import iMat.controllers.ShoppingCartController;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import se.chalmers.ait.dat215.project.IMatDataHandler;
 import se.chalmers.ait.dat215.project.ShoppingItem;
@@ -29,6 +34,11 @@ public class ShoppingItemCellController extends AbstractCellController {
 
     private ShoppingItem shoppingItem;
 
+    private Image removeIcon = new Image("/iMat/Images/RemoveIconBlack.png");
+
+
+    private ShopProductCellController shopProductCellController;
+
     public void inject(ShoppingItem shoppingItem) {
         this.shoppingItem = shoppingItem;
     }
@@ -37,16 +47,21 @@ public class ShoppingItemCellController extends AbstractCellController {
         return shoppingItemPane;
     }
 
+
+
     @Override
     public void setLabels() {
         nameLabel.setText(shoppingItem.getProduct().getName());
         amountLabel.setText(String.valueOf(shoppingItem.getAmount()) + " " + shoppingItem.getProduct().getUnitSuffix());
         priceLabel.setText(String.valueOf(shoppingItem.getTotal()) + ":-");
+        removeButton.setGraphic(new ImageView(removeIcon));
     }
 
     @FXML
     private void removeButtonActionPerformed(ActionEvent event) {
         dataHandler.getShoppingCart().removeItem(shoppingItem);
+
+
     }
 
     @FXML
@@ -64,10 +79,12 @@ public class ShoppingItemCellController extends AbstractCellController {
         }
         setLabels();
         notifyShoppingCart(shoppingItem,false);
+
     }
 
     private void notifyShoppingCart(ShoppingItem shoppingItem, boolean addEvent) {
         dataHandler.getShoppingCart().fireShoppingCartChanged(shoppingItem, addEvent);
     }
+
 }
 
