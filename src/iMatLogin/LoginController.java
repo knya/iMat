@@ -22,11 +22,11 @@ public class LoginController implements Initializable {
     @FXML private AnchorPane loginScenePane;
     @FXML private StackPane createAccountPane;
 
-    @FXML private LoginStep1Controller loginStep1Controller;
+    @FXML private CreateAccountStep1Controller createAccountStep1Controller;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        loginStep1Controller.inject(this);
+        createAccountStep1Controller.inject(this);
     }
 
     @FXML

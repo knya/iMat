@@ -17,7 +17,7 @@
       <Separator layoutX="222.0" orientation="VERTICAL" prefHeight="400.0" prefWidth="16.0" />
       <StackPane fx:id="createAccountPane" layoutX="241.0" prefHeight="400.0" prefWidth="360.0" visible="false">
          <children>
-            <fx:include fx:id="loginStep1" source="LoginStep1.fxml" />
+            <fx:include fx:id="createAccountStep1" source="CreateAccountStep1.fxml" />
          </children>
       </StackPane>
    </children>

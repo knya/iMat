@@ -10,7 +10,7 @@ import java.util.ResourceBundle;
 /**
  * Created by JOHAN on 2017-03-02.
  */
-public class LoginStep1Controller implements Initializable {
+public class CreateAccountStep1Controller implements Initializable {
 
     private LoginController loginController;
 
