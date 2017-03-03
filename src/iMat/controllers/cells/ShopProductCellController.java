@@ -48,12 +48,6 @@ public class ShopProductCellController extends AbstractCellController {
         } else {
             favoriteButtonImage.setImage(emptyStar);
         }
-
-        if (getProductsInShoppingCart().contains(product)) {
-            disableButtons(true);
-        } else {
-            disableButtons(false);
-        }
     }
 
     public AnchorPane getAnchorPane() {
@@ -66,9 +60,15 @@ public class ShopProductCellController extends AbstractCellController {
 
     @FXML
     private void addToCartActionPerformed(ActionEvent event) {
-        shoppingCart.addProduct(product, quantity);
-        productAmountLabel.setText(String.valueOf(1.0));
-        disableButtons(true);
+        if(getProductsInShoppingCart().contains(product)) {
+            double quantityProduct = shoppingCart.getItems().get(getIndex(product)).getAmount();
+            shoppingCart.getItems().get(getIndex(product)).setAmount(quantity + quantityProduct);
+            shoppingCart.fireShoppingCartChanged(shoppingCart.getItems().get(getIndex(product)), true);
+        } else {
+            shoppingCart.addProduct(product, quantity);
+        }
+        quantity = 1.0;
+        productAmountLabel.setText(String.valueOf(quantity));
     }
 
     @FXML
@@ -94,16 +94,6 @@ public class ShopProductCellController extends AbstractCellController {
             quantity = quantity - 1;
         }
         productAmountLabel.setText(String.valueOf(quantity));
-    }
-
-    private void disableButtons(boolean b) {
-        addToCartButton.setDisable(b);
-        increaseButton.setDisable(b);
-        decreaseButton.setDisable(b);
-    }
-
-    private void increaseQuantity(Product product) {
-        shoppingCart.getItems().get(getIndex(product)).setAmount(shoppingCart.getItems().get(getIndex(product)).getAmount() + 1);
     }
 
     private int getIndex(Product product) {

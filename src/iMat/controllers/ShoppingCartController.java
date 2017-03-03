@@ -57,6 +57,7 @@ public class ShoppingCartController implements Initializable {
         dataHandler.getShoppingCart().addShoppingCartListener(cartEvent -> {
             totalLabel.setText(String.valueOf(dataHandler.getShoppingCart().getTotal()) + ":-");
             shoppingItemListView.setItems(refreshItemListView());
+            shoppingItemListView.refresh();
         });
     }
 

@@ -20,7 +20,7 @@ public class TabController implements Initializable {
     @FXML private AnchorPane homeTab;
     @FXML private AnchorPane shopTab;
     @FXML private AnchorPane myPagesTab;
-    @FXML private AnchorPane shoppingCartTab;
+    @FXML private AnchorPane orderTab;
 
     private MainController mainController;
 
