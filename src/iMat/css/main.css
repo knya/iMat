@@ -1,9 +1,12 @@
 
 .button{
-    -fx-background-color: #fecaa0;
+    -fx-background-color: linear-gradient(#fef1d5, #fecaa0, #fec28e);
     -fx-border-color: #5d5d5d;
     -fx-font-size: 12pt;
     -fx-text-fill: #4b4b4b;
+}
+.button:pressed{
+    -fx-background-color: linear-gradient(#fee5b7, #fec38d, #feba76);
 }
 
 

@@ -37,12 +37,16 @@
 .tab .tab-label {
     -fx-alignment: CENTER;
     -fx-text-fill: #4b4b4b;
-    -fx-font-size: 16pt;
+    -fx-font-size: 17pt;
+    -fx-padding: -5px;
 }
 .tab-header-area{
     -fx-font-size: 16pt;
     -fx-background-color: white;
 }
 .tab-pane:focused > .tab-header-area > .headers-region > .tab:selected .focus-indicator {
-    -fx-border-color: gray;
+    -fx-border-color: transparent;
+}
+.tab-pane > .tab-header-area > .headers-region > .tab{
+    -fx-padding: 20px;
 }
