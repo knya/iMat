@@ -13,7 +13,6 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
-import javafx.stage.Modality;
 import javafx.stage.Stage;
 import se.chalmers.ait.dat215.project.IMatDataHandler;
 import se.chalmers.ait.dat215.project.ShoppingItem;
@@ -46,6 +45,7 @@ public class OrderTabController implements Initializable {
 
         dataHandler.getShoppingCart().addShoppingCartListener(cartEvent -> {
             shoppingItemListView.setItems(refreshItemListView());
+            shoppingItemListView.refresh();
         });
     }
 
@@ -67,7 +67,6 @@ public class OrderTabController implements Initializable {
         Stage confirmationStage = new Stage();
         confirmationStage.setScene(new Scene(root));
 
-//        confirmationStage.initModality(Modality.APPLICATION_MODAL);
         confirmationStage.setTitle("Bekräfta beställning");
         confirmationStage.setResizable(false);
         confirmationStage.showAndWait();
