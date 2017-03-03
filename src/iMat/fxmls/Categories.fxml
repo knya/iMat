@@ -6,7 +6,7 @@
 <?import javafx.scene.control.ListView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="768.0" prefWidth="250.0" stylesheets="@../css/shoppingCart.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="iMat.controllers.CategoriesController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="768.0" prefWidth="250.0" stylesheets="@../css/categories.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="iMat.controllers.CategoriesController">
    <children>
       <ListView fx:id="productCategoryListView" layoutY="75.0" prefHeight="526.0" prefWidth="240.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="80.0" />
       <Button fx:id="escapeHatch" mnemonicParsing="false" onAction="#escapeHatchActionPerformed" prefHeight="81.0" prefWidth="250.0" />
