@@ -1,5 +1,6 @@
 package iMat.controllers;
 
+import iMat.cells.CellFactory;
 import iMat.cells.ProductCategoryCell;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
@@ -96,7 +97,7 @@ public class CategoriesController implements Initializable {
 //        escapeHatch.setMaxHeight((Logo.getHeight()));
 
         productCategoryListView.setItems(productCategoryListObservableList);
-        productCategoryListView.setCellFactory(productCategoryListView -> new ProductCategoryCell());
+        productCategoryListView.setCellFactory(productCategoryListView -> new CellFactory().createProductCategoryCell());
 
         productCategoryListView.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<List<ProductCategory>>() {
             @Override
