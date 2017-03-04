@@ -1,59 +1,46 @@
 package iMat.controllers.tabs;
 
 import iMat.cells.CellFactory;
-import iMat.cells.ShopProductCell;
 import iMat.controllers.TabController;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import se.chalmers.ait.dat215.project.IMatDataHandler;
 import se.chalmers.ait.dat215.project.Product;
-import se.chalmers.ait.dat215.project.ProductCategory;
 
 import java.net.URL;
-import java.util.Comparator;
 import java.util.List;
 import java.util.ResourceBundle;
 
 /**
- * Controller for Shop tab.
+ * Created by JOHAN on 2017-03-04.
  */
-public class ShopTabController implements Initializable {
+public class SearchTabController implements Initializable {
 
     private TabController tabController;
 
-    @FXML private ListView<Product> shopProductListView;
-    @FXML private Label productCategoryLabel;
+    @FXML private ListView<Product> searchListView;
 
     private ObservableList<Product> productObservableList;
-
     private IMatDataHandler dataHandler = IMatDataHandler.getInstance();
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-
         productObservableList = FXCollections.observableArrayList();
-//        setProductCategoryObservableList();
-        shopProductListView.setItems(productObservableList);
-        shopProductListView.setCellFactory(productListView -> new CellFactory().createShopProductCell());
+        searchListView.setItems(productObservableList);
+        searchListView.setCellFactory(productListView -> new CellFactory().createShopProductCell());
     }
 
     public void inject(TabController tabController) {
         this.tabController = tabController;
     }
 
-    public ObservableList<Product> setProductCategoryObservableList(List<ProductCategory> productCategoryList) {
+    public ObservableList<Product> setProductObservableList(List<Product> productList) {
         productObservableList.clear();
+        productObservableList.addAll(productList);
 
-        Comparator<Product> comparator = Comparator.comparingInt(Product::getProductId);
-
-        for (ProductCategory i : productCategoryList) {
-            productObservableList.addAll(dataHandler.getProducts(i));
-        }
-        productObservableList.sort(comparator);
         return productObservableList;
     }
 }

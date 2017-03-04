@@ -6,6 +6,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+import javafx.scene.control.Tab;
 import javafx.scene.control.TextField;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
@@ -69,7 +70,9 @@ public class SearchController implements Initializable {
             productList = dataHandler.findProducts(searchText);
         }
 
-        mainController.getTabController().getShopTabController().setProductObservableList(productList);
-        mainController.getTabPane().getSelectionModel().select(1);
+        mainController.getTabController().getSearchTabController().setProductObservableList(productList);
+        Tab searchTab = mainController.getTabController().getSearchTab();
+        mainController.getTabPane().getTabs().add(searchTab);
+        mainController.getTabPane().getSelectionModel().select(4);
     }
 }

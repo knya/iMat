@@ -3,9 +3,6 @@
 <?import java.lang.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
-<?import javafx.scene.control.Tab?>
-<?import javafx.scene.control.TabPane?>
-<?import javafx.scene.layout.AnchorPane?>
 
 <TabPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="0.0" minWidth="0.0" prefHeight="435.0" prefWidth="583.0" stylesheets="@../css/middleViewTabs.css" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="iMat.controllers.TabController">
    <tabs>
@@ -13,7 +10,7 @@
          <content>
             <AnchorPane prefHeight="147.0" prefWidth="400.0">
                <children>
-                  <fx:include fx:id="homeTab" source="tabs/HomeTab.fxml" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0"  />
+                  <fx:include fx:id="homeTab" source="tabs/HomeTab.fxml" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
                </children>
             </AnchorPane>
          </content>
@@ -45,5 +42,14 @@
                </AnchorPane>
            </content>
        </Tab>
+      <Tab fx:id="search" text="Sök">
+        <content>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+              <children>
+                  <fx:include fx:id="searchTab" source="tabs/SearchTab.fxml" />
+              </children>
+          </AnchorPane>
+        </content>
+      </Tab>
    </tabs>
 </TabPane>
