@@ -1,11 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.text.*?>
 <?import javafx.scene.control.*?>
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="440.0" prefWidth="362.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="iMat.controllers.stages.ConfirmationStageController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="440.0" prefWidth="380.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="iMat.controllers.stages.ConfirmationStageController">
    <children>
-      <Label layoutX="28.0" layoutY="28.0" text="Hej" />
+      <Label fx:id="presentationLabel" layoutX="29.0" layoutY="28.0" text="Hej namn!">
+         <font>
+            <Font size="20.0" />
+         </font></Label>
+      <Label layoutX="28.0" layoutY="75.0" text="Leveransadress:" />
+      <ChoiceBox layoutX="28.0" layoutY="89.0" prefWidth="150.0" />
+      <Label layoutX="28.0" layoutY="123.0" text="Betalsätt:" />
+      <ChoiceBox layoutX="28.0" layoutY="137.0" prefWidth="150.0" />
+      <ListView fx:id="receiptListView" layoutX="211.0" layoutY="46.0" prefHeight="317.0" prefWidth="169.0" />
+      <Label layoutX="211.0" layoutY="363.0" text="Summa:" />
+      <Label layoutX="329.0" layoutY="363.0" text="Label" />
+      <Button fx:id="placeOrderButton" layoutX="252.0" layoutY="404.0" mnemonicParsing="false" onAction="#placeOrderActionPerformed" text="Bekräfta beställning" />
+      <Label layoutX="130.0" layoutY="7.0" text="Bekräfta beställning" underline="true" />
    </children>
 </AnchorPane>
