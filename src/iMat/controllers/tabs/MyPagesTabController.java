@@ -3,6 +3,7 @@ package iMat.controllers.tabs;
 import iMat.controllers.TabController;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.TextField;
@@ -19,8 +20,8 @@ public class MyPagesTabController implements Initializable {
 
     private TabController tabController;
 
-    @FXML private AnchorPane myPagesPersonal;
-    @FXML private AnchorPane myPagesDelivery;
+    @FXML private AnchorPane personalDetailsPane;
+    @FXML private AnchorPane changePasswordPane;
 
     @FXML private TextField socialSecurityNumberField;
     @FXML private TextField firstNameField;
@@ -37,6 +38,7 @@ public class MyPagesTabController implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
+        personalDetailsPane.toFront();
         setLabels();
 
         firstNameField.textProperty().addListener((observable, oldValue, newValue) -> {
@@ -81,5 +83,15 @@ public class MyPagesTabController implements Initializable {
 
     public void inject(TabController tabController) {
         this.tabController = tabController;
+    }
+
+    @FXML
+    private void changePasswordPaneActionPerformed(ActionEvent event) {
+        changePasswordPane.toFront();
+    }
+
+    @FXML
+    private void personalDetailsPaneActionPerformed(ActionEvent event) {
+        personalDetailsPane.toFront();
     }
 }
