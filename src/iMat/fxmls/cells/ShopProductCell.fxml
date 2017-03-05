@@ -16,8 +16,8 @@
             <ImageView fx:id="favoriteButtonImage" fitHeight="26.0" fitWidth="23.0" pickOnBounds="true" preserveRatio="true" />
          </graphic></Button>
       <Label fx:id="productPriceLabel" layoutX="112.0" layoutY="53.0" text="Price" />
-      <Button fx:id="decreaseButton" layoutX="359.0" layoutY="60.0" mnemonicParsing="false" onAction="#decreaseButtonActionPerformed" prefHeight="22.0" prefWidth="25.0" text="-" />
+      <Button fx:id="decreaseButton" layoutX="332.0" layoutY="59.0" mnemonicParsing="false" onAction="#decreaseButtonActionPerformed" prefHeight="22.0" prefWidth="25.0" text="-" />
       <Button fx:id="increaseButton" layoutX="445.0" layoutY="60.0" mnemonicParsing="false" onAction="#increaseButtonActionPerformed" text="+" />
-      <Label fx:id="productAmountLabel" layoutX="402.0" layoutY="64.0" text="antal" />
+      <Label fx:id="productAmountLabel" layoutX="371.0" layoutY="62.0" text="antal" />
    </children>
 </AnchorPane>

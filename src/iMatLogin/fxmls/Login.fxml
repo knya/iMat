@@ -11,9 +11,9 @@
       <TextField fx:id="userNameField" layoutX="43.0" layoutY="56.0" />
       <Label layoutX="42.0" layoutY="93.0" text="Lösenord:" />
       <TextField fx:id="passwordField" layoutX="43.0" layoutY="107.0" />
-      <Button layoutX="14.0" layoutY="139.0" mnemonicParsing="false" text="Glömt lösenord" />
-      <Button layoutX="120.0" layoutY="139.0" mnemonicParsing="false" onAction="#createButtonActionPerformed" text="Skapa användare" />
-      <Button layoutX="81.0" layoutY="189.0" mnemonicParsing="false" onAction="#changeSceneContent" text="Logga in" />
+      <Button layoutX="11.0" layoutY="359.0" mnemonicParsing="false" text="Glömt lösenord" />
+      <Button layoutX="11.0" layoutY="277.0" mnemonicParsing="false" onAction="#createButtonActionPerformed" text="Skapa användare" />
+      <Button layoutX="138.0" layoutY="173.0" mnemonicParsing="false" onAction="#changeSceneContent" text="Logga in" />
       <Separator layoutX="222.0" orientation="VERTICAL" prefHeight="400.0" prefWidth="16.0" />
       <StackPane fx:id="createAccountPane" layoutX="241.0" prefHeight="400.0" prefWidth="360.0">
          <children>
@@ -34,5 +34,6 @@
             </AnchorPane>
          </children>
       </StackPane>
+      <Label layoutX="11.0" layoutY="260.0" text="Har du inget konto?" />
    </children>
 </AnchorPane>

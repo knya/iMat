@@ -41,7 +41,7 @@ public class ShopProductCellController extends AbstractCellController {
         productNameLabel.setText(product.getName());
         productImageView.setImage(dataHandler.getFXImage(product));
         productPriceLabel.setText(String.valueOf(product.getPrice()) + ":-");
-        productAmountLabel.setText(String.valueOf(1.0));
+        productAmountLabel.setText(String.valueOf(1.0) + product.getUnitSuffix());
 
         if (dataHandler.isFavorite(product)) {
             favoriteButtonImage.setImage(fullStar);
@@ -68,7 +68,7 @@ public class ShopProductCellController extends AbstractCellController {
             shoppingCart.addProduct(product, quantity);
         }
         quantity = 1.0;
-        productAmountLabel.setText(String.valueOf(quantity));
+        productAmountLabel.setText(String.valueOf(quantity) + product.getUnitSuffix());
     }
 
     @FXML
@@ -85,7 +85,7 @@ public class ShopProductCellController extends AbstractCellController {
     @FXML
     private void increaseButtonActionPerformed(ActionEvent event) {
         quantity = quantity + 1.0;
-        productAmountLabel.setText(String.valueOf(quantity));
+        productAmountLabel.setText(String.valueOf(quantity) + product.getUnitSuffix());
     }
 
     @FXML
@@ -93,7 +93,7 @@ public class ShopProductCellController extends AbstractCellController {
         if(quantity > 1.0) {
             quantity = quantity - 1;
         }
-        productAmountLabel.setText(String.valueOf(quantity));
+        productAmountLabel.setText(String.valueOf(quantity) + product.getUnitSuffix());
     }
 
     private int getIndex(Product product) {
