@@ -6,6 +6,7 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import se.chalmers.ait.dat215.project.IMatDataHandler;
 import se.chalmers.ait.dat215.project.Product;
@@ -22,6 +23,7 @@ public class SearchTabController implements Initializable {
     private TabController tabController;
 
     @FXML private ListView<Product> searchListView;
+    @FXML private Label searchLabel;
 
     private ObservableList<Product> productObservableList;
     private IMatDataHandler dataHandler = IMatDataHandler.getInstance();
@@ -42,5 +44,14 @@ public class SearchTabController implements Initializable {
         productObservableList.addAll(productList);
 
         return productObservableList;
+    }
+
+    public void setSearchText(String s) {
+        if (s == null) {
+            searchLabel.setText("Tom sökning. Visar alla " + productObservableList.size() + " produkter i iMat");
+        } else {
+            searchLabel.setText(productObservableList.size() + " träffar på " + "\"" + s + "\"");
+        }
+
     }
 }

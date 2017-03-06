@@ -69,9 +69,12 @@ public class SearchController implements Initializable {
         } else {
             productList = dataHandler.findProducts(searchText);
         }
-
         mainController.getTabController().getSearchTabController().setProductObservableList(productList);
+        mainController.getTabController().getSearchTabController().setSearchText(searchText);
         Tab searchTab = mainController.getTabController().getSearchTab();
+        if (mainController.getTabController().getSearchTab().isSelected()) {
+            mainController.getTabPane().getTabs().remove(4);
+        }
         mainController.getTabPane().getTabs().add(searchTab);
         mainController.getTabPane().getSelectionModel().select(4);
     }
