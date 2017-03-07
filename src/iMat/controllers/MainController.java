@@ -33,18 +33,15 @@ public class MainController implements Initializable {
 
         setSizes();
 
-        tab.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<Tab>() {
-            @Override
-            public void changed(ObservableValue<? extends Tab> observable, Tab oldValue, Tab newValue) {
-                if (tab.getTabs().size() == 5) {
-                    if (oldValue == tab.getTabs().get(4)) {
-                        tab.getTabs().remove(4);
-                    }
+        tab.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) -> {
+            if (tab.getTabs().size() == 4) {
+                if (oldValue == tab.getTabs().get(3)) {
+                    tab.getTabs().remove(3);
                 }
             }
         });
 
-        tab.getTabs().remove(4);
+        tab.getTabs().remove(3);
 
     }
 

@@ -19,7 +19,6 @@ import java.util.ResourceBundle;
  */
 public class TabController implements Initializable {
 
-    @FXML private AnchorPane homeTab;
     @FXML private AnchorPane shopTab;
     @FXML private AnchorPane myPagesTab;
     @FXML private AnchorPane orderTab;
@@ -29,7 +28,6 @@ public class TabController implements Initializable {
 
     private MainController mainController;
 
-    @FXML private HomeTabController homeTabController;
     @FXML private ShopTabController shopTabController;
     @FXML private MyPagesTabController myPagesTabController;
     @FXML private OrderTabController orderTabController;
@@ -42,7 +40,6 @@ public class TabController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        homeTabController.inject(this);
         shopTabController.inject(this);
         myPagesTabController.inject(this);
         orderTabController.inject(this);

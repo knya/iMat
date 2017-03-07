@@ -1,7 +1,6 @@
 package iMat.controllers.tabs;
 
 import iMat.cells.CellFactory;
-import iMat.cells.ShopProductCell;
 import iMat.controllers.TabController;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -36,6 +35,7 @@ public class ShopTabController implements Initializable {
     public void initialize(URL location, ResourceBundle resources) {
 
         productObservableList = FXCollections.observableArrayList();
+//        productObservableList.addAll(productCategories.getAllCategories());
 //        setProductCategoryObservableList();
         shopProductListView.setItems(productObservableList);
         shopProductListView.setCellFactory(productListView -> new CellFactory().createShopProductCell());

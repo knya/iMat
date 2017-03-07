@@ -41,12 +41,9 @@ public class SearchController implements Initializable {
     }
 
     private void addSearchInputListener() {
-        searchTextField.textProperty().addListener(new ChangeListener<String>() {
-            @Override
-            public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
-                if (newValue != null && !newValue.isEmpty()) {
-                    searchText = newValue;
-                }
+        searchTextField.textProperty().addListener((observable, oldValue, newValue) -> {
+            if (newValue != null && !newValue.isEmpty()) {
+                searchText = newValue;
             }
         });
     }
@@ -73,9 +70,9 @@ public class SearchController implements Initializable {
         mainController.getTabController().getSearchTabController().setSearchText(searchText);
         Tab searchTab = mainController.getTabController().getSearchTab();
         if (mainController.getTabController().getSearchTab().isSelected()) {
-            mainController.getTabPane().getTabs().remove(4);
+            mainController.getTabPane().getTabs().remove(3);
         }
         mainController.getTabPane().getTabs().add(searchTab);
-        mainController.getTabPane().getSelectionModel().select(4);
+        mainController.getTabPane().getSelectionModel().select(3);
     }
 }

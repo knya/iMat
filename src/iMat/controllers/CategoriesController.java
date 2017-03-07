@@ -99,13 +99,10 @@ public class CategoriesController implements Initializable {
         productCategoryListView.setItems(productCategoryListObservableList);
         productCategoryListView.setCellFactory(productCategoryListView -> new CellFactory().createProductCategoryCell());
 
-        productCategoryListView.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<List<ProductCategory>>() {
-            @Override
-            public void changed(ObservableValue<? extends List<ProductCategory>> observable, List<ProductCategory> oldValue, List<ProductCategory> newValue) {
-                if (newValue != null) {
-                    mainController.getTabController().getShopTabController().setProductCategoryObservableList(newValue);
-                    mainController.getTabPane().getSelectionModel().select(1);
-                }
+        productCategoryListView.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) -> {
+            if (newValue != null) {
+                mainController.getTabController().getShopTabController().setProductCategoryObservableList(newValue);
+                mainController.getTabPane().getSelectionModel().select(0);
             }
         });
     }
