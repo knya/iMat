@@ -14,6 +14,7 @@ import javafx.scene.control.*;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import se.chalmers.ait.dat215.project.IMatDataHandler;
+import se.chalmers.ait.dat215.project.Order;
 import se.chalmers.ait.dat215.project.ShoppingItem;
 
 import java.io.IOException;
@@ -27,27 +28,34 @@ public class OrderTabController implements Initializable {
 
     private TabController tabController;
 
+    // OrderCartPane
     @FXML private AnchorPane orderCartPane;
-    @FXML private AnchorPane orderHistoryPane;
-    @FXML private ListView<ShoppingItem> shoppingItemListView;
     @FXML private TableView<ShoppingItem> shoppingItemTableView;
     @FXML private TableColumn<ShoppingItem, String> nameColumn;
     @FXML private TableColumn<ShoppingItem, String> amountColumn;
     @FXML private TableColumn<ShoppingItem, String> priceColumn;
     @FXML private TableColumn<ShoppingItem, String> sumColumn;
-    @FXML private Label nameLabel;
-    @FXML private Label amountLabel;
-    @FXML private Label priceLabel;
-    @FXML private Label sumLabel;
+
+    //OrderHistoryPane
+    @FXML private AnchorPane orderHistoryPane;
+    @FXML private TableView<Order> orderHistoryTableView;
+    @FXML private TableColumn<Order, String> orderNumberColumn;
+    @FXML private TableColumn<Order, String> dateColumn;
+    @FXML private TableColumn<Order, String> productOrderColumn;
+    @FXML private TableColumn<Order, String> sumOrderColumn;
+
     @FXML private Button placeOrderButton;
     @FXML private Button orderHistoryButton;
+    @FXML private Button backToCartButton;
 
     private IMatDataHandler dataHandler = IMatDataHandler.getInstance();
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
-        shoppingItemTableView.setItems(refreshItemListView());
+//        orderCartPane.toFront();
+
+        shoppingItemTableView.setItems(refreshItemTableView());
         nameColumn.setCellValueFactory(c -> new SimpleStringProperty(c.getValue().getProduct().getName()));
         amountColumn.setCellValueFactory(c -> new SimpleStringProperty(String.valueOf(c.getValue().getAmount())));
         priceColumn.setCellValueFactory(c -> new SimpleStringProperty(String.valueOf(c.getValue().getProduct().getPrice())));
@@ -55,9 +63,17 @@ public class OrderTabController implements Initializable {
 
 //        shoppingItemTableView.setCellValueFactory(shoppingItemListView -> new CellFactory().createOrderCartCell());
 
+        orderHistoryTableView.setItems(refreshOrderTableView());
+        orderNumberColumn.setCellValueFactory(c -> new SimpleStringProperty(String.valueOf(c.getValue().getOrderNumber())));
+        dateColumn.setCellValueFactory(c -> new SimpleStringProperty(String.valueOf(c.getValue().getDate())));
+        productOrderColumn.setCellValueFactory(c -> new SimpleStringProperty(String.valueOf(c.getValue().getItems().size())));
+//        sumOrderColumn.setCellValueFactory(c -> new SimpleStringProperty(String.valueOf()));
+
         dataHandler.getShoppingCart().addShoppingCartListener(cartEvent -> {
-            shoppingItemTableView.setItems(refreshItemListView());
+            shoppingItemTableView.setItems(refreshItemTableView());
             shoppingItemTableView.refresh();
+            orderHistoryTableView.setItems(refreshOrderTableView());
+            orderHistoryTableView.refresh();
         });
     }
 
@@ -65,11 +81,18 @@ public class OrderTabController implements Initializable {
         this.tabController = tabController;
     }
 
-    private ObservableList<ShoppingItem> refreshItemListView() {
+    private ObservableList<ShoppingItem> refreshItemTableView() {
         ObservableList<ShoppingItem> shoppingItemObservableList = FXCollections.observableArrayList();
         shoppingItemObservableList.addAll(dataHandler.getShoppingCart().getItems());
 
         return shoppingItemObservableList;
+    }
+
+    private ObservableList<Order> refreshOrderTableView() {
+        ObservableList<Order> orderHistoryObservableList = FXCollections.observableArrayList();
+        orderHistoryObservableList.addAll(dataHandler.getOrders());
+
+        return orderHistoryObservableList;
     }
 
     @FXML
@@ -87,5 +110,10 @@ public class OrderTabController implements Initializable {
     @FXML
     private void orderHistoryButtonActionPerformed(ActionEvent event) {
         orderHistoryPane.toFront();
+    }
+
+    @FXML
+    private void backToCartActionPerformed(ActionEvent event) {
+        orderCartPane.toFront();
     }
 }

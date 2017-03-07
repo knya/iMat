@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.*?>
 <?import javafx.scene.text.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
@@ -10,23 +11,25 @@
          <children>
             <AnchorPane id="pane2" fx:id="orderHistoryPane" prefHeight="200.0" prefWidth="200.0" stylesheets="@../../css/orderCart.css">
                <children>
-                  <TableView layoutX="20.0" layoutY="98.0" prefHeight="286.0" prefWidth="505.0">
+                  <TableView fx:id="orderHistoryTableView" layoutX="20.0" layoutY="98.0" prefHeight="286.0" prefWidth="505.0">
                     <columns>
-                      <TableColumn prefWidth="75.0" text="Datum" />
-                      <TableColumn prefWidth="114.0" text="Antal produkter" />
-                        <TableColumn prefWidth="75.0" text="Summa" />
+                        <TableColumn fx:id="orderNumberColumn" prefWidth="75.0" text="Ordernummer" />
+                      <TableColumn fx:id="dateColumn" prefWidth="75.0" text="Datum" />
+                      <TableColumn fx:id="productOrderColumn" prefWidth="114.0" text="Antal produkter" />
+                        <TableColumn fx:id="sumOrderColumn" prefWidth="75.0" text="Summa" />
                     </columns>
                   </TableView>
+                  <Button fx:id="backToCart" layoutX="377.0" layoutY="14.0" mnemonicParsing="false" onAction="#backToCartActionPerformed" text="Tillbaka till kundvagn" />
                </children>
             </AnchorPane>
             <AnchorPane id="pane1" fx:id="orderCartPane" prefHeight="468.0" prefWidth="598.0" stylesheets="@../../css/orderCart.css">
                <children>
                   <TableView fx:id="shoppingItemTableView" layoutX="20.0" layoutY="96.0" prefHeight="286.0" prefWidth="505.0">
                     <columns>
-                      <TableColumn fx:id="nameColumn" prefWidth="75.0" text="Namn" />
-                      <TableColumn fx:id="amountColumn" prefWidth="75.0" text="Antal" />
-                        <TableColumn fx:id="priceColumn" prefWidth="75.0" text="Pris" />
-                        <TableColumn fx:id="sumColumn" prefWidth="75.0" text="Summa" />
+                      <TableColumn fx:id="nameColumn" prefWidth="89.0" text="Namn" />
+                      <TableColumn fx:id="amountColumn" prefWidth="79.0" text="Antal" />
+                        <TableColumn fx:id="priceColumn" prefWidth="76.0" text="Pris" />
+                        <TableColumn fx:id="sumColumn" prefWidth="82.0" text="Summa" />
                     </columns>
                   </TableView>
                   <Label layoutX="20.0" layoutY="14.0" text="Kundvagn">
