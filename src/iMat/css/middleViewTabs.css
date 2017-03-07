@@ -6,11 +6,6 @@
 .list-cell:odd { /* <=== changed to even */
     -fx-background-color: #FEF1E1;
 }
-/*
-.list-cell:filled:hover {
-    -fx-background-color: #0093ff;
-    -fx-text-fill: white;
-}*/
 
 .tab-pane .tab-header-area .tab-header-background {
     -fx-background-color: #FEF1E1;
