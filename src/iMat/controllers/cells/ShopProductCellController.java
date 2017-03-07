@@ -10,6 +10,8 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import se.chalmers.ait.dat215.project.*;
 
+
+import javax.management.Notification;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -35,6 +37,7 @@ public class ShopProductCellController extends AbstractCellController {
 
     private Image fullStar = new Image("/iMat/Images/FullStar.png");
     private Image emptyStar = new Image("/iMat/Images/EmptyStar.png");
+
 
     private Product product;
     private int quantity = 1;
@@ -68,11 +71,13 @@ public class ShopProductCellController extends AbstractCellController {
             double quantityProduct = shoppingCart.getItems().get(getIndex(product)).getAmount();
             shoppingCart.getItems().get(getIndex(product)).setAmount(quantity + quantityProduct);
             shoppingCart.fireShoppingCartChanged(shoppingCart.getItems().get(getIndex(product)), true);
+
         } else {
             shoppingCart.addProduct(product, quantity);
         }
         quantity = 1;
         quantityField.setText(String.valueOf(quantity));
+
 
     }
 
