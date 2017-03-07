@@ -25,3 +25,6 @@
 .button:pressed{
     -fx-background-color: linear-gradient(#fee5b7, #fec38d, #feba76);
 }
+.text-field{
+    -fx-focus-color: transparent;
+}
