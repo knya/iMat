@@ -10,7 +10,7 @@
 .list-cell:filled:selected:focused, .list-cell:filled:selected {
     //-fx-background-color: linear-gradient(#ff6600 0%, #ff751a 10%, #ff8533 20%, #ff944d 40%, #fec28e 100%);
     -fx-text-fill: black;
-    -fx-background-color: #FEF1E1;
+    -fx-background-color: #fecaa0;
 
 }
 .list-cell:selected{

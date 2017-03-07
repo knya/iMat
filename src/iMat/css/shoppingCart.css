@@ -1,7 +1,7 @@
 .list-cell:filled:selected:focused, .list-cell:filled:selected {
     //-fx-background-color: linear-gradient(#ffefe2 0%, #fef1e1 25%, #feeed4 75%, #ffeeca 100%);
     -fx-background-color: #fecaa0;
-    -fx-text-fill: white;
+    -fx-text-fill: black;
 }
 
 .list-cell:odd { /* <=== changed to even */
@@ -11,11 +11,11 @@
 .list-cell:even{
     -fx-text-fill: black;
 }
+.list-cell{
+    -fx-cell-size: 100px;
+}
 .button{
     -fx-font-size: 12pt;
-    //-fx-effect: dropshadow( three-pass-box , rgba(255,255,255,0.2) , 1, 0.0 , 0 , 1);
-    //-fx-effect: dropshadow(three-pass-box, #3c3c3c, 1, 0.0, 0, 1);
-
 }
 /*
 .list-cell:filled:hover {

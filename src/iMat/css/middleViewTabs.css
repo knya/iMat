@@ -1,7 +1,7 @@
 .list-cell:filled:selected:focused, .list-cell:filled:selected {
     //-fx-background-color: linear-gradient(#ffefe2 0%, #fef1e1 25%, #feeed4 75%, #ffeeca 100%);
     -fx-background-color: #fecaa0;
-    -fx-text-fill: white;
+    -fx-text-fill: black;
 }
 .list-cell:odd { /* <=== changed to even */
     -fx-background-color: #FEF1E1;
@@ -22,6 +22,7 @@
 .button{
     -fx-font-size: 12pt;
 }
+
 .tab-pane .tab:selected{
     -fx-background-color: white;
 }
