@@ -9,6 +9,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import se.chalmers.ait.dat215.project.IMatDataHandler;
+import se.chalmers.ait.dat215.project.Product;
 import se.chalmers.ait.dat215.project.ShoppingItem;
 
 import java.net.URL;
@@ -21,7 +22,7 @@ public class ConfirmationStageController implements Initializable {
 
     @FXML private Label presentationLabel;
     @FXML private Button placeOrderButton;
-    @FXML private ListView<ShoppingItem> receiptListView;
+    @FXML private ListView<Product> receiptListView;
 
     IMatDataHandler dataHandler = IMatDataHandler.getInstance();
 
@@ -31,7 +32,11 @@ public class ConfirmationStageController implements Initializable {
 
         ObservableList<ShoppingItem> shoppingItemObservableList = FXCollections.observableArrayList();
         shoppingItemObservableList.addAll(dataHandler.getShoppingCart().getItems());
-        receiptListView.setItems(shoppingItemObservableList);
+        ObservableList<Product> productObservableList = FXCollections.observableArrayList();
+        for(int i = 0; i < shoppingItemObservableList.size();i++){
+            productObservableList.add(shoppingItemObservableList.get(i).getProduct());
+        }
+        receiptListView.setItems(productObservableList);
     }
 
     @FXML

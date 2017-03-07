@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
@@ -41,7 +42,7 @@
                         <Label layoutX="145.0" layoutY="100.0" text="Efternamn:" />
                         <TextField fx:id="lastNameField" layoutX="145.0" layoutY="120.0" prefHeight="22.0" prefWidth="120.0" promptText="Efternamn" />
                         <Label layoutX="15.0" layoutY="163.0" text="Telefon:" />
-                        <TextField fx:id="phoneNumberField" layoutX="15.0" layoutY="180.0" prefHeight="27.0" prefWidth="116.0" promptText="Telefon" />
+                        <TextField fx:id="phoneNumberField" layoutX="12.0" layoutY="180.0" prefHeight="27.0" prefWidth="116.0" promptText="Telefon" />
                         <Label layoutX="145.0" layoutY="163.0" text="Mobiltelefon:" />
                         <TextField fx:id="mobilePhoneNumberField" layoutX="145.0" layoutY="180.0" prefHeight="27.0" prefWidth="121.0" promptText="Mobiltelefon" />
                      </children>
