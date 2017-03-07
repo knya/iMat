@@ -31,9 +31,10 @@ public class CategoriesController implements Initializable {
     @FXML private ListView<List<ProductCategory>> productCategoryListView;
     private ObservableList<List<ProductCategory>> productCategoryListObservableList;
 
-    @FXML private Button escapeHatch;
+    @FXML private Button logoButton;
+    @FXML private ImageView logoButtonImage;
 
-    private Image Logo = new Image("/Imat/Images/TestLogo.jpg");
+    private Image logo = new Image("/Imat/Images/TestLogo.jpg");
 
 
     private List<ProductCategory> allCategories = new ArrayList<>(Arrays.asList(
@@ -85,16 +86,14 @@ public class CategoriesController implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
+        logoButtonImage.setImage(logo);
+
         productCategoryListObservableList = FXCollections.observableArrayList();
         productCategoryListObservableList.addAll(
                 allCategories, fruitAndBerriesCategory, breadCategory, vegetablesCategory,
                 meatCategory, pantryCategory, dairyCategory, drinksCategory, sweetsCategory,
                 carbsCategory
         );
-
-        escapeHatch.setGraphic(new ImageView(Logo));
-//        escapeHatch.setMaxWidth(Logo.getWidth());
-//        escapeHatch.setMaxHeight((Logo.getHeight()));
 
         productCategoryListView.setItems(productCategoryListObservableList);
         productCategoryListView.setCellFactory(productCategoryListView -> new CellFactory().createProductCategoryCell());
@@ -108,7 +107,7 @@ public class CategoriesController implements Initializable {
     }
 
     @FXML
-    protected void escapeHatchActionPerformed(ActionEvent event) {
+    private void logoButtonActionPerformed(ActionEvent event) {
         //TODO
     }
 }
