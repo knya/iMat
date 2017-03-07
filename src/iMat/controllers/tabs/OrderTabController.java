@@ -1,8 +1,7 @@
 package iMat.controllers.tabs;
 
-import iMat.cells.CellFactory;
-import iMat.cells.OrderCartCell;
 import iMat.controllers.TabController;
+import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -11,9 +10,8 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.ListView;
+import javafx.scene.control.*;
+import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import se.chalmers.ait.dat215.project.IMatDataHandler;
 import se.chalmers.ait.dat215.project.ShoppingItem;
@@ -29,24 +27,37 @@ public class OrderTabController implements Initializable {
 
     private TabController tabController;
 
+    @FXML private AnchorPane orderCartPane;
+    @FXML private AnchorPane orderHistoryPane;
     @FXML private ListView<ShoppingItem> shoppingItemListView;
+    @FXML private TableView<ShoppingItem> shoppingItemTableView;
+    @FXML private TableColumn<ShoppingItem, String> nameColumn;
+    @FXML private TableColumn<ShoppingItem, String> amountColumn;
+    @FXML private TableColumn<ShoppingItem, String> priceColumn;
+    @FXML private TableColumn<ShoppingItem, String> sumColumn;
     @FXML private Label nameLabel;
     @FXML private Label amountLabel;
     @FXML private Label priceLabel;
     @FXML private Label sumLabel;
     @FXML private Button placeOrderButton;
+    @FXML private Button orderHistoryButton;
 
     private IMatDataHandler dataHandler = IMatDataHandler.getInstance();
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
-        shoppingItemListView.setItems(refreshItemListView());
-        shoppingItemListView.setCellFactory(shoppingItemListView -> new CellFactory().createOrderCartCell());
+        shoppingItemTableView.setItems(refreshItemListView());
+        nameColumn.setCellValueFactory(c -> new SimpleStringProperty(c.getValue().getProduct().getName()));
+        amountColumn.setCellValueFactory(c -> new SimpleStringProperty(String.valueOf(c.getValue().getAmount())));
+        priceColumn.setCellValueFactory(c -> new SimpleStringProperty(String.valueOf(c.getValue().getProduct().getPrice())));
+        sumColumn.setCellValueFactory(c -> new SimpleStringProperty(String.valueOf(c.getValue().getTotal())));
+
+//        shoppingItemTableView.setCellValueFactory(shoppingItemListView -> new CellFactory().createOrderCartCell());
 
         dataHandler.getShoppingCart().addShoppingCartListener(cartEvent -> {
-            shoppingItemListView.setItems(refreshItemListView());
-            shoppingItemListView.refresh();
+            shoppingItemTableView.setItems(refreshItemListView());
+            shoppingItemTableView.refresh();
         });
     }
 
@@ -71,5 +82,10 @@ public class OrderTabController implements Initializable {
         confirmationStage.setTitle("Bekräfta beställning");
         confirmationStage.setResizable(false);
         confirmationStage.showAndWait();
+    }
+
+    @FXML
+    private void orderHistoryButtonActionPerformed(ActionEvent event) {
+        orderHistoryPane.toFront();
     }
 }
