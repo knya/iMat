@@ -4,6 +4,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
@@ -27,6 +28,7 @@ public class ShopProductCellController extends AbstractCellController {
     @FXML private Button increaseButton;
     @FXML private Button decreaseButton;
     @FXML private ImageView favoriteButtonImage;
+    @FXML private TextField quantityField;
 
     private IMatDataHandler dataHandler = IMatDataHandler.getInstance();
     private ShoppingCart shoppingCart = dataHandler.getShoppingCart();
@@ -35,19 +37,21 @@ public class ShopProductCellController extends AbstractCellController {
     private Image emptyStar = new Image("/iMat/Images/EmptyStar.png");
 
     private Product product;
-    private double quantity = 1.0;
+    private int quantity = 1;
 
     public void setLabels() {
         productNameLabel.setText(product.getName());
         productImageView.setImage(dataHandler.getFXImage(product));
-        productPriceLabel.setText(String.valueOf(product.getPrice()) + ":-");
-        productAmountLabel.setText(String.valueOf(1.0) + product.getUnitSuffix());
+        productPriceLabel.setText(String.valueOf(product.getPrice()) + ":-" + " / " + product.getUnitSuffix());
+        quantityField.setText(String.valueOf(quantity));
 
         if (dataHandler.isFavorite(product)) {
             favoriteButtonImage.setImage(fullStar);
         } else {
             favoriteButtonImage.setImage(emptyStar);
         }
+
+        addTextFieldListener();
     }
 
     public AnchorPane getAnchorPane() {
@@ -67,8 +71,9 @@ public class ShopProductCellController extends AbstractCellController {
         } else {
             shoppingCart.addProduct(product, quantity);
         }
-        quantity = 1.0;
-        productAmountLabel.setText(String.valueOf(quantity) + product.getUnitSuffix());
+        quantity = 1;
+        quantityField.setText(String.valueOf(quantity));
+
     }
 
     @FXML
@@ -84,16 +89,18 @@ public class ShopProductCellController extends AbstractCellController {
 
     @FXML
     private void increaseButtonActionPerformed(ActionEvent event) {
-        quantity = quantity + 1.0;
-        productAmountLabel.setText(String.valueOf(quantity) + product.getUnitSuffix());
+        quantity = quantity + 1;
+        quantityField.setText(String.valueOf(quantity));
+
     }
 
     @FXML
     private void decreaseButtonActionPerformed(ActionEvent event) {
-        if(quantity > 1.0) {
+        if(quantity > 1) {
             quantity = quantity - 1;
         }
-        productAmountLabel.setText(String.valueOf(quantity) + product.getUnitSuffix());
+        quantityField.setText(String.valueOf(quantity));
+
     }
 
     private int getIndex(Product product) {
@@ -115,5 +122,15 @@ public class ShopProductCellController extends AbstractCellController {
             productList.add(i.getProduct());
         }
         return productList;
+    }
+
+    private void addTextFieldListener() {
+        quantityField.textProperty().addListener((observable, oldValue, newValue) -> {
+            if (newValue != null && !newValue.isEmpty()) {
+                if (newValue.matches("[0-9]*") && Integer.valueOf(newValue) >= 0) {
+                    quantity = Integer.valueOf(newValue);
+                }
+            }
+        });
     }
 }
