@@ -69,4 +69,5 @@ public class ProductCategoryCellController extends AbstractCellController {
     public void inject(List<ProductCategory> productCategoryList) {
         this.productCategoryList = productCategoryList;
     }
+
 }

@@ -8,8 +8,6 @@
 .button:pressed{
     -fx-background-color: linear-gradient(#fee5b7, #fec38d, #feba76);
 }
-
-
 .split-pane:vertical > .split-pane-divider {
     -fx-background-color: transparent;
 }

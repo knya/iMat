@@ -110,4 +110,5 @@ public class CategoriesController implements Initializable {
     private void logoButtonActionPerformed(ActionEvent event) {
         //TODO
     }
+
 }

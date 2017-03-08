@@ -2,6 +2,7 @@
     //-fx-background-color: linear-gradient(#ffefe2 0%, #fef1e1 25%, #feeed4 75%, #ffeeca 100%);
     -fx-background-color: #fecaa0;
     -fx-text-fill: black;
+    -fx-text-background-color: black;
 }
 .list-cell:odd { /* <=== changed to even */
     -fx-background-color: #FEF1E1;
@@ -49,32 +50,28 @@
 .table-view .column-header{
     -fx-background-color: linear-gradient(#fef1d5, #fecaa0, #fec28e);
 }
-/*
-.table-view .column-header-background .label{
-    -fx-background-color: transparent;
-    -fx-text-fill: black;
-}
-
-.table-view .column-header {
-    -fx-background-color: transparent;
-}
-
-.table-view .table-cell{
-    -fx-text-fill: white;
-}
-*/
 .table-row-cell{
     -fx-background-color: white;
+    -fx-text-fill: black;
 }
 
 .table-row-cell:odd{
     -fx-background-color: #FEF1E1;
     -fx-text-fill: black;
 }
-/*
-.table-row-cell:selected {
-    -fx-background-color: #fecaa0;
-}*/
+
+.table-row-cell:focused {
+    -fx-text-fill: black;
+    -fx-table-cell-border-color: lightgray;
+    -fx-text-background-color: black;
+}
+.table-row-cell:selected .text{
+    -fx-text-fill: black;
+}
+.table-view:focused{
+    -fx-focus-color: lightgray;
+    -fx-focus-faint-color: lightgray;
+}
 .table-view .filler{
     -fx-background-color: linear-gradient(#fef1d5, #fecaa0, #fec28e);
 }
