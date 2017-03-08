@@ -31,9 +31,12 @@ public class ConfirmationStageController implements Initializable {
     @FXML private TableColumn<ShoppingItem, String> productColumn;
     @FXML private TableColumn<ShoppingItem, String> amountColumn;
     @FXML private TableColumn<ShoppingItem, String> totalColumn;
+    @FXML private DatePicker deliveryDatePicker;
 
     //SecondConfirmationPane
     @FXML private AnchorPane secondConfirmationPane;
+    @FXML private Label presentationLabel2nd;
+    @FXML private Label addressLabel2nd;
     @FXML private TableView<ShoppingItem> shoppingItemTableView2nd;
     @FXML private TableColumn<ShoppingItem, String> productColumn2nd;
     @FXML private TableColumn<ShoppingItem, String> amountColumn2nd;
@@ -42,6 +45,7 @@ public class ConfirmationStageController implements Initializable {
     //ThankYouPane
     @FXML private AnchorPane thankYouPane;
     @FXML private Button finishedButton;
+    @FXML private Label addressLabel3rd;
 
 
     @FXML private Label totalSum;
@@ -51,6 +55,16 @@ public class ConfirmationStageController implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         presentationLabel.setText("Hej " + dataHandler.getCustomer().getFirstName() + "!");
+        presentationLabel2nd.setText(dataHandler.getCustomer().getFirstName() + ",");
+        addressLabel2nd.setText(
+                dataHandler.getCustomer().getAddress() + ", "
+                + dataHandler.getCustomer().getPostCode() + ", "
+                + dataHandler.getCustomer().getPostAddress()
+        );
+        addressLabel3rd.setText(dataHandler.getCustomer().getAddress() + ", "
+                + dataHandler.getCustomer().getPostCode() + ", "
+                + dataHandler.getCustomer().getPostAddress()
+        );
 
         ObservableList<ShoppingItem> shoppingItemObservableList = FXCollections.observableArrayList();
         shoppingItemObservableList.addAll(dataHandler.getShoppingCart().getItems());
