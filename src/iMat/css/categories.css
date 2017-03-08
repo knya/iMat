@@ -11,7 +11,7 @@
 }
 
 .list-cell:filled:hover {
-    //-fx-background-color: linear-gradient(#ff944d 25%, #ff8533 50%, #ff751a 75%, #ff6600 100%);
+    -fx-background-color: #FEF1E1;
     -fx-font-weight: bolder;
     -fx-text-fill: #000000;
 }
