@@ -58,6 +58,8 @@ public class LoginController implements Initializable {
         Parent mainScene = FXMLLoader.load(getClass().getResource("/iMat/fxmls/Main.fxml"));
         stage.setScene(new Scene(mainScene));
         stage.setTitle("iMat");
+        stage.setX(0);
+        stage.setY(0);
     }
 
     @FXML
