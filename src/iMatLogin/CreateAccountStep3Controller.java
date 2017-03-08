@@ -8,6 +8,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.layout.AnchorPane;
+import se.chalmers.ait.dat215.project.IMatDataHandler;
 
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -23,6 +24,8 @@ public class CreateAccountStep3Controller implements Initializable {
     @FXML private Button createAccountButton;
     @FXML private AnchorPane creditCardPane;
     @FXML private AnchorPane invoicePane;
+
+    private IMatDataHandler dataHandler = IMatDataHandler.getInstance();
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -53,6 +56,13 @@ public class CreateAccountStep3Controller implements Initializable {
     @FXML
     private void createAccountActionPerformed(ActionEvent event) {
         loginController.getLoginPane();
+
+        dataHandler.getUser().setUserName(loginController.getUsername());
+        dataHandler.getUser().setPassword(loginController.getPassword());
+        dataHandler.getCustomer().setFirstName(loginController.getFirstName());
+        dataHandler.getCustomer().setLastName(loginController.getLastName());
+        dataHandler.getCustomer().setPhoneNumber(loginController.getPhoneNumber());
+        dataHandler.getCustomer().setMobilePhoneNumber(loginController.getMobileNumber());
     }
 
     @FXML

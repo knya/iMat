@@ -33,24 +33,23 @@ public class CreateAccountStep1Controller implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         userNameField.textProperty().addListener((observable, oldValue, newValue) -> {
-            dataHandler.getUser().setUserName(newValue);
-            System.out.println(dataHandler.getUser().getUserName());
+            loginController.setUsername(newValue);
         });
 
         firstNameField.textProperty().addListener((observable, oldValue, newValue) -> {
-            dataHandler.getCustomer().setFirstName(newValue);
+            loginController.setFirstName(newValue);
         });
 
         lastNameField.textProperty().addListener((observable, oldValue, newValue) -> {
-            dataHandler.getCustomer().setLastName(newValue);
+            loginController.setLastName(newValue);
         });
 
         phoneNumberField.textProperty().addListener((observable, oldValue, newValue) -> {
-            dataHandler.getCustomer().setPhoneNumber(newValue);
+            loginController.setPhoneNumber(newValue);
         });
 
         mobilePhoneNumberField.textProperty().addListener((observable, oldValue, newValue) -> {
-            dataHandler.getCustomer().setMobilePhoneNumber(newValue);
+            loginController.setMobileNumber(newValue);
         });
 
         confirmPhoneField.textProperty().addListener((observable, oldValue, newValue) -> {
