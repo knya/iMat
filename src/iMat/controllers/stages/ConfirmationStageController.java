@@ -26,6 +26,7 @@ public class ConfirmationStageController implements Initializable {
     @FXML private Button placeOrderButton;
     @FXML private Button cancelOrderButton;
     @FXML private ListView<Product> receiptListView;
+    @FXML private Label totalSum;
 
     private IMatDataHandler dataHandler = IMatDataHandler.getInstance();
 
@@ -40,6 +41,7 @@ public class ConfirmationStageController implements Initializable {
             productObservableList.add(shoppingItemObservableList.get(i).getProduct());
         }
         receiptListView.setItems(productObservableList);
+        totalSum.setText(String.valueOf(dataHandler.getShoppingCart().getTotal()) + ":-");
     }
 
     @FXML

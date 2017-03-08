@@ -60,6 +60,10 @@ public class OrderTabController implements Initializable {
         amountColumn.setCellValueFactory(c -> new SimpleStringProperty(String.valueOf(c.getValue().getAmount())));
         priceColumn.setCellValueFactory(c -> new SimpleStringProperty(String.valueOf(c.getValue().getProduct().getPrice())));
         sumColumn.setCellValueFactory(c -> new SimpleStringProperty(String.valueOf(c.getValue().getTotal())));
+        shoppingItemTableView.setFocusTraversable(false);
+        shoppingItemTableView.setOpacity(2);
+        nameColumn.setVisible(true);
+
 
 //        shoppingItemTableView.setCellValueFactory(shoppingItemListView -> new CellFactory().createOrderCartCell());
 

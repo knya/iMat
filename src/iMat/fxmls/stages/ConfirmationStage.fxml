@@ -24,10 +24,16 @@
       <Label layoutX="28.0" layoutY="123.0" text="Betalsätt:" />
       <ChoiceBox layoutX="28.0" layoutY="137.0" prefWidth="150.0" />
       <ListView fx:id="receiptListView" layoutX="211.0" layoutY="46.0" prefHeight="317.0" prefWidth="169.0" />
-      <Label layoutX="211.0" layoutY="363.0" text="Summa:" />
-      <Label layoutX="329.0" layoutY="363.0" text="Label" />
+      <Label layoutX="211.0" layoutY="363.0" prefHeight="26.0" prefWidth="59.0" text="Summa:">
+         <font>
+            <Font size="15.0" />
+         </font></Label>
+      <Label fx:id="totalSum" layoutX="335.0" layoutY="363.0" prefHeight="26.0" prefWidth="45.0" text="Label">
+         <font>
+            <Font size="15.0" />
+         </font></Label>
       <Button fx:id="cancelOrderButton" layoutX="14.0" layoutY="382.0" mnemonicParsing="false" onAction="#cancelOrderActionPerformed" prefHeight="49.0" prefWidth="108.0" text="Avbryt" />
-      <Button fx:id="placeOrderButton" layoutX="212.0" layoutY="382.0" mnemonicParsing="false" onAction="#placeOrderActionPerformed" prefHeight="49.0" prefWidth="181.0" text="Bekräfta beställning" />
+      <Button fx:id="placeOrderButton" layoutX="212.0" layoutY="391.0" mnemonicParsing="false" onAction="#placeOrderActionPerformed" prefHeight="40.0" prefWidth="178.0" text="Bekräfta beställning" />
       <Label layoutX="130.0" layoutY="7.0" text="Bekräfta beställning" underline="true" />
       <DatePicker layoutX="28.0" layoutY="191.0" prefHeight="27.0" prefWidth="150.0" />
       <Text layoutX="29.0" layoutY="187.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Leveransdatum:" />
