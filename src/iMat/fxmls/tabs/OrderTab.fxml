@@ -24,7 +24,7 @@
             </AnchorPane>
             <AnchorPane id="pane1" fx:id="orderCartPane" prefHeight="468.0" prefWidth="598.0" stylesheets="@../../css/orderCart.css">
                <children>
-                  <TableView fx:id="shoppingItemTableView" disable="true" layoutX="20.0" layoutY="96.0" prefHeight="286.0" prefWidth="505.0">
+                  <TableView fx:id="shoppingItemTableView" layoutX="20.0" layoutY="96.0" prefHeight="286.0" prefWidth="505.0">
                     <columns>
                       <TableColumn fx:id="nameColumn" prefWidth="112.0" text="Namn" />
                       <TableColumn fx:id="amountColumn" prefWidth="56.0" text="Antal" />

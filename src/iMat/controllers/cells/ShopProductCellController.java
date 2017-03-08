@@ -74,6 +74,7 @@ public class ShopProductCellController extends AbstractCellController {
             shoppingCart.getItems().get(getIndex(product)).setAmount(quantity + quantityProduct);
             shoppingCart.fireShoppingCartChanged(shoppingCart.getItems().get(getIndex(product)), true);
 
+
         } else {
             shoppingCart.addProduct(product, quantity);
         }

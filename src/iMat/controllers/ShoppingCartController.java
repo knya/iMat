@@ -29,6 +29,9 @@ public class ShoppingCartController implements Initializable {
     @FXML private ListView<ShoppingItem> shoppingItemListView;
     @FXML private Button goToCartButton;
     @FXML private Label totalLabel;
+    @FXML private Label numberOfItems;
+    private double amount;
+
 
     private ObservableList<ShoppingItem> shoppingItemObservableList;
 
@@ -47,6 +50,7 @@ public class ShoppingCartController implements Initializable {
         dataHandler.getShoppingCart().addProduct(dataHandler.getProduct(1));
         dataHandler.getShoppingCart().addProduct(dataHandler.getProduct(2));
         dataHandler.getShoppingCart().addProduct(dataHandler.getProduct(3));
+        numberOfItems.setText(String.valueOf(dataHandler.getShoppingCart().getItems().size()));
 
         totalLabel.setText(String.valueOf(dataHandler.getShoppingCart().getTotal()) + ":-");
 
@@ -56,8 +60,13 @@ public class ShoppingCartController implements Initializable {
 
         dataHandler.getShoppingCart().addShoppingCartListener(cartEvent -> {
             totalLabel.setText(String.valueOf(dataHandler.getShoppingCart().getTotal()) + ":-");
+            for(int i = 0; i <dataHandler.getShoppingCart().getItems().size();i++){
+                amount += dataHandler.getShoppingCart().getItems().get(i).getAmount();
+            }
+            numberOfItems.setText(String.valueOf(amount));
             shoppingItemListView.setItems(refreshItemListView());
             shoppingItemListView.refresh();
+            amount = 0;
         });
     }
 
@@ -70,6 +79,6 @@ public class ShoppingCartController implements Initializable {
 
     @FXML
     private void goToCartActionPerformed(ActionEvent event) {
-        mainController.getTabPane().getSelectionModel().select(2);
+        mainController.getTabPane().getSelectionModel().select(2 );
     }
 }
