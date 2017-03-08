@@ -1,5 +1,6 @@
 package iMat.controllers.stages;
 
+import iMat.controllers.tabs.OrderTabController;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -8,6 +9,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
+import javafx.stage.Stage;
 import se.chalmers.ait.dat215.project.IMatDataHandler;
 import se.chalmers.ait.dat215.project.Product;
 import se.chalmers.ait.dat215.project.ShoppingItem;
@@ -22,9 +24,10 @@ public class ConfirmationStageController implements Initializable {
 
     @FXML private Label presentationLabel;
     @FXML private Button placeOrderButton;
+    @FXML private Button cancelOrderButton;
     @FXML private ListView<Product> receiptListView;
 
-    IMatDataHandler dataHandler = IMatDataHandler.getInstance();
+    private IMatDataHandler dataHandler = IMatDataHandler.getInstance();
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -42,5 +45,13 @@ public class ConfirmationStageController implements Initializable {
     @FXML
     private void placeOrderActionPerformed(ActionEvent event) {
         dataHandler.placeOrder(true);
+        Stage confirmationStage = (Stage) placeOrderButton.getScene().getWindow();
+        confirmationStage.close();
+    }
+
+    @FXML
+    private void cancelOrderActionPerformed(ActionEvent event) {
+        Stage confirmationStage = (Stage) cancelOrderButton.getScene().getWindow();
+        confirmationStage.close();
     }
 }
