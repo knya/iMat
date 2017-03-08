@@ -32,5 +32,6 @@
             <Font size="15.0" />
          </font>
       </Label>
+      <Button fx:id="backToLogin" layoutX="184.0" layoutY="361.0" mnemonicParsing="false" onAction="#backToLoginActionPerformed" text="Avbryt" />
    </children>
 </AnchorPane>

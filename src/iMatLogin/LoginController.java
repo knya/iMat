@@ -23,6 +23,7 @@ public class LoginController implements Initializable {
 
     @FXML private AnchorPane loginScenePane;
     @FXML private StackPane createAccountPane;
+    @FXML private AnchorPane loginPane;
     @FXML private AnchorPane createAccountStep1Pane;
     @FXML private AnchorPane createAccountStep2Pane;
     @FXML private AnchorPane createAcctionStep3Pane;
@@ -39,7 +40,7 @@ public class LoginController implements Initializable {
         createAccountStep1Controller.inject(this);
         createAccountStep2Controller.inject(this);
         createAccountStep3Controller.inject(this);
-        createAccountPane.setVisible(false);
+
     }
 
     @FXML
@@ -51,8 +52,9 @@ public class LoginController implements Initializable {
         stage.setTitle("iMat");
     }
 
-    @FXML protected void createButtonActionPerformed(ActionEvent event) {
-        createAccountPane.setVisible(true);
+    @FXML
+    private void createButtonActionPerformed(ActionEvent event) {
+        createAccountStep1Pane.toFront();
     }
 
     public AnchorPane getCreateAccountStep1() {
@@ -65,5 +67,9 @@ public class LoginController implements Initializable {
 
     public AnchorPane getCreateAccountStep3() {
         return createAcctionStep3Pane;
+    }
+
+    public AnchorPane getLoginPane() {
+        return loginPane;
     }
 }

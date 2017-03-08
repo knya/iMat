@@ -11,7 +11,7 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 /**
- * Created by JOHAN on 2017-03-02.
+ * Controller for the first step in creating an account.
  */
 public class CreateAccountStep1Controller implements Initializable {
 
@@ -26,6 +26,7 @@ public class CreateAccountStep1Controller implements Initializable {
     @FXML private TextField confirmMobileField;
 
     @FXML private Button goForwardButton;
+    @FXML private Button backToLogin;
 
     private IMatDataHandler dataHandler = IMatDataHandler.getInstance();
 
@@ -67,7 +68,12 @@ public class CreateAccountStep1Controller implements Initializable {
     }
 
     @FXML
-    protected void goForwardActionPerformed(ActionEvent event) {
+    private void goForwardActionPerformed(ActionEvent event) {
         loginController.getCreateAccountStep2().toFront();
+    }
+
+    @FXML
+    private void backToLoginActionPerformed(ActionEvent event) {
+        loginController.getLoginPane().toFront();
     }
 }

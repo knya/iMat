@@ -1,23 +1,19 @@
 package iMatLogin;
 
-import javafx.beans.value.ChangeListener;
-import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
-import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.ComboBox;
 import javafx.scene.layout.AnchorPane;
 
-import javax.swing.*;
 import java.net.URL;
 import java.util.ResourceBundle;
 
 /**
- * Created by JOHAN on 2017-03-02.
+ * Controller for the third step in creating an account.
  */
 public class CreateAccountStep3Controller implements Initializable {
 
@@ -56,7 +52,7 @@ public class CreateAccountStep3Controller implements Initializable {
 
     @FXML
     private void createAccountActionPerformed(ActionEvent event) {
-
+        loginController.getLoginPane();
     }
 
     @FXML
