@@ -8,13 +8,13 @@
 <AnchorPane id="pane3" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="360.0" stylesheets="@createAccount.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="iMatLogin.CreateAccountStep2Controller">
    <children>
       <Label layoutX="14.0" layoutY="14.0" text="Adressinformation" />
+      <Text layoutX="14.0" layoutY="81.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Leveransadress:" />
+      <TextField fx:id="deliveryAddressField" layoutX="14.0" layoutY="85.0" prefHeight="27.0" prefWidth="195.0" />
+      <Text layoutX="14.0" layoutY="134.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Postnummer:" wrappingWidth="83.0" />
+      <TextField fx:id="postCodeField" layoutX="14.0" layoutY="138.0" prefHeight="27.0" prefWidth="68.0" />
+      <Text layoutX="111.0" layoutY="134.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Stad:" />
+      <TextField fx:id="cityField" layoutX="109.0" layoutY="138.0" prefHeight="27.0" prefWidth="101.0" />
       <Button fx:id="goBackwardButton" layoutX="180.0" layoutY="364.0" mnemonicParsing="false" onAction="#goBackwardActionPerformed" text="Tillbaka" />
       <Button fx:id="goForwardButton" layoutX="278.0" layoutY="364.0" mnemonicParsing="false" onAction="#goForwardActionPerformed" text="Nästa" />
-      <TextField layoutX="14.0" layoutY="138.0" />
-      <TextField layoutX="14.0" layoutY="206.0" />
-      <TextField layoutX="14.0" layoutY="263.0" />
-      <Text layoutX="14.0" layoutY="134.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Stad:" />
-      <Text layoutX="14.0" layoutY="192.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Postnummer:" wrappingWidth="79.21875" />
-      <Text layoutX="14.0" layoutY="259.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Leveransadress:" />
    </children>
 </AnchorPane>

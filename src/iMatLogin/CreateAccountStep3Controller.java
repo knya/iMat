@@ -39,11 +39,11 @@ public class CreateAccountStep3Controller implements Initializable {
         paymentComboBox.getSelectionModel().selectFirst();
 
         paymentComboBox.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) -> {
-            if (newValue == "Kreditkort") {
+            if (newValue.equals("Kreditkort")) {
                 creditCardPane.toFront();
             }
 
-            if (newValue == "Faktura") {
+            if (newValue.equals("Faktura")) {
                 invoicePane.toFront();
             }
         });
@@ -55,7 +55,7 @@ public class CreateAccountStep3Controller implements Initializable {
 
     @FXML
     private void createAccountActionPerformed(ActionEvent event) {
-        loginController.getLoginPane();
+        loginController.getLoginPane().toFront();
 
         dataHandler.getUser().setUserName(loginController.getUsername());
         dataHandler.getUser().setPassword(loginController.getPassword());
@@ -63,6 +63,9 @@ public class CreateAccountStep3Controller implements Initializable {
         dataHandler.getCustomer().setLastName(loginController.getLastName());
         dataHandler.getCustomer().setPhoneNumber(loginController.getPhoneNumber());
         dataHandler.getCustomer().setMobilePhoneNumber(loginController.getMobileNumber());
+        dataHandler.getCustomer().setAddress(loginController.getAddress());
+        dataHandler.getCustomer().setPostCode(loginController.getPostCode());
+        dataHandler.getCustomer().setPostAddress(loginController.getCity());
     }
 
     @FXML

@@ -41,6 +41,9 @@ public class LoginController implements Initializable {
     private String lastName;
     private String phoneNumber;
     private String mobileNumber;
+    private String address;
+    private String postCode;
+    private String city;
 
 
     @Override
@@ -129,5 +132,29 @@ public class LoginController implements Initializable {
 
     public void setMobileNumber(String mobileNumber) {
         this.mobileNumber = mobileNumber;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public String getPostCode() {
+        return postCode;
+    }
+
+    public void setPostCode(String postCode) {
+        this.postCode = postCode;
+    }
+
+    public String getCity() {
+        return city;
+    }
+
+    public void setCity(String city) {
+        this.city = city;
     }
 }

@@ -4,13 +4,14 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 
 import java.net.URL;
 import java.util.ResourceBundle;
 
 /**
- * Created by JOHAN on 2017-03-02.
+ * Controller for the second step in creating an account.
  */
 public class CreateAccountStep2Controller implements Initializable {
 
@@ -18,9 +19,23 @@ public class CreateAccountStep2Controller implements Initializable {
 
     @FXML private Button goBackwardButton;
 
+    @FXML private TextField deliveryAddressField;
+    @FXML private TextField postCodeField;
+    @FXML private TextField cityField;
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        deliveryAddressField.textProperty().addListener(((observable, oldValue, newValue) -> {
+            loginController.setAddress(newValue);
+        }));
 
+        postCodeField.textProperty().addListener(((observable, oldValue, newValue) -> {
+            loginController.setPostCode(newValue);
+        }));
+
+        cityField.textProperty().addListener(((observable, oldValue, newValue) -> {
+            loginController.setCity(newValue);
+        }));
     }
 
     public void inject(LoginController loginController) {
@@ -28,12 +43,12 @@ public class CreateAccountStep2Controller implements Initializable {
     }
 
     @FXML
-    protected void goBackwardActionPerformed(ActionEvent event) {
+    private void goBackwardActionPerformed(ActionEvent event) {
         loginController.getCreateAccountStep1().toFront();
     }
 
     @FXML
-    protected void goForwardActionPerformed(ActionEvent event) {
+    private void goForwardActionPerformed(ActionEvent event) {
         loginController.getCreateAccountStep3().toFront();
     }
 }
