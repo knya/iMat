@@ -37,7 +37,7 @@ public class ShopProductCellController extends AbstractCellController {
 
     private Image fullStar = new Image("/iMat/Images/FullStar.png");
     private Image emptyStar = new Image("/iMat/Images/EmptyStar.png");
-
+    private Image addition = new Image("/Imat/Images/whiteAddition32.png");
 
     private Product product;
     private int quantity = 1;
@@ -55,6 +55,8 @@ public class ShopProductCellController extends AbstractCellController {
         }
 
         addTextFieldListener();
+        increaseButton.setGraphic(new ImageView(addition));
+        increaseButton.setMaxSize(addition.getWidth(),addition.getHeight());
     }
 
     public AnchorPane getAnchorPane() {
