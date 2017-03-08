@@ -5,7 +5,6 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
-import javafx.scene.layout.AnchorPane;
 
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -26,15 +25,15 @@ public class CreateAccountStep2Controller implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         deliveryAddressField.textProperty().addListener(((observable, oldValue, newValue) -> {
-            loginController.setAddress(newValue);
+            loginController.getNewCustomer().setAddress(newValue);
         }));
 
         postCodeField.textProperty().addListener(((observable, oldValue, newValue) -> {
-            loginController.setPostCode(newValue);
+            loginController.getNewCustomer().setPostCode(newValue);
         }));
 
         cityField.textProperty().addListener(((observable, oldValue, newValue) -> {
-            loginController.setCity(newValue);
+            loginController.getNewCustomer().setPostAddress(newValue);
         }));
     }
 

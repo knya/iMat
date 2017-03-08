@@ -17,20 +17,24 @@
          <children>
             <AnchorPane id="pane1" fx:id="creditCardPane" prefHeight="200.0" prefWidth="200.0" stylesheets="@createAccount.css">
                <children>
-                  <TextField layoutX="14.0" layoutY="35.0" />
-                  <Label layoutX="14.0" layoutY="14.0" text="Kortnummer:" />
-                  <Label layoutX="10.0" layoutY="72.0" text="Månad" />
-                  <Label layoutX="64.0" layoutY="72.0" text="År" />
-                  <TextField layoutX="11.0" layoutY="89.0" prefHeight="27.0" prefWidth="39.0" promptText="MM" />
-                  <TextField layoutX="64.0" layoutY="89.0" prefHeight="27.0" prefWidth="39.0" promptText="YY" />
+                  <Label layoutX="10.0" layoutY="6.0" text="Kortinnehavarens namn:" />
+                  <TextField fx:id="holdersNameField" layoutX="10.0" layoutY="23.0" />
+                  <CheckBox fx:id="holdersNameCheckBox" layoutX="194.0" layoutY="6.0" mnemonicParsing="false" onAction="#holdersNameCheckBoxActionPerformed" prefHeight="61.0" prefWidth="118.0" text="Samma som förnamn och efternamn" wrapText="true" />
+                  <Label layoutX="12.0" layoutY="65.0" text="Kortnummer:" />
+                  <TextField fx:id="cardNumberField" layoutX="10.0" layoutY="82.0" />
+                  <Label layoutX="12.0" layoutY="118.0" text="Månad" />
+                  <Label layoutX="59.0" layoutY="118.0" text="År" />
+                  <TextField fx:id="validMonthField" layoutX="14.0" layoutY="135.0" prefHeight="27.0" prefWidth="39.0" promptText="MM" />
+                  <TextField fx:id="validYearField" layoutX="54.0" layoutY="135.0" prefHeight="27.0" prefWidth="39.0" promptText="YY" />
                </children>
             </AnchorPane>
-            <AnchorPane id="pane2" fx:id="invoicePane" prefHeight="200.0" prefWidth="200.0" stylesheets="@createAccount.css">
+            <AnchorPane id="pane1" fx:id="invoicePane" prefHeight="200.0" prefWidth="200.0" stylesheets="@createAccount.css">
                <children>
                   <CheckBox layoutX="14.0" layoutY="41.0" mnemonicParsing="false" text="Samma som leveransadress" />
                   <Label layoutX="14.0" layoutY="14.0" text="Fakturaadress:" />
                </children>
             </AnchorPane>
+            <AnchorPane id="pane1" fx:id="emptyPaymentPane" prefHeight="200.0" prefWidth="200.0" stylesheets="@createAccount.css" />
          </children>
       </StackPane>
    </children>
