@@ -33,6 +33,7 @@ public class ShoppingCartController implements Initializable {
     private double amount;
 
 
+
     private ObservableList<ShoppingItem> shoppingItemObservableList;
 
     private IMatDataHandler dataHandler = IMatDataHandler.getInstance();;
@@ -46,6 +47,7 @@ public class ShoppingCartController implements Initializable {
     public void initialize(URL location, ResourceBundle resources) {
         dataHandler = IMatDataHandler.getInstance();
         goToCartButton.setGraphic(new ImageView(shoppingCartImage));
+
 
         dataHandler.getShoppingCart().addProduct(dataHandler.getProduct(1));
         dataHandler.getShoppingCart().addProduct(dataHandler.getProduct(2));

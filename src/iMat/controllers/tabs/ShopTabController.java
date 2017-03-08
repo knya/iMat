@@ -64,6 +64,15 @@ public class ShopTabController implements Initializable {
         return productObservableList;
     }
 
+    public ObservableList<Product> getProductObservableList(){
+        return this.productObservableList;
+    }
+    public ListView<Product> getShopProductListView(){
+        return this.shopProductListView;
+    }
+
+
+
     private void setLabels(List<ProductCategory> productCategoryList) {
         productCategoryAmountLabel.setText(String.valueOf(productObservableList.size()) + " st produkter");
 
