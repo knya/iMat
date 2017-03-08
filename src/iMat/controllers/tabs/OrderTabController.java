@@ -74,7 +74,16 @@ public class OrderTabController implements Initializable {
             shoppingItemTableView.refresh();
             orderHistoryTableView.setItems(refreshOrderTableView());
             orderHistoryTableView.refresh();
+            setPlaceOrderButton();
         });
+    }
+
+    private void setPlaceOrderButton() {
+        if (dataHandler.getShoppingCart().getItems().isEmpty()) {
+            placeOrderButton.setDisable(true);
+        } else {
+            placeOrderButton.setDisable(false);
+        }
     }
 
     public void inject(TabController tabController) {
