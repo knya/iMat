@@ -11,7 +11,6 @@
     -fx-background-color: linear-gradient(#fee5b7, #fec38d, #feba76);
 }
 .list-cell:filled:selected:focused, .list-cell:filled:selected {
-    -fx-background-color: #fecaa0;
     -fx-text-fill: black;
 }
 
@@ -21,6 +20,7 @@
 }
 .list-cell:even{
     -fx-text-fill: black;
+    -fx-background-color: white;
 }
 .choice-box{
     -fx-background-color: #FEF1E1;

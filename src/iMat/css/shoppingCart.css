@@ -1,6 +1,7 @@
 .list-cell:filled:selected:focused, .list-cell:filled:selected {
     -fx-background-color: #fecaa0;
     -fx-text-fill: black;
+    -fx-text-background-color: black;
 }
 
 .list-cell:odd { /* <=== changed to even */
