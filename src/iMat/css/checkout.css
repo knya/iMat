@@ -23,9 +23,17 @@
     -fx-background-color: white;
 }
 .choice-box{
-    -fx-background-color: #FEF1E1;
+    /*-fx-background-color: #FEF1E1;*/
     -fx-focus-color: transparent;
 }
 .list-view{
     -fx-focus-color: transparent;
+}
+
+.pane-background {
+    -fx-background-color: #FEF1E1;
+}
+
+#pane{
+    -fx-background-color: #FEF1E1;
 }

@@ -53,17 +53,15 @@ public class OrderTabController implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
-//        orderCartPane.toFront();
-
         shoppingItemTableView.setItems(refreshItemTableView());
         nameColumn.setCellValueFactory(c -> new SimpleStringProperty(c.getValue().getProduct().getName()));
-        amountColumn.setCellValueFactory(c -> new SimpleStringProperty(String.valueOf(c.getValue().getAmount())));
-        priceColumn.setCellValueFactory(c -> new SimpleStringProperty(String.valueOf(c.getValue().getProduct().getPrice())));
-        sumColumn.setCellValueFactory(c -> new SimpleStringProperty(String.valueOf(c.getValue().getTotal())));
-
-
-
-//        shoppingItemTableView.setCellValueFactory(shoppingItemListView -> new CellFactory().createOrderCartCell());
+        amountColumn.setCellValueFactory(c -> new SimpleStringProperty(
+                String.valueOf(c.getValue().getAmount() + " " + c.getValue().getProduct().getUnitSuffix()))
+        );
+        priceColumn.setCellValueFactory(c -> new SimpleStringProperty(
+                String.valueOf(c.getValue().getProduct().getPrice() + ":-"))
+        );
+        sumColumn.setCellValueFactory(c -> new SimpleStringProperty(String.valueOf(c.getValue().getTotal() + ":-")));
 
         orderHistoryTableView.setItems(refreshOrderTableView());
         orderNumberColumn.setCellValueFactory(c -> new SimpleStringProperty(String.valueOf(c.getValue().getOrderNumber())));
