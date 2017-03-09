@@ -23,8 +23,11 @@ public class Main extends Application {
         primaryStage.setMinWidth(362);
         primaryStage.show();
 
-//        primaryStage.setOnCloseRequest(event -> dataHandler.shutDown());
-        dataHandler.reset();
+        primaryStage.setOnCloseRequest(event -> dataHandler.shutDown());
+
+
+
+
     }
 
 

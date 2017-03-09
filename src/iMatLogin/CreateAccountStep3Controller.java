@@ -13,6 +13,8 @@ import javafx.scene.layout.AnchorPane;
 import se.chalmers.ait.dat215.project.IMatDataHandler;
 
 import java.net.URL;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.ResourceBundle;
 
 /**
@@ -114,6 +116,7 @@ public class CreateAccountStep3Controller implements Initializable {
 
     @FXML
     private void createAccountActionPerformed(ActionEvent event) {
+
         loginController.getLoginPane().toFront();
 
         dataHandler.getUser().setUserName(loginController.getNewUser().getUserName());
@@ -132,5 +135,20 @@ public class CreateAccountStep3Controller implements Initializable {
         dataHandler.getCreditCard().setValidMonth(loginController.getNewCreditCard().getValidMonth());
         dataHandler.getCreditCard().setValidYear(loginController.getNewCreditCard().getValidYear());
         dataHandler.getCreditCard().setVerificationCode(loginController.getNewCreditCard().getValidYear());
+    }
+
+
+    private boolean checkIfOnlyNumbers(TextField phoneNumberField){
+        List<Character> numbers  = new ArrayList<>();
+        for(int i = 0; i < 10; i++){
+            numbers.add((char)(i + '0'));
+        }
+        for(int i = 0; i < phoneNumberField.getText().length(); i++){
+            if(!numbers.contains(phoneNumberField.getText().charAt(i))){
+                return false;
+            }
+
+        }
+        return true;
     }
 }

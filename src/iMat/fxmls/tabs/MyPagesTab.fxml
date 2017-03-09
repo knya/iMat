@@ -69,5 +69,24 @@
       </StackPane>
       <Button fx:id="changePasswordButton" layoutX="434.0" layoutY="56.0" mnemonicParsing="false" onAction="#changePasswordPaneActionPerformed" text="Ändra lösenord" />
       <Button fx:id="personalDetailsButton" layoutX="435.0" layoutY="14.0" mnemonicParsing="false" onAction="#personalDetailsPaneActionPerformed" text="Kontouppgifter" />
+      <Text layoutX="373.0" layoutY="268.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Kreditkortsuppgifter:">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </Text>
+      <TextField fx:id="cardNumberInMyPages" layoutX="373.0" layoutY="307.0" />
+      <TextField fx:id="monthField" layoutX="373.0" layoutY="362.0" prefHeight="27.0" prefWidth="33.0" />
+      <TextField fx:id="yearField" layoutX="424.0" layoutY="363.0" prefHeight="27.0" prefWidth="33.0" />
+      <Text layoutX="412.0" layoutY="382.0" strokeType="OUTSIDE" strokeWidth="0.0" text="/">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </Text>
+      <TextField fx:id="cvcField" layoutX="372.0" layoutY="420.0" prefHeight="27.0" prefWidth="68.0" />
+      <Separator layoutX="357.0" layoutY="279.0" prefWidth="200.0" />
+      <Text layoutX="376.0" layoutY="303.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Kortnummer:" />
+      <Text layoutX="376.0" layoutY="358.0" strokeType="OUTSIDE" strokeWidth="0.0" text="MM" />
+      <Text layoutX="427.0" layoutY="358.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ÅÅ" />
+      <Text layoutX="373.0" layoutY="416.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CVC" />
    </children>
 </AnchorPane>

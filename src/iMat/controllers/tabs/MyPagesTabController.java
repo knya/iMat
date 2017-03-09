@@ -33,6 +33,11 @@ public class MyPagesTabController implements Initializable {
     @FXML private TextField postCodeField;
     @FXML private TextField cityField;
 
+    @FXML private TextField cvcField;
+    @FXML private TextField monthField;
+    @FXML private TextField yearField;
+    @FXML private TextField cardNumberInMyPages;
+
     private IMatDataHandler dataHandler = IMatDataHandler.getInstance();
 
     @Override
@@ -43,6 +48,11 @@ public class MyPagesTabController implements Initializable {
     }
 
     private void setLabels() {
+
+        cardNumberInMyPages.setText(dataHandler.getCreditCard().getCardNumber());
+        yearField.setText(dataHandler.getCreditCard().getValidYear() + "");
+        monthField.setText(dataHandler.getCreditCard().getValidMonth() + "");
+        cvcField.setText(dataHandler.getCreditCard().getVerificationCode()+ "");
         socialSecurityNumberField.setText(dataHandler.getUser().getUserName());
         firstNameField.setText(dataHandler.getCustomer().getFirstName());
         lastNameField.setText(dataHandler.getCustomer().getLastName());
