@@ -55,6 +55,7 @@ public class OrderTabController implements Initializable {
 
         setPlaceOrderButton();
 
+
         shoppingItemTableView.setItems(refreshItemTableView());
         nameColumn.setCellValueFactory(c -> new SimpleStringProperty(c.getValue().getProduct().getName()));
         amountColumn.setCellValueFactory(c -> new SimpleStringProperty(
@@ -69,7 +70,7 @@ public class OrderTabController implements Initializable {
         orderNumberColumn.setCellValueFactory(c -> new SimpleStringProperty(String.valueOf(c.getValue().getOrderNumber())));
         dateColumn.setCellValueFactory(c -> new SimpleStringProperty(String.valueOf(c.getValue().getDate())));
         productOrderColumn.setCellValueFactory(c -> new SimpleStringProperty(String.valueOf(c.getValue().getItems().size())));
-        //sumOrderColumn.setCellValueFactory(c -> new SimpleStringProperty(String.valueOf()));
+        //sumOrderColumn.setCellValueFactory(c -> new SimpleStringProperty());
 
         dataHandler.getShoppingCart().addShoppingCartListener(cartEvent -> {
             shoppingItemTableView.setItems(refreshItemTableView());
@@ -102,6 +103,7 @@ public class OrderTabController implements Initializable {
     private ObservableList<Order> refreshOrderTableView() {
         ObservableList<Order> orderHistoryObservableList = FXCollections.observableArrayList();
         orderHistoryObservableList.addAll(dataHandler.getOrders());
+
 
         return orderHistoryObservableList;
     }

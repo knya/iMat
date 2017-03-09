@@ -89,7 +89,6 @@ public class CategoriesController implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
-
         logoButtonImage.setImage(logo);
 
         productCategoryListObservableList = FXCollections.observableArrayList();
