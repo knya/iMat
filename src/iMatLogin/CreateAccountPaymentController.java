@@ -20,7 +20,7 @@ import java.util.ResourceBundle;
 /**
  * Controller for the third step in creating an account.
  */
-public class CreateAccountStep3Controller implements Initializable {
+public class CreateAccountPaymentController implements Initializable {
 
     private LoginController loginController;
 
@@ -99,7 +99,7 @@ public class CreateAccountStep3Controller implements Initializable {
 
     @FXML
     private void goBackwardActionPerformed(ActionEvent event) {
-        loginController.getCreateAccountStep2().toFront();
+        loginController.getDeliveryPane().toFront();
     }
 
     @FXML

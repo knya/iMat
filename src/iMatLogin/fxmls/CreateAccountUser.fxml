@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+
+<AnchorPane id="pane1" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="360.0" stylesheets="@createAccount.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="iMatLogin.CreateAccountUserController">
+   <children>
+      <PasswordField fx:id="confirmPasswordField" layoutX="190.0" layoutY="151.0" prefHeight="27.0" prefWidth="137.0" promptText="Bekräfta lösenord" />
+      <Label layoutX="190.0" layoutY="132.0" text="Bekräfta lösenord:" />
+      <PasswordField fx:id="passwordField" layoutX="28.0" layoutY="151.0" prefHeight="27.0" prefWidth="137.0" promptText="Lösenord" />
+      <Label layoutX="28.0" layoutY="132.0" text="Lösenord:" />
+      <TextField fx:id="userNameField" layoutX="28.0" layoutY="70.0" promptText="Personnummer" />
+      <Label layoutX="28.0" layoutY="53.0" text="Fyll i personnummer (ÅÅMMDD-XXXX):" />
+      <Label alignment="CENTER" layoutX="101.0" layoutY="13.0" text="1. Användaruppgifter" underline="true">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

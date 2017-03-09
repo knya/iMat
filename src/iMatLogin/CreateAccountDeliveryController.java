@@ -14,7 +14,7 @@ import java.util.ResourceBundle;
 /**
  * Controller for the second step in creating an account.
  */
-public class CreateAccountStep2Controller implements Initializable {
+public class CreateAccountDeliveryController implements Initializable {
 
     private LoginController loginController;
 
@@ -45,17 +45,16 @@ public class CreateAccountStep2Controller implements Initializable {
 
     @FXML
     private void goBackwardActionPerformed(ActionEvent event) {
-        loginController.getCreateAccountStep1().toFront();
+        loginController.getPersonalPane().toFront();
     }
 
     @FXML
     private void goForwardActionPerformed(ActionEvent event) {
         if(checkIfOnlyNumbers(postCodeField) && postCodeField.getText().length() == 5){
-            loginController.getCreateAccountStep3().toFront();
+            loginController.getPaymentPane().toFront();
         }
 
     }
-
 
     private boolean checkIfOnlyNumbers(TextField phoneNumberField){
         List<Character> numbers  = new ArrayList<>();

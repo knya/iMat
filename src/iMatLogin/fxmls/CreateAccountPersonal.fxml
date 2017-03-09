@@ -5,7 +5,7 @@
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="pane1" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="360.0" stylesheets="@createAccount.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="iMatLogin.CreateAccountStep1Controller">
+<AnchorPane id="pane1" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="360.0" stylesheets="@createAccount.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="iMatLogin.CreateAccountPersonalController">
    <children>
       <Button fx:id="goForwardButton" layoutX="279.0" layoutY="353.0" mnemonicParsing="false" onAction="#goForwardActionPerformed" text="Nästa" />
       <Label alignment="CENTER" layoutX="85.0" layoutY="3.0" text="1. Personliga uppgifter" underline="true">

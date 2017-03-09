@@ -15,34 +15,39 @@
    <children>
       <StackPane fx:id="createAccountPane" prefHeight="400.0" prefWidth="362.0">
          <children>
-            <AnchorPane fx:id="createAcctionStep3Pane" prefHeight="200.0" prefWidth="200.0">
+            <AnchorPane fx:id="paymentPane" prefHeight="200.0" prefWidth="200.0">
                <children>
-                  <fx:include fx:id="createAccountStep3" source="CreateAccountStep3.fxml" />
+                  <fx:include fx:id="createAccountPayment" source="CreateAccountPayment.fxml" />
                </children>
             </AnchorPane>
-            <AnchorPane fx:id="createAccountStep2Pane" prefHeight="200.0" prefWidth="200.0">
+            <AnchorPane fx:id="deliveryPane" prefHeight="200.0" prefWidth="200.0">
                <children>
-                  <fx:include fx:id="createAccountStep2" source="CreateAccountStep2.fxml" />
+                  <fx:include fx:id="createAccountDelivery" source="CreateAccountDelivery.fxml" />
                </children>
             </AnchorPane>
-            <AnchorPane fx:id="createAccountStep1Pane" prefHeight="200.0" prefWidth="200.0">
+            <AnchorPane fx:id="personalPane" prefHeight="200.0" prefWidth="200.0">
                <children>
-                  <fx:include fx:id="createAccountStep1" source="CreateAccountStep1.fxml" />
+                  <fx:include fx:id="createAccountPersonal" source="CreateAccountPersonal.fxml" />
                </children>
             </AnchorPane>
-            <AnchorPane id="pane1" fx:id="loginPane" prefHeight="200.0" prefWidth="200.0" stylesheets="@createAccount.css">
+            <AnchorPane fx:id="userPane" prefHeight="200.0" prefWidth="200.0">
+               <children>
+                  <fx:include fx:id="createAccountUser" source="CreateAccountUser.fxml" />
+               </children>
+            </AnchorPane>
+            <AnchorPane id="pane1" fx:id="loginPane" prefHeight="486.0" prefWidth="470.0" stylesheets="@createAccount.css">
                <children>
                   <Label layoutX="134.0" layoutY="14.0" text="Inloggning">
                      <font>
                         <Font size="20.0" />
                      </font></Label>
-                  <Label layoutX="143.0" layoutY="58.0" text="Användarnamn:" />
-                  <TextField fx:id="userNameField" layoutX="115.0" layoutY="72.0" />
-                  <Label layoutX="157.0" layoutY="106.0" text="Lösenord:" />
-                  <PasswordField fx:id="passwordField" layoutX="115.0" layoutY="120.0" />
+                  <Label layoutX="133.0" layoutY="58.0" text="Användarnamn:" />
+                  <TextField fx:id="userNameField" layoutX="98.0" layoutY="75.0" />
+                  <Label layoutX="150.0" layoutY="106.0" text="Lösenord:" />
+                  <PasswordField fx:id="passwordField" layoutX="98.0" layoutY="123.0" />
                   <Button layoutX="141.0" layoutY="166.0" mnemonicParsing="false" onAction="#changeSceneContent" text="Logga in" />
-                  <Label layoutX="135.0" layoutY="241.0" text="Har du inget konto?" />
-                  <Button layoutX="111.0" layoutY="255.0" mnemonicParsing="false" onAction="#createButtonActionPerformed" text="Skapa användare" />
+                  <Label layoutX="121.0" layoutY="241.0" text="Har du inget konto?" />
+                  <Button layoutX="109.0" layoutY="258.0" mnemonicParsing="false" onAction="#createButtonActionPerformed" text="Skapa användare" />
                </children>
             </AnchorPane>
          </children>

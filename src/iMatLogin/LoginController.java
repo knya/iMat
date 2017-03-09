@@ -25,16 +25,18 @@ public class LoginController implements Initializable {
     @FXML private AnchorPane loginScenePane;
     @FXML private StackPane createAccountPane;
     @FXML private AnchorPane loginPane;
-    @FXML private AnchorPane createAccountStep1Pane;
-    @FXML private AnchorPane createAccountStep2Pane;
-    @FXML private AnchorPane createAcctionStep3Pane;
+    @FXML private AnchorPane userPane;
+    @FXML private AnchorPane personalPane;
+    @FXML private AnchorPane deliveryPane;
+    @FXML private AnchorPane paymentPane;
 
     @FXML private TextField userNameField;
     @FXML private TextField passwordField;
 
-    @FXML private CreateAccountStep1Controller createAccountStep1Controller;
-    @FXML private CreateAccountStep2Controller createAccountStep2Controller;
-    @FXML private CreateAccountStep3Controller createAccountStep3Controller;
+    @FXML private CreateAccountUserController createAccountUserController;
+    @FXML private CreateAccountPersonalController createAccountPersonalController;
+    @FXML private CreateAccountDeliveryController createAccountDeliveryController;
+    @FXML private CreateAccountPaymentController createAccountPaymentController;
 
     private NewUser newUser;
     private NewCustomer newCustomer;
@@ -44,9 +46,10 @@ public class LoginController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        createAccountStep1Controller.inject(this);
-        createAccountStep2Controller.inject(this);
-        createAccountStep3Controller.inject(this);
+        createAccountUserController.inject(this);
+        createAccountPersonalController.inject(this);
+        createAccountDeliveryController.inject(this);
+        createAccountPaymentController.inject(this);
 
         userNameField.textProperty().addListener(((observable, oldValue, newValue) -> {
             if (dataHandler.getUser().getUserName() != null) {
@@ -85,23 +88,27 @@ public class LoginController implements Initializable {
 
     @FXML
     private void createButtonActionPerformed(ActionEvent event) {
-        createAccountStep1Pane.toFront();
+        userPane.toFront();
 
         newUser = new NewUser();
         newCustomer = new NewCustomer();
         newCreditCard = new NewCreditCard();
     }
 
-    public AnchorPane getCreateAccountStep1() {
-        return createAccountStep1Pane;
+    public AnchorPane getUserPane() {
+        return userPane;
     }
 
-    public AnchorPane getCreateAccountStep2() {
-        return createAccountStep2Pane;
+    public AnchorPane getPersonalPane() {
+        return personalPane;
     }
 
-    public AnchorPane getCreateAccountStep3() {
-        return createAcctionStep3Pane;
+    public AnchorPane getDeliveryPane() {
+        return deliveryPane;
+    }
+
+    public AnchorPane getPaymentPane() {
+        return paymentPane;
     }
 
     public AnchorPane getLoginPane() {

@@ -6,7 +6,7 @@
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="pane1" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="360.0" stylesheets="@createAccount.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="iMatLogin.CreateAccountStep3Controller">
+<AnchorPane id="pane1" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="360.0" stylesheets="@createAccount.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="iMatLogin.CreateAccountPaymentController">
    <children>
       <Button fx:id="createAccountButton" layoutX="228.0" layoutY="355.0" mnemonicParsing="false" onAction="#createAccountActionPerformed" text="Skapa konto" />
       <Button fx:id="goBackwardButton" layoutX="123.0" layoutY="355.0" mnemonicParsing="false" onAction="#goBackwardActionPerformed" text="Tillbaka" />

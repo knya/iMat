@@ -16,13 +16,10 @@ import java.util.ResourceBundle;
 /**
  * Controller for the first step in creating an account.
  */
-public class CreateAccountStep1Controller implements Initializable {
+public class CreateAccountPersonalController implements Initializable {
 
     private LoginController loginController;
 
-    @FXML private TextField userNameField;
-    @FXML private PasswordField passwordField;
-    @FXML private PasswordField confirmPasswordField;
     @FXML private TextField firstNameField;
     @FXML private TextField lastNameField;
     @FXML private TextField phoneNumberField;
@@ -37,15 +34,6 @@ public class CreateAccountStep1Controller implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-
-
-        userNameField.textProperty().addListener((observable, oldValue, newValue) -> {
-            loginController.getNewUser().setUserName(newValue);
-        });
-
-        passwordField.textProperty().addListener(((observable, oldValue, newValue) -> {
-            loginController.getNewUser().setPassword(newValue);
-        }));
 
         firstNameField.textProperty().addListener((observable, oldValue, newValue) -> {
             loginController.getNewCustomer().setFirstName(newValue);
@@ -82,9 +70,9 @@ public class CreateAccountStep1Controller implements Initializable {
         if(checkIfOnlyNumbers(phoneNumberField) && checkIfOnlyNumbers(mobilePhoneNumberField)
                 && confirmPhoneField.getText().equals(phoneNumberField.getText())
                 && mobilePhoneNumberField.getText().equals(confirmMobileField.getText())){
-            loginController.getCreateAccountStep2().toFront();
-        }else{
-
+            loginController.getDeliveryPane().toFront();
+        } else {
+            triggerSamePageErrorMessage();
         }
 
 
@@ -95,6 +83,9 @@ public class CreateAccountStep1Controller implements Initializable {
         loginController.getLoginPane().toFront();
     }
 
+    private void triggerSamePageErrorMessage() {
+
+    }
 
     private boolean checkIfOnlyNumbers(TextField phoneNumberField){
         List<Character> numbers  = new ArrayList<>();
