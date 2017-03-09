@@ -13,10 +13,10 @@
                <children>
                   <TableView fx:id="orderHistoryTableView" layoutX="20.0" layoutY="98.0" prefHeight="286.0" prefWidth="505.0">
                     <columns>
-                        <TableColumn fx:id="orderNumberColumn" prefWidth="75.0" text="Ordernummer" />
-                      <TableColumn fx:id="dateColumn" prefWidth="75.0" text="Datum" />
-                      <TableColumn fx:id="productOrderColumn" prefWidth="114.0" text="Antal produkter" />
-                        <TableColumn fx:id="sumOrderColumn" prefWidth="75.0" text="Summa" />
+                        <TableColumn fx:id="orderNumberColumn" prefWidth="92.0" text="Ordernummer" />
+                      <TableColumn fx:id="dateColumn" prefWidth="174.0" text="Datum" />
+                      <TableColumn fx:id="productOrderColumn" prefWidth="61.0" text="Antal produkter" />
+                        <TableColumn fx:id="sumOrderColumn" prefWidth="111.0" text="Summa" />
                     </columns>
                   </TableView>
                   <Button fx:id="backToCart" layoutX="377.0" layoutY="14.0" mnemonicParsing="false" onAction="#backToCartActionPerformed" text="Tillbaka till kundvagn" />
