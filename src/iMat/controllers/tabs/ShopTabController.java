@@ -36,10 +36,12 @@ public class ShopTabController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-
         productObservableList = FXCollections.observableArrayList();
-//        productObservableList.addAll(productCategories.getAllCategories());
-//        setProductCategoryObservableList();
+        productObservableList.addAll(dataHandler.getProducts());
+
+        productCategoryLabel.setText("Alla produkter");
+        productCategoryAmountLabel.setText(String.valueOf(productObservableList.size()) + " st produkter");
+
         shopProductListView.setItems(productObservableList);
         shopProductListView.setCellFactory(productListView -> new CellFactory().createShopProductCell());
 
@@ -70,8 +72,6 @@ public class ShopTabController implements Initializable {
     public ListView<Product> getShopProductListView(){
         return this.shopProductListView;
     }
-
-
 
     private void setLabels(List<ProductCategory> productCategoryList) {
         productCategoryAmountLabel.setText(String.valueOf(productObservableList.size()) + " st produkter");
