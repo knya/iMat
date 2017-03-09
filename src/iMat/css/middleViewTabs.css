@@ -75,4 +75,9 @@
 }
 .table-view .filler{
     -fx-background-color: linear-gradient(#fef1d5, #fecaa0, #fec28e);
-}
+}/*
+#decreaseButton, #increaseButton{
+    -fx-background-radius: 30px;
+    -fx-border-color: transparent;
+
+}*/

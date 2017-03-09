@@ -62,7 +62,7 @@ public class ShoppingCartController implements Initializable {
                 amount += dataHandler.getShoppingCart().getItems().get(i).getAmount();
             }
 
-            numberOfItems.setText(String.valueOf(amount));
+            numberOfItems.setText(String.valueOf(amount + " st"));
             shoppingItemListView.setItems(refreshItemListView());
             shoppingItemListView.refresh();
             amount = 0.0;

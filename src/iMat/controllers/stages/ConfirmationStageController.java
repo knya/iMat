@@ -13,7 +13,6 @@ import se.chalmers.ait.dat215.project.IMatDataHandler;
 import se.chalmers.ait.dat215.project.ShoppingItem;
 
 import java.net.URL;
-import java.util.Date;
 import java.util.ResourceBundle;
 
 /**
@@ -47,8 +46,7 @@ public class ConfirmationStageController implements Initializable {
     @FXML private AnchorPane thankYouPane;
     @FXML private Button finishedButton;
     @FXML private Label addressLabel3rd;
-    @FXML private Label deliveryDate;
-
+    @FXML private Label dateLabel;
 
 
     @FXML private Label totalSum;
@@ -111,6 +109,10 @@ public class ConfirmationStageController implements Initializable {
     private void placeOrderActionPerformed(ActionEvent event) {
         dataHandler.placeOrder(true);
         thankYouPane.toFront();
+
+        dateLabel.setText(String.valueOf(deliveryDatePicker.getValue().getDayOfMonth()
+                + "/" + deliveryDatePicker.getValue().getMonthValue()
+                + "/" + deliveryDatePicker.getValue().getYear()));
     }
 
     @FXML

@@ -48,7 +48,6 @@ public class ShopProductCellController extends AbstractCellController {
         productPriceLabel.setText(String.valueOf(product.getPrice()) + ":-" + " / " + product.getUnitSuffix());
         quantityField.setText(String.valueOf(quantity));
 
-
         if (dataHandler.isFavorite(product)) {
             favoriteButtonImage.setImage(fullStar);
         } else {
@@ -56,6 +55,8 @@ public class ShopProductCellController extends AbstractCellController {
         }
 
         addTextFieldListener();
+        //increaseButton.setGraphic(new ImageView(addition));
+        //increaseButton.setMaxSize(addition.getWidth(),addition.getHeight());
     }
 
     public AnchorPane getAnchorPane() {

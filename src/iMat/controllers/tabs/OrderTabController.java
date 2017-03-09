@@ -53,6 +53,8 @@ public class OrderTabController implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
+        setPlaceOrderButton();
+
         shoppingItemTableView.setItems(refreshItemTableView());
         nameColumn.setCellValueFactory(c -> new SimpleStringProperty(c.getValue().getProduct().getName()));
         amountColumn.setCellValueFactory(c -> new SimpleStringProperty(
