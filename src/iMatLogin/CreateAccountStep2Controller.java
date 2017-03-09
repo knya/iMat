@@ -7,6 +7,8 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 
 import java.net.URL;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.ResourceBundle;
 
 /**
@@ -48,6 +50,24 @@ public class CreateAccountStep2Controller implements Initializable {
 
     @FXML
     private void goForwardActionPerformed(ActionEvent event) {
-        loginController.getCreateAccountStep3().toFront();
+        if(checkIfOnlyNumbers(postCodeField) && postCodeField.getText().length() == 5){
+            loginController.getCreateAccountStep3().toFront();
+        }
+
+    }
+
+
+    private boolean checkIfOnlyNumbers(TextField phoneNumberField){
+        List<Character> numbers  = new ArrayList<>();
+        for(int i = 0; i < 10; i++){
+            numbers.add((char)(i + '0'));
+        }
+        for(int i = 0; i < phoneNumberField.getText().length(); i++){
+            if(!numbers.contains(phoneNumberField.getText().charAt(i))){
+                return false;
+            }
+
+        }
+        return true;
     }
 }

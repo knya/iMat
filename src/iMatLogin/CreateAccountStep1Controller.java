@@ -9,6 +9,8 @@ import javafx.scene.control.TextField;
 import se.chalmers.ait.dat215.project.IMatDataHandler;
 
 import java.net.URL;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.ResourceBundle;
 
 /**
@@ -35,6 +37,8 @@ public class CreateAccountStep1Controller implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+
+
         userNameField.textProperty().addListener((observable, oldValue, newValue) -> {
             loginController.getNewUser().setUserName(newValue);
         });
@@ -75,11 +79,34 @@ public class CreateAccountStep1Controller implements Initializable {
 
     @FXML
     private void goForwardActionPerformed(ActionEvent event) {
-        loginController.getCreateAccountStep2().toFront();
+        if(checkIfOnlyNumbers(phoneNumberField) && checkIfOnlyNumbers(mobilePhoneNumberField)
+                && confirmPhoneField.getText().equals(phoneNumberField.getText())
+                && mobilePhoneNumberField.getText().equals(confirmMobileField.getText())){
+            loginController.getCreateAccountStep2().toFront();
+        }else{
+
+        }
+
+
     }
 
     @FXML
     private void backToLoginActionPerformed(ActionEvent event) {
         loginController.getLoginPane().toFront();
+    }
+
+
+    private boolean checkIfOnlyNumbers(TextField phoneNumberField){
+        List<Character> numbers  = new ArrayList<>();
+        for(int i = 0; i < 10; i++){
+            numbers.add((char)(i + '0'));
+        }
+        for(int i = 0; i < phoneNumberField.getText().length(); i++){
+            if(!numbers.contains(phoneNumberField.getText().charAt(i))){
+                return false;
+            }
+
+        }
+        return true;
     }
 }

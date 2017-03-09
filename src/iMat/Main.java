@@ -25,6 +25,8 @@ public class Main extends Application {
 
 //        primaryStage.setOnCloseRequest(event -> dataHandler.shutDown());
         dataHandler.reset();
+        dataHandler.isCustomerComplete();
+
     }
 
 
