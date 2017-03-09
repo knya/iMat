@@ -40,34 +40,6 @@ public class MyPagesTabController implements Initializable {
 
         personalDetailsPane.toFront();
         setLabels();
-
-        firstNameField.textProperty().addListener((observable, oldValue, newValue) -> {
-            dataHandler.getCustomer().setFirstName(newValue);
-        });
-
-        lastNameField.textProperty().addListener((observable, oldValue, newValue) -> {
-            dataHandler.getCustomer().setLastName(newValue);
-        });
-
-        phoneNumberField.textProperty().addListener((observable, oldValue, newValue) -> {
-            dataHandler.getCustomer().setPhoneNumber(newValue);
-        });
-
-        mobilePhoneNumberField.textProperty().addListener((observable, oldValue, newValue) -> {
-            dataHandler.getCustomer().setMobilePhoneNumber(newValue);
-        });
-
-        addressField.textProperty().addListener((observable, oldValue, newValue) -> {
-            dataHandler.getCustomer().setAddress(newValue);
-        });
-
-        postCodeField.textProperty().addListener((observable, oldValue, newValue) -> {
-            dataHandler.getCustomer().setPostCode(newValue);
-        });
-
-        cityField.textProperty().addListener((observable, oldValue, newValue) -> {
-            dataHandler.getCustomer().setPostAddress(newValue);
-        });
     }
 
     private void setLabels() {
