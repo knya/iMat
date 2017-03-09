@@ -111,13 +111,7 @@ public class CategoriesController implements Initializable {
 
     @FXML
     private void logoButtonActionPerformed(ActionEvent event) {
-        //ObservableList allItems = FXCollections.observableArrayList();
-        //allItems.addAll(dataHandler.findProducts(""));
-        //mainController.getTabPane().getSelectionModel().select(0);
-        //mainController.getTabController().getShopTabController().getShopProductListView().setItems(allItems);
-
-
-
+        productCategoryListView.getSelectionModel().selectFirst();
     }
 
 
