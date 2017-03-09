@@ -12,7 +12,7 @@
             <Font size="18.0" />
          </font>
       </Label>
-      <Label layoutX="28.0" layoutY="53.0" text="Fyll i personnummer (ÅÅMMDD-XXXX):" />
+      <Label layoutX="28.0" layoutY="53.0" text="Fyll i personnummer (ÅÅMMDDXXXX):" />
       <TextField fx:id="userNameField" layoutX="28.0" layoutY="70.0" promptText="Personnummer" />
       <Label layoutX="28.0" layoutY="132.0" text="Lösenord:" />
       <PasswordField fx:id="passwordField" layoutX="28.0" layoutY="151.0" prefHeight="27.0" prefWidth="137.0" promptText="Lösenord" />
