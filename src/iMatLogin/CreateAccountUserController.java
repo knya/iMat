@@ -34,18 +34,40 @@ public class CreateAccountUserController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        clearErrorMessages();
+        clearErrorLabels();
 
         userNameField.textProperty().addListener((observable, oldValue, newValue) -> {
             loginController.getNewUser().setUserName(newValue);
+
+            if (!newValue.matches("^[0-9]+$")) {
+                userNameErrorLabel.setText("Personnumret får endast innehålla siffror.");
+            } else {
+                userNameErrorLabel.setText("");
+            }
+
+            if (newValue.isEmpty()) {
+                userNameErrorLabel.setText("Fält ej ifyllt");
+            }
         });
 
         passwordField.textProperty().addListener(((observable, oldValue, newValue) -> {
             loginController.getNewUser().setPassword(newValue);
+
+            if (newValue.isEmpty()) {
+                passwordErrorLabel.setText("Fält ej ifyllt");
+            } else {
+                passwordErrorLabel.setText("");
+            }
         }));
 
         confirmPasswordField.textProperty().addListener(((observable, oldValue, newValue) -> {
             confirmPassword = newValue;
+
+            if (newValue.isEmpty()) {
+                passwordErrorLabel.setText("Fält ej ifyllt");
+            } else {
+                passwordErrorLabel.setText("");
+            }
         }));
     }
 
@@ -60,7 +82,7 @@ public class CreateAccountUserController implements Initializable {
 
     @FXML
     private void goForwardActionPerformed(ActionEvent event) {
-        clearErrorMessages();
+        clearErrorLabels();
 
         if (checkIfOnlyNumbers(userNameField) && checkPassword()) {
             loginController.getPersonalPane().toFront();
@@ -87,7 +109,7 @@ public class CreateAccountUserController implements Initializable {
         }
     }
 
-    private void clearErrorMessages() {
+    private void clearErrorLabels() {
         userNameErrorLabel.setText("");
         passwordErrorLabel.setText("");
     }

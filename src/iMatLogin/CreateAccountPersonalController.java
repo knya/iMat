@@ -4,6 +4,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import se.chalmers.ait.dat215.project.IMatDataHandler;
@@ -26,21 +27,41 @@ public class CreateAccountPersonalController implements Initializable {
     @FXML private TextField mobilePhoneNumberField;
     @FXML private TextField confirmPhoneField;
     @FXML private TextField confirmMobileField;
+    @FXML private Label firstNameErrorLabel;
+    @FXML private Label lastNameErrorLabel;
+    @FXML private Label phoneErrorLabel;
+    @FXML private Label mobileErrorLabel;
 
     @FXML private Button goForwardButton;
     @FXML private Button goBackwardButton;
+
+    private String confirmPhone = "";
+    private String confirmMobile = "";
 
     private IMatDataHandler dataHandler = IMatDataHandler.getInstance();
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        clearErrorLabels();
 
         firstNameField.textProperty().addListener((observable, oldValue, newValue) -> {
             loginController.getNewCustomer().setFirstName(newValue);
+
+            if (newValue.isEmpty()) {
+                firstNameErrorLabel.setText("Fält ej ifyllt");
+            } else {
+                firstNameErrorLabel.setText("");
+            }
         });
 
         lastNameField.textProperty().addListener((observable, oldValue, newValue) -> {
             loginController.getNewCustomer().setLastName(newValue);
+
+            if (newValue.isEmpty()) {
+                lastNameErrorLabel.setText("Fält ej ifyllt");
+            } else {
+                lastNameErrorLabel.setText("");
+            }
         });
 
         phoneNumberField.textProperty().addListener((observable, oldValue, newValue) -> {
@@ -52,11 +73,11 @@ public class CreateAccountPersonalController implements Initializable {
         });
 
         confirmPhoneField.textProperty().addListener((observable, oldValue, newValue) -> {
-            //TODO
+            confirmPhone = newValue;
         });
 
         confirmMobileField.textProperty().addListener((observable, oldValue, newValue) -> {
-            //TODO
+            confirmMobile = newValue;
         });
 
     }
@@ -67,13 +88,12 @@ public class CreateAccountPersonalController implements Initializable {
 
     @FXML
     private void goForwardActionPerformed(ActionEvent event) {
-        if(checkIfOnlyNumbers(phoneNumberField)
-                && checkIfOnlyNumbers(mobilePhoneNumberField)
-                && confirmPhoneField.getText().equals(phoneNumberField.getText())
-                && mobilePhoneNumberField.getText().equals(confirmMobileField.getText())) {
+        clearErrorLabels();
+
+        if(checkPhone() && checkMobile()) {
             loginController.getDeliveryPane().toFront();
         } else {
-            triggerSamePageErrorMessage();
+            setErrorLabels();
         }
     }
 
@@ -82,8 +102,51 @@ public class CreateAccountPersonalController implements Initializable {
         loginController.getUserPane().toFront();
     }
 
-    private void triggerSamePageErrorMessage() {
+    private void clearErrorLabels() {
+        firstNameErrorLabel.setText("");
+        lastNameErrorLabel.setText("");
+        phoneErrorLabel.setText("");
+        mobileErrorLabel.setText("");
+    }
 
+    private void setErrorLabels() {
+        if (firstNameField.getText().isEmpty()) {
+            firstNameErrorLabel.setText("Fält ej ifyllt");
+        }
+
+        if (lastNameField.getText().isEmpty()) {
+            lastNameErrorLabel.setText("Fält ej ifyllt");
+        }
+
+        if (phoneNumberField.getText().isEmpty()) {
+            phoneErrorLabel.setText("Fält ej ifyllt");
+        }
+
+        if (mobilePhoneNumberField.getText().isEmpty()) {
+            mobileErrorLabel.setText("Fält ej ifyllt");
+        }
+
+        if (!checkPhone()) {
+            phoneErrorLabel.setText("Telefonnumret matchar inte");
+        }
+
+        if (!checkMobile()) {
+            mobileErrorLabel.setText("Mobilnumret matchar inte");
+        }
+    }
+
+    private boolean checkPhone() {
+        if (confirmPhone.isEmpty() && loginController.getNewCustomer().getPhoneNumber().isEmpty()) {
+            return false;
+        }
+        return checkIfOnlyNumbers(phoneNumberField) && confirmPhone.equals(loginController.getNewCustomer().getPhoneNumber());
+    }
+
+    private boolean checkMobile() {
+        if (confirmMobile.isEmpty() && loginController.getNewCustomer().getMobilePhoneNumber().isEmpty()) {
+            return false;
+        }
+        return checkIfOnlyNumbers(mobilePhoneNumberField) && confirmPhone.equals(loginController.getNewCustomer().getMobilePhoneNumber());
     }
 
     private boolean checkIfOnlyNumbers(TextField phoneNumberField){

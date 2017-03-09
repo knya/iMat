@@ -31,5 +31,15 @@
          </font>
       </Label>
       <Button fx:id="goBackwardButton" layoutX="190.0" layoutY="350.0" mnemonicParsing="false" onAction="#goBackwardActionPerformed" text="Avbryt" />
+      <Label layoutX="17.0" layoutY="70.0" text="*" textFill="RED" />
+      <Label layoutX="187.0" layoutY="70.0" text="*" textFill="RED" />
+      <Label layoutX="17.0" layoutY="170.0" text="*" textFill="RED" />
+      <Label layoutX="187.0" layoutY="170.0" text="*" textFill="RED" />
+      <Label layoutX="17.0" layoutY="247.0" text="*" textFill="RED" />
+      <Label layoutX="187.0" layoutY="247.0" text="*" textFill="RED" />
+      <Label fx:id="lastNameErrorLabel" layoutX="196.0" layoutY="90.0" prefHeight="14.0" prefWidth="137.0" text="lastnameError" textFill="RED" />
+      <Label fx:id="firstNameErrorLabel" layoutX="28.0" layoutY="90.0" prefHeight="14.0" prefWidth="137.0" text="firstNameError" textFill="RED" />
+      <Label fx:id="phoneErrorLabel" alignment="CENTER_RIGHT" layoutX="27.0" layoutY="190.0" prefHeight="14.0" prefWidth="306.0" text="phoneError" textFill="RED" />
+      <Label fx:id="mobileErrorLabel" alignment="CENTER_RIGHT" layoutX="27.0" layoutY="267.0" prefHeight="14.0" prefWidth="306.0" text="mobileError" textFill="RED" />
    </children>
 </AnchorPane>

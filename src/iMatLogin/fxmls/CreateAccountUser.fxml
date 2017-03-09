@@ -28,7 +28,7 @@
       <Label layoutX="17.0" layoutY="74.0" text="*" textFill="RED" />
       <Label layoutX="17.0" layoutY="158.0" text="*" textFill="RED" />
       <Label layoutX="182.0" layoutY="158.0" text="*" textFill="RED" />
-      <Label fx:id="userNameErrorLabel" layoutX="28.0" layoutY="92.0" prefHeight="14.0" prefWidth="223.0" text="userNameError" textFill="RED" />
-      <Label fx:id="passwordErrorLabel" alignment="CENTER_RIGHT" layoutX="120.0" layoutY="178.0" prefHeight="14.0" prefWidth="210.0" text="passwordError" textFill="RED" />
+      <Label fx:id="userNameErrorLabel" layoutX="28.0" layoutY="92.0" prefHeight="14.0" prefWidth="287.0" text="userNameError" textFill="RED" />
+      <Label fx:id="passwordErrorLabel" layoutX="28.0" layoutY="178.0" prefHeight="14.0" prefWidth="210.0" text="passwordError" textFill="RED" />
    </children>
 </AnchorPane>
