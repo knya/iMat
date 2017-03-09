@@ -55,8 +55,8 @@ public class ShopProductCellController extends AbstractCellController {
         }
 
         addTextFieldListener();
-        increaseButton.setGraphic(new ImageView(addition));
-        increaseButton.setMaxSize(addition.getWidth(),addition.getHeight());
+        //increaseButton.setGraphic(new ImageView(addition));
+        //increaseButton.setMaxSize(addition.getWidth(),addition.getHeight());
     }
 
     public AnchorPane getAnchorPane() {

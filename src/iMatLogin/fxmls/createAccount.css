@@ -10,11 +10,11 @@
 }
 
 #pane2{
-    -fx-background-color: #FFFFFF;
+    -fx-background-color: #FEF1E1;
 }
 
 #pane3{
-    -fx-background-color: #FFFFFF;
+    -fx-background-color: #FEF1E1;
 }
 .button{
     -fx-background-color: linear-gradient(#fef1d5, #fecaa0, #fec28e);
