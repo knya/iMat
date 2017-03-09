@@ -5,7 +5,6 @@
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-
 <AnchorPane id="pane1" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="360.0" stylesheets="@createAccount.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="iMatLogin.CreateAccountUserController">
    <children>
       <PasswordField fx:id="confirmPasswordField" layoutX="190.0" layoutY="151.0" prefHeight="27.0" prefWidth="137.0" promptText="Bekräfta lösenord" />
@@ -17,6 +16,13 @@
       <Label alignment="CENTER" layoutX="101.0" layoutY="13.0" text="1. Användaruppgifter" underline="true">
          <font>
             <Font size="18.0" />
+         </font>
+      </Label>
+      <Button fx:id="backToLoginButton" layoutX="190.0" layoutY="350.0" mnemonicParsing="false" onAction="#backToLoginActionPerformed" text="Avbryt" />
+      <Button fx:id="goForwardButton" layoutX="280.0" layoutY="350.0" mnemonicParsing="false" onAction="#goForwardActionPerformed" text="Nästa" />
+      <Label layoutX="20.0" layoutY="360.0" text="Steg 1 av 4">
+         <font>
+            <Font size="15.0" />
          </font>
       </Label>
    </children>

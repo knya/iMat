@@ -28,7 +28,7 @@ public class CreateAccountPersonalController implements Initializable {
     @FXML private TextField confirmMobileField;
 
     @FXML private Button goForwardButton;
-    @FXML private Button backToLogin;
+    @FXML private Button goBackwardButton;
 
     private IMatDataHandler dataHandler = IMatDataHandler.getInstance();
 
@@ -67,20 +67,19 @@ public class CreateAccountPersonalController implements Initializable {
 
     @FXML
     private void goForwardActionPerformed(ActionEvent event) {
-        if(checkIfOnlyNumbers(phoneNumberField) && checkIfOnlyNumbers(mobilePhoneNumberField)
+        if(checkIfOnlyNumbers(phoneNumberField)
+                && checkIfOnlyNumbers(mobilePhoneNumberField)
                 && confirmPhoneField.getText().equals(phoneNumberField.getText())
-                && mobilePhoneNumberField.getText().equals(confirmMobileField.getText())){
+                && mobilePhoneNumberField.getText().equals(confirmMobileField.getText())) {
             loginController.getDeliveryPane().toFront();
         } else {
             triggerSamePageErrorMessage();
         }
-
-
     }
 
     @FXML
-    private void backToLoginActionPerformed(ActionEvent event) {
-        loginController.getLoginPane().toFront();
+    private void goBackwardActionPerformed(ActionEvent event) {
+        loginController.getUserPane().toFront();
     }
 
     private void triggerSamePageErrorMessage() {

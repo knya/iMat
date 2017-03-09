@@ -1,7 +1,9 @@
 package iMatLogin;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 
@@ -19,6 +21,10 @@ public class CreateAccountUserController implements Initializable {
     @FXML private PasswordField passwordField;
     @FXML private PasswordField confirmPasswordField;
 
+    @FXML private Button backToLoginButton;
+    @FXML private Button goForwardButton;
+
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         userNameField.textProperty().addListener((observable, oldValue, newValue) -> {
@@ -32,5 +38,15 @@ public class CreateAccountUserController implements Initializable {
 
     public void inject(LoginController loginController) {
         this.loginController = loginController;
+    }
+
+    @FXML
+    private void backToLoginActionPerformed(ActionEvent event) {
+        loginController.getLoginPane().toFront();
+    }
+
+    @FXML
+    private void goForwardActionPerformed(ActionEvent event) {
+        loginController.getPersonalPane().toFront();
     }
 }
