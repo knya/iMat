@@ -57,4 +57,8 @@ public class TabController implements Initializable {
     public Tab getSearchTab() {
         return search;
     }
+
+    public OrderTabController getOrderTabController(){
+        return orderTabController;
+    }
 }

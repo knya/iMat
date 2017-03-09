@@ -124,7 +124,7 @@ public class OrderTabController implements Initializable {
     }
 
     @FXML
-    private void backToCartActionPerformed(ActionEvent event) {
+    public void backToCartActionPerformed(ActionEvent event) {
         orderCartPane.toFront();
     }
 }
