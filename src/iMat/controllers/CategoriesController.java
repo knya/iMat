@@ -13,6 +13,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import se.chalmers.ait.dat215.project.IMatDataHandler;
 import se.chalmers.ait.dat215.project.ProductCategory;
 
 import java.net.URL;
@@ -31,10 +32,12 @@ public class CategoriesController implements Initializable {
     @FXML private ListView<List<ProductCategory>> productCategoryListView;
     private ObservableList<List<ProductCategory>> productCategoryListObservableList;
 
+
     @FXML private Button logoButton;
     @FXML private ImageView logoButtonImage;
 
     private Image logo = new Image("/Imat/Images/TestLogo.jpg");
+    private IMatDataHandler dataHandler = IMatDataHandler.getInstance();
 
 
     private List<ProductCategory> allCategories = new ArrayList<>(Arrays.asList(
@@ -86,6 +89,7 @@ public class CategoriesController implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
+
         logoButtonImage.setImage(logo);
 
         productCategoryListObservableList = FXCollections.observableArrayList();
@@ -108,7 +112,14 @@ public class CategoriesController implements Initializable {
 
     @FXML
     private void logoButtonActionPerformed(ActionEvent event) {
-        //TODO
+        //ObservableList allItems = FXCollections.observableArrayList();
+        //allItems.addAll(dataHandler.findProducts(""));
+        //mainController.getTabPane().getSelectionModel().select(0);
+        //mainController.getTabController().getShopTabController().getShopProductListView().setItems(allItems);
+
+
+
     }
+
 
 }

@@ -10,6 +10,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
+import se.chalmers.ait.dat215.project.IMatDataHandler;
 
 import java.io.IOException;
 import java.net.URL;
@@ -39,16 +40,39 @@ public class LoginController implements Initializable {
     private NewCustomer newCustomer;
     private NewCreditCard newCreditCard;
 
+    private IMatDataHandler dataHandler = IMatDataHandler.getInstance();
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         createAccountStep1Controller.inject(this);
         createAccountStep2Controller.inject(this);
         createAccountStep3Controller.inject(this);
 
+        userNameField.textProperty().addListener(((observable, oldValue, newValue) -> {
+            if (dataHandler.getUser().getUserName() != null) {
+                userNameField.setText(dataHandler.getUser().getUserName());
+            }
+        }));
     }
 
     @FXML
-    protected void changeSceneContent(ActionEvent event) throws IOException {
+    private void changeSceneContent(ActionEvent event) throws IOException {
+
+        /*
+        if (newUser != null) {
+            if (newUser.getUserName().equals(dataHandler.getUser().getUserName())
+                    && newUser.getPassword().equals(dataHandler.getUser().getPassword())) {
+                Stage stage = (Stage) loginScenePane.getScene().getWindow();
+
+                Parent mainScene = FXMLLoader.load(getClass().getResource("/iMat/fxmls/Main.fxml"));
+                stage.setScene(new Scene(mainScene));
+                stage.setTitle("iMat");
+                stage.setX(0);
+                stage.setY(0);
+            }
+        }
+        */
+
         Stage stage = (Stage) loginScenePane.getScene().getWindow();
 
         Parent mainScene = FXMLLoader.load(getClass().getResource("/iMat/fxmls/Main.fxml"));
@@ -56,6 +80,7 @@ public class LoginController implements Initializable {
         stage.setTitle("iMat");
         stage.setX(0);
         stage.setY(0);
+
     }
 
     @FXML

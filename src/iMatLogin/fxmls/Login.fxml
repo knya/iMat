@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.text.*?>
 <?import java.lang.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
@@ -31,14 +32,17 @@
             </AnchorPane>
             <AnchorPane id="pane1" fx:id="loginPane" prefHeight="200.0" prefWidth="200.0" stylesheets="@createAccount.css">
                <children>
-                  <Label layoutX="140.0" layoutY="14.0" text="Inloggning" />
-                  <Label layoutX="119.0" layoutY="58.0" text="Användarnamn:" />
-                  <TextField fx:id="userNameField" layoutX="84.0" layoutY="75.0" />
-                  <Label layoutX="136.0" layoutY="125.0" text="Lösenord:" />
-                  <TextField fx:id="passwordField" layoutX="84.0" layoutY="142.0" />
-                  <Button layoutX="123.0" layoutY="190.0" mnemonicParsing="false" onAction="#changeSceneContent" text="Logga in" />
-                  <Label layoutX="107.0" layoutY="271.0" text="Har du inget konto?" />
-                  <Button layoutX="90.0" layoutY="297.0" mnemonicParsing="false" onAction="#createButtonActionPerformed" text="Skapa användare" />
+                  <Label layoutX="134.0" layoutY="14.0" text="Inloggning">
+                     <font>
+                        <Font size="20.0" />
+                     </font></Label>
+                  <Label layoutX="143.0" layoutY="58.0" text="Användarnamn:" />
+                  <TextField fx:id="userNameField" layoutX="115.0" layoutY="72.0" />
+                  <Label layoutX="157.0" layoutY="106.0" text="Lösenord:" />
+                  <PasswordField fx:id="passwordField" layoutX="115.0" layoutY="120.0" />
+                  <Button layoutX="141.0" layoutY="166.0" mnemonicParsing="false" onAction="#changeSceneContent" text="Logga in" />
+                  <Label layoutX="135.0" layoutY="241.0" text="Har du inget konto?" />
+                  <Button layoutX="111.0" layoutY="255.0" mnemonicParsing="false" onAction="#createButtonActionPerformed" text="Skapa användare" />
                </children>
             </AnchorPane>
          </children>

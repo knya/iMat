@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.image.*?>
 <?import java.lang.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
@@ -13,29 +14,115 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="440.0" prefWidth="416.0" stylesheets="@../../css/checkout.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="iMat.controllers.stages.ConfirmationStageController">
+<AnchorPane id="pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="440.0" prefWidth="416.0" stylesheets="@../../css/checkout.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="iMat.controllers.stages.ConfirmationStageController">
    <children>
-      <Label fx:id="presentationLabel" layoutX="29.0" layoutY="28.0" text="Hej namn!">
-         <font>
-            <Font size="20.0" />
-         </font></Label>
-      <Label layoutX="28.0" layoutY="75.0" text="Leveransadress:" />
-      <ChoiceBox layoutX="28.0" layoutY="89.0" prefWidth="150.0" />
-      <Label layoutX="28.0" layoutY="123.0" text="Betalsätt:" />
-      <ChoiceBox layoutX="28.0" layoutY="137.0" prefWidth="150.0" />
-      <ListView fx:id="receiptListView" layoutX="211.0" layoutY="46.0" prefHeight="317.0" prefWidth="169.0" />
-      <Label layoutX="211.0" layoutY="363.0" prefHeight="26.0" prefWidth="59.0" text="Summa:">
-         <font>
-            <Font size="15.0" />
-         </font></Label>
-      <Label fx:id="totalSum" layoutX="335.0" layoutY="363.0" prefHeight="26.0" prefWidth="45.0" text="Label">
-         <font>
-            <Font size="15.0" />
-         </font></Label>
-      <Button fx:id="cancelOrderButton" layoutX="14.0" layoutY="382.0" mnemonicParsing="false" onAction="#cancelOrderActionPerformed" prefHeight="49.0" prefWidth="108.0" text="Avbryt" />
-      <Button fx:id="placeOrderButton" layoutX="212.0" layoutY="391.0" mnemonicParsing="false" onAction="#placeOrderActionPerformed" prefHeight="40.0" prefWidth="178.0" text="Bekräfta beställning" />
-      <Label layoutX="130.0" layoutY="7.0" text="Bekräfta beställning" underline="true" />
-      <DatePicker layoutX="28.0" layoutY="191.0" prefHeight="27.0" prefWidth="150.0" />
-      <Text layoutX="29.0" layoutY="187.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Leveransdatum:" />
+      <StackPane prefHeight="440.0" prefWidth="416.0">
+         <children>
+            <AnchorPane id="pane" fx:id="thankYouPane" prefHeight="200.0" prefWidth="200.0" stylesheets="@../../css/checkout.css">
+               <children>
+                  <Label layoutX="114.0" layoutY="62.0" text="Tack för din beställning!">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Button fx:id="finishedButton" layoutX="183.0" layoutY="252.0" mnemonicParsing="false" onAction="#finishedButtonActionPerformed" text="Klar" />
+                  <Label layoutX="94.0" layoutY="99.0" text="Dina varor kommer att levereras">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="172.0" layoutY="145.0" text="Valt datum">
+                     <font>
+                        <Font size="16.0" />
+                     </font></Label>
+                  <Label layoutX="202.0" layoutY="177.0" text="till">
+                     <font>
+                        <Font size="14.0" />
+                     </font></Label>
+                  <Label fx:id="addressLabel3rd" alignment="CENTER" layoutX="60.0" layoutY="216.0" prefHeight="20.0" prefWidth="299.0" text="Adress">
+                     <font>
+                        <Font size="16.0" />
+                     </font></Label>
+                  <Label layoutX="125.0" layoutY="14.0" text="Beställning bekräftad" underline="true">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+            <AnchorPane id="pane" fx:id="secondConfirmationPane" prefHeight="200.0" prefWidth="200.0" stylesheets="@../../css/checkout.css">
+               <children>
+                  <Label layoutX="59.0" layoutY="84.0" text="är du säker på att du vill beställa dessa varor">
+                     <font>
+                        <Font size="15.0" />
+                     </font></Label>
+                  <Label layoutX="150.0" layoutY="301.0" text="som ska levereras till">
+                     <font>
+                        <Font size="13.0" />
+                     </font></Label>
+                  <Label fx:id="addressLabel2nd" alignment="CENTER" layoutX="49.0" layoutY="328.0" prefHeight="20.0" prefWidth="320.0" text="Address label">
+                     <font>
+                        <Font size="16.0" />
+                     </font></Label>
+                  <Button fx:id="cancelOrderButton" layoutX="49.0" layoutY="387.0" mnemonicParsing="false" onAction="#cancelOrderActionPerformed" text="Nej, avbryt" />
+                  <Button fx:id="placeOrderButton" layoutX="266.0" layoutY="387.0" mnemonicParsing="false" onAction="#placeOrderActionPerformed" prefHeight="34.0" prefWidth="102.0" text="Ja, beställ" />
+                  <TableView fx:id="shoppingItemTableView2nd" layoutX="49.0" layoutY="116.0" prefHeight="173.0" prefWidth="320.0">
+                     <columns>
+                        <TableColumn fx:id="productColumn2nd" editable="false" prefWidth="105.0" resizable="false" sortable="false" text="Artiklar" />
+                        <TableColumn fx:id="amountColumn2nd" editable="false" prefWidth="82.0" resizable="false" sortable="false" text="Antal" />
+                        <TableColumn fx:id="totalColumn2nd" editable="false" prefWidth="67.0" resizable="false" sortable="false" text="Totalt" />
+                     </columns>
+                  </TableView>
+                  <Label fx:id="presentationLabel2nd" alignment="CENTER" layoutX="49.0" layoutY="51.0" prefHeight="23.0" prefWidth="320.0" text="Namn,">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="132.0" layoutY="3.0" text="Bekräfta beställning" underline="true">
+                     <font>
+                        <Font size="18.0" />
+                     </font></Label>
+               </children>
+            </AnchorPane>
+            <AnchorPane id="pane" fx:id="firstConfirmationPane" prefHeight="200.0" prefWidth="200.0" stylesheets="@../../css/checkout.css">
+               <children>
+                  <Label layoutX="129.0" layoutY="14.0" text="Bekräfta beställning" underline="true">
+                     <font>
+                        <Font size="18.0" />
+                     </font></Label>
+                  <Label fx:id="presentationLabel" layoutX="42.0" layoutY="41.0" text="Hej namn!">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="29.0" layoutY="76.0" text="Vart ska varorna levereras?" />
+                  <ChoiceBox layoutX="29.0" layoutY="98.0" prefWidth="150.0" />
+                  <Label layoutX="29.0" layoutY="127.0" text="Hur vill du betala?" />
+                  <ChoiceBox layoutX="29.0" layoutY="141.0" prefWidth="150.0" />
+                  <TableView fx:id="shoppingItemTableView" layoutX="233.0" layoutY="41.0" prefHeight="317.0" prefWidth="169.0">
+                    <columns>
+                      <TableColumn fx:id="productColumn" editable="false" prefWidth="90.0" resizable="false" sortable="false" text="Artiklar" />
+                        <TableColumn fx:id="amountColumn" editable="false" prefWidth="40.0" resizable="false" sortable="false" text="Antal" />
+                        <TableColumn fx:id="totalColumn" editable="false" prefWidth="38.0" resizable="false" sortable="false" text="Totalt" />
+                    </columns>
+                  </TableView>
+                  <Label fx:id="totalSum" layoutX="354.0" layoutY="357.0" prefHeight="26.0" prefWidth="45.0" text="Label">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="233.0" layoutY="357.0" prefHeight="26.0" prefWidth="59.0" text="Summa:">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Label>
+                  <Button fx:id="cancelOrderButton" layoutX="10.0" layoutY="386.0" mnemonicParsing="false" onAction="#cancelOrderActionPerformed" prefHeight="40.0" prefWidth="102.0" text="Avbryt" />
+                  <Button fx:id="confirmOrderButton" layoutX="221.0" layoutY="386.0" mnemonicParsing="false" onAction="#confirmOrderActionPerformed" prefHeight="40.0" prefWidth="178.0" text="Bekräfta beställning" />
+                  <Text layoutX="37.0" layoutY="190.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tidigast leveransdatum:" />
+                  <DatePicker fx:id="deliveryDatePicker" layoutX="29.0" layoutY="193.0" prefHeight="27.0" prefWidth="150.0" />
+               </children>
+            </AnchorPane>
+         </children>
+      </StackPane>
    </children>
 </AnchorPane>
