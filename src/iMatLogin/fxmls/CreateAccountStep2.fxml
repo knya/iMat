@@ -17,9 +17,9 @@
       <TextField fx:id="postCodeField" layoutX="14.0" layoutY="138.0" prefHeight="27.0" prefWidth="68.0" />
       <Text layoutX="111.0" layoutY="134.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Stad:" />
       <TextField fx:id="cityField" layoutX="109.0" layoutY="138.0" prefHeight="27.0" prefWidth="101.0" />
-      <Button fx:id="goBackwardButton" layoutX="180.0" layoutY="364.0" mnemonicParsing="false" onAction="#goBackwardActionPerformed" text="Tillbaka" />
-      <Button fx:id="goForwardButton" layoutX="278.0" layoutY="364.0" mnemonicParsing="false" onAction="#goForwardActionPerformed" text="Nästa" />
-      <Label layoutX="15.0" layoutY="372.0" text="Steg 2 av 3">
+      <Button fx:id="goBackwardButton" layoutX="180.0" layoutY="355.0" mnemonicParsing="false" onAction="#goBackwardActionPerformed" text="Tillbaka" />
+      <Button fx:id="goForwardButton" layoutX="278.0" layoutY="355.0" mnemonicParsing="false" onAction="#goForwardActionPerformed" text="Nästa" />
+      <Label layoutX="15.0" layoutY="363.0" text="Steg 2 av 3">
          <font>
             <Font size="15.0" />
          </font>

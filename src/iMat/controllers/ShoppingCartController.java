@@ -31,7 +31,7 @@ public class ShoppingCartController implements Initializable {
     @FXML private Label totalLabel;
     @FXML private Label numberOfItems;
 
-    private double amount;
+    private int amount;
 
     private ObservableList<ShoppingItem> shoppingItemObservableList;
 
@@ -62,10 +62,10 @@ public class ShoppingCartController implements Initializable {
                 amount += dataHandler.getShoppingCart().getItems().get(i).getAmount();
             }
 
-            numberOfItems.setText(String.valueOf(amount + " st"));
+            numberOfItems.setText(String.valueOf((int) amount + " st"));
             shoppingItemListView.setItems(refreshItemListView());
             shoppingItemListView.refresh();
-            amount = 0.0;
+            amount = 0;
         });
     }
 

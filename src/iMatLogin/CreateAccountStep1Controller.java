@@ -4,6 +4,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import se.chalmers.ait.dat215.project.IMatDataHandler;
 
@@ -18,6 +19,8 @@ public class CreateAccountStep1Controller implements Initializable {
     private LoginController loginController;
 
     @FXML private TextField userNameField;
+    @FXML private PasswordField passwordField;
+    @FXML private PasswordField confirmPasswordField;
     @FXML private TextField firstNameField;
     @FXML private TextField lastNameField;
     @FXML private TextField phoneNumberField;
@@ -35,6 +38,10 @@ public class CreateAccountStep1Controller implements Initializable {
         userNameField.textProperty().addListener((observable, oldValue, newValue) -> {
             loginController.getNewUser().setUserName(newValue);
         });
+
+        passwordField.textProperty().addListener(((observable, oldValue, newValue) -> {
+            loginController.getNewUser().setPassword(newValue);
+        }));
 
         firstNameField.textProperty().addListener((observable, oldValue, newValue) -> {
             loginController.getNewCustomer().setFirstName(newValue);

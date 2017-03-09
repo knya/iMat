@@ -7,7 +7,7 @@
 
 <AnchorPane id="pane1" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="360.0" stylesheets="@createAccount.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="iMatLogin.CreateAccountStep1Controller">
    <children>
-      <Button fx:id="goForwardButton" layoutX="278.0" layoutY="361.0" mnemonicParsing="false" onAction="#goForwardActionPerformed" text="Nästa" />
+      <Button fx:id="goForwardButton" layoutX="279.0" layoutY="353.0" mnemonicParsing="false" onAction="#goForwardActionPerformed" text="Nästa" />
       <Label alignment="CENTER" layoutX="85.0" layoutY="3.0" text="1. Personliga uppgifter" underline="true">
          <font>
             <Font size="18.0" />
@@ -15,27 +15,27 @@
       </Label>
       <Label layoutX="64.0" layoutY="43.0" text="Fyll i personnummer (ÅÅMMDD-XXXX):" />
       <TextField fx:id="userNameField" layoutX="101.0" layoutY="60.0" promptText="Personnummer" />
-      <Label layoutX="49.0" layoutY="175.0" prefHeight="17.0" prefWidth="62.0" text="Förnamn:" />
-      <TextField fx:id="firstNameField" layoutX="48.0" layoutY="189.0" prefHeight="22.0" prefWidth="120.0" promptText="Förnamn" />
+      <Label layoutX="31.0" layoutY="94.0" text="Lösenord:" />
+      <PasswordField fx:id="passwordField" layoutX="31.0" layoutY="108.0" prefHeight="27.0" prefWidth="137.0" promptText="Lösenord" />
+      <Label layoutX="200.0" layoutY="94.0" text="Bekräfta lösenord:" />
+      <PasswordField fx:id="confirmPasswordField" layoutX="200.0" layoutY="108.0" prefHeight="27.0" prefWidth="137.0" promptText="Bekräfta lösenord" />
+      <Label layoutX="31.0" layoutY="175.0" prefHeight="17.0" prefWidth="62.0" text="Förnamn:" />
+      <TextField fx:id="firstNameField" layoutX="31.0" layoutY="189.0" prefHeight="27.0" prefWidth="137.0" promptText="Förnamn" />
       <Label layoutX="200.0" layoutY="175.0" text="Efternamn:" />
-      <TextField fx:id="lastNameField" layoutX="200.0" layoutY="189.0" prefHeight="22.0" prefWidth="120.0" promptText="Efternamn" />
-      <Label layoutX="48.0" layoutY="229.0" text="Telefon:" />
-      <TextField fx:id="phoneNumberField" layoutX="48.0" layoutY="243.0" prefHeight="22.0" prefWidth="120.0" promptText="Telefonnummer" />
+      <TextField fx:id="lastNameField" layoutX="200.0" layoutY="189.0" prefHeight="27.0" prefWidth="137.0" promptText="Efternamn" />
+      <Label layoutX="31.0" layoutY="229.0" text="Telefon:" />
+      <TextField fx:id="phoneNumberField" layoutX="31.0" layoutY="243.0" prefHeight="27.0" prefWidth="137.0" promptText="Telefonnummer" />
       <Label layoutX="200.0" layoutY="229.0" text="Bekräfta telefonnummer:" />
-      <TextField fx:id="confirmPhoneField" layoutX="200.0" layoutY="243.0" prefHeight="22.0" prefWidth="120.0" promptText="Bekräfta telefon" />
-      <Label layoutX="50.0" layoutY="278.0" text="Mobiltelefon:" />
-      <TextField fx:id="mobilePhoneNumberField" layoutX="48.0" layoutY="292.0" prefHeight="22.0" prefWidth="120.0" promptText="Mobilnummer" />
+      <TextField fx:id="confirmPhoneField" layoutX="200.0" layoutY="243.0" prefHeight="27.0" prefWidth="137.0" promptText="Bekräfta telefon" />
+      <Label layoutX="31.0" layoutY="278.0" text="Mobiltelefon:" />
+      <TextField fx:id="mobilePhoneNumberField" layoutX="31.0" layoutY="292.0" prefHeight="27.0" prefWidth="137.0" promptText="Mobilnummer" />
       <Label layoutX="201.0" layoutY="278.0" text="Bekräfta mobilnummber:" />
-      <TextField fx:id="confirmMobileField" layoutX="200.0" layoutY="292.0" prefHeight="22.0" prefWidth="120.0" promptText="Bekräfta mobil" />
-      <Label layoutX="13.0" layoutY="369.0" text="Steg 1 av 3">
+      <TextField fx:id="confirmMobileField" layoutX="200.0" layoutY="292.0" prefHeight="27.0" prefWidth="137.0" promptText="Bekräfta mobil" />
+      <Label layoutX="14.0" layoutY="361.0" text="Steg 1 av 3">
          <font>
             <Font size="15.0" />
          </font>
       </Label>
-      <Button fx:id="backToLogin" layoutX="184.0" layoutY="361.0" mnemonicParsing="false" onAction="#backToLoginActionPerformed" text="Avbryt" />
-      <Label layoutX="52.0" layoutY="94.0" text="Lösenord:" />
-      <PasswordField layoutX="48.0" layoutY="108.0" prefHeight="22.0" prefWidth="120.0" promptText="Lösenord" />
-      <PasswordField layoutX="200.0" layoutY="108.0" prefHeight="22.0" prefWidth="122.0" promptText="Bekräfta lösenord" />
-      <Label layoutX="200.0" layoutY="94.0" text="Bekräfta lösenord:" />
+      <Button fx:id="backToLogin" layoutX="185.0" layoutY="353.0" mnemonicParsing="false" onAction="#backToLoginActionPerformed" text="Avbryt" />
    </children>
 </AnchorPane>
