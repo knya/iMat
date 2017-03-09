@@ -11,17 +11,14 @@
    <children>
       <ImageView fx:id="productImageView" fitHeight="80.0" fitWidth="83.0" layoutX="14.0" layoutY="11.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="20" />
       <Label fx:id="productNameLabel" layoutX="107.0" layoutY="14.0" text="Namn" AnchorPane.leftAnchor="110.0" AnchorPane.topAnchor="20.0" />
-      <Button fx:id="addToCartButton" layoutX="300.0" layoutY="1.0" mnemonicParsing="false" onAction="#addToCartActionPerformed" prefHeight="45.0" prefWidth="182.0" text="Lägg till i kundvagn" AnchorPane.rightAnchor="-283.0" AnchorPane.topAnchor="1.0" />
+      <Button fx:id="addToCartButton" layoutX="571.0" layoutY="6.0" mnemonicParsing="false" onAction="#addToCartActionPerformed" prefHeight="45.0" prefWidth="182.0" text="Lägg till i kundvagn" AnchorPane.rightAnchor="-253.0" AnchorPane.topAnchor="6.0" />
       <Button fx:id="addToFavoritesButton" layoutX="260.0" layoutY="17.0" mnemonicParsing="false" onAction="#addToFavoritesActionPerformed" prefHeight="17.0" prefWidth="16.0" AnchorPane.leftAnchor="260.0" AnchorPane.topAnchor="20.0">
          <graphic>
             <ImageView fx:id="favoriteButtonImage" fitHeight="26.0" fitWidth="23.0" pickOnBounds="true" preserveRatio="true" />
          </graphic></Button>
       <Label fx:id="productPriceLabel" layoutX="112.0" layoutY="53.0" text="Price" />
-      <Button fx:id="decreaseButton" layoutX="612.0" layoutY="61.0" minHeight="25.0" minWidth="25.0" mnemonicParsing="false" onAction="#decreaseButtonActionPerformed" prefHeight="22.0" prefWidth="25.0" text="-" AnchorPane.rightAnchor="-137.0">
-         <font>
-            <Font name="System Bold" size="17.0" />
-         </font></Button>
-      <Button fx:id="increaseButton" layoutX="732.0" layoutY="57.0" mnemonicParsing="false" onAction="#increaseButtonActionPerformed" />
-      <TextField fx:id="quantityField" alignment="CENTER" layoutX="655.0" layoutY="60.0" prefHeight="27.0" prefWidth="52.0" />
+      <Button fx:id="decreaseButton" layoutX="571.0" layoutY="57.0" minHeight="25.0" minWidth="25.0" mnemonicParsing="false" onAction="#decreaseButtonActionPerformed" text="-" />
+      <Button fx:id="increaseButton" layoutX="718.0" layoutY="57.0" mnemonicParsing="false" onAction="#increaseButtonActionPerformed" text="+" />
+      <TextField fx:id="quantityField" alignment="CENTER" layoutX="636.0" layoutY="60.0" prefHeight="27.0" prefWidth="52.0" />
    </children>
 </AnchorPane>

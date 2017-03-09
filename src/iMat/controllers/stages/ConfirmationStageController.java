@@ -13,6 +13,7 @@ import se.chalmers.ait.dat215.project.IMatDataHandler;
 import se.chalmers.ait.dat215.project.ShoppingItem;
 
 import java.net.URL;
+import java.util.Date;
 import java.util.ResourceBundle;
 
 /**
@@ -46,6 +47,8 @@ public class ConfirmationStageController implements Initializable {
     @FXML private AnchorPane thankYouPane;
     @FXML private Button finishedButton;
     @FXML private Label addressLabel3rd;
+    @FXML private Label deliveryDate;
+
 
 
     @FXML private Label totalSum;
