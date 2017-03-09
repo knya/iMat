@@ -41,9 +41,9 @@
     -fx-font-size: 16pt;
     -fx-background-color: white;
 }
-.tab-pane:focused > .tab-header-area > .headers-region > .tab:selected .focus-indicator {
-    -fx-border-color: transparent;
-}
+/*.tab-pane:focused > .tab-header-area > .headers-region > .tab:selected .focus-indicator {*/
+    /*-fx-border-color: transparent;*/
+/*}*/
 .tab-pane > .tab-header-area > .headers-region > .tab{
     -fx-padding: 20px;
 }

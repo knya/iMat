@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="pane2" fx:id="orderHistoryPane" prefHeight="517.0" prefWidth="619.0" stylesheets="@../../css/orderCart.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="iMat.controllers.tabs.OrderHistoryTabController">
+   <children>
+      <TableView fx:id="orderHistoryTableView" layoutX="20.0" layoutY="98.0" prefHeight="395.0" prefWidth="257.0">
+         <columns>
+            <TableColumn fx:id="orderNumberColumn" prefWidth="100.0" text="Ordernummer" />
+            <TableColumn fx:id="dateColumn" prefWidth="156.0" text="Datum" />
+         </columns>
+      </TableView>
+      <TableView fx:id="orderProductTableView" layoutX="309.0" layoutY="98.0" prefHeight="342.0" prefWidth="257.0">
+         <columns>
+            <TableColumn fx:id="productNameColumn" prefWidth="99.0" text="Artikel" />
+            <TableColumn fx:id="amountProductColumn" prefWidth="90.0" text="Antal" />
+            <TableColumn fx:id="sumProductColumn" prefWidth="67.0" text="Totalt" />
+         </columns>
+      </TableView>
+      <Label layoutX="310.0" layoutY="448.0" text="Summa:" />
+   </children>
+</AnchorPane>

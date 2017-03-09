@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
@@ -40,6 +41,15 @@
               </children>
           </AnchorPane>
         </content>
+      </Tab>
+      <Tab fx:id="orderHistory" text="Orderhistorik">
+        <content>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+              <children>
+                  <fx:include fx:id="orderHistoryTab" source="tabs/OrderHistoryTab.fxml" />
+              </children>
+          </AnchorPane>
+          </content>
       </Tab>
    </tabs>
 </TabPane>

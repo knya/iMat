@@ -23,8 +23,10 @@ public class TabController implements Initializable {
     @FXML private AnchorPane myPagesTab;
     @FXML private AnchorPane orderTab;
     @FXML private AnchorPane searchTab;
+    @FXML private AnchorPane orderHistoryTab;
 
     @FXML private Tab search;
+    @FXML private Tab orderHistory;
 
     private MainController mainController;
 
@@ -32,6 +34,7 @@ public class TabController implements Initializable {
     @FXML private MyPagesTabController myPagesTabController;
     @FXML private OrderTabController orderTabController;
     @FXML private SearchTabController searchTabController;
+    @FXML private OrderHistoryTabController orderHistoryTabController;
 
 
     public void injectMainController(MainController mainController) {
@@ -44,6 +47,7 @@ public class TabController implements Initializable {
         myPagesTabController.inject(this);
         orderTabController.inject(this);
         searchTabController.inject(this);
+        orderHistoryTabController.inject(this);
     }
 
     public ShopTabController getShopTabController() {
@@ -56,5 +60,9 @@ public class TabController implements Initializable {
 
     public Tab getSearchTab() {
         return search;
+    }
+
+    public Tab getOrderHistoryTab() {
+        return orderHistory;
     }
 }

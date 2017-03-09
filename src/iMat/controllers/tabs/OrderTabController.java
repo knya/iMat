@@ -15,6 +15,7 @@ import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import se.chalmers.ait.dat215.project.IMatDataHandler;
 import se.chalmers.ait.dat215.project.Order;
+import se.chalmers.ait.dat215.project.Product;
 import se.chalmers.ait.dat215.project.ShoppingItem;
 
 import java.io.IOException;
@@ -29,24 +30,13 @@ public class OrderTabController implements Initializable {
     private TabController tabController;
 
     // OrderCartPane
-    @FXML private AnchorPane orderCartPane;
     @FXML private TableView<ShoppingItem> shoppingItemTableView;
     @FXML private TableColumn<ShoppingItem, String> nameColumn;
     @FXML private TableColumn<ShoppingItem, String> amountColumn;
     @FXML private TableColumn<ShoppingItem, String> priceColumn;
     @FXML private TableColumn<ShoppingItem, String> sumColumn;
 
-    //OrderHistoryPane
-    @FXML private AnchorPane orderHistoryPane;
-    @FXML private TableView<Order> orderHistoryTableView;
-    @FXML private TableColumn<Order, String> orderNumberColumn;
-    @FXML private TableColumn<Order, String> dateColumn;
-    @FXML private TableColumn<Order, String> productOrderColumn;
-    @FXML private TableColumn<Order, String> sumOrderColumn;
-
     @FXML private Button placeOrderButton;
-    @FXML private Button orderHistoryButton;
-    @FXML private Button backToCartButton;
 
     private IMatDataHandler dataHandler = IMatDataHandler.getInstance();
 
@@ -65,17 +55,16 @@ public class OrderTabController implements Initializable {
         );
         sumColumn.setCellValueFactory(c -> new SimpleStringProperty(String.valueOf(c.getValue().getTotal() + ":-")));
 
-        orderHistoryTableView.setItems(refreshOrderTableView());
-        orderNumberColumn.setCellValueFactory(c -> new SimpleStringProperty(String.valueOf(c.getValue().getOrderNumber())));
-        dateColumn.setCellValueFactory(c -> new SimpleStringProperty(String.valueOf(c.getValue().getDate())));
-        productOrderColumn.setCellValueFactory(c -> new SimpleStringProperty(String.valueOf(c.getValue().getItems().size())));
-//        sumOrderColumn.setCellValueFactory(c -> new SimpleStringProperty(String.valueOf()));
+//        orderHistoryTableView.setItems(refreshOrderTableView());
+//        orderNumberColumn.setCellValueFactory(c -> new SimpleStringProperty(String.valueOf(c.getValue().getOrderNumber())));
+//        dateColumn.setCellValueFactory(c -> new SimpleStringProperty(String.valueOf(c.getValue().getDate())));
+//        productOrderColumn.setCellValueFactory(c -> new SimpleStringProperty(String.valueOf(c.getValue().getItems().size())));
 
         dataHandler.getShoppingCart().addShoppingCartListener(cartEvent -> {
             shoppingItemTableView.setItems(refreshItemTableView());
             shoppingItemTableView.refresh();
-            orderHistoryTableView.setItems(refreshOrderTableView());
-            orderHistoryTableView.refresh();
+//            orderHistoryTableView.setItems(refreshOrderTableView());
+//            orderHistoryTableView.refresh();
             setPlaceOrderButton();
         });
     }
@@ -99,13 +88,6 @@ public class OrderTabController implements Initializable {
         return shoppingItemObservableList;
     }
 
-    private ObservableList<Order> refreshOrderTableView() {
-        ObservableList<Order> orderHistoryObservableList = FXCollections.observableArrayList();
-        orderHistoryObservableList.addAll(dataHandler.getOrders());
-
-        return orderHistoryObservableList;
-    }
-
     @FXML
     private void placeOrderActionPerformed(ActionEvent event) throws IOException {
 
@@ -116,15 +98,5 @@ public class OrderTabController implements Initializable {
         confirmationStage.setTitle("Bekräfta beställning");
         confirmationStage.setResizable(false);
         confirmationStage.showAndWait();
-    }
-
-    @FXML
-    private void orderHistoryButtonActionPerformed(ActionEvent event) {
-        orderHistoryPane.toFront();
-    }
-
-    @FXML
-    private void backToCartActionPerformed(ActionEvent event) {
-        orderCartPane.toFront();
     }
 }
