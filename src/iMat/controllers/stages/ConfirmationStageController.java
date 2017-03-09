@@ -41,6 +41,8 @@ public class ConfirmationStageController implements Initializable {
     @FXML private TableColumn<ShoppingItem, String> productColumn2nd;
     @FXML private TableColumn<ShoppingItem, String> amountColumn2nd;
     @FXML private TableColumn<ShoppingItem, String> totalColumn2nd;
+    @FXML private ChoiceBox<String> deliveryAddressChoiceBox;
+    @FXML private ChoiceBox<String> paymentChoiceBox;
 
     //ThankYouPane
     @FXML private AnchorPane thankYouPane;
@@ -66,6 +68,19 @@ public class ConfirmationStageController implements Initializable {
                 + dataHandler.getCustomer().getPostCode() + ", "
                 + dataHandler.getCustomer().getPostAddress()
         );
+
+        ObservableList<String> deliveryAddressObservableList = FXCollections.observableArrayList(
+                dataHandler.getCustomer().getAddress() + ", "
+                + dataHandler.getCustomer().getPostCode() + ", "
+                + dataHandler.getCustomer().getPostAddress()
+        );
+
+        ObservableList<String> paymentOptionsList = FXCollections.observableArrayList(
+                "Faktura", "Kreditkort"
+        );
+
+        deliveryAddressChoiceBox.setItems(deliveryAddressObservableList);
+        paymentChoiceBox.setItems(paymentOptionsList);
 
         ObservableList<ShoppingItem> shoppingItemObservableList = FXCollections.observableArrayList();
         shoppingItemObservableList.addAll(dataHandler.getShoppingCart().getItems());
@@ -110,9 +125,11 @@ public class ConfirmationStageController implements Initializable {
         dataHandler.placeOrder(true);
         thankYouPane.toFront();
 
-        dateLabel.setText(String.valueOf(deliveryDatePicker.getValue().getDayOfMonth()
-                + "/" + deliveryDatePicker.getValue().getMonthValue()
-                + "/" + deliveryDatePicker.getValue().getYear()));
+        if (deliveryDatePicker != null) {
+            dateLabel.setText(String.valueOf(deliveryDatePicker.getValue().getDayOfMonth()
+                    + "/" + deliveryDatePicker.getValue().getMonthValue()
+                    + "/" + deliveryDatePicker.getValue().getYear()));
+        }
     }
 
     @FXML

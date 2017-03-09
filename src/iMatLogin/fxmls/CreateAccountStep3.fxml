@@ -10,9 +10,12 @@
    <children>
       <Button fx:id="createAccountButton" layoutX="228.0" layoutY="364.0" mnemonicParsing="false" onAction="#createAccountActionPerformed" text="Skapa konto" />
       <Button fx:id="goBackwardButton" layoutX="123.0" layoutY="364.0" mnemonicParsing="false" onAction="#goBackwardActionPerformed" text="Tillbaka" />
-      <Text layoutX="14.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Betalinformation" />
+      <Text layoutX="97.0" layoutY="31.0" strokeType="OUTSIDE" strokeWidth="0.0" text="3. Betalinformation" underline="true">
+         <font>
+            <Font size="18.0" />
+         </font></Text>
       <ComboBox fx:id="paymentComboBox" layoutX="14.0" layoutY="88.0" prefWidth="150.0" />
-      <Text layoutX="14.0" layoutY="75.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Betalsätt" />
+      <Text layoutX="15.0" layoutY="75.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Betalsätt:" />
       <StackPane layoutX="15.0" layoutY="125.0" prefHeight="217.0" prefWidth="326.0">
          <children>
             <AnchorPane id="pane1" fx:id="creditCardPane" prefHeight="200.0" prefWidth="200.0" stylesheets="@createAccount.css">
@@ -37,5 +40,10 @@
             <AnchorPane id="pane1" fx:id="emptyPaymentPane" prefHeight="200.0" prefWidth="200.0" stylesheets="@createAccount.css" />
          </children>
       </StackPane>
+      <Label layoutX="14.0" layoutY="372.0" text="Steg 3 av 3">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>
