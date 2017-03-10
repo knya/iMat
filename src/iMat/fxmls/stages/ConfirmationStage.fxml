@@ -16,7 +16,7 @@
 
 <AnchorPane id="pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="440.0" prefWidth="416.0" stylesheets="@../../css/checkout.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="iMat.controllers.stages.ConfirmationStageController">
    <children>
-      <StackPane prefHeight="440.0" prefWidth="416.0">
+      <StackPane prefHeight="440.0" prefWidth="416.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
             <AnchorPane id="pane" fx:id="thankYouPane" prefHeight="200.0" prefWidth="200.0" stylesheets="@../../css/checkout.css">
                <children>
@@ -102,11 +102,11 @@
                   <TableView fx:id="shoppingItemTableView" layoutX="197.0" layoutY="41.0" prefHeight="317.0" prefWidth="205.0">
                     <columns>
                       <TableColumn fx:id="productColumn" editable="false" prefWidth="90.0" resizable="false" sortable="false" text="Artiklar" />
-                        <TableColumn fx:id="amountColumn" editable="false" prefWidth="57.0" resizable="false" sortable="false" text="Antal" />
-                        <TableColumn fx:id="totalColumn" editable="false" prefWidth="57.0" resizable="false" sortable="false" text="Totalt" />
+                        <TableColumn fx:id="amountColumn" editable="false" prefWidth="44.0" resizable="false" sortable="false" text="Antal" />
+                        <TableColumn fx:id="totalColumn" editable="false" prefWidth="64.0" resizable="false" sortable="false" text="Totalt" />
                     </columns>
                   </TableView>
-                  <Label fx:id="totalSum" alignment="CENTER_RIGHT" layoutX="317.0" layoutY="357.0" prefHeight="26.0" prefWidth="82.0" text="Label">
+                  <Label fx:id="totalSum" alignment="CENTER_RIGHT" layoutX="320.0" layoutY="357.0" prefHeight="26.0" prefWidth="82.0" text="Label">
                      <font>
                         <Font size="15.0" />
                      </font>
@@ -117,7 +117,7 @@
                      </font>
                   </Label>
                   <Button fx:id="cancelOrderButton" layoutX="10.0" layoutY="386.0" mnemonicParsing="false" onAction="#cancelOrderActionPerformed" prefHeight="40.0" prefWidth="102.0" text="Avbryt" />
-                  <Button fx:id="confirmOrderButton" layoutX="194.0" layoutY="386.0" mnemonicParsing="false" onAction="#confirmOrderActionPerformed" prefHeight="40.0" prefWidth="205.0" text="Bekräfta beställning" />
+                  <Button fx:id="confirmOrderButton" layoutX="197.0" layoutY="386.0" mnemonicParsing="false" onAction="#confirmOrderActionPerformed" prefHeight="40.0" prefWidth="205.0" text="Bekräfta beställning" />
                   <Text layoutX="21.0" layoutY="196.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tidigast leveransdatum:" />
                   <DatePicker fx:id="deliveryDatePicker" layoutX="20.0" layoutY="200.0" prefHeight="27.0" prefWidth="150.0" />
                </children>

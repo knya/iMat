@@ -71,7 +71,7 @@
       <Button fx:id="personalDetailsButton" layoutX="435.0" layoutY="14.0" mnemonicParsing="false" onAction="#personalDetailsPaneActionPerformed" text="Kontouppgifter" />
       <Text layoutX="373.0" layoutY="268.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Kreditkortsuppgifter:">
          <font>
-            <Font size="17.0" />
+            <Font name="System Bold" size="16.0" />
          </font>
       </Text>
       <TextField fx:id="cardNumberInMyPages" layoutX="373.0" layoutY="307.0" />
