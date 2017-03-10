@@ -8,8 +8,8 @@
    <children>
       <TableView fx:id="orderHistoryTableView" layoutX="20.0" layoutY="98.0" prefHeight="395.0" prefWidth="257.0">
          <columns>
-            <TableColumn fx:id="orderNumberColumn" prefWidth="100.0" text="Ordernummer" />
-            <TableColumn fx:id="dateColumn" prefWidth="156.0" text="Datum" />
+            <TableColumn fx:id="orderNumberColumn" prefWidth="57.0" text="#Order" />
+            <TableColumn fx:id="dateColumn" prefWidth="199.0" text="Datum" />
          </columns>
       </TableView>
       <TableView fx:id="orderProductTableView" layoutX="309.0" layoutY="98.0" prefHeight="342.0" prefWidth="257.0">
