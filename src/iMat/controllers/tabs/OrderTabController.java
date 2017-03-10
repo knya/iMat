@@ -11,11 +11,8 @@ import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
-import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import se.chalmers.ait.dat215.project.IMatDataHandler;
-import se.chalmers.ait.dat215.project.Order;
-import se.chalmers.ait.dat215.project.Product;
 import se.chalmers.ait.dat215.project.ShoppingItem;
 
 import java.io.IOException;
@@ -29,7 +26,6 @@ public class OrderTabController implements Initializable {
 
     private TabController tabController;
 
-    // OrderCartPane
     @FXML private TableView<ShoppingItem> shoppingItemTableView;
     @FXML private TableColumn<ShoppingItem, String> nameColumn;
     @FXML private TableColumn<ShoppingItem, String> amountColumn;
@@ -55,16 +51,11 @@ public class OrderTabController implements Initializable {
         );
         sumColumn.setCellValueFactory(c -> new SimpleStringProperty(String.valueOf(c.getValue().getTotal() + ":-")));
 
-//        orderHistoryTableView.setItems(refreshOrderTableView());
-//        orderNumberColumn.setCellValueFactory(c -> new SimpleStringProperty(String.valueOf(c.getValue().getOrderNumber())));
-//        dateColumn.setCellValueFactory(c -> new SimpleStringProperty(String.valueOf(c.getValue().getDate())));
-//        productOrderColumn.setCellValueFactory(c -> new SimpleStringProperty(String.valueOf(c.getValue().getItems().size())));
 
         dataHandler.getShoppingCart().addShoppingCartListener(cartEvent -> {
             shoppingItemTableView.setItems(refreshItemTableView());
             shoppingItemTableView.refresh();
-//            orderHistoryTableView.setItems(refreshOrderTableView());
-//            orderHistoryTableView.refresh();
+
             setPlaceOrderButton();
         });
     }

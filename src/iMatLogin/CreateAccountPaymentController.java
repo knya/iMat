@@ -5,11 +5,9 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Button;
-import javafx.scene.control.CheckBox;
-import javafx.scene.control.ComboBox;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.text.Text;
 import se.chalmers.ait.dat215.project.IMatDataHandler;
 
 import java.net.URL;
@@ -34,6 +32,9 @@ public class CreateAccountPaymentController implements Initializable {
     @FXML private TextField cardNumberField;
     @FXML private TextField validMonthField;
     @FXML private TextField validYearField;
+    @FXML private TextField verificationCodeField;
+
+    @FXML private Label cardNumberErrorLabel;
 
     //InvoicePane
     @FXML private AnchorPane invoicePane;
@@ -45,6 +46,9 @@ public class CreateAccountPaymentController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+
+        clearErrorLabels();
+
         ObservableList<String> paymentList = FXCollections.observableArrayList(
                 "< Betalsätt >",
                 "Kreditkort",
@@ -71,25 +75,39 @@ public class CreateAccountPaymentController implements Initializable {
         });
     }
 
+    private void clearErrorLabels() {
+        cardNumberErrorLabel.setText("");
+    }
+
     public void inject(LoginController loginController) {
         this.loginController = loginController;
     }
 
     private void addCreditCardInputListener() {
         holdersNameField.textProperty().addListener((observable, oldValue, newValue) -> {
-            //TODO
+            loginController.getNewCreditCard().setHoldersName(newValue);
         });
 
-        cardNumberField.textProperty().addListener(((observable, oldValue, newValue) -> {
-            //TODO
-        }));
+        cardNumberField.textProperty().addListener((observable, oldValue, newValue) -> {
+            loginController.getNewCreditCard().setCardNumber(newValue);
+
+            if (!newValue.matches("^[0-9]+$")) {
+                cardNumberErrorLabel.setText("Kortnumret får endast innehålla siffror.");
+            } else {
+                cardNumberErrorLabel.setText("");
+            }
+        });
 
         validMonthField.textProperty().addListener(((observable, oldValue, newValue) -> {
-            //TODO
+            loginController.getNewCreditCard().setValidMonth(Integer.valueOf(newValue));
         }));
 
         validYearField.textProperty().addListener(((observable, oldValue, newValue) -> {
-            //TODO
+            loginController.getNewCreditCard().setValidYear(Integer.valueOf(newValue));
+        }));
+
+        verificationCodeField.textProperty().addListener(((observable, oldValue, newValue) -> {
+            loginController.getNewCreditCard().setValidYear(Integer.valueOf(newValue));
         }));
     }
 

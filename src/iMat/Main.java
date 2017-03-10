@@ -24,15 +24,11 @@ public class Main extends Application {
         primaryStage.show();
 
         primaryStage.setOnCloseRequest(event -> dataHandler.shutDown());
-
-
-
-
+//        dataHandler.reset();
     }
 
 
     public static void main(String[] args) {
         launch(args);
-
     }
 }

@@ -23,7 +23,7 @@
       <TextField fx:id="confirmPhoneField" layoutX="196.0" layoutY="163.0" prefHeight="27.0" prefWidth="137.0" promptText="Bekräfta telefon" />
       <Label layoutX="27.0" layoutY="226.0" text="Mobiltelefon:" />
       <TextField fx:id="mobilePhoneNumberField" layoutX="27.0" layoutY="240.0" prefHeight="27.0" prefWidth="137.0" promptText="Mobilnummer" />
-      <Label layoutX="197.0" layoutY="226.0" text="Bekräfta mobilnummber:" />
+      <Label layoutX="197.0" layoutY="226.0" text="Bekräfta mobilnummer:" />
       <TextField fx:id="confirmMobileField" layoutX="196.0" layoutY="240.0" prefHeight="27.0" prefWidth="137.0" promptText="Bekräfta mobil" />
       <Label layoutX="20.0" layoutY="360.0" text="Steg 2 av 4">
          <font>

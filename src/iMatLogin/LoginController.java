@@ -6,6 +6,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.StackPane;
@@ -33,6 +34,8 @@ public class LoginController implements Initializable {
     @FXML private TextField userNameField;
     @FXML private TextField passwordField;
 
+    @FXML private Label loginErrorLabel;
+
     @FXML private CreateAccountUserController createAccountUserController;
     @FXML private CreateAccountPersonalController createAccountPersonalController;
     @FXML private CreateAccountDeliveryController createAccountDeliveryController;
@@ -42,29 +45,41 @@ public class LoginController implements Initializable {
     private NewCustomer newCustomer;
     private NewCreditCard newCreditCard;
 
+    private String username;
+    private String password;
+
     private IMatDataHandler dataHandler = IMatDataHandler.getInstance();
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+
+        clearErrorLabel();
+
         createAccountUserController.inject(this);
         createAccountPersonalController.inject(this);
         createAccountDeliveryController.inject(this);
         createAccountPaymentController.inject(this);
 
         userNameField.textProperty().addListener(((observable, oldValue, newValue) -> {
-            if (dataHandler.getUser().getUserName() != null) {
-                userNameField.setText(dataHandler.getUser().getUserName());
-            }
+            username = newValue;
+        }));
+
+        passwordField.textProperty().addListener(((observable, oldValue, newValue) -> {
+            password = newValue;
         }));
     }
 
     @FXML
     private void changeSceneContent(ActionEvent event) throws IOException {
 
-        /*
-        if (newUser != null) {
+
+        if (newUser != null && dataHandler.getUser().getUserName() != null) {
             if (newUser.getUserName().equals(dataHandler.getUser().getUserName())
-                    && newUser.getPassword().equals(dataHandler.getUser().getPassword())) {
+                    && newUser.getPassword().equals(dataHandler.getUser().getPassword())
+                    && username.equals(newUser.getUserName())
+                    && username.equals(dataHandler.getUser().getUserName())
+                    && password.equals(newUser.getPassword())
+                    && password.equals(dataHandler.getUser().getPassword())) {
                 Stage stage = (Stage) loginScenePane.getScene().getWindow();
 
                 Parent mainScene = FXMLLoader.load(getClass().getResource("/iMat/fxmls/Main.fxml"));
@@ -72,10 +87,14 @@ public class LoginController implements Initializable {
                 stage.setTitle("iMat");
                 stage.setX(0);
                 stage.setY(0);
+            } else {
+                loginErrorLabel.setText("Felaktigt användarnamn eller lösenord");
             }
+        } else {
+            loginErrorLabel.setText("Användare ej registrerad ännu");
         }
-        */
 
+        /*
         Stage stage = (Stage) loginScenePane.getScene().getWindow();
 
         Parent mainScene = FXMLLoader.load(getClass().getResource("/iMat/fxmls/Main.fxml"));
@@ -83,7 +102,12 @@ public class LoginController implements Initializable {
         stage.setTitle("iMat");
         stage.setX(0);
         stage.setY(0);
+        */
 
+    }
+
+    private void clearErrorLabel() {
+        loginErrorLabel.setText("");
     }
 
     @FXML
