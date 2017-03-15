@@ -9,7 +9,7 @@ import se.chalmers.ait.dat215.project.Product;
 import java.io.IOException;
 
 /**
- * Created by Johan on 2017-02-22.
+ * Cell for Product in ShoppingTab
  */
 public class ShopProductCell extends ListCell<Product> {
 

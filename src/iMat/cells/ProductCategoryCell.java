@@ -10,7 +10,7 @@ import java.io.IOException;
 import java.util.List;
 
 /**
- * Created by Johan on 2017-02-23.
+ * Cell for ProductCategory
  */
 public class ProductCategoryCell extends ListCell<List<ProductCategory>> {
 

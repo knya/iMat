@@ -34,7 +34,7 @@ public class ShoppingCartController implements Initializable {
 
     private ObservableList<ShoppingItem> shoppingItemObservableList;
 
-    private IMatDataHandler dataHandler = IMatDataHandler.getInstance();;
+    private IMatDataHandler dataHandler = IMatDataHandler.getInstance();
     private Image shoppingCartImage = new Image("/iMat/Images/ShoppingCart.png");
 
     public void injectMainController(MainController mainController) {

@@ -8,13 +8,9 @@ import se.chalmers.ait.dat215.project.ShoppingItem;
 import java.util.List;
 
 /**
- * Created by JOHAN on 2017-03-04.
+ * Trivial CellFactory.
  */
 public class CellFactory {
-
-    public ListCell<ShoppingItem> createOrderCartCell() {
-        return new OrderCartCell();
-    }
 
     public ListCell<List<ProductCategory>> createProductCategoryCell() {
         return new ProductCategoryCell();
