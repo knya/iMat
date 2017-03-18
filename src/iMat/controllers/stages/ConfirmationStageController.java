@@ -32,7 +32,10 @@ public class ConfirmationStageController implements Initializable {
     @FXML private TableColumn<ShoppingItem, String> productColumn;
     @FXML private TableColumn<ShoppingItem, String> amountColumn;
     @FXML private TableColumn<ShoppingItem, String> totalColumn;
+    @FXML private RadioButton creditCardRadioButton;
+    @FXML private RadioButton invoiceRadioButton;
     @FXML private DatePicker deliveryDatePicker;
+    @FXML private ToggleGroup paymentGroup;
 
     //SecondConfirmationPane
     @FXML private AnchorPane secondConfirmationPane;
@@ -43,14 +46,12 @@ public class ConfirmationStageController implements Initializable {
     @FXML private TableColumn<ShoppingItem, String> amountColumn2nd;
     @FXML private TableColumn<ShoppingItem, String> totalColumn2nd;
     @FXML private ChoiceBox<String> deliveryAddressChoiceBox;
-    @FXML private ChoiceBox<String> paymentChoiceBox;
 
     //ThankYouPane
     @FXML private AnchorPane thankYouPane;
     @FXML private Button finishedButton;
     @FXML private Label addressLabel3rd;
     @FXML private Label dateLabel;
-
 
     @FXML private Label totalSum;
 
@@ -76,12 +77,7 @@ public class ConfirmationStageController implements Initializable {
                 + dataHandler.getCustomer().getPostAddress()
         );
 
-        ObservableList<String> paymentOptionsList = FXCollections.observableArrayList(
-                "Faktura", "Kreditkort"
-        );
-
         deliveryAddressChoiceBox.setItems(deliveryAddressObservableList);
-        paymentChoiceBox.setItems(paymentOptionsList);
 
         ObservableList<ShoppingItem> shoppingItemObservableList = FXCollections.observableArrayList();
         shoppingItemObservableList.addAll(dataHandler.getShoppingCart().getItems());

@@ -14,8 +14,11 @@
             <Font size="18.0" />
          </font></Text>
       <Text layoutX="149.0" layoutY="79.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Betalsätt:" />
-      <RadioButton fx:id="creditCardRadioButton" layoutX="107.0" layoutY="83.0" mnemonicParsing="false" text="Kreditkort" />
-      <RadioButton fx:id="invoiceRadioButton" layoutX="191.0" layoutY="83.0" mnemonicParsing="false" text="Faktura" />
+      <RadioButton fx:id="creditCardRadioButton" layoutX="107.0" layoutY="83.0" mnemonicParsing="false" text="Kreditkort">
+         <toggleGroup>
+            <ToggleGroup fx:id="paymentGroup" />
+         </toggleGroup></RadioButton>
+      <RadioButton fx:id="invoiceRadioButton" layoutX="191.0" layoutY="83.0" mnemonicParsing="false" text="Faktura" toggleGroup="$paymentGroup" />
       <StackPane layoutX="15.0" layoutY="125.0" prefHeight="197.0" prefWidth="326.0">
          <children>
             <AnchorPane id="pane1" fx:id="creditCardPane" prefHeight="192.0" prefWidth="326.0" stylesheets="@createAccount.css">

@@ -37,6 +37,7 @@ public class CreateAccountPaymentController implements Initializable {
     @FXML private ChoiceBox<Integer> validMonthChoiceBox;
     @FXML private ChoiceBox<Integer> validYearChoiceBox;
     @FXML private TextField verificationCodeField;
+    @FXML private ToggleGroup paymentGroup;
 
     @FXML private Label cardNumberErrorLabel;
 
@@ -50,8 +51,6 @@ public class CreateAccountPaymentController implements Initializable {
     @FXML private Button createAccountButton;
     @FXML private Button goBackwardButton;
 
-    private ToggleGroup group;
-
     private IMatDataHandler dataHandler = IMatDataHandler.getInstance();
 
     @Override
@@ -60,17 +59,13 @@ public class CreateAccountPaymentController implements Initializable {
         clearErrorLabels();
         emptyPaymentPane.toFront();
 
-        group = new ToggleGroup();
-        creditCardRadioButton.setToggleGroup(group);
-        invoiceRadioButton.setToggleGroup(group);
-
-        group.selectedToggleProperty().addListener((observable, oldValue, newValue) -> {
-            if (group.getSelectedToggle() == creditCardRadioButton) {
+        paymentGroup.selectedToggleProperty().addListener((observable, oldValue, newValue) -> {
+            if (paymentGroup.getSelectedToggle() == creditCardRadioButton) {
                 creditCardPane.toFront();
                 addCreditCardInputListener();
             }
 
-            if (group.getSelectedToggle() == invoiceRadioButton) {
+            if (paymentGroup.getSelectedToggle() == invoiceRadioButton) {
                 invoicePane.toFront();
                 addInvoiceInputListener();
             }
@@ -177,7 +172,7 @@ public class CreateAccountPaymentController implements Initializable {
     @FXML
     private void createAccountActionPerformed(ActionEvent event) {
 
-        if (group.getSelectedToggle() != null) {
+        if (paymentGroup.getSelectedToggle() != null) {
             loginController.getLoginPane().toFront();
 
             loginController.getUserNameField().setText(loginController.getNewUser().getUserName());
