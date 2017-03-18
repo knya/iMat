@@ -34,6 +34,7 @@ public class CreateAccountPersonalController implements Initializable {
 
     @FXML private Button goForwardButton;
     @FXML private Button goBackwardButton;
+    @FXML private Button cancelAccountCreationButton;
 
     private String confirmPhone = "";
     private String confirmMobile = "";
@@ -107,6 +108,21 @@ public class CreateAccountPersonalController implements Initializable {
         lastNameErrorLabel.setText("");
         phoneErrorLabel.setText("");
         mobileErrorLabel.setText("");
+    }
+
+    @FXML
+    private void cancelAccountCreationActionPerformed(ActionEvent event) {
+        loginController.getLoginPane().toFront();
+        loginController.clearAllTextFields();
+    }
+
+    public void clearTextFields() {
+        firstNameField.clear();
+        lastNameField.clear();
+        phoneNumberField.clear();
+        mobilePhoneNumberField.clear();
+        confirmPhoneField.clear();
+        confirmMobileField.clear();
     }
 
     private void setErrorLabels() {

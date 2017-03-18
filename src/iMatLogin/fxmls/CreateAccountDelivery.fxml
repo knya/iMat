@@ -19,10 +19,11 @@
       <TextField fx:id="cityField" layoutX="109.0" layoutY="138.0" prefHeight="27.0" prefWidth="101.0" />
       <Button fx:id="goBackwardButton" layoutX="190.0" layoutY="350.0" mnemonicParsing="false" onAction="#goBackwardActionPerformed" text="Tillbaka" />
       <Button fx:id="goForwardButton" layoutX="280.0" layoutY="350.0" mnemonicParsing="false" onAction="#goForwardActionPerformed" text="Nästa" />
-      <Label layoutX="20.0" layoutY="360.0" text="Steg 3 av 4">
+      <Label layoutX="18.0" layoutY="321.0" text="Steg 3 av 4">
          <font>
             <Font size="15.0" />
          </font>
       </Label>
+      <Button fx:id="cancelAccountCreationButton" layoutX="21.0" layoutY="350.0" mnemonicParsing="false" onAction="#cancelAccountCreationActionPerformed" text="Avbryt" />
    </children>
 </AnchorPane>

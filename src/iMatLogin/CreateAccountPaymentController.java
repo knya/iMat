@@ -1,5 +1,7 @@
 package iMatLogin;
 
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -23,10 +25,11 @@ public class CreateAccountPaymentController implements Initializable {
     private LoginController loginController;
 
     @FXML private AnchorPane emptyPaymentPane;
+    @FXML private RadioButton creditCardRadioButton;
+    @FXML private RadioButton invoiceRadioButton;
 
     //CreditCardPane
     @FXML private AnchorPane creditCardPane;
-    @FXML private ComboBox<String> paymentComboBox;
     @FXML private CheckBox holdersNameCheckBox;
     @FXML private TextField holdersNameField;
     @FXML private TextField cardNumberField;
@@ -46,31 +49,22 @@ public class CreateAccountPaymentController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-
         clearErrorLabels();
+        emptyPaymentPane.toFront();
 
-        ObservableList<String> paymentList = FXCollections.observableArrayList(
-                "< Betalsätt >",
-                "Kreditkort",
-                "Faktura"
-        );
+        ToggleGroup group = new ToggleGroup();
+        creditCardRadioButton.setToggleGroup(group);
+        invoiceRadioButton.setToggleGroup(group);
 
-        paymentComboBox.setItems(paymentList);
-        paymentComboBox.getSelectionModel().selectFirst();
-
-        paymentComboBox.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) -> {
-            if (newValue.equals("Kreditkort")) {
+        group.selectedToggleProperty().addListener((observable, oldValue, newValue) -> {
+            if (group.getSelectedToggle() == creditCardRadioButton) {
                 creditCardPane.toFront();
                 addCreditCardInputListener();
             }
 
-            if (newValue.equals("Faktura")) {
+            if (group.getSelectedToggle() == invoiceRadioButton) {
                 invoicePane.toFront();
                 addInvoiceInputListener();
-            }
-
-            if (newValue.equals("< Betalsätt >")) {
-                emptyPaymentPane.toFront();
             }
         });
     }
@@ -121,6 +115,12 @@ public class CreateAccountPaymentController implements Initializable {
     }
 
     @FXML
+    private void cancelAccountCreationActionPerformed(ActionEvent event) {
+        loginController.getLoginPane().toFront();
+        loginController.clearAllTextFields();
+    }
+
+    @FXML
     private void holdersNameCheckBoxActionPerformed(ActionEvent event) {
         if (holdersNameCheckBox.isSelected()) {
             holdersNameField.setDisable(true);
@@ -168,5 +168,13 @@ public class CreateAccountPaymentController implements Initializable {
 
         }
         return true;
+    }
+
+    public void clearTextFields() {
+        holdersNameField.clear();
+        cardNumberField.clear();
+        validMonthField.clear();
+        validYearField.clear();
+        verificationCodeField.clear();
     }
 }

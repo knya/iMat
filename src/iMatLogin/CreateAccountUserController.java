@@ -26,7 +26,7 @@ public class CreateAccountUserController implements Initializable {
     @FXML private Label userNameErrorLabel;
     @FXML private Label passwordErrorLabel;
 
-    @FXML private Button backToLoginButton;
+    @FXML private Button cancelAccountCreationButton;
     @FXML private Button goForwardButton;
 
     private String confirmPassword = "";
@@ -76,8 +76,15 @@ public class CreateAccountUserController implements Initializable {
     }
 
     @FXML
-    private void backToLoginActionPerformed(ActionEvent event) {
+    private void cancelAccountCreationActionPerformed(ActionEvent event) {
         loginController.getLoginPane().toFront();
+        loginController.clearAllTextFields();
+    }
+
+    public void clearTextFields() {
+        userNameField.clear();
+        passwordField.clear();
+        confirmPasswordField.clear();
     }
 
     @FXML

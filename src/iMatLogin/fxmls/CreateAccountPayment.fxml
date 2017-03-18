@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.paint.*?>
 <?import javafx.scene.*?>
 <?import javafx.scene.text.*?>
 <?import javafx.scene.control.*?>
@@ -8,17 +9,16 @@
 
 <AnchorPane id="pane1" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="360.0" stylesheets="@createAccount.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="iMatLogin.CreateAccountPaymentController">
    <children>
-      <Button fx:id="createAccountButton" layoutX="234.0" layoutY="350.0" mnemonicParsing="false" onAction="#createAccountActionPerformed" text="Skapa konto" />
-      <Button fx:id="goBackwardButton" layoutX="141.0" layoutY="350.0" mnemonicParsing="false" onAction="#goBackwardActionPerformed" text="Tillbaka" />
       <Text layoutX="97.0" layoutY="31.0" strokeType="OUTSIDE" strokeWidth="0.0" text="3. Betalinformation" underline="true">
          <font>
             <Font size="18.0" />
          </font></Text>
-      <ComboBox fx:id="paymentComboBox" layoutX="14.0" layoutY="79.0" prefWidth="150.0" />
-      <Text layoutX="15.0" layoutY="75.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Betalsätt:" />
-      <StackPane layoutX="15.0" layoutY="125.0" prefHeight="217.0" prefWidth="326.0">
+      <Text layoutX="149.0" layoutY="79.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Betalsätt:" />
+      <RadioButton fx:id="creditCardRadioButton" layoutX="107.0" layoutY="83.0" mnemonicParsing="false" text="Kreditkort" />
+      <RadioButton fx:id="invoiceRadioButton" layoutX="191.0" layoutY="83.0" mnemonicParsing="false" text="Faktura" />
+      <StackPane layoutX="15.0" layoutY="125.0" prefHeight="197.0" prefWidth="326.0">
          <children>
-            <AnchorPane id="pane1" fx:id="creditCardPane" prefHeight="200.0" prefWidth="200.0" stylesheets="@createAccount.css">
+            <AnchorPane id="pane1" fx:id="creditCardPane" prefHeight="192.0" prefWidth="326.0" stylesheets="@createAccount.css">
                <children>
                   <Label layoutX="10.0" layoutY="6.0" text="Kortinnehavarens namn:" />
                   <TextField fx:id="holdersNameField" layoutX="10.0" layoutY="23.0" />
@@ -28,25 +28,31 @@
                   <Label layoutX="13.0" layoutY="134.0" text="Månad" />
                   <Label layoutX="62.0" layoutY="134.0" text="År" />
                   <TextField fx:id="validMonthField" layoutX="14.0" layoutY="149.0" prefHeight="27.0" prefWidth="39.0" promptText="MM" />
-                  <Text layoutX="118.0" layoutY="147.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CVC" wrappingWidth="27.37109375" AnchorPane.bottomAnchor="68.0" AnchorPane.leftAnchor="118.0" />
+                  <Text layoutX="118.0" layoutY="147.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CVC" wrappingWidth="27.37109375" />
                   <TextField fx:id="validYearField" layoutX="62.0" layoutY="149.0" prefHeight="27.0" prefWidth="39.0" promptText="YY" />
-                  <TextField fx:id="verificationCodeField" layoutX="118.0" layoutY="149.0" prefHeight="27.0" prefWidth="67.0" AnchorPane.bottomAnchor="41.0" AnchorPane.leftAnchor="118.0" />
+                  <TextField fx:id="verificationCodeField" layoutX="118.0" layoutY="149.0" prefHeight="27.0" prefWidth="67.0" />
                   <Label fx:id="cardNumberErrorLabel" layoutX="10.0" layoutY="109.0" prefHeight="17.0" prefWidth="293.0" text="cardNumber" textFill="RED" />
                </children>
             </AnchorPane>
-            <AnchorPane id="pane1" fx:id="invoicePane" prefHeight="200.0" prefWidth="200.0" stylesheets="@createAccount.css" visible="false">
+            <AnchorPane id="pane1" fx:id="invoicePane" prefHeight="200.0" prefWidth="200.0" stylesheets="@createAccount.css">
                <children>
                   <CheckBox layoutX="14.0" layoutY="41.0" mnemonicParsing="false" text="Samma som leveransadress" />
                   <Label layoutX="14.0" layoutY="14.0" text="Fakturaadress:" />
                </children>
             </AnchorPane>
-            <AnchorPane id="pane1" fx:id="emptyPaymentPane" prefHeight="200.0" prefWidth="200.0" stylesheets="@createAccount.css" visible="false" />
+            <AnchorPane id="pane1" fx:id="emptyPaymentPane" prefHeight="200.0" prefWidth="200.0" stylesheets="@createAccount.css" />
          </children>
       </StackPane>
-      <Label layoutX="20.0" layoutY="360.0" text="Steg 4 av 4">
+      <Label layoutX="23.0" layoutY="322.0" text="Steg 4 av 4">
          <font>
             <Font size="15.0" />
          </font>
       </Label>
+      <Button fx:id="cancelAccountCreationButton" layoutX="26.0" layoutY="350.0" mnemonicParsing="false" onAction="#cancelAccountCreationActionPerformed" text="Avbryt" />
+      <Button fx:id="goBackwardButton" layoutX="141.0" layoutY="350.0" mnemonicParsing="false" onAction="#goBackwardActionPerformed" text="Tillbaka" />
+      <Button fx:id="createAccountButton" layoutX="234.0" layoutY="350.0" mnemonicParsing="false" onAction="#createAccountActionPerformed" text="Skapa konto">
+         <font>
+            <Font name="System Bold" size="11.0" />
+         </font></Button>
    </children>
 </AnchorPane>

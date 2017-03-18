@@ -53,7 +53,12 @@ public class CreateAccountDeliveryController implements Initializable {
         if(checkIfOnlyNumbers(postCodeField) && postCodeField.getText().length() == 5){
             loginController.getPaymentPane().toFront();
         }
+    }
 
+    @FXML
+    private void cancelAccountCreationActionPerformed(ActionEvent event) {
+        loginController.getLoginPane().toFront();
+        loginController.clearAllTextFields();
     }
 
     private boolean checkIfOnlyNumbers(TextField phoneNumberField){
@@ -68,5 +73,11 @@ public class CreateAccountDeliveryController implements Initializable {
 
         }
         return true;
+    }
+
+    public void clearTextFields() {
+        deliveryAddressField.clear();
+        postCodeField.clear();
+        cityField.clear();
     }
 }
