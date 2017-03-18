@@ -27,6 +27,7 @@ public class CreateAccountPaymentController implements Initializable {
     @FXML private AnchorPane emptyPaymentPane;
     @FXML private RadioButton creditCardRadioButton;
     @FXML private RadioButton invoiceRadioButton;
+    @FXML private Label paymentErrorLabel;
 
     //CreditCardPane
     @FXML private AnchorPane creditCardPane;
@@ -41,18 +42,25 @@ public class CreateAccountPaymentController implements Initializable {
 
     //InvoicePane
     @FXML private AnchorPane invoicePane;
+    @FXML private CheckBox deliveryAdressCheckBox;
+    @FXML private TextField invoiceAddressField;
+    @FXML private TextField invoicePostCodeField;
+    @FXML private TextField invoiceCityField;
 
     @FXML private Button createAccountButton;
     @FXML private Button goBackwardButton;
+
+    private ToggleGroup group;
 
     private IMatDataHandler dataHandler = IMatDataHandler.getInstance();
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+
         clearErrorLabels();
         emptyPaymentPane.toFront();
 
-        ToggleGroup group = new ToggleGroup();
+        group = new ToggleGroup();
         creditCardRadioButton.setToggleGroup(group);
         invoiceRadioButton.setToggleGroup(group);
 
@@ -71,6 +79,7 @@ public class CreateAccountPaymentController implements Initializable {
 
     private void clearErrorLabels() {
         cardNumberErrorLabel.setText("");
+        paymentErrorLabel.setText("");
     }
 
     public void inject(LoginController loginController) {
@@ -118,6 +127,28 @@ public class CreateAccountPaymentController implements Initializable {
     private void cancelAccountCreationActionPerformed(ActionEvent event) {
         loginController.getLoginPane().toFront();
         loginController.clearAllTextFields();
+        clearErrorLabels();
+    }
+
+    @FXML
+    private void deliveryAddressCheckBoxActionPerformed(ActionEvent event) {
+        if (deliveryAdressCheckBox.isSelected()) {
+            invoiceAddressField.setDisable(true);
+            invoicePostCodeField.setDisable(true);
+            invoiceCityField.setDisable(true);
+
+            invoiceAddressField.setText(loginController.getNewCustomer().getAddress().toUpperCase());
+            invoicePostCodeField.setText(loginController.getNewCustomer().getPostCode());
+            invoiceCityField.setText(loginController.getNewCustomer().getPostAddress().toUpperCase());
+        } else {
+            invoiceAddressField.setDisable(false);
+            invoicePostCodeField.setDisable(false);
+            invoiceCityField.setDisable(false);
+
+            invoiceAddressField.setText("");
+            invoicePostCodeField.setText("");
+            invoiceCityField.setText("");
+        }
     }
 
     @FXML
@@ -135,26 +166,31 @@ public class CreateAccountPaymentController implements Initializable {
     @FXML
     private void createAccountActionPerformed(ActionEvent event) {
 
-        loginController.getLoginPane().toFront();
+        if (group.getSelectedToggle() != null) {
+            loginController.getLoginPane().toFront();
 
-        dataHandler.getUser().setUserName(loginController.getNewUser().getUserName());
-        dataHandler.getUser().setPassword(loginController.getNewUser().getPassword());
+            loginController.getUserNameField().setText(loginController.getNewUser().getUserName());
 
-        dataHandler.getCustomer().setFirstName(loginController.getNewCustomer().getFirstName());
-        dataHandler.getCustomer().setLastName(loginController.getNewCustomer().getLastName());
-        dataHandler.getCustomer().setPhoneNumber(loginController.getNewCustomer().getPhoneNumber());
-        dataHandler.getCustomer().setMobilePhoneNumber(loginController.getNewCustomer().getMobilePhoneNumber());
-        dataHandler.getCustomer().setAddress(loginController.getNewCustomer().getAddress());
-        dataHandler.getCustomer().setPostCode(loginController.getNewCustomer().getPostCode());
-        dataHandler.getCustomer().setPostAddress(loginController.getNewCustomer().getPostAddress());
+            dataHandler.getUser().setUserName(loginController.getNewUser().getUserName());
+            dataHandler.getUser().setPassword(loginController.getNewUser().getPassword());
 
-        dataHandler.getCreditCard().setCardNumber(loginController.getNewCreditCard().getCardNumber());
-        dataHandler.getCreditCard().setHoldersName(loginController.getNewCreditCard().getHoldersName());
-        dataHandler.getCreditCard().setValidMonth(loginController.getNewCreditCard().getValidMonth());
-        dataHandler.getCreditCard().setValidYear(loginController.getNewCreditCard().getValidYear());
-        dataHandler.getCreditCard().setVerificationCode(loginController.getNewCreditCard().getValidYear());
+            dataHandler.getCustomer().setFirstName(loginController.getNewCustomer().getFirstName());
+            dataHandler.getCustomer().setLastName(loginController.getNewCustomer().getLastName());
+            dataHandler.getCustomer().setPhoneNumber(loginController.getNewCustomer().getPhoneNumber());
+            dataHandler.getCustomer().setMobilePhoneNumber(loginController.getNewCustomer().getMobilePhoneNumber());
+            dataHandler.getCustomer().setAddress(loginController.getNewCustomer().getAddress());
+            dataHandler.getCustomer().setPostCode(loginController.getNewCustomer().getPostCode());
+            dataHandler.getCustomer().setPostAddress(loginController.getNewCustomer().getPostAddress());
+
+            dataHandler.getCreditCard().setCardNumber(loginController.getNewCreditCard().getCardNumber());
+            dataHandler.getCreditCard().setHoldersName(loginController.getNewCreditCard().getHoldersName());
+            dataHandler.getCreditCard().setValidMonth(loginController.getNewCreditCard().getValidMonth());
+            dataHandler.getCreditCard().setValidYear(loginController.getNewCreditCard().getValidYear());
+            dataHandler.getCreditCard().setVerificationCode(loginController.getNewCreditCard().getValidYear());
+        } else {
+            paymentErrorLabel.setText("Du måste välja ett betalsätt");
+        }
     }
-
 
     private boolean checkIfOnlyNumbers(TextField phoneNumberField){
         List<Character> numbers  = new ArrayList<>();

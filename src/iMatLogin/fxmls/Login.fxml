@@ -41,13 +41,13 @@
                      <font>
                         <Font size="20.0" />
                      </font></Label>
-                  <Label layoutX="133.0" layoutY="58.0" text="Användarnamn:" />
-                  <TextField fx:id="userNameField" layoutX="98.0" layoutY="75.0" />
-                  <Label layoutX="150.0" layoutY="106.0" text="Lösenord:" />
-                  <PasswordField fx:id="passwordField" layoutX="98.0" layoutY="123.0" />
-                  <Button layoutX="142.0" layoutY="200.0" mnemonicParsing="false" onAction="#changeSceneContent" text="Logga in" />
-                  <Label layoutX="121.0" layoutY="241.0" text="Har du inget konto?" />
-                  <Button layoutX="109.0" layoutY="258.0" mnemonicParsing="false" onAction="#createButtonActionPerformed" text="Skapa användare" />
+                  <Label layoutX="109.0" layoutY="61.0" text="Användarnamn (ÅÅMMDDXXXX):" />
+                  <TextField fx:id="userNameField" layoutX="109.0" layoutY="75.0" />
+                  <Label layoutX="109.0" layoutY="109.0" text="Lösenord:" />
+                  <PasswordField fx:id="passwordField" layoutX="108.0" layoutY="123.0" />
+                  <Button layoutX="139.0" layoutY="200.0" mnemonicParsing="false" onAction="#changeSceneContent" text="Logga in" />
+                  <Label layoutX="133.0" layoutY="241.0" text="Har du inget konto?" />
+                  <Button layoutX="108.0" layoutY="255.0" mnemonicParsing="false" onAction="#createButtonActionPerformed" text="Skapa användare" />
                   <Label fx:id="loginErrorLabel" alignment="CENTER" layoutX="31.0" layoutY="150.0" prefHeight="17.0" prefWidth="310.0" text="Felaktigt användarnamn eller lösenord" textFill="RED" />
                </children>
             </AnchorPane>

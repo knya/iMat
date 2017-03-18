@@ -23,37 +23,23 @@ import java.util.Stack;
  */
 public class LoginController implements Initializable {
 
-    @FXML
-    private AnchorPane loginScenePane;
-    @FXML
-    private StackPane createAccountPane;
-    @FXML
-    private AnchorPane loginPane;
-    @FXML
-    private AnchorPane userPane;
-    @FXML
-    private AnchorPane personalPane;
-    @FXML
-    private AnchorPane deliveryPane;
-    @FXML
-    private AnchorPane paymentPane;
+    @FXML private AnchorPane loginScenePane;
+    @FXML private StackPane createAccountPane;
+    @FXML private AnchorPane loginPane;
+    @FXML private AnchorPane userPane;
+    @FXML private AnchorPane personalPane;
+    @FXML private AnchorPane deliveryPane;
+    @FXML private AnchorPane paymentPane;
 
-    @FXML
-    private TextField userNameField;
-    @FXML
-    private TextField passwordField;
+    @FXML private TextField userNameField;
+    @FXML private TextField passwordField;
 
-    @FXML
-    private Label loginErrorLabel;
+    @FXML private Label loginErrorLabel;
 
-    @FXML
-    private CreateAccountUserController createAccountUserController;
-    @FXML
-    private CreateAccountPersonalController createAccountPersonalController;
-    @FXML
-    private CreateAccountDeliveryController createAccountDeliveryController;
-    @FXML
-    private CreateAccountPaymentController createAccountPaymentController;
+    @FXML private CreateAccountUserController createAccountUserController;
+    @FXML private CreateAccountPersonalController createAccountPersonalController;
+    @FXML private CreateAccountDeliveryController createAccountDeliveryController;
+    @FXML private CreateAccountPaymentController createAccountPaymentController;
 
     private NewUser newUser;
     private NewCustomer newCustomer;
@@ -108,38 +94,26 @@ public class LoginController implements Initializable {
         }
     }
 
-//            if (newUser.getUserName().equals(dataHandler.getUser().getUserName())
-//                    && newUser.getPassword().equals(dataHandler.getUser().getPassword())
-//                    && username.equals(newUser.getUserName())
-//                    && username.equals(dataHandler.getUser().getUserName())
-//                    && password.equals(newUser.getPassword())
-//                    && password.equals(dataHandler.getUser().getPassword())) {
-//
-//            } else {
-//                loginErrorLabel.setText("Felaktigt användarnamn eller lösenord");
-//            }
-
-        /*
-        Stage stage = (Stage) loginScenePane.getScene().getWindow();
-
-        Parent mainScene = FXMLLoader.load(getClass().getResource("/iMat/fxmls/Main.fxml"));
-        stage.setScene(new Scene(mainScene));
-        stage.setTitle("iMat");
-        stage.setX(0);
-        stage.setY(0);
-        */
-
     private void clearErrorLabel() {
         loginErrorLabel.setText("");
     }
 
     @FXML
     private void createButtonActionPerformed(ActionEvent event) {
-        userPane.toFront();
+        userNameField.clear();
+        passwordField.clear();
+        clearErrorLabel();
+
+//        userPane.toFront();
+        paymentPane.toFront();
 
         newUser = new NewUser();
         newCustomer = new NewCustomer();
         newCreditCard = new NewCreditCard();
+    }
+
+    public TextField getUserNameField() {
+        return userNameField;
     }
 
     public AnchorPane getUserPane() {

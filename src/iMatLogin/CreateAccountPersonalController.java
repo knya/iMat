@@ -114,6 +114,7 @@ public class CreateAccountPersonalController implements Initializable {
     private void cancelAccountCreationActionPerformed(ActionEvent event) {
         loginController.getLoginPane().toFront();
         loginController.clearAllTextFields();
+        clearErrorLabels();
     }
 
     public void clearTextFields() {
