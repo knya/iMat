@@ -55,6 +55,11 @@ public class LoginController implements Initializable {
 
         clearErrorLabel();
 
+        if (!dataHandler.getUser().getUserName().isEmpty()) {
+            userNameField.setText(dataHandler.getUser().getUserName());
+            username = dataHandler.getUser().getUserName();
+        }
+
         createAccountUserController.inject(this);
         createAccountPersonalController.inject(this);
         createAccountDeliveryController.inject(this);
@@ -104,8 +109,7 @@ public class LoginController implements Initializable {
         passwordField.clear();
         clearErrorLabel();
 
-//        userPane.toFront();
-        paymentPane.toFront();
+        userPane.toFront();
 
         newUser = new NewUser();
         newCustomer = new NewCustomer();

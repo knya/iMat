@@ -7,86 +7,68 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="461.0" prefWidth="578.0" stylesheets="@../../css/middleViewTabs.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="iMat.controllers.tabs.MyPagesTabController">
    <children>
-      <StackPane layoutX="-6.0" prefHeight="461.0" prefWidth="379.0">
+      <StackPane prefHeight="461.0" prefWidth="364.0">
          <children>
-            <AnchorPane id="pane2" fx:id="changePasswordPane" prefHeight="200.0" prefWidth="200.0" stylesheets="@../../css/myPages.css">
+            <AnchorPane fx:id="creditCardDetailsPane" prefHeight="252.0" prefWidth="194.0">
                <children>
-                  <Label layoutX="123.0" layoutY="14.0" text="Ändra lösenord" underline="true">
+                  <Text layoutX="14.0" layoutY="30.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Betaluppgifter:">
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                     </font>
+                  </Text>
+                  <Label layoutX="18.0" layoutY="44.0" text="Kontoinnehavare:" />
+                  <TextField fx:id="holdersNameField" editable="false" layoutX="18.0" layoutY="58.0" prefHeight="22.0" prefWidth="160.0" promptText="Kortinnehavare" />
+                  <TextField fx:id="maskedCardNumberField" editable="false" layoutX="18.0" layoutY="105.0" prefHeight="22.0" prefWidth="160.0" promptText="Kortnummer" />
+                  <Separator layoutX="14.0" layoutY="33.0" prefWidth="200.0" />
+                  <Text layoutX="20.0" layoutY="167.0" strokeType="OUTSIDE" strokeWidth="0.0" text="MM / ÅÅ:" />
+                  <Label layoutX="20.0" layoutY="138.0" text="Giltighetstid:" />
+                  <Label fx:id="expiryDateLabel" layoutX="72.0" layoutY="156.0" text="Label" />
+                  <Label layoutX="18.0" layoutY="91.0" text="Kortnummer:" />
+               </children>
+            </AnchorPane>
+            <AnchorPane id="pane2" fx:id="changeDeliveryAddressPane" prefHeight="299.0" prefWidth="186.0" stylesheets="@../../css/myPages.css">
+               <children>
+                  <Label layoutX="84.0" layoutY="14.0" text="Ändra leveransuppgifter" underline="true">
                      <font>
                         <Font size="20.0" />
                      </font>
                   </Label>
-                  <Label layoutX="14.0" layoutY="57.0" text="Nuvarande lösenord:" />
-                  <TextField layoutX="14.0" layoutY="71.0" />
-                  <Label layoutX="14.0" layoutY="109.0" text="Nytt lösenord:" />
-                  <TextField layoutX="14.0" layoutY="123.0" />
-                  <Label layoutX="169.0" layoutY="109.0" text="Bekräfta nytt lösenord:" />
-                  <TextField layoutX="169.0" layoutY="123.0" />
-                  <Button layoutX="225.0" layoutY="183.0" mnemonicParsing="false" text="Spara ändringar" />
+                  <Label layoutX="14.0" layoutY="57.0" text="Nuvarande mottagaradress:" />
+                  <TextField fx:id="currentFullAddressField" layoutX="14.0" layoutY="71.0" prefHeight="22.0" prefWidth="250.0" />
+                  <Label layoutX="15.0" layoutY="108.0" text="Ny mottagaradress:" />
+                  <TextField fx:id="newAddressField" layoutX="15.0" layoutY="124.0" prefHeight="22.0" prefWidth="200.0" />
+                  <Label layoutX="14.0" layoutY="153.0" text="Ny postkod:" />
+                  <TextField fx:id="newPostCodeField" layoutX="15.0" layoutY="167.0" prefHeight="22.0" prefWidth="68.0" />
+                  <Label layoutX="110.0" layoutY="153.0" text="Ny stad:" />
+                  <TextField fx:id="newCityField" layoutX="110.0" layoutY="167.0" prefHeight="22.0" prefWidth="105.0" />
+                  <Button fx:id="cancelChangesButton" layoutX="14.0" layoutY="221.0" mnemonicParsing="false" onAction="#cancelDeliveryChangesActionPerformed" text="Avbryt" />
+                  <Button fx:id="saveChangesButton" layoutX="229.0" layoutY="221.0" mnemonicParsing="false" onAction="#saveDeliveryChangesActionPerformed" text="Spara ändringar" />
                </children>
             </AnchorPane>
-            <AnchorPane id="pane1" fx:id="personalDetailsPane" prefHeight="461.0" prefWidth="89.0" stylesheets="@../../css/myPages.css">
+            <AnchorPane id="pane2" fx:id="personalDetailsPane" prefHeight="251.0" prefWidth="228.0" stylesheets="@../../css/myPages.css">
                <children>
-                  <AnchorPane prefHeight="217.0" prefWidth="379.0">
-                     <children>
-                        <Separator layoutX="11.0" layoutY="35.0" prefHeight="5.0" prefWidth="325.0" />
-                        <Label layoutX="10.0" layoutY="10.0" text="Personliga uppgifter:">
-                           <font>
-                              <Font name="System Bold" size="16.0" />
-                           </font>
-                        </Label>
-                        <Label layoutX="15.0" layoutY="45.0" text="Personnummer (ÅÅMMDDXXXX):" />
-                        <TextField fx:id="socialSecurityNumberField" editable="false" layoutX="10.0" layoutY="65.0" prefHeight="22.0" prefWidth="250.0" promptText="Personnummer" />
-                        <Label layoutX="15.0" layoutY="100.0" text="Förnamn:" />
-                        <TextField fx:id="firstNameField" editable="false" layoutX="10.0" layoutY="120.0" prefHeight="22.0" prefWidth="120.0" promptText="Förnamn" />
-                        <Label layoutX="145.0" layoutY="100.0" text="Efternamn:" />
-                        <TextField fx:id="lastNameField" editable="false" layoutX="145.0" layoutY="120.0" prefHeight="22.0" prefWidth="120.0" promptText="Efternamn" />
-                        <Label layoutX="15.0" layoutY="163.0" text="Telefon:" />
-                        <TextField fx:id="phoneNumberField" editable="false" layoutX="12.0" layoutY="180.0" prefHeight="27.0" prefWidth="116.0" promptText="Telefon" />
-                        <Label layoutX="145.0" layoutY="163.0" text="Mobiltelefon:" />
-                        <TextField fx:id="mobilePhoneNumberField" editable="false" layoutX="145.0" layoutY="180.0" prefHeight="27.0" prefWidth="121.0" promptText="Mobiltelefon" />
-                     </children>
-                  </AnchorPane>
-                  <AnchorPane layoutY="217.0" prefHeight="216.0" prefWidth="376.0">
-                     <children>
-                        <Label layoutX="10.0" layoutY="35.0" text="Leveransuppgifter:">
-                           <font>
-                              <Font name="System Bold" size="16.0" />
-                           </font>
-                        </Label>
-                        <Label layoutX="15.0" layoutY="70.0" text="Mottagaradress:" />
-                        <TextField fx:id="addressField" editable="false" layoutX="10.0" layoutY="90.0" prefHeight="22.0" prefWidth="250.0" promptText="Adress" />
-                        <Label layoutX="15.0" layoutY="130.0" text="Postkod:" />
-                        <TextField fx:id="postCodeField" editable="false" layoutX="10.0" layoutY="150.0" prefHeight="22.0" prefWidth="120.0" promptText="Postkod" />
-                        <Label layoutX="150.0" layoutY="130.0" text="Stad:" />
-                        <TextField fx:id="cityField" editable="false" layoutX="145.0" layoutY="150.0" prefHeight="22.0" prefWidth="120.0" promptText="Stad" />
-                        <Separator layoutX="13.0" layoutY="60.0" prefHeight="6.0" prefWidth="330.0" />
-                     </children>
-                  </AnchorPane>
+                  <Separator layoutX="11.0" layoutY="35.0" prefHeight="5.0" prefWidth="325.0" />
+                  <Label layoutX="10.0" layoutY="10.0" text="Kontouppgifter:">
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="22.0" layoutY="51.0" text="Användarnamn (ÅÅMMDDXXXX):" />
+                  <TextField fx:id="usernameField" editable="false" layoutX="22.0" layoutY="65.0" prefHeight="22.0" prefWidth="116.0" promptText="Användarnamn" />
+                  <Label layoutX="22.0" layoutY="95.0" text="Namn:" />
+                  <TextField fx:id="nameField" editable="false" layoutX="22.0" layoutY="109.0" prefHeight="22.0" prefWidth="250.0" promptText="Namn" />
+                  <Label layoutX="22.0" layoutY="138.0" text="Telefon:" />
+                  <TextField fx:id="phoneNumberField" editable="false" layoutX="22.0" layoutY="152.0" prefHeight="22.0" prefWidth="116.0" promptText="Telefon" />
+                  <Label layoutX="155.0" layoutY="138.0" text="Mobiltelefon:" />
+                  <TextField fx:id="mobilePhoneNumberField" editable="false" layoutX="155.0" layoutY="152.0" prefHeight="22.0" prefWidth="116.0" promptText="Mobiltelefon" />
+                  <Label layoutX="22.0" layoutY="189.0" text="Fullständig leveransadress:" />
+                  <TextField fx:id="fullAddressField" editable="false" layoutX="22.0" layoutY="206.0" prefHeight="22.0" prefWidth="250.0" promptText="Adress" />
                </children>
             </AnchorPane>
          </children>
       </StackPane>
-      <Button fx:id="changePasswordButton" layoutX="434.0" layoutY="56.0" mnemonicParsing="false" onAction="#changePasswordPaneActionPerformed" text="Ändra lösenord" />
+      <Button fx:id="changeDeliveryAddressButton" layoutX="372.0" layoutY="94.0" mnemonicParsing="false" onAction="#changeDeliveryAddressPaneActionPerformed" prefHeight="32.0" prefWidth="191.0" text="Ändra leveransuppgifter" />
       <Button fx:id="personalDetailsButton" layoutX="435.0" layoutY="14.0" mnemonicParsing="false" onAction="#personalDetailsPaneActionPerformed" text="Kontouppgifter" />
-      <Text layoutX="373.0" layoutY="268.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Kreditkortsuppgifter:">
-         <font>
-            <Font name="System Bold" size="16.0" />
-         </font>
-      </Text>
-      <TextField fx:id="cardNumberInMyPages" layoutX="373.0" layoutY="307.0" />
-      <TextField fx:id="monthField" layoutX="373.0" layoutY="362.0" prefHeight="27.0" prefWidth="33.0" />
-      <TextField fx:id="yearField" layoutX="424.0" layoutY="363.0" prefHeight="27.0" prefWidth="33.0" />
-      <Text layoutX="412.0" layoutY="382.0" strokeType="OUTSIDE" strokeWidth="0.0" text="/">
-         <font>
-            <Font size="17.0" />
-         </font>
-      </Text>
-      <TextField fx:id="cvcField" layoutX="372.0" layoutY="420.0" prefHeight="27.0" prefWidth="68.0" />
-      <Separator layoutX="357.0" layoutY="279.0" prefWidth="200.0" />
-      <Text layoutX="376.0" layoutY="303.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Kortnummer:" />
-      <Text layoutX="376.0" layoutY="358.0" strokeType="OUTSIDE" strokeWidth="0.0" text="MM" />
-      <Text layoutX="427.0" layoutY="358.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ÅÅ" />
-      <Text layoutX="373.0" layoutY="416.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CVC" />
+      <Button fx:id="creditCardDetailsButton" layoutX="435.0" layoutY="54.0" mnemonicParsing="false" onAction="#creditCardDetailsPaneActionPerformed" prefHeight="32.0" prefWidth="127.0" text="Betaluppgifter" />
    </children>
 </AnchorPane>
