@@ -9,7 +9,7 @@
    <children>
       <StackPane prefHeight="461.0" prefWidth="364.0">
          <children>
-            <AnchorPane fx:id="creditCardDetailsPane" prefHeight="252.0" prefWidth="194.0">
+            <AnchorPane id="pane2" fx:id="creditCardDetailsPane" prefHeight="252.0" prefWidth="194.0" stylesheets="@../../css/myPages.css">
                <children>
                   <Text layoutX="14.0" layoutY="30.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Betaluppgifter:">
                      <font>

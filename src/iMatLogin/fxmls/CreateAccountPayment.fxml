@@ -25,13 +25,13 @@
                   <CheckBox fx:id="holdersNameCheckBox" layoutX="194.0" layoutY="6.0" mnemonicParsing="false" onAction="#holdersNameCheckBoxActionPerformed" prefHeight="61.0" prefWidth="118.0" text="Samma som förnamn och efternamn" wrapText="true" />
                   <Label layoutX="12.0" layoutY="65.0" text="Kortnummer:" />
                   <TextField fx:id="cardNumberField" layoutX="10.0" layoutY="82.0" />
-                  <Label layoutX="13.0" layoutY="134.0" text="Månad" />
-                  <Label layoutX="62.0" layoutY="134.0" text="År" />
-                  <TextField fx:id="validMonthField" layoutX="14.0" layoutY="149.0" prefHeight="27.0" prefWidth="39.0" promptText="MM" />
-                  <Text layoutX="118.0" layoutY="147.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CVC" wrappingWidth="27.37109375" />
-                  <TextField fx:id="validYearField" layoutX="62.0" layoutY="149.0" prefHeight="27.0" prefWidth="39.0" promptText="YY" />
-                  <TextField fx:id="verificationCodeField" layoutX="118.0" layoutY="149.0" prefHeight="27.0" prefWidth="67.0" />
-                  <Label fx:id="cardNumberErrorLabel" layoutX="10.0" layoutY="109.0" prefHeight="17.0" prefWidth="293.0" text="cardNumber" textFill="RED" />
+                  <Label layoutX="12.0" layoutY="129.0" text="Månad" />
+                  <Label layoutX="72.0" layoutY="129.0" text="År" />
+                  <Text layoutX="143.0" layoutY="140.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CVC" wrappingWidth="27.37109375" />
+                  <TextField fx:id="verificationCodeField" layoutX="144.0" layoutY="141.0" prefHeight="17.0" prefWidth="67.0" />
+                  <Label fx:id="cardNumberErrorLabel" layoutX="10.0" layoutY="104.0" prefHeight="17.0" prefWidth="293.0" text="cardNumber" textFill="RED" />
+                  <ChoiceBox fx:id="validMonthChoiceBox" layoutX="14.0" layoutY="141.0" prefHeight="22.0" prefWidth="46.0" />
+                  <ChoiceBox fx:id="validYearChoiceBox" layoutX="70.0" layoutY="141.0" prefHeight="22.0" prefWidth="57.0" />
                </children>
             </AnchorPane>
             <AnchorPane id="pane1" fx:id="invoicePane" prefHeight="200.0" prefWidth="200.0" stylesheets="@createAccount.css">

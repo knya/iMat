@@ -34,8 +34,8 @@ public class CreateAccountPaymentController implements Initializable {
     @FXML private CheckBox holdersNameCheckBox;
     @FXML private TextField holdersNameField;
     @FXML private TextField cardNumberField;
-    @FXML private TextField validMonthField;
-    @FXML private TextField validYearField;
+    @FXML private ChoiceBox<Integer> validMonthChoiceBox;
+    @FXML private ChoiceBox<Integer> validYearChoiceBox;
     @FXML private TextField verificationCodeField;
 
     @FXML private Label cardNumberErrorLabel;
@@ -75,6 +75,17 @@ public class CreateAccountPaymentController implements Initializable {
                 addInvoiceInputListener();
             }
         });
+
+        ObservableList<Integer> validMonthList = FXCollections.observableArrayList(
+                 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12
+        );
+
+        ObservableList<Integer> validYearList = FXCollections.observableArrayList(
+                17, 18, 19, 20, 21, 22
+        );
+
+        validMonthChoiceBox.setItems(validMonthList);
+        validYearChoiceBox.setItems(validYearList);
     }
 
     private void clearErrorLabels() {
@@ -101,13 +112,13 @@ public class CreateAccountPaymentController implements Initializable {
             }
         });
 
-        validMonthField.textProperty().addListener(((observable, oldValue, newValue) -> {
-            loginController.getNewCreditCard().setValidMonth(Integer.valueOf(newValue));
-        }));
+        validMonthChoiceBox.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) -> {
+            loginController.getNewCreditCard().setValidMonth(newValue);
+        });
 
-        validYearField.textProperty().addListener(((observable, oldValue, newValue) -> {
-            loginController.getNewCreditCard().setValidYear(Integer.valueOf(newValue));
-        }));
+        validYearChoiceBox.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) -> {
+            loginController.getNewCreditCard().setValidYear(newValue);
+        });
 
         verificationCodeField.textProperty().addListener(((observable, oldValue, newValue) -> {
             loginController.getNewCreditCard().setValidYear(Integer.valueOf(newValue));
@@ -209,8 +220,6 @@ public class CreateAccountPaymentController implements Initializable {
     public void clearTextFields() {
         holdersNameField.clear();
         cardNumberField.clear();
-        validMonthField.clear();
-        validYearField.clear();
         verificationCodeField.clear();
     }
 }

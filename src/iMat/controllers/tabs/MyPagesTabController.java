@@ -110,6 +110,7 @@ public class MyPagesTabController implements Initializable {
         dataHandler.getCustomer().setAddress(newAddress);
         dataHandler.getCustomer().setPostCode(newPostCode);
         dataHandler.getCustomer().setPostAddress(newCity);
+        clearFields();
         setLabels();
     }
 
