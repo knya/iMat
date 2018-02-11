@@ -1,0 +1,28 @@
+.list-cell:filled:selected:focused, .list-cell:filled:selected {
+    //-fx-background-color: linear-gradient(#ff6600 0%, #ff751a 10%, #ff8533 20%, #ff944d 40%, #fec28e 100%);
+    -fx-text-fill: black;
+    -fx-background-color: #fecaa0;
+    -fx-text-background-color: black;
+}
+.list-cell:selected{
+    -fx-text-fill: black;
+    -fx-font-weight: bolder;
+    -fx-text-background-color: black;
+}
+
+.list-cell:filled:hover {
+    -fx-background-color: #FEF1E1;
+    -fx-font-weight: bolder;
+    -fx-text-fill: #000000;
+}
+
+.list-cell {
+    //-fx-background-color: linear-gradient(#ff6600 25%, #ff751a 50%, #ff8533 75%, #ff944d 100%);
+    -fx-background-color: white;
+    -fx-text-fill: #000000;
+    -fx-color-label-visible: true;
+}
+.label:selected{
+    -fx-text-fill: black;
+    -fx-font-weight: bolder;
+}

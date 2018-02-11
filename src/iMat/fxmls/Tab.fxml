@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<TabPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="0.0" minWidth="0.0" prefHeight="435.0" prefWidth="583.0" stylesheets="@../css/middleViewTabs.css" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="iMat.controllers.TabController">
+   <tabs>
+      <Tab text="Butik">
+         <content>
+            <AnchorPane prefHeight="200.0" prefWidth="200.0">
+               <children>
+                  <fx:include fx:id="shopTab" source="tabs/ShopTab.fxml" AnchorPane.bottomAnchor="20" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+               </children>
+            </AnchorPane>
+         </content>
+      </Tab>
+      <Tab text="Mina sidor">
+         <content>
+             <AnchorPane prefHeight="400.0" prefWidth="600.0">
+                 <children>
+                     <fx:include fx:id="myPagesTab" source="tabs/MyPagesTab.fxml" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                 </children>
+             </AnchorPane>
+         </content>
+       </Tab>
+       <Tab text="Kundvagn">
+           <content>
+               <AnchorPane prefHeight="200.0" prefWidth="200.0" stylesheets="@../css/middleViewTabs.css">
+                   <children>
+                       <fx:include fx:id="orderTab" source="tabs/OrderTab.fxml" />
+                   </children>
+               </AnchorPane>
+           </content>
+       </Tab>
+      <Tab fx:id="search" text="Sök">
+        <content>
+          <AnchorPane prefHeight="180.0" prefWidth="200.0">
+              <children>
+                  <fx:include fx:id="searchTab" source="tabs/SearchTab.fxml" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+              </children>
+          </AnchorPane>
+        </content>
+      </Tab>
+      <Tab fx:id="orderHistory" text="Orderhistorik">
+        <content>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+              <children>
+                  <fx:include fx:id="orderHistoryTab" source="tabs/OrderHistoryTab.fxml" />
+              </children>
+          </AnchorPane>
+          </content>
+      </Tab>
+   </tabs>
+</TabPane>

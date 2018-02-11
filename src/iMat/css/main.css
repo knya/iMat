@@ -1,0 +1,24 @@
+
+.button{
+    -fx-background-color: linear-gradient(#fef1d5, #fecaa0, #fec28e);
+    -fx-border-color: #5d5d5d;
+    -fx-font-size: 12pt;
+    -fx-text-fill: #4b4b4b;
+}
+.button:pressed{
+    -fx-background-color: linear-gradient(#fee5b7, #fec38d, #feba76);
+}
+.split-pane:vertical > .split-pane-divider {
+    -fx-background-color: transparent;
+}
+.split-pane{
+    -fx-background-color: white;
+    -fx-focus-color: transparent;
+    -fx-faint-focus-color: transparent;
+}
+.list-view{
+    -fx-focus-color: transparent;
+    -fx-faint-focus-color: lightgray;
+}
+
+

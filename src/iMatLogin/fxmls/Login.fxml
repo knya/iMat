@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.StackPane?>
+
+<AnchorPane fx:id="loginScenePane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="362.0" stylesheets="@createAccount.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="iMatLogin.LoginController">
+   <children>
+      <StackPane fx:id="createAccountPane" prefHeight="400.0" prefWidth="362.0">
+         <children>
+            <AnchorPane fx:id="paymentPane" prefHeight="200.0" prefWidth="200.0">
+               <children>
+                  <fx:include fx:id="createAccountPayment" source="CreateAccountPayment.fxml" />
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="deliveryPane" prefHeight="200.0" prefWidth="200.0">
+               <children>
+                  <fx:include fx:id="createAccountDelivery" source="CreateAccountDelivery.fxml" />
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="personalPane" prefHeight="200.0" prefWidth="200.0">
+               <children>
+                  <fx:include fx:id="createAccountPersonal" source="CreateAccountPersonal.fxml" />
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="userPane" prefHeight="200.0" prefWidth="200.0">
+               <children>
+                  <fx:include fx:id="createAccountUser" source="CreateAccountUser.fxml" />
+               </children>
+            </AnchorPane>
+            <AnchorPane id="pane1" fx:id="loginPane" prefHeight="486.0" prefWidth="470.0" stylesheets="@createAccount.css">
+               <children>
+                  <Label layoutX="134.0" layoutY="14.0" text="Inloggning">
+                     <font>
+                        <Font size="20.0" />
+                     </font></Label>
+                  <Label layoutX="109.0" layoutY="61.0" text="Användarnamn (ÅÅMMDDXXXX):" />
+                  <TextField fx:id="userNameField" layoutX="109.0" layoutY="75.0" />
+                  <Label layoutX="109.0" layoutY="109.0" text="Lösenord:" />
+                  <PasswordField fx:id="passwordField" layoutX="108.0" layoutY="123.0" />
+                  <Button layoutX="139.0" layoutY="200.0" mnemonicParsing="false" onAction="#changeSceneContent" text="Logga in" />
+                  <Label layoutX="133.0" layoutY="241.0" text="Har du inget konto?" />
+                  <Button layoutX="108.0" layoutY="255.0" mnemonicParsing="false" onAction="#createButtonActionPerformed" text="Skapa användare" />
+                  <Label fx:id="loginErrorLabel" alignment="CENTER" layoutX="31.0" layoutY="150.0" prefHeight="17.0" prefWidth="310.0" text="Felaktigt användarnamn eller lösenord" textFill="RED" />
+               </children>
+            </AnchorPane>
+         </children>
+      </StackPane>
+   </children>
+</AnchorPane>

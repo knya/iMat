@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="436.0" prefWidth="545.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="iMat.controllers.tabs.OrderTabController">
+   <children>
+      <TableView fx:id="shoppingItemTableView" layoutX="20.0" layoutY="81.0" prefHeight="286.0" prefWidth="505.0">
+        <columns>
+          <TableColumn fx:id="nameColumn" editable="false" prefWidth="164.0" text="Namn" />
+          <TableColumn fx:id="amountColumn" editable="false" prefWidth="72.0" resizable="false" text="Antal" />
+            <TableColumn fx:id="priceColumn" editable="false" resizable="false" text="Pris" />
+            <TableColumn fx:id="sumColumn" editable="false" prefWidth="70.0" resizable="false" text="Summa" />
+        </columns>
+      </TableView>
+      <Label layoutX="20.0" layoutY="14.0" text="Kundvagn">
+         <font>
+            <Font size="21.0" />
+         </font>
+      </Label>
+      <Button fx:id="placeOrderButton" layoutX="346.0" layoutY="390.0" mnemonicParsing="false" onAction="#placeOrderActionPerformed" prefHeight="32.0" prefWidth="179.0" text="Lägg beställning">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>

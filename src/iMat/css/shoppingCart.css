@@ -1,0 +1,26 @@
+.list-cell:filled:selected:focused, .list-cell:filled:selected {
+    -fx-background-color: #fecaa0;
+    -fx-text-fill: black;
+    -fx-text-background-color: black;
+}
+
+.list-cell:odd { /* <=== changed to even */
+    -fx-background-color: #FEF1E1;
+    -fx-text-fill: black;
+}
+.list-cell:even{
+    -fx-text-fill: black;
+}
+.list-cell{
+    -fx-cell-size: 100px;
+}
+.button{
+    -fx-font-size: 12pt;
+}
+.tab-pane .tab-header-area .tab-header-background {
+    -fx-background-color: #FEF1E1;
+    -fx-opacity: 75%;
+}
+.tab-pane{
+    -fx-background-color: white;
+}

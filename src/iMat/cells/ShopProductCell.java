@@ -1,36 +1,25 @@
 package iMat.cells;
 
-import javafx.fxml.FXML;
+import iMat.controllers.cells.ICellController;
+import iMat.controllers.cells.ShopProductCellController;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.control.Label;
 import javafx.scene.control.ListCell;
-import javafx.scene.image.ImageView;
-import javafx.scene.layout.AnchorPane;
-import se.chalmers.ait.dat215.project.IMatDataHandler;
 import se.chalmers.ait.dat215.project.Product;
 
 import java.io.IOException;
-import java.net.URL;
-import java.util.ResourceBundle;
 
 /**
- * Created by Johan on 2017-02-22.
+ * Cell for Product in ShoppingTab
  */
 public class ShopProductCell extends ListCell<Product> {
 
-    @FXML private Label productNameLabel;
-    @FXML private ImageView productImageView;
-    @FXML private AnchorPane shopProductCellPane;
-
-    private IMatDataHandler dataHandler;
+    private ICellController cellController;
     private FXMLLoader fxmlLoader;
 
     public ShopProductCell() {
-        dataHandler = IMatDataHandler.getInstance();
-
         if (fxmlLoader == null) {
-            fxmlLoader = new FXMLLoader(getClass().getResource("/iMat/fxmls/ShopProductCell.fxml"));
-            fxmlLoader.setController(this);
+            fxmlLoader = new FXMLLoader(getClass().getResource("/iMat/fxmls/cells/ShopProductCell.fxml"));
+//            fxmlLoader.setController(this);
 
             try {
                 fxmlLoader.load();
@@ -38,7 +27,7 @@ public class ShopProductCell extends ListCell<Product> {
                 e.printStackTrace();
             }
         }
-
+        cellController = fxmlLoader.getController();
     }
 
     @Override
@@ -48,10 +37,10 @@ public class ShopProductCell extends ListCell<Product> {
         if(empty || product == null) {
             setGraphic(null);
         } else {
-            productNameLabel.setText(product.getName());
-            productImageView.setImage(dataHandler.getFXImage(product));
-            setGraphic(shopProductCellPane);
-        }
+            setGraphic(cellController.getAnchorPane());
+            cellController.inject(product);
+            cellController.setLabels();
 
+        }
     }
 }

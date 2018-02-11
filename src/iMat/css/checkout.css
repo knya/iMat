@@ -1,0 +1,48 @@
+.root{
+    -fx-background-color: #FFFFFF;
+}
+.button{
+    -fx-background-color: linear-gradient(#fef1d5, #fecaa0, #fec28e);
+    -fx-border-color: #5d5d5d;
+    -fx-font-size: 12pt;
+    -fx-text-fill: #4b4b4b;
+}
+.button:pressed{
+    -fx-background-color: linear-gradient(#fee5b7, #fec38d, #feba76);
+}
+.table-view .column-header{
+    -fx-background-color: linear-gradient(#fef1d5, #fecaa0, #fec28e);
+}
+.table-row-cell{
+    -fx-background-color: white;
+    -fx-text-fill: black;
+    -fx-font-size: 12pt;
+}
+
+.table-row-cell:odd{
+    -fx-background-color: #FEF1E1;
+    -fx-text-fill: black;
+}
+
+.table-row-cell:focused {
+    -fx-text-fill: black;
+    -fx-table-cell-border-color: lightgray;
+    -fx-text-background-color: black;
+}
+.table-row-cell:selected .text{
+    -fx-text-fill: black;
+}
+.table-view:focused{
+    -fx-focus-color: lightgray;
+    -fx-focus-faint-color: lightgray;
+}
+.table-view .filler{
+    -fx-background-color: linear-gradient(#fef1d5, #fecaa0, #fec28e);
+}
+.pane-background {
+    -fx-background-color: #FEF1E1;
+}
+
+#pane{
+    -fx-background-color: #FEF1E1;
+}

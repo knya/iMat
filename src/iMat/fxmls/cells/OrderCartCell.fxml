@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane fx:id="shoppingItemCellPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="47.0" prefWidth="370.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="iMat.controllers.cells.OrderCartCellController">
+   <children>
+      <Label fx:id="amountLabel" layoutX="120.0" layoutY="12.0" text="Antal" />
+      <Label fx:id="nameLabel" layoutX="20.0" layoutY="12.0" text="Namn" />
+      <Label fx:id="priceLabel" layoutX="220.0" layoutY="12.0" text="Pris" />
+      <Label fx:id="sumLabel" layoutX="320.0" layoutY="12.0" text="Summa" />
+   </children>
+</AnchorPane>
